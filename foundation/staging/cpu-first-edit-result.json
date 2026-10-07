@@ -1,0 +1,353 @@
+{
+  "started": "2026-10-07T21:25:01.958Z",
+  "samples": [
+    {
+      "redeployment": 1,
+      "started": "2026-10-07T21:25:07.410Z",
+      "ended": "2026-10-07T21:25:07.607Z",
+      "status": 200,
+      "wall_ms": 197.068,
+      "cpu_ms": 8.64
+    },
+    {
+      "redeployment": 2,
+      "started": "2026-10-07T21:25:12.473Z",
+      "ended": "2026-10-07T21:25:12.672Z",
+      "status": 200,
+      "wall_ms": 196.591,
+      "cpu_ms": 11.656
+    },
+    {
+      "redeployment": 3,
+      "started": "2026-10-07T21:25:17.698Z",
+      "ended": "2026-10-07T21:25:17.889Z",
+      "status": 200,
+      "wall_ms": 190.374,
+      "cpu_ms": 5.133
+    },
+    {
+      "redeployment": 4,
+      "started": "2026-10-07T21:25:22.547Z",
+      "ended": "2026-10-07T21:25:22.711Z",
+      "status": 200,
+      "wall_ms": 163.489,
+      "cpu_ms": 5.923
+    },
+    {
+      "redeployment": 5,
+      "started": "2026-10-07T21:25:25.318Z",
+      "ended": "2026-10-07T21:25:25.480Z",
+      "status": 200,
+      "wall_ms": 161.785,
+      "cpu_ms": 4.642
+    }
+  ],
+  "forced_cold_isolate": false,
+  "ended": "2026-10-07T21:25:25.480Z",
+  "analytics_observations": [
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:12Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 11656,
+        "cpuTimeP99": 11656,
+        "wallTimeP50": 113962,
+        "wallTimeP99": 113962
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:16Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 7818,
+        "cpuTimeP99": 15534,
+        "wallTimeP50": 91733,
+        "wallTimeP99": 120391
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 2
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:11Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 31941,
+        "cpuTimeP99": 31941,
+        "wallTimeP50": 241045,
+        "wallTimeP99": 241045
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:25Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 4642,
+        "cpuTimeP99": 4642,
+        "wallTimeP50": 98341,
+        "wallTimeP99": 98341
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:23Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 2623,
+        "cpuTimeP99": 4759,
+        "wallTimeP50": 40994,
+        "wallTimeP99": 90587
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 3
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:05Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 2542,
+        "cpuTimeP99": 3631,
+        "wallTimeP50": 44322,
+        "wallTimeP99": 91636
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 3
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:18Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 2201,
+        "cpuTimeP99": 2201,
+        "wallTimeP50": 2620,
+        "wallTimeP99": 2620
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:06Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 1772,
+        "cpuTimeP99": 16832,
+        "wallTimeP50": 2209,
+        "wallTimeP99": 130061
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 2
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:22Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 5923,
+        "cpuTimeP99": 5923,
+        "wallTimeP50": 121712,
+        "wallTimeP99": 121712
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:20Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 1953,
+        "cpuTimeP99": 3047,
+        "wallTimeP50": 2325,
+        "wallTimeP99": 41914
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 2
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:13Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 1076,
+        "cpuTimeP99": 1076,
+        "wallTimeP50": 1581,
+        "wallTimeP99": 1581
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:09Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 1751,
+        "cpuTimeP99": 1751,
+        "wallTimeP50": 2157,
+        "wallTimeP99": 2157
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:08Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 2553,
+        "cpuTimeP99": 2553,
+        "wallTimeP50": 3091,
+        "wallTimeP99": 3091
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:10Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 2635,
+        "cpuTimeP99": 7677,
+        "wallTimeP50": 49076,
+        "wallTimeP99": 137992
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 3
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:07Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 8640,
+        "cpuTimeP99": 8640,
+        "wallTimeP50": 102131,
+        "wallTimeP99": 102131
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:17Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 5133,
+        "cpuTimeP99": 5133,
+        "wallTimeP50": 115986,
+        "wallTimeP99": 115986
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:24Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 1644,
+        "cpuTimeP99": 16741,
+        "wallTimeP50": 1964,
+        "wallTimeP99": 127459
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 2
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:15Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 1632,
+        "cpuTimeP99": 2716,
+        "wallTimeP50": 3302,
+        "wallTimeP99": 43294
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 3
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T21:25:21Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 6725,
+        "cpuTimeP99": 12463,
+        "wallTimeP50": 79899,
+        "wallTimeP99": 133474
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 3
+      }
+    }
+  ]
+}

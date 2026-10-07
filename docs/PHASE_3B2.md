@@ -240,3 +240,7 @@ staging credentials; `python -m foundation.staging.benchmark_edits` measures edi
 Do not run these again without reviewing the CPU gate and staging-only settings.
 Historical 600,000-iteration PBKDF2 probe evidence remains preserved from commit
 `1722eb0`; it is not the current deployed authentication implementation.
+
+## Subsequent CPU/import review
+
+See [PHASE_3B2_CPU_REVIEW.md](PHASE_3B2_CPU_REVIEW.md) for the optimized repeated actual-Worker measurements, remaining first-action CPU outlier, and durable quota-aware native D1 import. This remains staging-only; no Phase 3B.3 or production cutover.

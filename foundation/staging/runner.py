@@ -20,17 +20,21 @@ def state():
     return json.loads(STATE.read_text())
 
 
-def deploy_staging():
+def deploy_staging(instrumented=True, benchmark_version=None):
+    benchmark_version = benchmark_version or 'cpu-review-' + secrets.token_hex(12)
     s = state()
     assert s['worker'] == WORKER
     cfg = {'algorithm': 'SHA-256', 'digest': hashlib.sha256(s['credential'].encode()).hexdigest(), 'version': s['credential_version']}
     bindings = [{'type':'secret_text','name':'OWNER_AUTH_CONFIG','text':json.dumps(cfg)},
                 {'type':'secret_text','name':'PROBE_KEY','text':s['operator_key']},
                 {'type':'plain_text','name':'STAGING_ONLY','text':'true'},
+                {'type':'plain_text','name':'STAGING_BENCH_VERSION','text':benchmark_version},
+                {'type':'plain_text','name':'STAGING_METRICS','text':'true' if instrumented else 'false'},
                 {'type':'d1','name':'DB','id':s['database_id']}]
     modules = {name: (ROOT / 'foundation/staging' / name).read_text() for name in ('worker.mjs','auth.js','records.js')}
     deploy(WORKER, modules, 'worker.mjs', bindings)
     endpoint(WORKER, True)
+    return benchmark_version
 
 
 class Client:
@@ -40,8 +44,9 @@ class Client:
         self.cookie = None
         self.measurements = []
 
-    def call(self, path, body=None, *, cookie=True, origin=True, gate=True):
+    def call(self, path, body=None, *, cookie=True, origin=True, gate=True, instrumented=True):
         headers = {'User-Agent':'Mozilla/5.0'}
+        headers['X-Staging-Metrics']='on' if instrumented else 'off'
         if gate:
             headers['X-Staging-Probe'] = self.state['operator_key']
         if cookie and self.cookie:
@@ -67,6 +72,8 @@ class Client:
                 data = {'error':'Non-JSON staging response'}
             result = {'status':response.status, 'body':data, 'rows_read':int(response.headers.get('X-Staging-D1-Reads',0)),
                       'rows_written':int(response.headers.get('X-Staging-D1-Writes',0)),
+                      'd1_duration_ms':float(response.headers.get('X-Staging-D1-Ms',0)),
+                      'instrumented':response.headers.get('X-Staging-D1-Reads') is not None,
                       'client_wall_ms':round((time.perf_counter()-start)*1000,3)}
             if response.headers.get('Set-Cookie'):
                 self.cookie = response.headers['Set-Cookie'].split(';')[0]
@@ -83,10 +90,10 @@ class Client:
     def login(self, remembered=True):
         return self.call('/login', {'credential':self.state['credential'],'remembered':remembered}, cookie=False)
 
-    def wait_ready(self):
+    def wait_ready(self, expected_version=None):
         for _ in range(30):
             r = self.call('/health')
-            if r['status'] == 200:
+            if r['status'] == 200 and (expected_version is None or r['body'].get('benchmark_version')==expected_version):
                 return
             time.sleep(2)
         raise RuntimeError('Staging routing unavailable')

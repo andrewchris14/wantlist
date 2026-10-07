@@ -1,6 +1,11 @@
 // Isolated staging backend. No production site integration or Dad-facing editor.
 import {verifyCredential, throttle, issue, validate, cookieToken, hash, config, logoutCookie} from './auth.js';
-import {mutate, openRecord, catalog, publicProjection} from './records.js';
+import {mutate, mutationReads, openRecord, catalog, publicProjection} from './records.js';
+let operatorConfig;
+async function operatorVerifier(key){
+  if(!operatorConfig || operatorConfig.key!==key)operatorConfig={key,promise:hash(key).then(digest=>({OWNER_AUTH_CONFIG:JSON.stringify({algorithm:'SHA-256',digest,version:'staging-operator-gate'})}))};
+  return operatorConfig.promise;
+}
 const json = (body, status=200, headers={}) => Response.json(body,{status,headers:{'Cache-Control':'no-store',...headers}});
 async function handle(request,env){
   if(env.STAGING_ONLY !== 'true') return json({error:'Staging only'},503);
@@ -8,10 +13,10 @@ async function handle(request,env){
   // Operator gate isolates ALL staging routes, including the test-only batch tool.
   // Comparing digests avoids ordinary string comparison of the operator secret.
   const supplied=request.headers.get('X-Staging-Probe') || '';
-  if(!env.PROBE_KEY || !await verifyCredential(supplied,{OWNER_AUTH_CONFIG:JSON.stringify({algorithm:'SHA-256',digest:await hash(env.PROBE_KEY),version:'staging-operator-gate'})})) return json({error:'Forbidden'},403);
+  if(!env.PROBE_KEY || !await verifyCredential(supplied,await operatorVerifier(env.PROBE_KEY))) return json({error:'Forbidden'},403);
   if(request.method!=='GET' && request.headers.get('Origin')!==origin) return json({error:'Forbidden'},403);
   try {
-    if(url.pathname==='/health') return json({staging:true});
+    if(url.pathname==='/health') return json({staging:true,benchmark_version:env.STAGING_BENCH_VERSION});
     if(request.method==='POST') {
       if(!(request.headers.get('Content-Type') || '').startsWith('application/json')) return json({error:'Invalid request'},400);
       if(Number(request.headers.get('Content-Length'))>2000000) return json({error:'Too large'},413);
@@ -52,7 +57,9 @@ async function handle(request,env){
       ]);
       return json({published:true,revision:r.revision});
     }
-    const session=await validate(env.DB,env,cookieToken(request));
+    const editing=url.pathname==='/action' && request.method==='POST';
+    const validation=await validate(env.DB,env,cookieToken(request),editing?mutationReads(env.DB,body):[]);
+    const session=editing?validation?.session:validation;
     if(!session)return json({error:'Sign in required'},401);
     if(url.pathname==='/session')return json({signed_in:true,remembered:!!session.remembered,expires:session.expires_at});
     if(url.pathname==='/logout' && request.method==='POST') {
@@ -66,7 +73,7 @@ async function handle(request,env){
     if(url.pathname==='/catalog')return json({records:await catalog(env.DB)});
     if(url.pathname==='/record')return json(await openRecord(env.DB,url.searchParams.get('id')));
     if(url.pathname==='/recent')return json({changes:(await env.DB.prepare('SELECT id,record_id,action,created_at FROM change_history ORDER BY created_at DESC,id DESC LIMIT 20').all()).results});
-    if(url.pathname==='/action' && request.method==='POST')return json(await mutate(env.DB,body));
+    if(url.pathname==='/action' && request.method==='POST')return json(await mutate(env.DB,body,validation.reads[0].results[0],validation.reads[1]?.results[0]));
     return json({error:'Not found'},404);
   }catch(error){
     // Do not include SQL, credentials, private data, or exception messages.
@@ -74,12 +81,13 @@ async function handle(request,env){
   }
 }
 export default {async fetch(request,env){
- const totals={rows_read:0,rows_written:0};
- const collect=r=>{totals.rows_read+=r.meta?.rows_read||0;totals.rows_written+=r.meta?.rows_written||0;return r;};
+ if(env.STAGING_METRICS!=='true'||request.headers.get('X-Staging-Metrics')!=='on')return handle(request,env);
+ const totals={rows_read:0,rows_written:0,sql_ms:0};
+ const collect=r=>{totals.sql_ms+=r.meta?.duration||0;totals.rows_read+=r.meta?.rows_read||0;totals.rows_written+=r.meta?.rows_written||0;return r;};
  const raw=env.DB;
  const wrap=st=>({raw:st,bind(...args){return wrap(st.bind(...args));},async all(){return collect(await st.all());},async first(){const r=collect(await st.all());return r.results[0]||null;},async run(){return collect(await st.run());}});
  const db={prepare(sql){return wrap(raw.prepare(sql));},async batch(statements){return (await raw.batch(statements.map(s=>s.raw))).map(collect);}};
  const response=await handle(request,{...env,DB:db});
- const headers=new Headers(response.headers);headers.set('X-Staging-D1-Reads',String(totals.rows_read));headers.set('X-Staging-D1-Writes',String(totals.rows_written));
+ const headers=new Headers(response.headers);headers.set('X-Staging-D1-Reads',String(totals.rows_read));headers.set('X-Staging-D1-Writes',String(totals.rows_written));headers.set('X-Staging-D1-Ms',String(totals.sql_ms));
  return new Response(response.body,{status:response.status,headers});
 }};

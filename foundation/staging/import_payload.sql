@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS import_chunk_payloads(id TEXT PRIMARY KEY,content_sha256 TEXT NOT NULL,records_added INTEGER NOT NULL,attempt_id TEXT NOT NULL REFERENCES import_write_attempts(id),payload_json TEXT NOT NULL CHECK(json_valid(payload_json)),guard INTEGER NOT NULL CHECK(guard=1));
+CREATE TRIGGER IF NOT EXISTS import_payload_apply AFTER INSERT ON import_chunk_payloads BEGIN
+INSERT INTO foundation_meta(key,value) SELECT json_extract(value,'$[0]'),json_extract(value,'$[1]') FROM json_each(NEW.payload_json,'$.foundation_meta');
+INSERT INTO import_batches(id,baseline_commit,dataset_sha256,header_json,imported_at) SELECT json_extract(value,'$[0]'),json_extract(value,'$[1]'),json_extract(value,'$[2]'),json_extract(value,'$[3]'),json_extract(value,'$[4]') FROM json_each(NEW.payload_json,'$.import_batches');
+INSERT INTO records(id,import_id,list_type,content_json,revision,created_at,updated_at,deleted_at) SELECT json_extract(value,'$[0]'),json_extract(value,'$[1]'),json_extract(value,'$[2]'),json_extract(value,'$[3]'),json_extract(value,'$[4]'),json_extract(value,'$[5]'),json_extract(value,'$[6]'),json_extract(value,'$[7]') FROM json_each(NEW.payload_json,'$.records');
+INSERT INTO record_groups(id,record_id,kind,position,list_type,metadata_json,inventory_keys_json) SELECT json_extract(value,'$[0]'),json_extract(value,'$[1]'),json_extract(value,'$[2]'),json_extract(value,'$[3]'),json_extract(value,'$[4]'),json_extract(value,'$[5]'),json_extract(value,'$[6]') FROM json_each(NEW.payload_json,'$.record_groups');
+INSERT INTO items(id,group_id,field_key,position,value,state,actionable,limitation,pending_at,received_at,deleted_at) SELECT json_extract(value,'$[0]'),json_extract(value,'$[1]'),json_extract(value,'$[2]'),json_extract(value,'$[3]'),json_extract(value,'$[4]'),json_extract(value,'$[5]'),json_extract(value,'$[6]'),json_extract(value,'$[7]'),json_extract(value,'$[8]'),json_extract(value,'$[9]'),json_extract(value,'$[10]') FROM json_each(NEW.payload_json,'$.items');
+INSERT INTO provenance(record_id,baseline_json,baseline_sha256,source_refs_json) SELECT json_extract(value,'$[0]'),json_extract(value,'$[1]'),json_extract(value,'$[2]'),json_extract(value,'$[3]') FROM json_each(NEW.payload_json,'$.provenance');
+INSERT INTO staging_import_chunks VALUES(NEW.id,NEW.content_sha256,NEW.records_added,strftime('%Y-%m-%dT%H:%M:%SZ','now'));
+UPDATE import_write_attempts SET completed=1 WHERE id=NEW.attempt_id;
+DELETE FROM import_chunk_payloads WHERE id=NEW.id;
+END;

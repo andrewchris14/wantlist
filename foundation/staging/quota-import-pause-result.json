@@ -1,0 +1,23 @@
+{
+  "expected_records": 27,
+  "chunks_total": 7,
+  "completed_now": 2,
+  "skipped": 0,
+  "actual_chunk_writes": 19,
+  "local_metering_unavailable": false,
+  "paused": true,
+  "next_chunk": "baseline-00002",
+  "next_chunk_reserved_writes": 1051,
+  "completed_chunks": 2,
+  "imported_records": 0,
+  "daily_reservations": [
+    {
+      "day": "2026-10-07",
+      "reserved": 2461,
+      "budget": 2584
+    }
+  ],
+  "full_import_executed": false,
+  "large_header_bound_json": true,
+  "api_multi_statement_transaction_rollback_verified": true
+}

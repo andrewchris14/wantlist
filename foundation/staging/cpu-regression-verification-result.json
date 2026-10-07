@@ -1,0 +1,2053 @@
+{
+  "checks": {
+    "no_operator_gate": true,
+    "unauthorized_mutation": true,
+    "cross_origin_login": true,
+    "wrong_code": true,
+    "remembered_login": true,
+    "session_validation": true,
+    "short_login": true,
+    "90_day_and_8_hour_server_expiration": true,
+    "logout": true,
+    "logout_replay_rejected": true,
+    "other_device_still_valid": true,
+    "individual_revocation": true,
+    "login_for_expiration": true,
+    "expired_session_rejected": true,
+    "login_for_global_revoke": true,
+    "revoke_all": true,
+    "global_revoke_rejected": true,
+    "login_throttled": true,
+    "login_after_staging_throttle_reset": true,
+    "constraint_failure_generic": true,
+    "actual_d1_batch_atomic_rollback": true,
+    "set_catalog": true,
+    "open_imported_owner-record-01573e45-a884-4cb9-8a5e-4a8f4df9414d": true,
+    "initial_publish_owner-record-01573e45-a884-4cb9-8a5e-4a8f4df9414d": true,
+    "open_imported_owner-record-0c803d3c-2e25-4ec5-80e9-28cf6e94bcd3": true,
+    "initial_publish_owner-record-0c803d3c-2e25-4ec5-80e9-28cf6e94bcd3": true,
+    "open_imported_owner-record-10e239e7-dabc-4965-9d87-04d40acfb355": true,
+    "initial_publish_owner-record-10e239e7-dabc-4965-9d87-04d40acfb355": true,
+    "open_imported_owner-record-1400d206-ecf4-4e24-b56a-7f66ef450a07": true,
+    "initial_publish_owner-record-1400d206-ecf4-4e24-b56a-7f66ef450a07": true,
+    "open_imported_owner-record-161592e9-2811-43cd-a676-4530880b9646": true,
+    "initial_publish_owner-record-161592e9-2811-43cd-a676-4530880b9646": true,
+    "open_imported_owner-record-17f36b24-6934-47e7-97df-4a0695f04456": true,
+    "initial_publish_owner-record-17f36b24-6934-47e7-97df-4a0695f04456": true,
+    "open_imported_owner-record-18adc75b-786b-4392-99e5-9eaac3b7b6ed": true,
+    "initial_publish_owner-record-18adc75b-786b-4392-99e5-9eaac3b7b6ed": true,
+    "open_imported_owner-record-209442cd-c093-44ef-83c5-844f1877f17a": true,
+    "initial_publish_owner-record-209442cd-c093-44ef-83c5-844f1877f17a": true,
+    "open_imported_owner-record-24a8c84a-a140-41e4-9927-342a1b69d251": true,
+    "initial_publish_owner-record-24a8c84a-a140-41e4-9927-342a1b69d251": true,
+    "open_imported_owner-record-2596f2ff-da37-40e8-b4a1-c3f0efb78090": true,
+    "initial_publish_owner-record-2596f2ff-da37-40e8-b4a1-c3f0efb78090": true,
+    "open_imported_owner-record-27ae859c-54ea-4da0-803d-42fdf4daa8f3": true,
+    "initial_publish_owner-record-27ae859c-54ea-4da0-803d-42fdf4daa8f3": true,
+    "open_imported_owner-record-2a7116d8-4f06-47de-a49f-e086722b1242": true,
+    "initial_publish_owner-record-2a7116d8-4f06-47de-a49f-e086722b1242": true,
+    "open_imported_owner-record-2b6ce563-6517-4063-9f51-69c33743d8b0": true,
+    "initial_publish_owner-record-2b6ce563-6517-4063-9f51-69c33743d8b0": true,
+    "open_imported_owner-record-2bdec8eb-0422-4109-865f-5aa6ca9f6a29": true,
+    "initial_publish_owner-record-2bdec8eb-0422-4109-865f-5aa6ca9f6a29": true,
+    "open_imported_owner-record-31874bd5-175d-4501-b09b-d4b964317d9b": true,
+    "initial_publish_owner-record-31874bd5-175d-4501-b09b-d4b964317d9b": true,
+    "open_imported_owner-record-33d8a19c-e5c4-4b7c-bfac-d768c0932709": true,
+    "initial_publish_owner-record-33d8a19c-e5c4-4b7c-bfac-d768c0932709": true,
+    "open_imported_owner-record-39dac18c-a081-4e6d-96f7-0d1df41ca954": true,
+    "initial_publish_owner-record-39dac18c-a081-4e6d-96f7-0d1df41ca954": true,
+    "open_imported_owner-record-4288f796-32b3-458c-95a9-369ac838abdd": true,
+    "initial_publish_owner-record-4288f796-32b3-458c-95a9-369ac838abdd": true,
+    "open_imported_owner-record-448906be-4e77-4f84-a662-6309bf2a74a9": true,
+    "initial_publish_owner-record-448906be-4e77-4f84-a662-6309bf2a74a9": true,
+    "open_imported_owner-record-4a414fdb-2bbd-4e03-a2f6-80ac27df0fbc": true,
+    "initial_publish_owner-record-4a414fdb-2bbd-4e03-a2f6-80ac27df0fbc": true,
+    "open_imported_owner-record-4d998b3f-11e7-4673-a8b1-465b53866413": true,
+    "initial_publish_owner-record-4d998b3f-11e7-4673-a8b1-465b53866413": true,
+    "open_imported_owner-record-515ccc54-5e21-4d59-a3e9-64f8a9b7861c": true,
+    "initial_publish_owner-record-515ccc54-5e21-4d59-a3e9-64f8a9b7861c": true,
+    "open_imported_owner-record-54a52bde-4033-46b0-b157-1e54859d2bcc": true,
+    "initial_publish_owner-record-54a52bde-4033-46b0-b157-1e54859d2bcc": true,
+    "open_imported_owner-record-580e9ccf-cc28-41be-bc0a-2e4973b634af": true,
+    "initial_publish_owner-record-580e9ccf-cc28-41be-bc0a-2e4973b634af": true,
+    "open_imported_owner-record-6372d8e0-6a6b-4637-b7e6-7a746e95f9df": true,
+    "initial_publish_owner-record-6372d8e0-6a6b-4637-b7e6-7a746e95f9df": true,
+    "open_imported_owner-record-6707ec2d-da31-4347-be1e-4009f93b2283": true,
+    "initial_publish_owner-record-6707ec2d-da31-4347-be1e-4009f93b2283": true,
+    "open_imported_owner-record-6ac5c55a-1752-4863-9651-d50e8415f414": true,
+    "initial_publish_owner-record-6ac5c55a-1752-4863-9651-d50e8415f414": true,
+    "open_imported_owner-record-711da841-fe60-4add-9296-9ab67acf636a": true,
+    "initial_publish_owner-record-711da841-fe60-4add-9296-9ab67acf636a": true,
+    "open_imported_owner-record-741dce6b-9251-410f-9d09-1709db7bac59": true,
+    "initial_publish_owner-record-741dce6b-9251-410f-9d09-1709db7bac59": true,
+    "open_imported_owner-record-76c80bf4-f304-4195-8f1d-f053fbc84e9f": true,
+    "initial_publish_owner-record-76c80bf4-f304-4195-8f1d-f053fbc84e9f": true,
+    "open_imported_owner-record-76d76404-d665-4b7c-a717-0ee2244012b2": true,
+    "initial_publish_owner-record-76d76404-d665-4b7c-a717-0ee2244012b2": true,
+    "open_imported_owner-record-85416600-2752-4fd5-8350-ccaf0a9829ba": true,
+    "initial_publish_owner-record-85416600-2752-4fd5-8350-ccaf0a9829ba": true,
+    "open_imported_owner-record-8b95523c-8644-48ac-be94-06c6f81bdccf": true,
+    "initial_publish_owner-record-8b95523c-8644-48ac-be94-06c6f81bdccf": true,
+    "open_imported_owner-record-a093fcde-3a62-455c-a87d-15da0509d2dc": true,
+    "initial_publish_owner-record-a093fcde-3a62-455c-a87d-15da0509d2dc": true,
+    "open_imported_owner-record-a20a5204-e2b7-4ad7-932c-d289e08b0d3a": true,
+    "initial_publish_owner-record-a20a5204-e2b7-4ad7-932c-d289e08b0d3a": true,
+    "open_imported_owner-record-a5da2def-afda-455f-88e2-3c83ebfd8ad4": true,
+    "initial_publish_owner-record-a5da2def-afda-455f-88e2-3c83ebfd8ad4": true,
+    "open_imported_owner-record-a606dac2-a0ba-451d-8516-14cce469bb46": true,
+    "initial_publish_owner-record-a606dac2-a0ba-451d-8516-14cce469bb46": true,
+    "open_imported_owner-record-a87b4890-9b2f-4162-afaa-eb4c762de26d": true,
+    "initial_publish_owner-record-a87b4890-9b2f-4162-afaa-eb4c762de26d": true,
+    "open_imported_owner-record-a8c9d0ab-e070-4880-87a7-b930e3b60af1": true,
+    "initial_publish_owner-record-a8c9d0ab-e070-4880-87a7-b930e3b60af1": true,
+    "open_imported_owner-record-aa1cfef5-6876-4382-b4e0-61acf52e8b68": true,
+    "initial_publish_owner-record-aa1cfef5-6876-4382-b4e0-61acf52e8b68": true,
+    "open_imported_owner-record-ae118f17-86a2-4090-b650-a1c8d2d06998": true,
+    "initial_publish_owner-record-ae118f17-86a2-4090-b650-a1c8d2d06998": true,
+    "open_imported_owner-record-ae5d1f79-6ad2-49b3-a31b-506ed3ea5e09": true,
+    "initial_publish_owner-record-ae5d1f79-6ad2-49b3-a31b-506ed3ea5e09": true,
+    "open_imported_owner-record-af323f15-b7a2-4b87-9c31-57c994463c81": true,
+    "initial_publish_owner-record-af323f15-b7a2-4b87-9c31-57c994463c81": true,
+    "open_imported_owner-record-bf7b7fdb-38c2-449c-90e1-8bdd0d08a0a7": true,
+    "initial_publish_owner-record-bf7b7fdb-38c2-449c-90e1-8bdd0d08a0a7": true,
+    "open_imported_owner-record-c37b83e1-e0a7-4c31-b94f-32a64759ee3b": true,
+    "initial_publish_owner-record-c37b83e1-e0a7-4c31-b94f-32a64759ee3b": true,
+    "open_imported_owner-record-c614c433-f823-4442-942e-d097910c1357": true,
+    "initial_publish_owner-record-c614c433-f823-4442-942e-d097910c1357": true,
+    "open_imported_owner-record-ca06b056-c16f-4fbb-b040-b3c989e57d33": true,
+    "initial_publish_owner-record-ca06b056-c16f-4fbb-b040-b3c989e57d33": true,
+    "open_imported_owner-record-cd27a294-b5e1-41ed-a96c-68b670b06184": true,
+    "initial_publish_owner-record-cd27a294-b5e1-41ed-a96c-68b670b06184": true,
+    "open_imported_owner-record-ce5f7312-0a28-4bc0-b82d-8fd43fd2a242": true,
+    "initial_publish_owner-record-ce5f7312-0a28-4bc0-b82d-8fd43fd2a242": true,
+    "open_imported_owner-record-d579f5ff-9677-41bd-9398-9f70f912d886": true,
+    "initial_publish_owner-record-d579f5ff-9677-41bd-9398-9f70f912d886": true,
+    "open_imported_owner-record-d66001a4-890d-4775-9e94-f78003dc6165": true,
+    "initial_publish_owner-record-d66001a4-890d-4775-9e94-f78003dc6165": true,
+    "open_imported_owner-record-d7633ff8-c94d-4143-a88d-268cd1ceacd7": true,
+    "initial_publish_owner-record-d7633ff8-c94d-4143-a88d-268cd1ceacd7": true,
+    "open_imported_owner-record-d889be42-fb52-454a-8010-0e868793900a": true,
+    "initial_publish_owner-record-d889be42-fb52-454a-8010-0e868793900a": true,
+    "open_imported_owner-record-d8e1c73c-acd8-40ca-9740-cb4bc7bf4a9e": true,
+    "initial_publish_owner-record-d8e1c73c-acd8-40ca-9740-cb4bc7bf4a9e": true,
+    "open_imported_owner-record-dd8ae4c4-2253-4f81-a121-6110555026d7": true,
+    "initial_publish_owner-record-dd8ae4c4-2253-4f81-a121-6110555026d7": true,
+    "open_imported_owner-record-e6ef7225-c138-41b1-b992-91474f996cbf": true,
+    "initial_publish_owner-record-e6ef7225-c138-41b1-b992-91474f996cbf": true,
+    "open_imported_owner-record-e8bebcac-4748-41c8-8232-8be5f14fb268": true,
+    "initial_publish_owner-record-e8bebcac-4748-41c8-8232-8be5f14fb268": true,
+    "open_imported_owner-record-e984005b-82ea-4d8e-9fd3-a860c82a9d89": true,
+    "initial_publish_owner-record-e984005b-82ea-4d8e-9fd3-a860c82a9d89": true,
+    "open_imported_owner-record-ea33fe39-a11f-4278-b6fc-ef7533962764": true,
+    "initial_publish_owner-record-ea33fe39-a11f-4278-b6fc-ef7533962764": true,
+    "open_imported_owner-record-ea74105b-9790-47f8-95bc-a714318727d1": true,
+    "initial_publish_owner-record-ea74105b-9790-47f8-95bc-a714318727d1": true,
+    "open_imported_owner-record-ee9afff4-f89f-4852-9a4e-d9924768160c": true,
+    "initial_publish_owner-record-ee9afff4-f89f-4852-9a4e-d9924768160c": true,
+    "open_imported_owner-record-f206734d-0d4e-40d4-8d0a-3ab520db7c1a": true,
+    "initial_publish_owner-record-f206734d-0d4e-40d4-8d0a-3ab520db7c1a": true,
+    "open_imported_owner-record-f39592f1-ca0b-4dde-952e-08ea069bf5ae": true,
+    "initial_publish_owner-record-f39592f1-ca0b-4dde-952e-08ea069bf5ae": true,
+    "open_imported_owner-record-f7a4a282-56b0-46c3-8474-9eb140e16faa": true,
+    "initial_publish_owner-record-f7a4a282-56b0-46c3-8474-9eb140e16faa": true,
+    "open_imported_owner-record-fba4e10e-4538-4aee-8400-d608de09ffff": true,
+    "initial_publish_owner-record-fba4e10e-4538-4aee-8400-d608de09ffff": true,
+    "open_imported_owner-record-fddc22b8-0615-49ce-8863-9b01bf590f76": true,
+    "initial_publish_owner-record-fddc22b8-0615-49ce-8863-9b01bf590f76": true,
+    "open_imported_p0008-l001": true,
+    "initial_publish_p0008-l001": true,
+    "open_imported_p0010-l001": true,
+    "initial_publish_p0010-l001": true,
+    "open_imported_p0012-l001": true,
+    "initial_publish_p0012-l001": true,
+    "open_imported_p0014-l001": true,
+    "initial_publish_p0014-l001": true,
+    "open_imported_p0019-l001": true,
+    "initial_publish_p0019-l001": true,
+    "open_imported_p0023-l001": true,
+    "initial_publish_p0023-l001": true,
+    "open_imported_p0026-l001": true,
+    "initial_publish_p0026-l001": true,
+    "open_imported_p0028-l001": true,
+    "initial_publish_p0028-l001": true,
+    "open_imported_p0092-l005": true,
+    "initial_publish_p0092-l005": true,
+    "open_imported_p0122-l001": true,
+    "initial_publish_p0122-l001": true,
+    "open_imported_p0136-l001": true,
+    "initial_publish_p0136-l001": true,
+    "open_imported_p0199-l001": true,
+    "initial_publish_p0199-l001": true,
+    "open_imported_p0237-l001": true,
+    "initial_publish_p0237-l001": true,
+    "open_imported_p0273-l047": true,
+    "initial_publish_p0273-l047": true,
+    "open_imported_p0277-l007": true,
+    "initial_publish_p0277-l007": true,
+    "open_imported_p0289-l007": true,
+    "initial_publish_p0289-l007": true,
+    "open_imported_p0526-l006": true,
+    "initial_publish_p0526-l006": true,
+    "open_imported_p0531-l001": true,
+    "initial_publish_p0531-l001": true,
+    "open_imported_p0581-l001": true,
+    "initial_publish_p0581-l001": true,
+    "open_imported_p0645-l005": true,
+    "initial_publish_p0645-l005": true,
+    "open_imported_p0672-l001": true,
+    "initial_publish_p0672-l001": true,
+    "open_imported_p0694-l001": true,
+    "initial_publish_p0694-l001": true,
+    "open_imported_p0730-l001": true,
+    "initial_publish_p0730-l001": true,
+    "open_imported_p1237-l004": true,
+    "initial_publish_p1237-l004": true,
+    "open_imported_p1566-l003": true,
+    "initial_publish_p1566-l003": true,
+    "open_imported_p3029-l001": true,
+    "initial_publish_p3029-l001": true,
+    "open_imported_p3128-l001": true,
+    "initial_publish_p3128-l001": true,
+    "open_small_set": true,
+    "open_large_set": true,
+    "targeted_d1_query_plans_indexed": true,
+    "create_2027_with_20_wanted": true,
+    "retrieve_2027": true,
+    "add_two_wanted": true,
+    "add_twenty_wanted": true,
+    "add_owned": true,
+    "retrieve_added": true,
+    "mark_pending": true,
+    "pending_public_immediate": true,
+    "pending_back_to_wanted": true,
+    "mark_received": true,
+    "edit_notes": true,
+    "mark_uncertain": true,
+    "unmark_uncertain": true,
+    "complete_rejects_needed_items": true,
+    "remove_wrong_card": true,
+    "restore_card": true,
+    "soft_delete_record": true,
+    "restore_record": true,
+    "idempotent_first_save": true,
+    "idempotent_retry": true,
+    "stale_revision_rejected": true,
+    "invalid_transition_rejected": true,
+    "create_owned_only_future": true,
+    "mark_complete": true,
+    "unmark_complete": true,
+    "recent_changes": true,
+    "public_catalog_refresh": true,
+    "public_snapshot_page": true,
+    "per_edit_projection_atomic_and_pending_visible": true,
+    "owner_created_no_fabricated_provenance": true,
+    "public_sanitized": true,
+    "private_details_excluded": true,
+    "partial_import_rejected": true,
+    "import_refuses_post_import_edits": true,
+    "actual_d1_json_export_local_restore": true,
+    "actual_d1_data_sql_restore": true,
+    "csv_export": true
+  },
+  "actual_d1_usage": [
+    {
+      "action": "no_operator_gate",
+      "status": 403,
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 47.676
+    },
+    {
+      "action": "unauthorized_mutation",
+      "status": 401,
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 89.339
+    },
+    {
+      "action": "cross_origin_login",
+      "status": 403,
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 61.654
+    },
+    {
+      "action": "wrong_code",
+      "status": 401,
+      "rows_read": 2,
+      "rows_written": 4,
+      "client_wall_ms": 166.286
+    },
+    {
+      "action": "remembered_login",
+      "status": 200,
+      "rows_read": 5,
+      "rows_written": 4,
+      "client_wall_ms": 175.458
+    },
+    {
+      "action": "session_validation",
+      "status": 200,
+      "rows_read": 2,
+      "rows_written": 0,
+      "client_wall_ms": 98.123
+    },
+    {
+      "action": "short_login",
+      "status": 200,
+      "rows_read": 4,
+      "rows_written": 5,
+      "client_wall_ms": 151.045
+    },
+    {
+      "action": "logout",
+      "status": 200,
+      "rows_read": 3,
+      "rows_written": 1,
+      "client_wall_ms": 109.722
+    },
+    {
+      "action": "logout_replay_rejected",
+      "status": 401,
+      "rows_read": 1,
+      "rows_written": 0,
+      "client_wall_ms": 57.935
+    },
+    {
+      "action": "other_device_still_valid",
+      "status": 200,
+      "rows_read": 2,
+      "rows_written": 0,
+      "client_wall_ms": 79.538
+    },
+    {
+      "action": "individual_revocation",
+      "status": 401,
+      "rows_read": 1,
+      "rows_written": 0,
+      "client_wall_ms": 82.152
+    },
+    {
+      "action": "login_for_expiration",
+      "status": 200,
+      "rows_read": 3,
+      "rows_written": 6,
+      "client_wall_ms": 138.044
+    },
+    {
+      "action": "expired_session_rejected",
+      "status": 401,
+      "rows_read": 1,
+      "rows_written": 0,
+      "client_wall_ms": 127.079
+    },
+    {
+      "action": "login_for_global_revoke",
+      "status": 200,
+      "rows_read": 4,
+      "rows_written": 5,
+      "client_wall_ms": 156.727
+    },
+    {
+      "action": "revoke_all",
+      "status": 200,
+      "rows_read": 3,
+      "rows_written": 1,
+      "client_wall_ms": 105.448
+    },
+    {
+      "action": "global_revoke_rejected",
+      "status": 401,
+      "rows_read": 2,
+      "rows_written": 0,
+      "client_wall_ms": 64.123
+    },
+    {
+      "action": "login_throttled",
+      "status": 429,
+      "rows_read": 4,
+      "rows_written": 2,
+      "client_wall_ms": 94.467
+    },
+    {
+      "action": "login_after_staging_throttle_reset",
+      "status": 200,
+      "rows_read": 3,
+      "rows_written": 6,
+      "client_wall_ms": 148.504
+    },
+    {
+      "action": "constraint_failure_generic",
+      "status": 503,
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 108.982
+    },
+    {
+      "action": "set_catalog",
+      "status": 200,
+      "rows_read": 95,
+      "rows_written": 0,
+      "client_wall_ms": 109.934
+    },
+    {
+      "action": "open_imported_owner-record-01573e45-a884-4cb9-8a5e-4a8f4df9414d",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 130.879
+    },
+    {
+      "action": "initial_publish_owner-record-01573e45-a884-4cb9-8a5e-4a8f4df9414d",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 164.176
+    },
+    {
+      "action": "open_imported_owner-record-0c803d3c-2e25-4ec5-80e9-28cf6e94bcd3",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 131.042
+    },
+    {
+      "action": "initial_publish_owner-record-0c803d3c-2e25-4ec5-80e9-28cf6e94bcd3",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 146.657
+    },
+    {
+      "action": "open_imported_owner-record-10e239e7-dabc-4965-9d87-04d40acfb355",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 128.762
+    },
+    {
+      "action": "initial_publish_owner-record-10e239e7-dabc-4965-9d87-04d40acfb355",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 196.737
+    },
+    {
+      "action": "open_imported_owner-record-1400d206-ecf4-4e24-b56a-7f66ef450a07",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 156.537
+    },
+    {
+      "action": "initial_publish_owner-record-1400d206-ecf4-4e24-b56a-7f66ef450a07",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 117.307
+    },
+    {
+      "action": "open_imported_owner-record-161592e9-2811-43cd-a676-4530880b9646",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 162.06
+    },
+    {
+      "action": "initial_publish_owner-record-161592e9-2811-43cd-a676-4530880b9646",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 153.812
+    },
+    {
+      "action": "open_imported_owner-record-17f36b24-6934-47e7-97df-4a0695f04456",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 124.724
+    },
+    {
+      "action": "initial_publish_owner-record-17f36b24-6934-47e7-97df-4a0695f04456",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 182.239
+    },
+    {
+      "action": "open_imported_owner-record-18adc75b-786b-4392-99e5-9eaac3b7b6ed",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 113.321
+    },
+    {
+      "action": "initial_publish_owner-record-18adc75b-786b-4392-99e5-9eaac3b7b6ed",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 187.141
+    },
+    {
+      "action": "open_imported_owner-record-209442cd-c093-44ef-83c5-844f1877f17a",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 143.224
+    },
+    {
+      "action": "initial_publish_owner-record-209442cd-c093-44ef-83c5-844f1877f17a",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 167.455
+    },
+    {
+      "action": "open_imported_owner-record-24a8c84a-a140-41e4-9927-342a1b69d251",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 119.986
+    },
+    {
+      "action": "initial_publish_owner-record-24a8c84a-a140-41e4-9927-342a1b69d251",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 179.284
+    },
+    {
+      "action": "open_imported_owner-record-2596f2ff-da37-40e8-b4a1-c3f0efb78090",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 138.715
+    },
+    {
+      "action": "initial_publish_owner-record-2596f2ff-da37-40e8-b4a1-c3f0efb78090",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 151.027
+    },
+    {
+      "action": "open_imported_owner-record-27ae859c-54ea-4da0-803d-42fdf4daa8f3",
+      "status": 200,
+      "rows_read": 11,
+      "rows_written": 0,
+      "client_wall_ms": 143.488
+    },
+    {
+      "action": "initial_publish_owner-record-27ae859c-54ea-4da0-803d-42fdf4daa8f3",
+      "status": 200,
+      "rows_read": 12,
+      "rows_written": 4,
+      "client_wall_ms": 151.35
+    },
+    {
+      "action": "open_imported_owner-record-2a7116d8-4f06-47de-a49f-e086722b1242",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 138.826
+    },
+    {
+      "action": "initial_publish_owner-record-2a7116d8-4f06-47de-a49f-e086722b1242",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 127.236
+    },
+    {
+      "action": "open_imported_owner-record-2b6ce563-6517-4063-9f51-69c33743d8b0",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 113.757
+    },
+    {
+      "action": "initial_publish_owner-record-2b6ce563-6517-4063-9f51-69c33743d8b0",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 140.219
+    },
+    {
+      "action": "open_imported_owner-record-2bdec8eb-0422-4109-865f-5aa6ca9f6a29",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 122.793
+    },
+    {
+      "action": "initial_publish_owner-record-2bdec8eb-0422-4109-865f-5aa6ca9f6a29",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 150.591
+    },
+    {
+      "action": "open_imported_owner-record-31874bd5-175d-4501-b09b-d4b964317d9b",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 108.764
+    },
+    {
+      "action": "initial_publish_owner-record-31874bd5-175d-4501-b09b-d4b964317d9b",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 151.222
+    },
+    {
+      "action": "open_imported_owner-record-33d8a19c-e5c4-4b7c-bfac-d768c0932709",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 127.209
+    },
+    {
+      "action": "initial_publish_owner-record-33d8a19c-e5c4-4b7c-bfac-d768c0932709",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 158.774
+    },
+    {
+      "action": "open_imported_owner-record-39dac18c-a081-4e6d-96f7-0d1df41ca954",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 141.57
+    },
+    {
+      "action": "initial_publish_owner-record-39dac18c-a081-4e6d-96f7-0d1df41ca954",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 147.967
+    },
+    {
+      "action": "open_imported_owner-record-4288f796-32b3-458c-95a9-369ac838abdd",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 130.809
+    },
+    {
+      "action": "initial_publish_owner-record-4288f796-32b3-458c-95a9-369ac838abdd",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 140.276
+    },
+    {
+      "action": "open_imported_owner-record-448906be-4e77-4f84-a662-6309bf2a74a9",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 147.27
+    },
+    {
+      "action": "initial_publish_owner-record-448906be-4e77-4f84-a662-6309bf2a74a9",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 156.927
+    },
+    {
+      "action": "open_imported_owner-record-4a414fdb-2bbd-4e03-a2f6-80ac27df0fbc",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 108.669
+    },
+    {
+      "action": "initial_publish_owner-record-4a414fdb-2bbd-4e03-a2f6-80ac27df0fbc",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 151.948
+    },
+    {
+      "action": "open_imported_owner-record-4d998b3f-11e7-4673-a8b1-465b53866413",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 110.855
+    },
+    {
+      "action": "initial_publish_owner-record-4d998b3f-11e7-4673-a8b1-465b53866413",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 162.836
+    },
+    {
+      "action": "open_imported_owner-record-515ccc54-5e21-4d59-a3e9-64f8a9b7861c",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 127.426
+    },
+    {
+      "action": "initial_publish_owner-record-515ccc54-5e21-4d59-a3e9-64f8a9b7861c",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 185.368
+    },
+    {
+      "action": "open_imported_owner-record-54a52bde-4033-46b0-b157-1e54859d2bcc",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 124.51
+    },
+    {
+      "action": "initial_publish_owner-record-54a52bde-4033-46b0-b157-1e54859d2bcc",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 146.179
+    },
+    {
+      "action": "open_imported_owner-record-580e9ccf-cc28-41be-bc0a-2e4973b634af",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 123.058
+    },
+    {
+      "action": "initial_publish_owner-record-580e9ccf-cc28-41be-bc0a-2e4973b634af",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 153.289
+    },
+    {
+      "action": "open_imported_owner-record-6372d8e0-6a6b-4637-b7e6-7a746e95f9df",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 109.823
+    },
+    {
+      "action": "initial_publish_owner-record-6372d8e0-6a6b-4637-b7e6-7a746e95f9df",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 155.638
+    },
+    {
+      "action": "open_imported_owner-record-6707ec2d-da31-4347-be1e-4009f93b2283",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 128.481
+    },
+    {
+      "action": "initial_publish_owner-record-6707ec2d-da31-4347-be1e-4009f93b2283",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 136.11
+    },
+    {
+      "action": "open_imported_owner-record-6ac5c55a-1752-4863-9651-d50e8415f414",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 105.148
+    },
+    {
+      "action": "initial_publish_owner-record-6ac5c55a-1752-4863-9651-d50e8415f414",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 139.272
+    },
+    {
+      "action": "open_imported_owner-record-711da841-fe60-4add-9296-9ab67acf636a",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 131.23
+    },
+    {
+      "action": "initial_publish_owner-record-711da841-fe60-4add-9296-9ab67acf636a",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 156.202
+    },
+    {
+      "action": "open_imported_owner-record-741dce6b-9251-410f-9d09-1709db7bac59",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 138.035
+    },
+    {
+      "action": "initial_publish_owner-record-741dce6b-9251-410f-9d09-1709db7bac59",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 154.501
+    },
+    {
+      "action": "open_imported_owner-record-76c80bf4-f304-4195-8f1d-f053fbc84e9f",
+      "status": 200,
+      "rows_read": 11,
+      "rows_written": 0,
+      "client_wall_ms": 111.876
+    },
+    {
+      "action": "initial_publish_owner-record-76c80bf4-f304-4195-8f1d-f053fbc84e9f",
+      "status": 200,
+      "rows_read": 12,
+      "rows_written": 4,
+      "client_wall_ms": 154.015
+    },
+    {
+      "action": "open_imported_owner-record-76d76404-d665-4b7c-a717-0ee2244012b2",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 144.836
+    },
+    {
+      "action": "initial_publish_owner-record-76d76404-d665-4b7c-a717-0ee2244012b2",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 137.72
+    },
+    {
+      "action": "open_imported_owner-record-85416600-2752-4fd5-8350-ccaf0a9829ba",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 128.1
+    },
+    {
+      "action": "initial_publish_owner-record-85416600-2752-4fd5-8350-ccaf0a9829ba",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 145.315
+    },
+    {
+      "action": "open_imported_owner-record-8b95523c-8644-48ac-be94-06c6f81bdccf",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 116.327
+    },
+    {
+      "action": "initial_publish_owner-record-8b95523c-8644-48ac-be94-06c6f81bdccf",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 135.133
+    },
+    {
+      "action": "open_imported_owner-record-a093fcde-3a62-455c-a87d-15da0509d2dc",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 117.111
+    },
+    {
+      "action": "initial_publish_owner-record-a093fcde-3a62-455c-a87d-15da0509d2dc",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 120.027
+    },
+    {
+      "action": "open_imported_owner-record-a20a5204-e2b7-4ad7-932c-d289e08b0d3a",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 122.11
+    },
+    {
+      "action": "initial_publish_owner-record-a20a5204-e2b7-4ad7-932c-d289e08b0d3a",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 131.903
+    },
+    {
+      "action": "open_imported_owner-record-a5da2def-afda-455f-88e2-3c83ebfd8ad4",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 96.402
+    },
+    {
+      "action": "initial_publish_owner-record-a5da2def-afda-455f-88e2-3c83ebfd8ad4",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 154.285
+    },
+    {
+      "action": "open_imported_owner-record-a606dac2-a0ba-451d-8516-14cce469bb46",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 135.779
+    },
+    {
+      "action": "initial_publish_owner-record-a606dac2-a0ba-451d-8516-14cce469bb46",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 161.052
+    },
+    {
+      "action": "open_imported_owner-record-a87b4890-9b2f-4162-afaa-eb4c762de26d",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 124.86
+    },
+    {
+      "action": "initial_publish_owner-record-a87b4890-9b2f-4162-afaa-eb4c762de26d",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 150.695
+    },
+    {
+      "action": "open_imported_owner-record-a8c9d0ab-e070-4880-87a7-b930e3b60af1",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 94.121
+    },
+    {
+      "action": "initial_publish_owner-record-a8c9d0ab-e070-4880-87a7-b930e3b60af1",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 152.409
+    },
+    {
+      "action": "open_imported_owner-record-aa1cfef5-6876-4382-b4e0-61acf52e8b68",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 164.175
+    },
+    {
+      "action": "initial_publish_owner-record-aa1cfef5-6876-4382-b4e0-61acf52e8b68",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 158.671
+    },
+    {
+      "action": "open_imported_owner-record-ae118f17-86a2-4090-b650-a1c8d2d06998",
+      "status": 200,
+      "rows_read": 103,
+      "rows_written": 0,
+      "client_wall_ms": 121.296
+    },
+    {
+      "action": "initial_publish_owner-record-ae118f17-86a2-4090-b650-a1c8d2d06998",
+      "status": 200,
+      "rows_read": 104,
+      "rows_written": 4,
+      "client_wall_ms": 254.407
+    },
+    {
+      "action": "open_imported_owner-record-ae5d1f79-6ad2-49b3-a31b-506ed3ea5e09",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 85.799
+    },
+    {
+      "action": "initial_publish_owner-record-ae5d1f79-6ad2-49b3-a31b-506ed3ea5e09",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 151.334
+    },
+    {
+      "action": "open_imported_owner-record-af323f15-b7a2-4b87-9c31-57c994463c81",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 128.951
+    },
+    {
+      "action": "initial_publish_owner-record-af323f15-b7a2-4b87-9c31-57c994463c81",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 143.699
+    },
+    {
+      "action": "open_imported_owner-record-bf7b7fdb-38c2-449c-90e1-8bdd0d08a0a7",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 147.371
+    },
+    {
+      "action": "initial_publish_owner-record-bf7b7fdb-38c2-449c-90e1-8bdd0d08a0a7",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 115.561
+    },
+    {
+      "action": "open_imported_owner-record-c37b83e1-e0a7-4c31-b94f-32a64759ee3b",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 116.31
+    },
+    {
+      "action": "initial_publish_owner-record-c37b83e1-e0a7-4c31-b94f-32a64759ee3b",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 134.755
+    },
+    {
+      "action": "open_imported_owner-record-c614c433-f823-4442-942e-d097910c1357",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 128.374
+    },
+    {
+      "action": "initial_publish_owner-record-c614c433-f823-4442-942e-d097910c1357",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 150.36
+    },
+    {
+      "action": "open_imported_owner-record-ca06b056-c16f-4fbb-b040-b3c989e57d33",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 91.607
+    },
+    {
+      "action": "initial_publish_owner-record-ca06b056-c16f-4fbb-b040-b3c989e57d33",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 140.734
+    },
+    {
+      "action": "open_imported_owner-record-cd27a294-b5e1-41ed-a96c-68b670b06184",
+      "status": 200,
+      "rows_read": 103,
+      "rows_written": 0,
+      "client_wall_ms": 124.251
+    },
+    {
+      "action": "initial_publish_owner-record-cd27a294-b5e1-41ed-a96c-68b670b06184",
+      "status": 200,
+      "rows_read": 104,
+      "rows_written": 4,
+      "client_wall_ms": 318.632
+    },
+    {
+      "action": "open_imported_owner-record-ce5f7312-0a28-4bc0-b82d-8fd43fd2a242",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 130.261
+    },
+    {
+      "action": "initial_publish_owner-record-ce5f7312-0a28-4bc0-b82d-8fd43fd2a242",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 112.524
+    },
+    {
+      "action": "open_imported_owner-record-d579f5ff-9677-41bd-9398-9f70f912d886",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 129.715
+    },
+    {
+      "action": "initial_publish_owner-record-d579f5ff-9677-41bd-9398-9f70f912d886",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 153.205
+    },
+    {
+      "action": "open_imported_owner-record-d66001a4-890d-4775-9e94-f78003dc6165",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 95.489
+    },
+    {
+      "action": "initial_publish_owner-record-d66001a4-890d-4775-9e94-f78003dc6165",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 145.203
+    },
+    {
+      "action": "open_imported_owner-record-d7633ff8-c94d-4143-a88d-268cd1ceacd7",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 104.932
+    },
+    {
+      "action": "initial_publish_owner-record-d7633ff8-c94d-4143-a88d-268cd1ceacd7",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 142.073
+    },
+    {
+      "action": "open_imported_owner-record-d889be42-fb52-454a-8010-0e868793900a",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 122.83
+    },
+    {
+      "action": "initial_publish_owner-record-d889be42-fb52-454a-8010-0e868793900a",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 169.377
+    },
+    {
+      "action": "open_imported_owner-record-d8e1c73c-acd8-40ca-9740-cb4bc7bf4a9e",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 140.372
+    },
+    {
+      "action": "initial_publish_owner-record-d8e1c73c-acd8-40ca-9740-cb4bc7bf4a9e",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 155.694
+    },
+    {
+      "action": "open_imported_owner-record-dd8ae4c4-2253-4f81-a121-6110555026d7",
+      "status": 200,
+      "rows_read": 103,
+      "rows_written": 0,
+      "client_wall_ms": 124.502
+    },
+    {
+      "action": "initial_publish_owner-record-dd8ae4c4-2253-4f81-a121-6110555026d7",
+      "status": 200,
+      "rows_read": 104,
+      "rows_written": 4,
+      "client_wall_ms": 136.908
+    },
+    {
+      "action": "open_imported_owner-record-e6ef7225-c138-41b1-b992-91474f996cbf",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 124.273
+    },
+    {
+      "action": "initial_publish_owner-record-e6ef7225-c138-41b1-b992-91474f996cbf",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 140.248
+    },
+    {
+      "action": "open_imported_owner-record-e8bebcac-4748-41c8-8232-8be5f14fb268",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 149.256
+    },
+    {
+      "action": "initial_publish_owner-record-e8bebcac-4748-41c8-8232-8be5f14fb268",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 150.201
+    },
+    {
+      "action": "open_imported_owner-record-e984005b-82ea-4d8e-9fd3-a860c82a9d89",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 124.441
+    },
+    {
+      "action": "initial_publish_owner-record-e984005b-82ea-4d8e-9fd3-a860c82a9d89",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 219.953
+    },
+    {
+      "action": "open_imported_owner-record-ea33fe39-a11f-4278-b6fc-ef7533962764",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 105.284
+    },
+    {
+      "action": "initial_publish_owner-record-ea33fe39-a11f-4278-b6fc-ef7533962764",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 134.886
+    },
+    {
+      "action": "open_imported_owner-record-ea74105b-9790-47f8-95bc-a714318727d1",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 123.875
+    },
+    {
+      "action": "initial_publish_owner-record-ea74105b-9790-47f8-95bc-a714318727d1",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 163.344
+    },
+    {
+      "action": "open_imported_owner-record-ee9afff4-f89f-4852-9a4e-d9924768160c",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 118.598
+    },
+    {
+      "action": "initial_publish_owner-record-ee9afff4-f89f-4852-9a4e-d9924768160c",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 136.85
+    },
+    {
+      "action": "open_imported_owner-record-f206734d-0d4e-40d4-8d0a-3ab520db7c1a",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 91.419
+    },
+    {
+      "action": "initial_publish_owner-record-f206734d-0d4e-40d4-8d0a-3ab520db7c1a",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 124.638
+    },
+    {
+      "action": "open_imported_owner-record-f39592f1-ca0b-4dde-952e-08ea069bf5ae",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 135.791
+    },
+    {
+      "action": "initial_publish_owner-record-f39592f1-ca0b-4dde-952e-08ea069bf5ae",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 133.062
+    },
+    {
+      "action": "open_imported_owner-record-f7a4a282-56b0-46c3-8474-9eb140e16faa",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 153.855
+    },
+    {
+      "action": "initial_publish_owner-record-f7a4a282-56b0-46c3-8474-9eb140e16faa",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 164.082
+    },
+    {
+      "action": "open_imported_owner-record-fba4e10e-4538-4aee-8400-d608de09ffff",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 126.496
+    },
+    {
+      "action": "initial_publish_owner-record-fba4e10e-4538-4aee-8400-d608de09ffff",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 167.085
+    },
+    {
+      "action": "open_imported_owner-record-fddc22b8-0615-49ce-8863-9b01bf590f76",
+      "status": 200,
+      "rows_read": 49,
+      "rows_written": 0,
+      "client_wall_ms": 99.091
+    },
+    {
+      "action": "initial_publish_owner-record-fddc22b8-0615-49ce-8863-9b01bf590f76",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 4,
+      "client_wall_ms": 145.505
+    },
+    {
+      "action": "open_imported_p0008-l001",
+      "status": 200,
+      "rows_read": 29,
+      "rows_written": 0,
+      "client_wall_ms": 115.243
+    },
+    {
+      "action": "initial_publish_p0008-l001",
+      "status": 200,
+      "rows_read": 30,
+      "rows_written": 4,
+      "client_wall_ms": 144.735
+    },
+    {
+      "action": "open_imported_p0010-l001",
+      "status": 200,
+      "rows_read": 14,
+      "rows_written": 0,
+      "client_wall_ms": 124.763
+    },
+    {
+      "action": "initial_publish_p0010-l001",
+      "status": 200,
+      "rows_read": 15,
+      "rows_written": 4,
+      "client_wall_ms": 141.476
+    },
+    {
+      "action": "open_imported_p0012-l001",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 0,
+      "client_wall_ms": 143.219
+    },
+    {
+      "action": "initial_publish_p0012-l001",
+      "status": 200,
+      "rows_read": 10,
+      "rows_written": 4,
+      "client_wall_ms": 141.828
+    },
+    {
+      "action": "open_imported_p0014-l001",
+      "status": 200,
+      "rows_read": 27,
+      "rows_written": 0,
+      "client_wall_ms": 97.654
+    },
+    {
+      "action": "initial_publish_p0014-l001",
+      "status": 200,
+      "rows_read": 28,
+      "rows_written": 4,
+      "client_wall_ms": 144.695
+    },
+    {
+      "action": "open_imported_p0019-l001",
+      "status": 200,
+      "rows_read": 65,
+      "rows_written": 0,
+      "client_wall_ms": 142.319
+    },
+    {
+      "action": "initial_publish_p0019-l001",
+      "status": 200,
+      "rows_read": 66,
+      "rows_written": 4,
+      "client_wall_ms": 154.652
+    },
+    {
+      "action": "open_imported_p0023-l001",
+      "status": 200,
+      "rows_read": 11,
+      "rows_written": 0,
+      "client_wall_ms": 115.667
+    },
+    {
+      "action": "initial_publish_p0023-l001",
+      "status": 200,
+      "rows_read": 12,
+      "rows_written": 4,
+      "client_wall_ms": 137.036
+    },
+    {
+      "action": "open_imported_p0026-l001",
+      "status": 200,
+      "rows_read": 13,
+      "rows_written": 0,
+      "client_wall_ms": 111.316
+    },
+    {
+      "action": "initial_publish_p0026-l001",
+      "status": 200,
+      "rows_read": 14,
+      "rows_written": 4,
+      "client_wall_ms": 134.758
+    },
+    {
+      "action": "open_imported_p0028-l001",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 0,
+      "client_wall_ms": 231.768
+    },
+    {
+      "action": "initial_publish_p0028-l001",
+      "status": 200,
+      "rows_read": 10,
+      "rows_written": 4,
+      "client_wall_ms": 147.48
+    },
+    {
+      "action": "open_imported_p0092-l005",
+      "status": 200,
+      "rows_read": 19,
+      "rows_written": 0,
+      "client_wall_ms": 89.552
+    },
+    {
+      "action": "initial_publish_p0092-l005",
+      "status": 200,
+      "rows_read": 20,
+      "rows_written": 4,
+      "client_wall_ms": 151.287
+    },
+    {
+      "action": "open_imported_p0122-l001",
+      "status": 200,
+      "rows_read": 13,
+      "rows_written": 0,
+      "client_wall_ms": 117.278
+    },
+    {
+      "action": "initial_publish_p0122-l001",
+      "status": 200,
+      "rows_read": 14,
+      "rows_written": 4,
+      "client_wall_ms": 148.359
+    },
+    {
+      "action": "open_imported_p0136-l001",
+      "status": 200,
+      "rows_read": 14,
+      "rows_written": 0,
+      "client_wall_ms": 144.281
+    },
+    {
+      "action": "initial_publish_p0136-l001",
+      "status": 200,
+      "rows_read": 15,
+      "rows_written": 4,
+      "client_wall_ms": 146.94
+    },
+    {
+      "action": "open_imported_p0199-l001",
+      "status": 200,
+      "rows_read": 21,
+      "rows_written": 0,
+      "client_wall_ms": 132.375
+    },
+    {
+      "action": "initial_publish_p0199-l001",
+      "status": 200,
+      "rows_read": 22,
+      "rows_written": 4,
+      "client_wall_ms": 147.674
+    },
+    {
+      "action": "open_imported_p0237-l001",
+      "status": 200,
+      "rows_read": 35,
+      "rows_written": 0,
+      "client_wall_ms": 147.461
+    },
+    {
+      "action": "initial_publish_p0237-l001",
+      "status": 200,
+      "rows_read": 36,
+      "rows_written": 4,
+      "client_wall_ms": 158.728
+    },
+    {
+      "action": "open_imported_p0273-l047",
+      "status": 200,
+      "rows_read": 13,
+      "rows_written": 0,
+      "client_wall_ms": 126.719
+    },
+    {
+      "action": "initial_publish_p0273-l047",
+      "status": 200,
+      "rows_read": 14,
+      "rows_written": 4,
+      "client_wall_ms": 147.893
+    },
+    {
+      "action": "open_imported_p0277-l007",
+      "status": 200,
+      "rows_read": 55,
+      "rows_written": 0,
+      "client_wall_ms": 124.719
+    },
+    {
+      "action": "initial_publish_p0277-l007",
+      "status": 200,
+      "rows_read": 56,
+      "rows_written": 4,
+      "client_wall_ms": 164.056
+    },
+    {
+      "action": "open_imported_p0289-l007",
+      "status": 200,
+      "rows_read": 19,
+      "rows_written": 0,
+      "client_wall_ms": 106.344
+    },
+    {
+      "action": "initial_publish_p0289-l007",
+      "status": 200,
+      "rows_read": 20,
+      "rows_written": 4,
+      "client_wall_ms": 167.079
+    },
+    {
+      "action": "open_imported_p0526-l006",
+      "status": 200,
+      "rows_read": 13,
+      "rows_written": 0,
+      "client_wall_ms": 124.51
+    },
+    {
+      "action": "initial_publish_p0526-l006",
+      "status": 200,
+      "rows_read": 14,
+      "rows_written": 4,
+      "client_wall_ms": 137.719
+    },
+    {
+      "action": "open_imported_p0531-l001",
+      "status": 200,
+      "rows_read": 15,
+      "rows_written": 0,
+      "client_wall_ms": 120.922
+    },
+    {
+      "action": "initial_publish_p0531-l001",
+      "status": 200,
+      "rows_read": 16,
+      "rows_written": 4,
+      "client_wall_ms": 140.285
+    },
+    {
+      "action": "open_imported_p0581-l001",
+      "status": 200,
+      "rows_read": 11,
+      "rows_written": 0,
+      "client_wall_ms": 87.94
+    },
+    {
+      "action": "initial_publish_p0581-l001",
+      "status": 200,
+      "rows_read": 12,
+      "rows_written": 4,
+      "client_wall_ms": 155.856
+    },
+    {
+      "action": "open_imported_p0645-l005",
+      "status": 200,
+      "rows_read": 53,
+      "rows_written": 0,
+      "client_wall_ms": 133.597
+    },
+    {
+      "action": "initial_publish_p0645-l005",
+      "status": 200,
+      "rows_read": 54,
+      "rows_written": 4,
+      "client_wall_ms": 147.953
+    },
+    {
+      "action": "open_imported_p0672-l001",
+      "status": 200,
+      "rows_read": 99,
+      "rows_written": 0,
+      "client_wall_ms": 122.265
+    },
+    {
+      "action": "initial_publish_p0672-l001",
+      "status": 200,
+      "rows_read": 100,
+      "rows_written": 4,
+      "client_wall_ms": 140.001
+    },
+    {
+      "action": "open_imported_p0694-l001",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 0,
+      "client_wall_ms": 118.72
+    },
+    {
+      "action": "initial_publish_p0694-l001",
+      "status": 200,
+      "rows_read": 10,
+      "rows_written": 4,
+      "client_wall_ms": 133.162
+    },
+    {
+      "action": "open_imported_p0730-l001",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 0,
+      "client_wall_ms": 120.464
+    },
+    {
+      "action": "initial_publish_p0730-l001",
+      "status": 200,
+      "rows_read": 10,
+      "rows_written": 4,
+      "client_wall_ms": 138.373
+    },
+    {
+      "action": "open_imported_p1237-l004",
+      "status": 200,
+      "rows_read": 3867,
+      "rows_written": 0,
+      "client_wall_ms": 186.471
+    },
+    {
+      "action": "initial_publish_p1237-l004",
+      "status": 200,
+      "rows_read": 3868,
+      "rows_written": 4,
+      "client_wall_ms": 209.478
+    },
+    {
+      "action": "open_imported_p1566-l003",
+      "status": 200,
+      "rows_read": 17,
+      "rows_written": 0,
+      "client_wall_ms": 116.352
+    },
+    {
+      "action": "initial_publish_p1566-l003",
+      "status": 200,
+      "rows_read": 18,
+      "rows_written": 4,
+      "client_wall_ms": 168.076
+    },
+    {
+      "action": "open_imported_p3029-l001",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 0,
+      "client_wall_ms": 119.528
+    },
+    {
+      "action": "initial_publish_p3029-l001",
+      "status": 200,
+      "rows_read": 10,
+      "rows_written": 4,
+      "client_wall_ms": 132.421
+    },
+    {
+      "action": "open_imported_p3128-l001",
+      "status": 200,
+      "rows_read": 508,
+      "rows_written": 0,
+      "client_wall_ms": 112.214
+    },
+    {
+      "action": "initial_publish_p3128-l001",
+      "status": 200,
+      "rows_read": 509,
+      "rows_written": 4,
+      "client_wall_ms": 160.532
+    },
+    {
+      "action": "open_small_set",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 0,
+      "client_wall_ms": 131.471
+    },
+    {
+      "action": "open_large_set",
+      "status": 200,
+      "rows_read": 3867,
+      "rows_written": 0,
+      "client_wall_ms": 279.142
+    },
+    {
+      "action": "find_one_card_known_set",
+      "rows_read": 4,
+      "rows_written": 0
+    },
+    {
+      "action": "create_2027_with_20_wanted",
+      "status": 200,
+      "rows_read": 52,
+      "rows_written": 104,
+      "client_wall_ms": 99.816
+    },
+    {
+      "action": "retrieve_2027",
+      "status": 200,
+      "rows_read": 57,
+      "rows_written": 0,
+      "client_wall_ms": 119.122
+    },
+    {
+      "action": "add_two_wanted",
+      "status": 200,
+      "rows_read": 18,
+      "rows_written": 16,
+      "client_wall_ms": 127.517
+    },
+    {
+      "action": "add_twenty_wanted",
+      "status": 200,
+      "rows_read": 72,
+      "rows_written": 88,
+      "client_wall_ms": 134.172
+    },
+    {
+      "action": "add_owned",
+      "status": 200,
+      "rows_read": 15,
+      "rows_written": 12,
+      "client_wall_ms": 118.501
+    },
+    {
+      "action": "retrieve_added",
+      "status": 200,
+      "rows_read": 103,
+      "rows_written": 0,
+      "client_wall_ms": 142.319
+    },
+    {
+      "action": "mark_pending",
+      "status": 200,
+      "rows_read": 12,
+      "rows_written": 9,
+      "client_wall_ms": 95.599
+    },
+    {
+      "action": "pending_public_immediate",
+      "status": 200,
+      "rows_read": 1,
+      "rows_written": 0,
+      "client_wall_ms": 69.744
+    },
+    {
+      "action": "pending_back_to_wanted",
+      "status": 200,
+      "rows_read": 12,
+      "rows_written": 9,
+      "client_wall_ms": 106.266
+    },
+    {
+      "action": "mark_received",
+      "status": 200,
+      "rows_read": 13,
+      "rows_written": 9,
+      "client_wall_ms": 104.471
+    },
+    {
+      "action": "edit_notes",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 8,
+      "client_wall_ms": 87.086
+    },
+    {
+      "action": "mark_uncertain",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 8,
+      "client_wall_ms": 96.738
+    },
+    {
+      "action": "unmark_uncertain",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 8,
+      "client_wall_ms": 99.855
+    },
+    {
+      "action": "complete_rejects_needed_items",
+      "status": 400,
+      "rows_read": 12,
+      "rows_written": 0,
+      "client_wall_ms": 95.722
+    },
+    {
+      "action": "remove_wrong_card",
+      "status": 200,
+      "rows_read": 16,
+      "rows_written": 9,
+      "client_wall_ms": 127.855
+    },
+    {
+      "action": "restore_card",
+      "status": 200,
+      "rows_read": 139,
+      "rows_written": 9,
+      "client_wall_ms": 135.346
+    },
+    {
+      "action": "soft_delete_record",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 8,
+      "client_wall_ms": 99.296
+    },
+    {
+      "action": "restore_record",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 8,
+      "client_wall_ms": 95.719
+    },
+    {
+      "action": "idempotent_first_save",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 8,
+      "client_wall_ms": 111.43
+    },
+    {
+      "action": "idempotent_retry",
+      "status": 200,
+      "rows_read": 6,
+      "rows_written": 0,
+      "client_wall_ms": 54.275
+    },
+    {
+      "action": "stale_revision_rejected",
+      "status": 409,
+      "rows_read": 5,
+      "rows_written": 0,
+      "client_wall_ms": 75.854
+    },
+    {
+      "action": "invalid_transition_rejected",
+      "status": 400,
+      "rows_read": 8,
+      "rows_written": 0,
+      "client_wall_ms": 62.441
+    },
+    {
+      "action": "create_owned_only_future",
+      "status": 200,
+      "rows_read": 8,
+      "rows_written": 17,
+      "client_wall_ms": 99.873
+    },
+    {
+      "action": "mark_complete",
+      "status": 200,
+      "rows_read": 13,
+      "rows_written": 8,
+      "client_wall_ms": 135.848
+    },
+    {
+      "action": "unmark_complete",
+      "status": 200,
+      "rows_read": 9,
+      "rows_written": 8,
+      "client_wall_ms": 122.041
+    },
+    {
+      "action": "recent_changes",
+      "status": 200,
+      "rows_read": 22,
+      "rows_written": 0,
+      "client_wall_ms": 108.667
+    },
+    {
+      "action": "public_catalog_refresh",
+      "status": 200,
+      "rows_read": 95,
+      "rows_written": 0,
+      "client_wall_ms": 56.657
+    },
+    {
+      "action": "public_snapshot_page",
+      "status": 200,
+      "rows_read": 50,
+      "rows_written": 0,
+      "client_wall_ms": 74.612
+    },
+    {
+      "action": "public_sanitized",
+      "status": 200,
+      "rows_read": 1,
+      "rows_written": 0,
+      "client_wall_ms": 60.835
+    },
+    {
+      "action": "partial_import_rejected",
+      "status": 409,
+      "rows_read": 3,
+      "rows_written": 0,
+      "client_wall_ms": 60.612
+    }
+  ],
+  "query_plans": {
+    "open_record": [
+      {
+        "id": 3,
+        "parent": 0,
+        "notused": 39,
+        "detail": "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+      }
+    ],
+    "open_groups": [
+      {
+        "id": 4,
+        "parent": 0,
+        "notused": 62,
+        "detail": "SEARCH record_groups USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)"
+      }
+    ],
+    "open_items": [
+      {
+        "id": 5,
+        "parent": 0,
+        "notused": 62,
+        "detail": "SEARCH g USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)"
+      },
+      {
+        "id": 12,
+        "parent": 0,
+        "notused": 62,
+        "detail": "SEARCH i USING INDEX items_group_value (group_id=?)"
+      }
+    ],
+    "find_card": [
+      {
+        "id": 5,
+        "parent": 0,
+        "notused": 62,
+        "detail": "SEARCH g USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)"
+      },
+      {
+        "id": 12,
+        "parent": 0,
+        "notused": 61,
+        "detail": "SEARCH i USING INDEX items_group_value (group_id=? AND value=?)"
+      }
+    ],
+    "recent": [
+      {
+        "id": 5,
+        "parent": 0,
+        "notused": 224,
+        "detail": "SCAN change_history USING INDEX history_recent"
+      }
+    ],
+    "session": [
+      {
+        "id": 3,
+        "parent": 0,
+        "notused": 39,
+        "detail": "SEARCH sessions USING INDEX sqlite_autoindex_sessions_1 (token_hash=?)"
+      }
+    ],
+    "public_record": [
+      {
+        "id": 3,
+        "parent": 0,
+        "notused": 39,
+        "detail": "SEARCH public_records USING INDEX sqlite_autoindex_public_records_1 (record_id=?)"
+      }
+    ],
+    "public_page": [
+      {
+        "id": 5,
+        "parent": 0,
+        "notused": 204,
+        "detail": "SEARCH public_records USING INDEX sqlite_autoindex_public_records_1 (record_id>?)"
+      }
+    ]
+  },
+  "future_record_history_actions": [
+    "create",
+    "add",
+    "add",
+    "add",
+    "transition",
+    "transition",
+    "transition",
+    "edit",
+    "edit",
+    "edit",
+    "remove_item",
+    "restore_item",
+    "delete",
+    "restore",
+    "edit"
+  ],
+  "snapshot_strategy": "transactional affected-record projection; catalog + keyset public pages; no item-table scan per public read",
+  "snapshot_initial_public_rows": 50,
+  "start": "2026-10-07T21:26:23Z",
+  "end": "2026-10-07T21:27:00Z",
+  "worker_metrics": {
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "workersInvocationsAdaptive": [
+              {
+                "quantiles": {
+                  "cpuTimeP50": 3232,
+                  "cpuTimeP99": 6852,
+                  "wallTimeP50": 85102,
+                  "wallTimeP99": 134561
+                },
+                "sum": {
+                  "errors": 0,
+                  "requests": 61
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "errors": null
+  },
+  "backend_unavailable": "local fault injection only; actual database not deliberately disconnected",
+  "worker_unavailable": "endpoint-disabled behavior tested separately",
+  "restore_target": "disposable local SQLite; separate import-budget staging database is not the restore target",
+  "credential_expiry": "none; manual rotation only"
+}

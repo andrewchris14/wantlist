@@ -1,0 +1,230 @@
+{
+  "start": "2026-10-07T20:57:31Z",
+  "end": "2026-10-07T20:57:43Z",
+  "samples": [
+    {
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 180.677
+    },
+    {
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 240.93
+    },
+    {
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 242.533
+    },
+    {
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 304.148
+    },
+    {
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 225.667
+    },
+    {
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 237.944
+    },
+    {
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 193.017
+    },
+    {
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 187.836
+    },
+    {
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 252.328
+    },
+    {
+      "rows_read": 0,
+      "rows_written": 0,
+      "client_wall_ms": 168.263
+    }
+  ],
+  "metrics": {
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "workersInvocationsAdaptive": []
+          }
+        ]
+      }
+    },
+    "errors": null
+  },
+  "observations": [
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:57:41Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 6471,
+        "cpuTimeP99": 6471,
+        "wallTimeP50": 175996,
+        "wallTimeP99": 175996
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:57:39Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 3864,
+        "cpuTimeP99": 3864,
+        "wallTimeP50": 143502,
+        "wallTimeP99": 143502
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:57:35Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 15158,
+        "cpuTimeP99": 15158,
+        "wallTimeP50": 187250,
+        "wallTimeP99": 187250
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:57:32Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 12478,
+        "cpuTimeP99": 12478,
+        "wallTimeP50": 172003,
+        "wallTimeP99": 172003
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:57:38Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 4782,
+        "cpuTimeP99": 4782,
+        "wallTimeP50": 141934,
+        "wallTimeP99": 141934
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:57:42Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 3447,
+        "cpuTimeP99": 3447,
+        "wallTimeP50": 128173,
+        "wallTimeP99": 128173
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:57:36Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 6736,
+        "cpuTimeP99": 6736,
+        "wallTimeP50": 174744,
+        "wallTimeP99": 174744
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:57:31Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 5733,
+        "cpuTimeP99": 5733,
+        "wallTimeP50": 135484,
+        "wallTimeP99": 135484
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:57:37Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 11073,
+        "cpuTimeP99": 11073,
+        "wallTimeP50": 161182,
+        "wallTimeP99": 161182
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:57:33Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 7989,
+        "cpuTimeP99": 7989,
+        "wallTimeP50": 148069,
+        "wallTimeP99": 148069
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    }
+  ]
+}

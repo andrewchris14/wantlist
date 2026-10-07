@@ -1,0 +1,103 @@
+{
+  "fixture_record": "p1237-l004",
+  "fixture_literal_count": 526,
+  "timing": "Structural bytes/calls only. No Worker CPU or D1 billed rows inferred.",
+  "operations": {
+    "transition": {
+      "before": {
+        "binding_calls": 5,
+        "batch_calls": 1,
+        "sql_statements": 9,
+        "bound_json_bytes": 1524,
+        "returned_json_bytes": 406
+      },
+      "after": {
+        "binding_calls": 3,
+        "batch_calls": 1,
+        "sql_statements": 7,
+        "bound_json_bytes": 1485,
+        "returned_json_bytes": 456
+      }
+    },
+    "add_1": {
+      "before": {
+        "binding_calls": 6,
+        "batch_calls": 1,
+        "sql_statements": 11,
+        "bound_json_bytes": 102603,
+        "returned_json_bytes": 134102
+      },
+      "after": {
+        "binding_calls": 4,
+        "batch_calls": 1,
+        "sql_statements": 9,
+        "bound_json_bytes": 1472,
+        "returned_json_bytes": 219
+      }
+    },
+    "add_20": {
+      "before": {
+        "binding_calls": 6,
+        "batch_calls": 1,
+        "sql_statements": 30,
+        "bound_json_bytes": 115193,
+        "returned_json_bytes": 134102
+      },
+      "after": {
+        "binding_calls": 4,
+        "batch_calls": 1,
+        "sql_statements": 10,
+        "bound_json_bytes": 14339,
+        "returned_json_bytes": 219
+      }
+    },
+    "edit_notes": {
+      "before": {
+        "binding_calls": 5,
+        "batch_calls": 1,
+        "sql_statements": 8,
+        "bound_json_bytes": 7460,
+        "returned_json_bytes": 6874
+      },
+      "after": {
+        "binding_calls": 3,
+        "batch_calls": 1,
+        "sql_statements": 6,
+        "bound_json_bytes": 826,
+        "returned_json_bytes": 182
+      }
+    },
+    "remove_item": {
+      "before": {
+        "binding_calls": 6,
+        "batch_calls": 1,
+        "sql_statements": 10,
+        "bound_json_bytes": 102168,
+        "returned_json_bytes": 134102
+      },
+      "after": {
+        "binding_calls": 4,
+        "batch_calls": 1,
+        "sql_statements": 8,
+        "bound_json_bytes": 1393,
+        "returned_json_bytes": 504
+      }
+    },
+    "restore_item": {
+      "before": {
+        "binding_calls": 6,
+        "batch_calls": 1,
+        "sql_statements": 10,
+        "bound_json_bytes": 102326,
+        "returned_json_bytes": 134116
+      },
+      "after": {
+        "binding_calls": 4,
+        "batch_calls": 1,
+        "sql_statements": 8,
+        "bound_json_bytes": 1606,
+        "returned_json_bytes": 527
+      }
+    }
+  }
+}

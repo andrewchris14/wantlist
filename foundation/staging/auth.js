@@ -40,10 +40,16 @@ export function cookieToken(request) {
   const token = cookies[0].slice(COOKIE.length + 1);
   return /^[a-f0-9]{64}$/.test(token) ? token : null;
 }
-export async function validate(db, env, token) {
+export async function validate(db, env, token, readStatements=[]) {
   if (!token || !/^[a-f0-9]{64}$/.test(token)) return null;
-  const row = await db.prepare(`SELECT s.* FROM sessions s JOIN auth_control a ON a.id=1 AND a.generation=s.revocation_generation
-    WHERE s.token_hash=? AND s.revoked_at IS NULL AND s.expires_at>? AND s.credential_version=?`).bind(await hash(token), Math.floor(Date.now()/1000), config(env).version).first();
-  return row || null;
+  const statement = db.prepare(`SELECT s.* FROM sessions s JOIN auth_control a ON a.id=1 AND a.generation=s.revocation_generation
+    WHERE s.token_hash=? AND s.revoked_at IS NULL AND s.expires_at>? AND s.credential_version=?`).bind(await hash(token), Math.floor(Date.now()/1000), config(env).version);
+  if(readStatements.length){
+    // Same authentication predicate; batch read-only preflight with it to avoid
+    // extra Worker/D1 binding round trips. No mutation runs before authorization.
+    const results=await db.batch([statement,...readStatements]);
+    return {session:results[0].results[0]||null,reads:results.slice(1)};
+  }
+  return await statement.first() || null;
 }
 export const logoutCookie = `${COOKIE}=; Path=/; Secure; HttpOnly; SameSite=Strict; Max-Age=0`;

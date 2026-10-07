@@ -1,0 +1,12 @@
+{
+  "version_confirmed_before_fixture_creation": true,
+  "invalid_operation_status": 400,
+  "unauthorized_status": 401,
+  "mixed_group_order": [
+    "primary",
+    "mixed",
+    "sublist"
+  ],
+  "meaningful_sublist_preserved": true,
+  "test_record_soft_deleted": true
+}

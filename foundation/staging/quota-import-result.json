@@ -1,0 +1,259 @@
+{
+  "expected_records": 27,
+  "chunks_total": 7,
+  "completed_now": 5,
+  "skipped": 2,
+  "actual_chunk_writes": 4068,
+  "local_metering_unavailable": false,
+  "paused": false,
+  "completed_chunks": 7,
+  "imported_records": 27,
+  "daily_reservations": [
+    {
+      "day": "2026-10-07",
+      "reserved": 9813,
+      "budget": 12000
+    }
+  ],
+  "reconciliation": {
+    "passed": true,
+    "baseline_commit": "d452f58d9006a498db7a8c65827c645b8f817703",
+    "dataset_sha256": "38a7ee7ad07ede1ae744dbe91b819c1bb78a294c70ca30f933bc66604d44c98a",
+    "baseline_record_count": 27,
+    "imported_record_count": 27,
+    "baseline_list_types": {
+      "want_list": 11,
+      "complete": 5,
+      "have_list": 10,
+      "uncertain": 1
+    },
+    "list_types": {
+      "want_list": 11,
+      "complete": 5,
+      "have_list": 10,
+      "uncertain": 1
+    },
+    "baseline_categories": {
+      "baseball_cards": 10,
+      "non_sport_cards": 1,
+      "matchbooks": 1,
+      "postcards": 1,
+      "patches": 1,
+      "discs": 1,
+      "playing_cards": 1,
+      "autograph_cards": 1,
+      "photos": 1,
+      "stamps": 1,
+      "coins": 1,
+      "posters": 1,
+      "other_collectibles": 1,
+      "tobacco_and_candy_cards": 1,
+      "football_cards": 1,
+      "player_interests": 1,
+      "bobbleheads": 1,
+      "autographs": 1
+    },
+    "categories": {
+      "baseball_cards": 10,
+      "non_sport_cards": 1,
+      "matchbooks": 1,
+      "postcards": 1,
+      "patches": 1,
+      "discs": 1,
+      "playing_cards": 1,
+      "autograph_cards": 1,
+      "photos": 1,
+      "stamps": 1,
+      "coins": 1,
+      "posters": 1,
+      "other_collectibles": 1,
+      "tobacco_and_candy_cards": 1,
+      "football_cards": 1,
+      "player_interests": 1,
+      "bobbleheads": 1,
+      "autographs": 1
+    },
+    "records_with_groups": 3,
+    "group_count": 30,
+    "literal_value_rows": 960,
+    "actionable_items": 656,
+    "records_not_fully_itemized": [
+      {
+        "id": "p0010-l001",
+        "set_name": "1980-87 Baseball Immortals First Printing",
+        "literal_count": 1
+      },
+      {
+        "id": "p0092-l005",
+        "set_name": "1978 Baseball Player Patches",
+        "literal_count": 5
+      },
+      {
+        "id": "p0122-l001",
+        "set_name": "1978 Whiffle Ball Box Side Disk (Regulation/Junior Baseball Size on back)",
+        "literal_count": 2
+      },
+      {
+        "id": "p0136-l001",
+        "set_name": "1977 Pepsi Cincinnati Reds Playing Cards",
+        "literal_count": 1
+      },
+      {
+        "id": "p0199-l001",
+        "set_name": "1975 Linnett Portraits (note: has name printed on front as well as autograph. 1976 has no printed name)",
+        "literal_count": 6
+      },
+      {
+        "id": "p0237-l001",
+        "set_name": "1974 St. Louis Cardinals Photocards",
+        "literal_count": 13
+      },
+      {
+        "id": "p0273-l047",
+        "set_name": "1971 Dells Team Stamps",
+        "literal_count": 2
+      },
+      {
+        "id": "p0526-l006",
+        "set_name": "Milwaukee Brewers/Milwaukee Braves/Seattle Pilots cards",
+        "literal_count": 2
+      },
+      {
+        "id": "p0645-l005",
+        "set_name": "Eau Claire Express player cards",
+        "literal_count": 22
+      },
+      {
+        "id": "p3128-l001",
+        "set_name": "Milwaukee Baseball 8x10 Autographs",
+        "literal_count": 250
+      }
+    ],
+    "provenance_coverage": 27,
+    "header_matches": true,
+    "import_identity_matches": true,
+    "missing": [],
+    "extra": [],
+    "field_differences": {},
+    "duplicate_ids": 0,
+    "provenance_errors": [],
+    "item_state_errors": [],
+    "identity_differences": {
+      "missing_groups": [],
+      "extra_groups": [],
+      "missing_items": [],
+      "extra_items": []
+    },
+    "reviewed_edge_cases": {
+      "p1566-l003": {
+        "set_name": "2001 Ritz/Oreo (Fleer)",
+        "matches_baseline": true
+      },
+      "p0672-l001": {
+        "set_name": "2025 Topps Flagship (Costco)",
+        "matches_baseline": true
+      },
+      "p0694-l001": {
+        "set_name": "2024 Topps Flagship (Costco Exclusive)",
+        "matches_baseline": true
+      },
+      "p0730-l001": {
+        "set_name": "2023 Topps Flagship (Costco Exclusive)",
+        "matches_baseline": true
+      },
+      "Griffey_states": {
+        "Blue Border Griffey": "wanted",
+        "Red Border Griffey": "owned"
+      }
+    },
+    "representative_statuses_and_categories": {
+      "have_list": {
+        "id": "p0014-l001",
+        "matches_baseline": true
+      },
+      "complete": {
+        "id": "p0012-l001",
+        "matches_baseline": true
+      },
+      "uncertain": {
+        "id": "p0023-l001",
+        "matches_baseline": true
+      },
+      "autograph_cards": {
+        "id": "p0199-l001",
+        "matches_baseline": true
+      },
+      "autographs": {
+        "id": "p3128-l001",
+        "matches_baseline": true
+      },
+      "bobbleheads": {
+        "id": "p3029-l001",
+        "matches_baseline": true
+      },
+      "coins": {
+        "id": "p0277-l007",
+        "matches_baseline": true
+      },
+      "discs": {
+        "id": "p0122-l001",
+        "matches_baseline": true
+      },
+      "football_cards": {
+        "id": "p0581-l001",
+        "matches_baseline": true
+      },
+      "matchbooks": {
+        "id": "p0026-l001",
+        "matches_baseline": true
+      },
+      "non_sport_cards": {
+        "id": "p0019-l001",
+        "matches_baseline": true
+      },
+      "other_collectibles": {
+        "id": "p0526-l006",
+        "matches_baseline": true
+      },
+      "patches": {
+        "id": "p0092-l005",
+        "matches_baseline": true
+      },
+      "photos": {
+        "id": "p0237-l001",
+        "matches_baseline": true
+      },
+      "player_interests": {
+        "id": "p0645-l005",
+        "matches_baseline": true
+      },
+      "playing_cards": {
+        "id": "p0136-l001",
+        "matches_baseline": true
+      },
+      "postcards": {
+        "id": "p0028-l001",
+        "matches_baseline": true
+      },
+      "posters": {
+        "id": "p0289-l007",
+        "matches_baseline": true
+      },
+      "stamps": {
+        "id": "p0273-l047",
+        "matches_baseline": true
+      },
+      "tobacco_and_candy_cards": {
+        "id": "p0531-l001",
+        "matches_baseline": true
+      }
+    }
+  },
+  "full_import_executed": false,
+  "artificial_budget_test": {
+    "paused_at": 2584,
+    "operator_increased_to": 12000,
+    "actual_next_day_test": "local virtual UTC days only"
+  },
+  "header_bound_json": true
+}

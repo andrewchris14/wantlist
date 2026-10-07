@@ -14,7 +14,7 @@ from .cloudflare import api,query,metrics,WORKER
 from .runner import Client,ROOT,state,sql
 
 
-def run():
+def run(report_path=None):
     c=Client();c.wait_ready();dbid=state()['database_id'];checks={};usage=[]
     def expect(name,result,status=200):
         assert result['status']==status,(name,result['status'],result['body'])
@@ -169,8 +169,8 @@ def run():
             'snapshot_strategy':'transactional affected-record projection; catalog + keyset public pages; no item-table scan per public read',
             'snapshot_initial_public_rows':len(page['records']),'start':start,'end':end,'worker_metrics':metrics(WORKER,start,end),
             'backend_unavailable':'local fault injection only; actual database not deliberately disconnected','worker_unavailable':'endpoint-disabled behavior tested separately',
-            'restore_target':'disposable local SQLite; no second D1 database created','credential_expiry':'none; manual rotation only'}
-    (ROOT/'foundation/staging/verification-result.json').write_text(json.dumps(report,indent=2))
+            'restore_target':'disposable local SQLite; separate import-budget staging database is not the restore target','credential_expiry':'none; manual rotation only'}
+    (report_path or ROOT/'foundation/staging/verification-result.json').write_text(json.dumps(report,indent=2))
     print('Staging checks passed:',len(checks),'future history:',len(history));print('Actual usage:',json.dumps(usage))
     local.close();restored.close();sql_restored.close()
 

@@ -1,3 +1,5 @@
+> Historical local PBKDF2 prototype only. The approved, staging-tested owner-secret authentication is documented in [Phase 3B.2](../../docs/PHASE_3B2.md) and implemented under `foundation/staging/`. This Worker is not deployed.
+
 # Local-only Worker foundation
 
 There is deliberately no deploy script, Wrangler remote binding, account ID,

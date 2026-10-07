@@ -1,0 +1,214 @@
+{
+  "start": "2026-10-07T20:33:52Z",
+  "end": "2026-10-07T20:34:04Z",
+  "samples": [
+    {
+      "rows_read": 12,
+      "rows_written": 9,
+      "client_wall_ms": 259.068
+    },
+    {
+      "rows_read": 12,
+      "rows_written": 9,
+      "client_wall_ms": 359.078
+    },
+    {
+      "rows_read": 12,
+      "rows_written": 9,
+      "client_wall_ms": 282.484
+    },
+    {
+      "rows_read": 12,
+      "rows_written": 9,
+      "client_wall_ms": 223.274
+    },
+    {
+      "rows_read": 12,
+      "rows_written": 9,
+      "client_wall_ms": 302.596
+    },
+    {
+      "rows_read": 12,
+      "rows_written": 9,
+      "client_wall_ms": 255.605
+    },
+    {
+      "rows_read": 12,
+      "rows_written": 9,
+      "client_wall_ms": 228.364
+    },
+    {
+      "rows_read": 12,
+      "rows_written": 9,
+      "client_wall_ms": 195.283
+    },
+    {
+      "rows_read": 12,
+      "rows_written": 9,
+      "client_wall_ms": 374.711
+    },
+    {
+      "rows_read": 12,
+      "rows_written": 9,
+      "client_wall_ms": 207.879
+    }
+  ],
+  "metrics": {
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "workersInvocationsAdaptive": []
+          }
+        ]
+      }
+    },
+    "errors": null
+  },
+  "invocation_groups": [
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:33:54Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 6828,
+        "cpuTimeP99": 6828,
+        "wallTimeP50": 144978,
+        "wallTimeP99": 144978
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:33:58Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 5434,
+        "cpuTimeP99": 5434,
+        "wallTimeP50": 170855,
+        "wallTimeP99": 170855
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:34:00Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 6883,
+        "cpuTimeP99": 6883,
+        "wallTimeP50": 150430,
+        "wallTimeP99": 150430
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:33:52Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 5660,
+        "cpuTimeP99": 5660,
+        "wallTimeP50": 173067,
+        "wallTimeP99": 173067
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:34:01Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 4917,
+        "cpuTimeP99": 4917,
+        "wallTimeP50": 141043,
+        "wallTimeP99": 141043
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:34:03Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 5444,
+        "cpuTimeP99": 5444,
+        "wallTimeP50": 137122,
+        "wallTimeP99": 137122
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:33:53Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 10446,
+        "cpuTimeP99": 10446,
+        "wallTimeP50": 190548,
+        "wallTimeP99": 190548
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:33:57Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 8809,
+        "cpuTimeP99": 8809,
+        "wallTimeP50": 188600,
+        "wallTimeP99": 188600
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    },
+    {
+      "dimensions": {
+        "datetime": "2026-10-07T20:34:02Z",
+        "status": "success"
+      },
+      "quantiles": {
+        "cpuTimeP50": 15586,
+        "cpuTimeP99": 15586,
+        "wallTimeP50": 251802,
+        "wallTimeP99": 251802
+      },
+      "sum": {
+        "errors": 0,
+        "requests": 1
+      }
+    }
+  ]
+}

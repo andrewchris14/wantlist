@@ -1,0 +1,100 @@
+{
+  "manual_secret_rotation_rejects_old_session": true,
+  "manual_secret_rotation_rejects_old_code": true,
+  "new_code_login_works": true,
+  "secret_propagation_login_retries": 0,
+  "largest_set_changes": [
+    {
+      "status": 200,
+      "rows_read": 541,
+      "rows_written": 9,
+      "client_wall_ms": 380.985
+    },
+    {
+      "status": 200,
+      "rows_read": 541,
+      "rows_written": 9,
+      "client_wall_ms": 434.333
+    },
+    {
+      "status": 200,
+      "rows_read": 541,
+      "rows_written": 9,
+      "client_wall_ms": 231.703
+    },
+    {
+      "status": 200,
+      "rows_read": 541,
+      "rows_written": 9,
+      "client_wall_ms": 228.089
+    },
+    {
+      "status": 200,
+      "rows_read": 541,
+      "rows_written": 9,
+      "client_wall_ms": 222.785
+    },
+    {
+      "status": 200,
+      "rows_read": 541,
+      "rows_written": 9,
+      "client_wall_ms": 254.499
+    },
+    {
+      "status": 200,
+      "rows_read": 541,
+      "rows_written": 9,
+      "client_wall_ms": 286.214
+    },
+    {
+      "status": 200,
+      "rows_read": 541,
+      "rows_written": 9,
+      "client_wall_ms": 257.717
+    },
+    {
+      "status": 200,
+      "rows_read": 541,
+      "rows_written": 9,
+      "client_wall_ms": 327.38
+    },
+    {
+      "status": 200,
+      "rows_read": 541,
+      "rows_written": 9,
+      "client_wall_ms": 208.957
+    }
+  ],
+  "largest_set_items": 526,
+  "largest_cpu_window": {
+    "start": "2026-10-07T20:24:12Z",
+    "end": "2026-10-07T20:24:15Z"
+  },
+  "actual_concurrent_saves_one_success_one_conflict": true,
+  "same_record_projection_revision": true,
+  "largest_set_worker_metrics": {
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "workersInvocationsAdaptive": [
+              {
+                "quantiles": {
+                  "cpuTimeP50": 11319,
+                  "cpuTimeP99": 21130,
+                  "wallTimeP50": 186655,
+                  "wallTimeP99": 385273
+                },
+                "sum": {
+                  "errors": 0,
+                  "requests": 15
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "errors": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "worker": "wantlist-staging",
+  "worker_endpoint_enabled": false,
+  "probe_worker": "wantlist-staging-3b2-probe",
+  "probe_endpoint_enabled": false,
+  "d1_database": "wantlist-staging",
+  "d1_size_bytes": 1658880,
+  "d1_tables": 15,
+  "free_plan_basis": "User dashboard verification; API token cannot independently inspect billing subscriptions",
+  "payment_details_entered": false,
+  "production_cutover": false,
+  "remaining_gate": "Some actual targeted mutations exceed Workers Free 10 ms CPU; do not proceed to editor",
+  "disabled_endpoint_http": 404
+}

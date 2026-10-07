@@ -1,6 +1,6 @@
 # Phase 3B.2 CPU investigation and quota-aware importer
 
-Staging only. The strict cold-request CPU gate remains OPEN. Ordinary repeated edits improved substantially, but one first action after redeployment consumed **11.656 ms**, above Free’s documented 10 ms. Successful HTTP responses do not establish compliance; no reliance on rollover is accepted. No editor or production cutover is authorized by these results.
+Staging only. **Closure update, 2026-10-07:** the owner explicitly accepted the **11.656 ms** first-edit-after-redeployment observation as a documented Workers Free limitation rather than a blocker. Ordinary repeated edits have useful margin; successful responses do not prove every request fits 10 ms. No checks were weakened. See the definitive [Phase 3B.2 closure checkpoint](PHASE_3B2_CLOSURE.md). No editor or production cutover is authorized.
 
 ## Measurement and attribution
 
@@ -40,9 +40,9 @@ Each operation: 20 raw executions, 20 successes, zero failures; plus 3 separate 
 | Edit metadata | 20/20 | 2.879 | 4.466 | 6.494 | 6.494 | 129.3 | 9 | 8 |
 | Create future set + 20 cards | 19/20 | 2.972 | 6.473 | 6.473 | 6.473 | 124.2 | 46 | 93 |
 
-Maximum final ordinary observed CPU: **8.305 ms**. Two additional transition/setup types each ran 20 times and stayed below 10 ms too. This ordinary sample has useful margin, but it does not erase the cold/first-action failure.
+Maximum final ordinary observed CPU: **8.305 ms**. Two additional transition/setup types each ran 20 times and stayed below 10 ms too. This ordinary sample has useful margin, but it does not erase the accepted first-action limitation.
 
-Five distinct staging redeployments, with health checks verifying distinct non-secret deployment markers, each performed one first observed card edit. CPU: **8.640, 11.656, 5.133, 5.923, 4.642 ms**; 5/5 succeeded. Median **5.923 ms**, empirical P95/P99/max **11.656 ms**; client wall median **190.374 ms**. D1 counters were not instrumented on these five requests. No claim of forcing a cold isolate. The CPU reliability target is therefore not fully met.
+Five distinct staging redeployments, with health checks verifying distinct non-secret deployment markers, each performed one first observed card edit. CPU: **8.640, 11.656, 5.133, 5.923, 4.642 ms**; 5/5 succeeded. Median **5.923 ms**, empirical P95/P99/max **11.656 ms**; client wall median **190.374 ms**. D1 counters were not instrumented on these five requests. No claim of forcing a cold isolate. A universal below-10-ms guarantee is not established; the owner has accepted this administrative-event outlier.
 
 ## Security and correctness
 
@@ -76,7 +76,7 @@ Both `wantlist-staging` and `wantlist-staging-3b2-probe` workers.dev endpoints/p
 
 The blocked native export download host and untested Time Travel remain documented limitations; working portable JSON/CSV/SQL recovery is retained and rechecked. All `data/`, normalization `tools/` and public `site/` files remain byte-identical to the approved baseline; dataset SHA-256 is `38a7ee7ad07ede1ae744dbe91b819c1bb78a294c70ca30f933bc66604d44c98a`. The Word/raw source and independent backup archive are unchanged. The public React site still loads its committed static JSON and has no staging dependency.
 
-Before Phase 3B.3: the first-action CPU outlier needs further investigation/resolution or an explicit reviewed decision about that limitation. These results do not justify claiming every editing request reliably fits 10 ms. Large-draft save UX/data-layer work also remains separate. No Phase 3B.3 work was begun.
+Closure decision: the owner explicitly accepted the first-action CPU outlier; further optimization is not required to close Phase 3B.2. These results do not justify claiming every editing request reliably fits 10 ms. Large-draft save UX/data-layer work also remains separate. No Phase 3B.3 work was begun.
 
 ## Evidence and commands
 
@@ -91,4 +91,4 @@ Reports: `cpu-investigation-result.json`, `cpu-first-edit-result.json`, `cpu-str
 
 The original historical local PBKDF2 prototype tests remain for regression history; it is not deployed or used by the approved staging authentication.
 
-Final staging smoke also verifies new mixed-group ordering and preservation of meaningful sublists. Distinct non-secret deployment markers are required for readiness; an initial invalid-operation assertion immediately after upload failed before its status was captured. Version-confirmed rechecks correctly return 400 (unauthorized requests 401). A later public fixture read also returned an unexpected body before its status was captured; its database projection was valid and both raw/diagnostic rechecks returned 200 with the expected groups. These transient symptoms are not attributed to a specific cause. No partial data or false transaction result was found; the cold-request reliability gate remains open.
+Final staging smoke also verifies new mixed-group ordering and preservation of meaningful sublists. Distinct non-secret deployment markers are required for readiness; an initial invalid-operation assertion immediately after upload failed before its status was captured. Version-confirmed rechecks correctly return 400 (unauthorized requests 401). A later public fixture read also returned an unexpected body before its status was captured; its database projection was valid and both raw/diagnostic rechecks returned 200 with the expected groups. These transient symptoms are not attributed to a specific cause. No partial data or false transaction result was found; these historical transient observations remain documented; the first-edit CPU outlier is now explicitly accepted. Phase 3B.3 still requires separate approval.

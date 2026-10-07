@@ -1,4 +1,10 @@
-# Phase 3B.2 — actual staging verification, with an unresolved Free CPU gate
+# Phase 3B.2 — original actual staging verification report
+
+**Superseded checkpoint notice, 2026-10-07:** this report preserves the original
+staging findings. Subsequent delta optimizations and the owner’s explicit acceptance
+of the first-edit CPU outlier close that investigation. Use the definitive
+[Phase 3B.2 closure checkpoint](PHASE_3B2_CLOSURE.md) for next-phase decisions.
+No Phase 3B.3 implementation or full import is authorized.
 
 The current public site remains independent of this experiment. Its approved
 Word/raw sources, normalization/corrections, `data/wantlists.json`, and static
@@ -11,8 +17,8 @@ The approved SHA-256 owner-secret verifier fits Workers Free in the measured
 probe. Real D1 schema, representative import fidelity, atomic edits/history,
 sessions, portable export/restore, and incremental publication were verified.
 However, some actual targeted edits still exceeded the 10 ms Workers Free CPU
-allowance. **Do not approve this backend for production or proceed to the editor
-until that CPU issue is resolved and re-tested.** Both staging endpoints were
+allowance. **This was the original CPU stop condition; the later optimization review and
+explicit owner acceptance supersede it. Production/editor work still needs separate approval.** Both staging endpoints were
 disabled at this checkpoint; the D1 database is retained for review.
 
 ## Resources and Free-plan evidence

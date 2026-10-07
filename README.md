@@ -1,8 +1,82 @@
-# OBC wantlists — Phase 2
+# OBC wantlists — read-only website
 
 Reproducible normalized collecting data rebuilt from the user-provided **Wantlists 10-5-26.docx**.
 The Word document and the user's 23 reviewed interpretations are authoritative. No external checklists or
-Blogger data were used. Website development is intentionally outside this phase.
+Blogger data were used. The Phase 3A public website reads the committed dataset without changing
+normalization semantics. Editing and authentication are reserved for later phases.
+
+## Website development
+
+Use Node.js 24 (pinned in `.node-version`) and npm. From the existing `work` checkout:
+
+```sh
+npm ci
+npm run dev
+```
+
+Vite prints the local development address. The app is React with plain CSS; all 3,392 records are
+searched in the browser, with 30 results rendered per page. No database, credentials, backend service,
+or external card database is needed. There are no editing, authentication, Pending, or trade features.
+
+Run the website tests:
+
+```sh
+npm test
+npm run test:browser
+```
+
+The first command runs Vitest model/component tests. The second builds the production site, starts a
+temporary local preview server, and runs Playwright on desktop and phone viewports, including tablet
+and narrow-phone layout checks and axe accessibility checks. It uses `/usr/bin/chromium` when available;
+otherwise install Playwright's Chromium with `npx playwright install chromium`. Set
+`PLAYWRIGHT_CHROMIUM_EXECUTABLE` to use another existing Chromium executable.
+
+Build and inspect the production site:
+
+```sh
+npm run build
+npm run preview
+```
+
+`dist/` contains the static production site and `wantlists.json`. The data asset is a build-time
+projection of `data/wantlists.json`: all records and public semantic fields are preserved, while raw
+import/audit bulk is omitted. There is no handwritten copy of the dataset. Both development and
+production use `site/data-source.js`; `npm run build` refreshes the data asset after an intentional
+Phase 2 regeneration. The original Phase 2 file and Word source are not modified by any npm command.
+Relative asset paths support a later choice of static hosting; no hosting or deployment is configured.
+
+The maintenance flow is:
+
+```text
+raw Word source → import_docx.py → normalization + reviewed corrections
+                → data/wantlists.json → website build → browser search and display
+```
+
+`site/model.js` handles indexing, selection, facets, and sorting independently of React.
+`site/RecordCard.jsx` renders record and component ownership semantics; `site/App.jsx` contains
+the read-only browse controls. A future data service can replace the loader without replacing these
+public components. No future admin or trade infrastructure has been implemented speculatively.
+
+Search is case/spacing/punctuation tolerant and requires all entered words to match across normalized
+fields, names, notes, prefixes, and explicit mixed components. Numeric tokens match exactly: `12` does
+not match card `121`. Prefix aliases like `BCP-47` refer only to explicitly listed source cards.
+Uncorrected raw wording is not indexed, because it includes the discarded 1993 merged list.
+
+Filters cover the primary status, year, brand, and the dataset's exact categories. Mixed components
+retain separate owned/wanted labels within each result; a status filter applies to the record's primary
+status. Year filters include explicit year ranges. Unknown years/brands are selectable. Sorting supports
+newest, oldest, and alphabetical; dated sorting uses the first year of a range, with unknown dates last.
+Long lists can be expanded, and matching card IDs are visible even before expansion.
+
+## Phase 3A findings and validation
+
+See `docs/PHASE_3A.md` for the acceptance checks and known data concerns. In particular, three Costco
+Flagship records have the existing Phase 2 category `non_sport_cards` because of a substring match on
+“flags”. They are intentionally not reclassified in the presentation layer. This should be reviewed
+in a separate Phase 2 category correction, not hidden in UI code.
+
+The Phase 2 backup archive has been retained. Keep all meaningful changes committed and push `work`
+before leaving a cloud workspace. No branch merge is part of Phase 3A.
 
 ## Rebuild and validate
 

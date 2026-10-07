@@ -1,10 +1,13 @@
 // Disposable D1-interface adapter, not a Cloudflare emulator.
 import { DatabaseSync } from 'node:sqlite';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 
 export function localD1() {
   const sqlite = new DatabaseSync(':memory:');
-  sqlite.exec(readFileSync(new URL('../migrations/0001_foundation.sql', import.meta.url), 'utf8'));
+  const directory = new URL('../migrations/', import.meta.url);
+  for (const file of readdirSync(directory).filter(f => f.endsWith('.sql')).sort()) {
+    sqlite.exec(readFileSync(new URL(file, directory), 'utf8'));
+  }
   function statement(sql, args = []) {
     return {
       bind(...values) { return statement(sql, values); },

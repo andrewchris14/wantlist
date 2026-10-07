@@ -62,7 +62,8 @@ The disposable baseline database is approximately 22 MiB, with 59,104 literal
 rows. Compare the measured size and expected traffic with VERIFIED limits;
 there is not yet evidence to certify "dramatically below" all Free quotas.
 A future public API should serve a precomputed sanitized snapshot, not execute
-the local exporter’s per-record queries on every public visit. Client-side
+a full export on every public visit. The additional review now uses three bulk
+reads for full exports and indexed scoped reads for single-set operations. Client-side
 search remains possible; no API request is needed for each keystroke.
 
 ## Schema
@@ -249,7 +250,7 @@ Verified results for this phase:
 
 | Check | Result |
 | --- | --- |
-| Local storage/migration/recovery | 24 tests passed |
+| Local storage/migration/recovery + owner lifecycle/query review | 34 tests passed |
 | Local authentication/Worker handler | 12 tests passed |
 | Inactive fallback contract | 3 tests passed |
 | Existing Phase 2 validation | 21 tests passed |
@@ -269,3 +270,7 @@ verifier compatibility/CPU budget; approve isolated staging resources and backup
 destination. Do not remove the Worker guard or change the public loader merely
 because local tests passed. Production source switching requires a separate
 explicit later approval.
+
+See [the additional lifecycle/query/size review](PHASE_3B1_REVIEW.md) and
+`foundation/query-review.json` for owner-created sets, index justification,
+locally measured work and free-tier planning estimates.

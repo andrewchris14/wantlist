@@ -42,6 +42,7 @@ def connect(path=':memory:'):
 def apply_schema(db):
     # No destructive reset, DROP, or automatic schema replacement.
     db.executescript((ROOT / 'foundation/migrations/0001_foundation.sql').read_text())
+    db.executescript((ROOT / 'foundation/migrations/0002_query_indexes.sql').read_text())
 
 
 def load_baseline(path=None):
@@ -238,6 +239,9 @@ def change_item(db, item_id, new_state, *, expected_revision, actor):
             raise ValueError('Item requires explicit owner review or is deleted')
         if new_state not in transitions.get(row['state'], set()):
             raise ValueError('Invalid state transition')
+        mode = db.execute('SELECT list_type FROM records WHERE id=?', (row['record_id'],)).fetchone()[0]
+        if mode == 'complete' and new_state in ('wanted', 'pending'):
+            raise ValueError('Unmark Complete before changing an item to wanted/pending')
         changed = db.execute('UPDATE records SET revision=revision+1,updated_at=? WHERE id=? AND revision=? AND deleted_at IS NULL', (stamp, row['record_id'], expected_revision)).rowcount
         if changed != 1:
             raise ValueError('Revision conflict or deleted record')
@@ -279,18 +283,36 @@ def restore_record(db, record_id, *, expected_revision, actor):
 
 
 def public_export(db):
-    """Allowlist projection; not a copy of arbitrary future private JSON."""
-    rows = db.execute('SELECT id,revision,updated_at FROM records ORDER BY id').fetchall()
-    revision = hashlib.sha256(dumps([tuple(r) for r in rows]).encode()).hexdigest()
-    records = [{k: r[k] for k in PUBLIC_FIELDS if k in r and k not in (*INVENTORIES, 'mixed_lists', 'sublists')} for r in reconstruct(db)]
-    for record in records:
+    """Full allowlist snapshot in THREE intentional bulk reads.
+
+    Offline/publication reference only, not a per-visit/per-edit API. A later
+    publisher needs incremental updates and bounded coalesced full rebuilds.
+    """
+    rows = sorted(db.execute('SELECT * FROM records').fetchall(), key=lambda r: r['id'])
+    all_groups = db.execute('SELECT * FROM record_groups').fetchall()
+    all_items = db.execute('SELECT id,group_id,position,value,field_key,state,actionable,pending_at,received_at FROM items WHERE deleted_at IS NULL').fetchall()
+    groups_by_record, items_by_group = {}, {}
+    for group in all_groups:
+        groups_by_record.setdefault(group['record_id'], []).append(group)
+    for item in all_items:
+        items_by_group.setdefault(item['group_id'], []).append(item)
+    revision = hashlib.sha256(dumps([(r['id'], r['revision'], r['updated_at']) for r in rows]).encode()).hexdigest()
+    records = []
+    for row in rows:
+        if row['deleted_at']:
+            continue
+        content = json.loads(row['content_json'])
+        content['list_type'] = row['list_type']
+        record = {k: content[k] for k in PUBLIC_FIELDS if k in content and k not in (*INVENTORIES, 'mixed_lists', 'sublists')}
         record['groups'] = []
-        for group in db.execute('SELECT * FROM record_groups WHERE record_id=? ORDER BY kind,position', (record['id'],)):
+        for group in sorted(groups_by_record.get(row['id'], []), key=lambda g: (g['kind'], g['position'])):
             metadata = json.loads(group['metadata_json'])
             body = {k: metadata[k] for k in ('label', 'description', 'notes', 'source_list_type') if k in metadata}
             body.update({'id': group['id'], 'kind': group['kind'], 'list_type': group['list_type']})
-            body['entries'] = [dict(i) for i in db.execute('SELECT id,value,field_key,state,actionable,pending_at,received_at FROM items WHERE group_id=? AND deleted_at IS NULL ORDER BY field_key,position', (group['id'],))]
+            body['entries'] = [{k: i[k] for k in ('id', 'value', 'field_key', 'state', 'actionable', 'pending_at', 'received_at')}
+                               for i in sorted(items_by_group.get(group['id'], []), key=lambda i: (i['field_key'], i['position']))]
             record['groups'].append(body)
+        records.append(record)
         # Explicit entry states avoid showing a received item as wanted merely
         # because it originated in a WANT group. No existing UI consumes this.
     return {'export_schema': 'wantlist-public-v1-foundation', 'revision': revision,

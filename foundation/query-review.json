@@ -1,0 +1,784 @@
+{
+  "sqlite_version": "3.53.1",
+  "planning_limits": {
+    "rows_read_daily": 5000000,
+    "rows_written_daily": 100000,
+    "database_bytes_conservative": 500000000,
+    "total_storage_bytes": 5000000000,
+    "time_travel_days": 7
+  },
+  "measurement_caveat": "SQLite rows returned/logical writes/VM instructions are not measured D1 rows_read/rows_written. No staging resource exists.",
+  "sizes": {
+    "baseline_with_review_indexes_bytes": 22695936,
+    "page_size": 4096,
+    "largest_historical_record_id": "p1237-l004",
+    "largest_historical_record_item_count": 526,
+    "history_1000_growth_bytes": 1458176,
+    "public_snapshot_json_bytes": 10530060,
+    "future_100_sets_20_cards_growth_bytes": 1261568,
+    "final_file_bytes": 25534464,
+    "baseline_decimal_500mb_headroom_bytes": 477304064,
+    "final_decimal_500mb_headroom_bytes": 474465536,
+    "pending_50_with_history_growth_bytes": 77824,
+    "final_pending_count": 50,
+    "object_page_bytes": {
+      "change_history": 1507328,
+      "foundation_meta": 4096,
+      "history_recent": 172032,
+      "history_record_recent": 270336,
+      "import_batches": 745472,
+      "items": 6176768,
+      "items_group_value": 2326528,
+      "login_limits": 4096,
+      "owners": 4096,
+      "private_details": 4096,
+      "provenance": 4100096,
+      "record_groups": 376832,
+      "records": 3125248,
+      "sessions": 4096,
+      "sqlite_autoindex_change_history_1": 61440,
+      "sqlite_autoindex_foundation_meta_1": 4096,
+      "sqlite_autoindex_import_batches_1": 4096,
+      "sqlite_autoindex_import_batches_2": 4096,
+      "sqlite_autoindex_items_1": 3108864,
+      "sqlite_autoindex_items_2": 3092480,
+      "sqlite_autoindex_login_limits_1": 4096,
+      "sqlite_autoindex_owners_1": 4096,
+      "sqlite_autoindex_private_details_1": 4096,
+      "sqlite_autoindex_provenance_1": 73728,
+      "sqlite_autoindex_record_groups_1": 126976,
+      "sqlite_autoindex_record_groups_2": 122880,
+      "sqlite_autoindex_records_1": 86016,
+      "sqlite_autoindex_sessions_1": 4096,
+      "sqlite_schema": 12288
+    }
+  },
+  "actions": {
+    "owner_catalog_initial_load": {
+      "sql_statements": 1,
+      "rows_returned": 3393,
+      "logical_rows_written": 0,
+      "sqlite_vm_instructions": 54302,
+      "queries": [
+        {
+          "sql": "SELECT id,revision,list_type,json_extract(content_json,'$.year') AS year,json_extract(content_json,'$.brand') AS brand,json_extract(content_json,'$.set_name') AS set_name,json_extract(content_json,'$.category') AS category FROM records WHERE deleted_at IS NULL ORDER BY id",
+          "plan": [
+            "SCAN records USING INDEX sqlite_autoindex_records_1"
+          ]
+        }
+      ]
+    },
+    "search_catalog_in_memory": {
+      "sql_statements": 0,
+      "rows_returned": 0,
+      "logical_rows_written": 0,
+      "sqlite_vm_instructions": 0,
+      "queries": []
+    },
+    "open_future_set": {
+      "sql_statements": 4,
+      "rows_returned": 8,
+      "logical_rows_written": 0,
+      "sqlite_vm_instructions": 152,
+      "queries": [
+        {
+          "sql": "SELECT * FROM records WHERE id=?",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM record_groups WHERE record_id=? ORDER BY kind,position",
+          "plan": [
+            "SEARCH record_groups USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM items WHERE group_id=? ORDER BY field_key,position",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_2 (group_id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM items WHERE group_id=? ORDER BY field_key,position",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_2 (group_id=?)"
+          ]
+        }
+      ]
+    },
+    "find_card_in_known_set": {
+      "sql_statements": 1,
+      "rows_returned": 1,
+      "logical_rows_written": 0,
+      "sqlite_vm_instructions": 48,
+      "queries": [
+        {
+          "sql": "SELECT i.*,g.record_id FROM record_groups g JOIN items i ON i.group_id=g.id WHERE g.record_id=? AND i.value=? AND i.deleted_at IS NULL",
+          "plan": [
+            "SEARCH g USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)",
+            "SEARCH i USING INDEX items_group_value (group_id=? AND value=?)"
+          ]
+        }
+      ]
+    },
+    "open_largest_historical_set": {
+      "sql_statements": 3,
+      "rows_returned": 528,
+      "logical_rows_written": 0,
+      "sqlite_vm_instructions": 7943,
+      "queries": [
+        {
+          "sql": "SELECT * FROM records WHERE id=?",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM record_groups WHERE record_id=? ORDER BY kind,position",
+          "plan": [
+            "SEARCH record_groups USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM items WHERE group_id=? ORDER BY field_key,position",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_2 (group_id=?)"
+          ]
+        }
+      ]
+    },
+    "mark_received": {
+      "sql_statements": 6,
+      "rows_returned": 3,
+      "logical_rows_written": 3,
+      "sqlite_vm_instructions": 226,
+      "queries": [
+        {
+          "sql": "SELECT i.*,g.record_id FROM items i JOIN record_groups g ON g.id=i.group_id WHERE i.id=?",
+          "plan": [
+            "SEARCH i USING INDEX sqlite_autoindex_items_1 (id=?)",
+            "SEARCH g USING INDEX sqlite_autoindex_record_groups_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT list_type FROM records WHERE id=?",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE records SET revision=revision+1,updated_at=? WHERE id=? AND revision=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE items SET state=?,pending_at=?,received_at=? WHERE id=?",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM items WHERE id=?",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO change_history VALUES (?,?,?,?,?,?,?,?)",
+          "plan": []
+        }
+      ]
+    },
+    "return_owned_to_wanted": {
+      "sql_statements": 6,
+      "rows_returned": 3,
+      "logical_rows_written": 3,
+      "sqlite_vm_instructions": 223,
+      "queries": [
+        {
+          "sql": "SELECT i.*,g.record_id FROM items i JOIN record_groups g ON g.id=i.group_id WHERE i.id=?",
+          "plan": [
+            "SEARCH i USING INDEX sqlite_autoindex_items_1 (id=?)",
+            "SEARCH g USING INDEX sqlite_autoindex_record_groups_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT list_type FROM records WHERE id=?",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE records SET revision=revision+1,updated_at=? WHERE id=? AND revision=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE items SET state=?,pending_at=?,received_at=? WHERE id=?",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM items WHERE id=?",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO change_history VALUES (?,?,?,?,?,?,?,?)",
+          "plan": []
+        }
+      ]
+    },
+    "mark_pending": {
+      "sql_statements": 6,
+      "rows_returned": 3,
+      "logical_rows_written": 3,
+      "sqlite_vm_instructions": 224,
+      "queries": [
+        {
+          "sql": "SELECT i.*,g.record_id FROM items i JOIN record_groups g ON g.id=i.group_id WHERE i.id=?",
+          "plan": [
+            "SEARCH i USING INDEX sqlite_autoindex_items_1 (id=?)",
+            "SEARCH g USING INDEX sqlite_autoindex_record_groups_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT list_type FROM records WHERE id=?",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE records SET revision=revision+1,updated_at=? WHERE id=? AND revision=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE items SET state=?,pending_at=?,received_at=? WHERE id=?",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM items WHERE id=?",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO change_history VALUES (?,?,?,?,?,?,?,?)",
+          "plan": []
+        }
+      ]
+    },
+    "pending_back_to_wanted": {
+      "sql_statements": 6,
+      "rows_returned": 3,
+      "logical_rows_written": 3,
+      "sqlite_vm_instructions": 223,
+      "queries": [
+        {
+          "sql": "SELECT i.*,g.record_id FROM items i JOIN record_groups g ON g.id=i.group_id WHERE i.id=?",
+          "plan": [
+            "SEARCH i USING INDEX sqlite_autoindex_items_1 (id=?)",
+            "SEARCH g USING INDEX sqlite_autoindex_record_groups_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT list_type FROM records WHERE id=?",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE records SET revision=revision+1,updated_at=? WHERE id=? AND revision=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE items SET state=?,pending_at=?,received_at=? WHERE id=?",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM items WHERE id=?",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO change_history VALUES (?,?,?,?,?,?,?,?)",
+          "plan": []
+        }
+      ]
+    },
+    "add_2_wanted": {
+      "sql_statements": 8,
+      "rows_returned": 5,
+      "logical_rows_written": 4,
+      "sqlite_vm_instructions": 419,
+      "queries": [
+        {
+          "sql": "SELECT list_type FROM records WHERE id=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE records SET revision=revision+1,updated_at=? WHERE id=? AND revision=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM record_groups WHERE record_id=? ORDER BY kind,position",
+          "plan": [
+            "SEARCH record_groups USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT record_id,list_type FROM record_groups WHERE id=?",
+          "plan": [
+            "SEARCH record_groups USING INDEX sqlite_autoindex_record_groups_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT COALESCE(MAX(position),-1) FROM items WHERE group_id=? AND field_key=?",
+          "plan": [
+            "SEARCH items USING COVERING INDEX sqlite_autoindex_items_2 (group_id=? AND field_key=?)"
+          ]
+        },
+        {
+          "sql": "SELECT id FROM items WHERE group_id=? AND value IN (?,?) AND deleted_at IS NULL LIMIT 1",
+          "plan": [
+            "SEARCH items USING INDEX items_group_value (group_id=? AND value=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO items VALUES (?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL)",
+          "plan": [
+            "SCAN 2-ROW VALUES CLAUSE",
+            "SCAN change_history",
+            "SEARCH private_details USING COVERING INDEX sqlite_autoindex_private_details_1 (item_id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO change_history VALUES (?,?,?,?,?,?,?,?)",
+          "plan": []
+        }
+      ]
+    },
+    "add_20_wanted": {
+      "sql_statements": 9,
+      "rows_returned": 5,
+      "logical_rows_written": 22,
+      "sqlite_vm_instructions": 2314,
+      "queries": [
+        {
+          "sql": "SELECT list_type FROM records WHERE id=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE records SET revision=revision+1,updated_at=? WHERE id=? AND revision=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM record_groups WHERE record_id=? ORDER BY kind,position",
+          "plan": [
+            "SEARCH record_groups USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT record_id,list_type FROM record_groups WHERE id=?",
+          "plan": [
+            "SEARCH record_groups USING INDEX sqlite_autoindex_record_groups_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT COALESCE(MAX(position),-1) FROM items WHERE group_id=? AND field_key=?",
+          "plan": [
+            "SEARCH items USING COVERING INDEX sqlite_autoindex_items_2 (group_id=? AND field_key=?)"
+          ]
+        },
+        {
+          "sql": "SELECT id FROM items WHERE group_id=? AND value IN (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) AND deleted_at IS NULL LIMIT 1",
+          "plan": [
+            "SEARCH items USING INDEX items_group_value (group_id=? AND value=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO items VALUES (?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL)",
+          "plan": [
+            "SCAN 10-ROW VALUES CLAUSE",
+            "SCAN change_history",
+            "SEARCH private_details USING COVERING INDEX sqlite_autoindex_private_details_1 (item_id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO items VALUES (?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL)",
+          "plan": [
+            "SCAN 10-ROW VALUES CLAUSE",
+            "SCAN change_history",
+            "SEARCH private_details USING COVERING INDEX sqlite_autoindex_private_details_1 (item_id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO change_history VALUES (?,?,?,?,?,?,?,?)",
+          "plan": []
+        }
+      ]
+    },
+    "edit_notes": {
+      "sql_statements": 3,
+      "rows_returned": 1,
+      "logical_rows_written": 2,
+      "sqlite_vm_instructions": 153,
+      "queries": [
+        {
+          "sql": "SELECT * FROM records WHERE id=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE records SET content_json=?,list_type=?,revision=revision+1,updated_at=? WHERE id=? AND revision=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO change_history VALUES (?,?,?,?,?,?,?,?)",
+          "plan": []
+        }
+      ]
+    },
+    "create_set_20_wanted": {
+      "sql_statements": 8,
+      "rows_returned": 2,
+      "logical_rows_written": 23,
+      "sqlite_vm_instructions": 2242,
+      "queries": [
+        {
+          "sql": "INSERT INTO records VALUES (?,NULL,?,?,1,?,?,NULL)",
+          "plan": []
+        },
+        {
+          "sql": "INSERT INTO record_groups VALUES (?,?,?,0,?,?,?)",
+          "plan": []
+        },
+        {
+          "sql": "SELECT * FROM record_groups WHERE record_id=? ORDER BY kind,position",
+          "plan": [
+            "SEARCH record_groups USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT COALESCE(MAX(position),-1) FROM items WHERE group_id=? AND field_key=?",
+          "plan": [
+            "SEARCH items USING COVERING INDEX sqlite_autoindex_items_2 (group_id=? AND field_key=?)"
+          ]
+        },
+        {
+          "sql": "SELECT id FROM items WHERE group_id=? AND value IN (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) AND deleted_at IS NULL LIMIT 1",
+          "plan": [
+            "SEARCH items USING INDEX items_group_value (group_id=? AND value=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO items VALUES (?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL)",
+          "plan": [
+            "SCAN 10-ROW VALUES CLAUSE",
+            "SCAN change_history",
+            "SEARCH private_details USING COVERING INDEX sqlite_autoindex_private_details_1 (item_id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO items VALUES (?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL),(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL)",
+          "plan": [
+            "SCAN 10-ROW VALUES CLAUSE",
+            "SCAN change_history",
+            "SEARCH private_details USING COVERING INDEX sqlite_autoindex_private_details_1 (item_id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO change_history VALUES (?,?,?,?,?,?,?,?)",
+          "plan": []
+        }
+      ]
+    },
+    "delete_item": {
+      "sql_statements": 5,
+      "rows_returned": 2,
+      "logical_rows_written": 3,
+      "sqlite_vm_instructions": 185,
+      "queries": [
+        {
+          "sql": "SELECT i.*,g.record_id FROM items i JOIN record_groups g ON g.id=i.group_id WHERE i.id=?",
+          "plan": [
+            "SEARCH i USING INDEX sqlite_autoindex_items_1 (id=?)",
+            "SEARCH g USING INDEX sqlite_autoindex_record_groups_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE records SET revision=revision+1,updated_at=? WHERE id=? AND revision=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE items SET deleted_at=? WHERE id=?",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM items WHERE id=?",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO change_history VALUES (?,?,?,?,?,?,?,?)",
+          "plan": []
+        }
+      ]
+    },
+    "restore_item": {
+      "sql_statements": 7,
+      "rows_returned": 3,
+      "logical_rows_written": 3,
+      "sqlite_vm_instructions": 229,
+      "queries": [
+        {
+          "sql": "SELECT i.*,g.record_id FROM items i JOIN record_groups g ON g.id=i.group_id WHERE i.id=?",
+          "plan": [
+            "SEARCH i USING INDEX sqlite_autoindex_items_1 (id=?)",
+            "SEARCH g USING INDEX sqlite_autoindex_record_groups_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT id FROM items WHERE group_id=? AND value=? AND deleted_at IS NULL AND id != ? LIMIT 1",
+          "plan": [
+            "SEARCH items USING INDEX items_group_value (group_id=? AND value=?)"
+          ]
+        },
+        {
+          "sql": "SELECT list_type FROM records WHERE id=?",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE records SET revision=revision+1,updated_at=? WHERE id=? AND revision=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE items SET deleted_at=? WHERE id=?",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM items WHERE id=?",
+          "plan": [
+            "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO change_history VALUES (?,?,?,?,?,?,?,?)",
+          "plan": []
+        }
+      ]
+    },
+    "delete_record": {
+      "sql_statements": 4,
+      "rows_returned": 2,
+      "logical_rows_written": 2,
+      "sqlite_vm_instructions": 140,
+      "queries": [
+        {
+          "sql": "SELECT * FROM records WHERE id=?",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE records SET deleted_at=?,updated_at=?,revision=revision+1 WHERE id=? AND revision=? AND deleted_at IS NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM records WHERE id=?",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO change_history VALUES (?,?,?,?,?,?,?,?)",
+          "plan": []
+        }
+      ]
+    },
+    "restore_record": {
+      "sql_statements": 4,
+      "rows_returned": 2,
+      "logical_rows_written": 2,
+      "sqlite_vm_instructions": 140,
+      "queries": [
+        {
+          "sql": "SELECT * FROM records WHERE id=?",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE records SET deleted_at=NULL,updated_at=?,revision=revision+1 WHERE id=? AND revision=? AND deleted_at IS NOT NULL",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM records WHERE id=?",
+          "plan": [
+            "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO change_history VALUES (?,?,?,?,?,?,?,?)",
+          "plan": []
+        }
+      ]
+    },
+    "recent_changes_global_20": {
+      "sql_statements": 1,
+      "rows_returned": 20,
+      "logical_rows_written": 0,
+      "sqlite_vm_instructions": 248,
+      "queries": [
+        {
+          "sql": "SELECT * FROM change_history ORDER BY created_at DESC,id DESC LIMIT ?",
+          "plan": [
+            "SCAN change_history USING INDEX history_recent"
+          ]
+        }
+      ]
+    },
+    "recent_changes_record_20": {
+      "sql_statements": 1,
+      "rows_returned": 20,
+      "logical_rows_written": 0,
+      "sqlite_vm_instructions": 278,
+      "queries": [
+        {
+          "sql": "SELECT * FROM change_history WHERE record_id=? ORDER BY created_at DESC,id DESC LIMIT ?",
+          "plan": [
+            "SEARCH change_history USING INDEX history_record_recent (record_id=?)"
+          ]
+        }
+      ]
+    },
+    "login_sql_only": {
+      "sql_statements": 4,
+      "rows_returned": 3,
+      "logical_rows_written": 3,
+      "sqlite_vm_instructions": 128,
+      "queries": [
+        {
+          "sql": "INSERT INTO login_limits VALUES (?,0,1) ON CONFLICT(bucket) DO UPDATE SET attempts=attempts+1 RETURNING attempts",
+          "plan": []
+        },
+        {
+          "sql": "INSERT INTO login_limits VALUES (?,0,1) ON CONFLICT(bucket) DO UPDATE SET attempts=attempts+1 RETURNING attempts",
+          "plan": []
+        },
+        {
+          "sql": "SELECT * FROM owners WHERE id='owner'",
+          "plan": [
+            "SEARCH owners USING INDEX sqlite_autoindex_owners_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "INSERT INTO sessions VALUES (?,?,?,?,?,?,?,NULL)",
+          "plan": []
+        }
+      ]
+    },
+    "validate_session": {
+      "sql_statements": 1,
+      "rows_returned": 1,
+      "logical_rows_written": 0,
+      "sqlite_vm_instructions": 27,
+      "queries": [
+        {
+          "sql": "SELECT s.*,o.auth_version AS current_version FROM sessions s JOIN owners o ON o.id=s.owner_id WHERE token_hash=?",
+          "plan": [
+            "SEARCH s USING INDEX sqlite_autoindex_sessions_1 (token_hash=?)",
+            "SEARCH o USING INDEX sqlite_autoindex_owners_1 (id=?)"
+          ]
+        }
+      ]
+    },
+    "validate_session_daily_touch": {
+      "sql_statements": 2,
+      "rows_returned": 1,
+      "logical_rows_written": 1,
+      "sqlite_vm_instructions": 59,
+      "queries": [
+        {
+          "sql": "SELECT s.*,o.auth_version AS current_version FROM sessions s JOIN owners o ON o.id=s.owner_id WHERE token_hash=?",
+          "plan": [
+            "SEARCH s USING INDEX sqlite_autoindex_sessions_1 (token_hash=?)",
+            "SEARCH o USING INDEX sqlite_autoindex_owners_1 (id=?)"
+          ]
+        },
+        {
+          "sql": "UPDATE sessions SET last_seen_at=? WHERE token_hash=?",
+          "plan": [
+            "SEARCH sessions USING INDEX sqlite_autoindex_sessions_1 (token_hash=?)"
+          ]
+        }
+      ]
+    },
+    "full_public_snapshot_generation": {
+      "sql_statements": 3,
+      "rows_returned": 66006,
+      "logical_rows_written": 0,
+      "sqlite_vm_instructions": 834071,
+      "queries": [
+        {
+          "sql": "SELECT * FROM records",
+          "plan": [
+            "SCAN records"
+          ]
+        },
+        {
+          "sql": "SELECT * FROM record_groups",
+          "plan": [
+            "SCAN record_groups"
+          ]
+        },
+        {
+          "sql": "SELECT id,group_id,position,value,field_key,state,actionable,pending_at,received_at FROM items WHERE deleted_at IS NULL",
+          "plan": [
+            "SCAN items"
+          ]
+        }
+      ]
+    }
+  }
+}

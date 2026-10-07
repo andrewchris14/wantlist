@@ -6,6 +6,8 @@ Cloudflare resources. See [the safety boundary, free-tier verification gates,
 local import/export commands and session design](docs/PHASE_3B1.md).
 Run its checks with `npm run test:foundation`; existing website and Phase 2
 commands below remain unchanged. No additional dependencies are required.
+The [additional foundation review](docs/PHASE_3B1_REVIEW.md) verifies future
+owner-created sets, indexed operations, size growth and free-tier usage estimates.
 
 Reproducible normalized collecting data rebuilt from the user-provided **Wantlists 10-5-26.docx**.
 The Word document and the user's 23 reviewed interpretations are authoritative. No external checklists or

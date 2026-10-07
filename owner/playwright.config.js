@@ -1,0 +1,4 @@
+import {defineConfig} from '@playwright/test';
+import {fileURLToPath} from 'node:url';
+import {existsSync} from 'node:fs';
+export default defineConfig({testDir:'./browser-tests',workers:1,fullyParallel:false,reporter:'list',timeout:120000,use:{actionTimeout:15000,baseURL:'https://wantlist-staging.andrewchris14.workers.dev',launchOptions:{executablePath:existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined,args:['--no-sandbox']},trace:'off',screenshot:'off'},projects:[{name:'owner-desktop',use:{viewport:{width:1440,height:1000}}},{name:'owner-mobile',use:{viewport:{width:390,height:844},isMobile:true,hasTouch:true}}],webServer:{cwd:fileURLToPath(new URL('..',import.meta.url)),command:'python -m foundation.staging.editor_relay',url:'http://127.0.0.1:5181',reuseExistingServer:false,timeout:10000},outputDir:'../foundation/.local/editor-test-results'});

@@ -10,7 +10,7 @@ function SearchIcon() {
   return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="1.8" /><path d="m16 16 5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>;
 }
 
-export default function App({ initialRecords }) {
+export default function App({ initialRecords, ownerToolbar, ownerAction, modeLabel = "Read-only" }) {
   const [data, setData] = useState(initialRecords ?? null);
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
@@ -19,7 +19,7 @@ export default function App({ initialRecords }) {
   const resultsHeading = useRef(null);
   const searchInput = useRef(null);
   useEffect(() => {
-    if (initialRecords !== undefined) return;
+    if (initialRecords !== undefined) { setData(initialRecords); return; }
     const controller = new AbortController();
     setError(''); setData(null);
     loadDataset(controller.signal).then(setData).catch(e => { if (e.name !== 'AbortError') setError(e.message); });
@@ -46,10 +46,11 @@ export default function App({ initialRecords }) {
         <a className="how-link" href="#how-it-works">How to read the list <ArrowIcon /></a></div>
     </header>
     <main>
+      {ownerToolbar}
       <section className="hero" aria-labelledby="page-title">
         <div className="hero-text"><p className="eyebrow">FOR THE LOVE OF THE CARDS</p><h1 id="page-title">Baseball Card<br /><em>Want List</em></h1>
           <p className="hero-description">Have something to trade? Find a set, a player, or a card number and see what’s on the list.</p>
-          <p className="collection-meta"><span className="live-dot" aria-hidden="true" />{data === null ? 'Loading collection' : `${records.length.toLocaleString()} sets & collecting lists`}<span aria-hidden="true">·</span>Read-only</p></div>
+          <p className="collection-meta"><span className="live-dot" aria-hidden="true" />{data === null ? 'Loading collection' : `${records.length.toLocaleString()} sets & collecting lists`}<span aria-hidden="true">·</span>{modeLabel}</p></div>
         <div className="hero-art" aria-hidden="true"><div className="collector-card"><div className="card-corner">OBC <span>CARD BY CARD</span></div><div className="baseball-diamond"><div className="diamond-line" /><span className="base home" /><span className="base first" /><span className="base second" /><span className="base third" /><div className="ball"><span /><span /></div></div><p>GOOD CARDS.<br />GOOD COMPANY.</p><div className="card-rule" /><small>A COLLECTOR’S TRADITION</small></div></div>
       </section>
       <section className="search-panel" aria-label="Search and filter the want list">
@@ -72,7 +73,7 @@ export default function App({ initialRecords }) {
         {error ? <div className="empty-state" role="alert"><h3>The list couldn’t be loaded</h3><p>{error}</p><button className="primary-button" onClick={() => setRetry(retry + 1)}>Try again</button></div>
           : data === null ? <div className="loading-state">Opening the card box…</div>
           : result.length === 0 ? <div className="empty-state"><span aria-hidden="true">⌕</span><h3>No matching lists</h3><p>Try fewer words or a different year, brand, or category.</p><button className="primary-button" onClick={clear}>Clear search &amp; filters</button></div>
-          : <><div className="results-grid">{pageRecords.map(record => <RecordCard key={record._key} record={record} query={filters.query} />)}</div>
+          : <><div className="results-grid">{pageRecords.map(record => <RecordCard key={record._key} record={record} query={filters.query} ownerAction={ownerAction?.(record)} />)}</div>
             {pageCount > 1 && <nav className="pagination" aria-label="Result pages"><button type="button" onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}>← Previous</button><span>Page {currentPage} of {pageCount}<small>Showing {(currentPage - 1) * PAGE_SIZE + 1}–{Math.min(currentPage * PAGE_SIZE, result.length)} of {result.length.toLocaleString()}</small></span><button type="button" onClick={() => changePage(currentPage + 1)} disabled={currentPage === pageCount}>Next →</button></nav>}</>}
       </section>
     </main>

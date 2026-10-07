@@ -1,0 +1,476 @@
+{
+  "checks": {
+    "public_write_rejected": true,
+    "private_read_rejected": true,
+    "diagnostic_api_still_gated": true,
+    "origin_protection": true,
+    "owner_login_without_operator_gate": true,
+    "new_future_record": true,
+    "lean_owner_read": true,
+    "owner_read_omits_source_blob": true,
+    "pending": true,
+    "read_recent": true,
+    "undo_current_revision_only": true,
+    "undo_pending": true,
+    "add_1": true,
+    "add_2": true,
+    "add_20": true,
+    "read_recent_metered": true,
+    "add_delta": true,
+    "add_returns_bounded_confirmed_delta": true,
+    "stale_undo_rejected": true,
+    "logout": true,
+    "writes_after_logout_rejected": true
+  },
+  "samples": [
+    {
+      "operation": "pending",
+      "started": "2026-10-07T23:35:35.901Z",
+      "ended": "2026-10-07T23:35:36.035Z",
+      "status": 200,
+      "client_wall_ms": 124.055,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 1.706
+    },
+    {
+      "operation": "undo_pending",
+      "started": "2026-10-07T23:35:37.185Z",
+      "ended": "2026-10-07T23:35:37.348Z",
+      "status": 200,
+      "client_wall_ms": 162.639,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 4.222
+    },
+    {
+      "operation": "add_1",
+      "started": "2026-10-07T23:35:38.401Z",
+      "ended": "2026-10-07T23:35:38.567Z",
+      "status": 200,
+      "client_wall_ms": 157.235,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 2.395
+    },
+    {
+      "operation": "add_2",
+      "started": "2026-10-07T23:35:39.617Z",
+      "ended": "2026-10-07T23:35:39.783Z",
+      "status": 200,
+      "client_wall_ms": 165.96,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 2.572
+    },
+    {
+      "operation": "add_20",
+      "started": "2026-10-07T23:35:40.836Z",
+      "ended": "2026-10-07T23:35:40.993Z",
+      "status": 200,
+      "client_wall_ms": 148.998,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 3.356
+    },
+    {
+      "operation": "pending",
+      "started": "2026-10-07T23:35:42.047Z",
+      "ended": "2026-10-07T23:35:42.236Z",
+      "status": 200,
+      "client_wall_ms": 170.091,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "undo_pending",
+      "started": "2026-10-07T23:35:43.418Z",
+      "ended": "2026-10-07T23:35:43.600Z",
+      "status": 200,
+      "client_wall_ms": 181.14,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "add_1",
+      "started": "2026-10-07T23:35:44.653Z",
+      "ended": "2026-10-07T23:35:44.885Z",
+      "status": 200,
+      "client_wall_ms": 223.73,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 2.592
+    },
+    {
+      "operation": "add_2",
+      "started": "2026-10-07T23:35:45.935Z",
+      "ended": "2026-10-07T23:35:46.092Z",
+      "status": 200,
+      "client_wall_ms": 157.104,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 2.8
+    },
+    {
+      "operation": "add_20",
+      "started": "2026-10-07T23:35:47.145Z",
+      "ended": "2026-10-07T23:35:47.327Z",
+      "status": 200,
+      "client_wall_ms": 173.794,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 2.898
+    },
+    {
+      "operation": "pending",
+      "started": "2026-10-07T23:35:48.380Z",
+      "ended": "2026-10-07T23:35:48.515Z",
+      "status": 200,
+      "client_wall_ms": 126.53,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "undo_pending",
+      "started": "2026-10-07T23:35:49.735Z",
+      "ended": "2026-10-07T23:35:49.931Z",
+      "status": 200,
+      "client_wall_ms": 195.28,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 2.645
+    },
+    {
+      "operation": "add_1",
+      "started": "2026-10-07T23:35:50.983Z",
+      "ended": "2026-10-07T23:35:51.146Z",
+      "status": 200,
+      "client_wall_ms": 157.946,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "add_2",
+      "started": "2026-10-07T23:35:52.196Z",
+      "ended": "2026-10-07T23:35:52.343Z",
+      "status": 200,
+      "client_wall_ms": 146.803,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "add_20",
+      "started": "2026-10-07T23:35:53.395Z",
+      "ended": "2026-10-07T23:35:53.547Z",
+      "status": 200,
+      "client_wall_ms": 147.282,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 3.238
+    },
+    {
+      "operation": "pending",
+      "started": "2026-10-07T23:35:54.599Z",
+      "ended": "2026-10-07T23:35:54.735Z",
+      "status": 200,
+      "client_wall_ms": 130.599,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "undo_pending",
+      "started": "2026-10-07T23:35:55.935Z",
+      "ended": "2026-10-07T23:35:56.158Z",
+      "status": 200,
+      "client_wall_ms": 221.954,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 9.788
+    },
+    {
+      "operation": "add_1",
+      "started": "2026-10-07T23:35:57.209Z",
+      "ended": "2026-10-07T23:35:57.339Z",
+      "status": 200,
+      "client_wall_ms": 126.128,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "add_2",
+      "started": "2026-10-07T23:35:58.389Z",
+      "ended": "2026-10-07T23:35:58.518Z",
+      "status": 200,
+      "client_wall_ms": 128.729,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "add_20",
+      "started": "2026-10-07T23:35:59.568Z",
+      "ended": "2026-10-07T23:35:59.767Z",
+      "status": 200,
+      "client_wall_ms": 198.095,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "pending",
+      "started": "2026-10-07T23:36:00.818Z",
+      "ended": "2026-10-07T23:36:00.955Z",
+      "status": 200,
+      "client_wall_ms": 118.843,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "undo_pending",
+      "started": "2026-10-07T23:36:02.103Z",
+      "ended": "2026-10-07T23:36:02.262Z",
+      "status": 200,
+      "client_wall_ms": 159.003,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "add_1",
+      "started": "2026-10-07T23:36:03.314Z",
+      "ended": "2026-10-07T23:36:03.458Z",
+      "status": 200,
+      "client_wall_ms": 141.44,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "add_2",
+      "started": "2026-10-07T23:36:04.508Z",
+      "ended": "2026-10-07T23:36:04.638Z",
+      "status": 200,
+      "client_wall_ms": 129.997,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "add_20",
+      "started": "2026-10-07T23:36:05.689Z",
+      "ended": "2026-10-07T23:36:05.861Z",
+      "status": 200,
+      "client_wall_ms": 169.662,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "add_1",
+      "started": "2026-10-07T23:36:06.911Z",
+      "ended": "2026-10-07T23:36:07.063Z",
+      "status": 200,
+      "client_wall_ms": 151.963,
+      "instrumented": true,
+      "rows_read": 15,
+      "rows_written": 12,
+      "d1_duration_ms": 4.9535
+    },
+    {
+      "operation": "add_2",
+      "started": "2026-10-07T23:36:08.113Z",
+      "ended": "2026-10-07T23:36:08.257Z",
+      "status": 200,
+      "client_wall_ms": 143.411,
+      "instrumented": true,
+      "rows_read": 19,
+      "rows_written": 16,
+      "d1_duration_ms": 5.7425
+    },
+    {
+      "operation": "add_20",
+      "started": "2026-10-07T23:36:09.307Z",
+      "ended": "2026-10-07T23:36:09.460Z",
+      "status": 200,
+      "client_wall_ms": 151.172,
+      "instrumented": true,
+      "rows_read": 73,
+      "rows_written": 88,
+      "d1_duration_ms": 5.959300000000001
+    },
+    {
+      "operation": "pending",
+      "started": "2026-10-07T23:36:10.510Z",
+      "ended": "2026-10-07T23:36:10.628Z",
+      "status": 200,
+      "client_wall_ms": 118.225,
+      "instrumented": true,
+      "rows_read": 12,
+      "rows_written": 9,
+      "d1_duration_ms": 3.7253
+    },
+    {
+      "operation": "undo_pending",
+      "started": "2026-10-07T23:36:11.803Z",
+      "ended": "2026-10-07T23:36:11.976Z",
+      "status": 200,
+      "client_wall_ms": 172.549,
+      "instrumented": true,
+      "rows_read": 13,
+      "rows_written": 9,
+      "d1_duration_ms": 5.6435
+    },
+    {
+      "operation": "add_delta",
+      "started": "2026-10-07T23:36:13.026Z",
+      "ended": "2026-10-07T23:36:13.172Z",
+      "status": 200,
+      "client_wall_ms": 146.245,
+      "instrumented": true,
+      "rows_read": 19,
+      "rows_written": 16,
+      "d1_duration_ms": 5.615200000000001
+    }
+  ],
+  "start": "2026-10-07T23:35:34.848Z",
+  "end": "2026-10-07T23:36:13.268Z",
+  "full_import": false,
+  "production_cutover": false,
+  "authentication_redesigned": false,
+  "summary": {
+    "add_1": {
+      "raw_runs": 5,
+      "successes": 5,
+      "cpu_observations": 2,
+      "median_cpu_ms": 2.4935,
+      "max_cpu_ms": 2.592,
+      "median_wall_ms": 157.235,
+      "metered": [
+        {
+          "rows_read": 15,
+          "rows_written": 12,
+          "d1_duration_ms": 4.9535
+        }
+      ]
+    },
+    "add_2": {
+      "raw_runs": 5,
+      "successes": 5,
+      "cpu_observations": 2,
+      "median_cpu_ms": 2.686,
+      "max_cpu_ms": 2.8,
+      "median_wall_ms": 146.803,
+      "metered": [
+        {
+          "rows_read": 19,
+          "rows_written": 16,
+          "d1_duration_ms": 5.7425
+        }
+      ]
+    },
+    "add_20": {
+      "raw_runs": 5,
+      "successes": 5,
+      "cpu_observations": 3,
+      "median_cpu_ms": 3.238,
+      "max_cpu_ms": 3.356,
+      "median_wall_ms": 169.662,
+      "metered": [
+        {
+          "rows_read": 73,
+          "rows_written": 88,
+          "d1_duration_ms": 5.959300000000001
+        }
+      ]
+    },
+    "add_delta": {
+      "raw_runs": 0,
+      "successes": 0,
+      "cpu_observations": 0,
+      "median_cpu_ms": null,
+      "max_cpu_ms": null,
+      "median_wall_ms": null,
+      "metered": [
+        {
+          "rows_read": 19,
+          "rows_written": 16,
+          "d1_duration_ms": 5.615200000000001
+        }
+      ]
+    },
+    "pending": {
+      "raw_runs": 5,
+      "successes": 5,
+      "cpu_observations": 1,
+      "median_cpu_ms": 1.706,
+      "max_cpu_ms": 1.706,
+      "median_wall_ms": 126.53,
+      "metered": [
+        {
+          "rows_read": 12,
+          "rows_written": 9,
+          "d1_duration_ms": 3.7253
+        }
+      ]
+    },
+    "undo_pending": {
+      "raw_runs": 5,
+      "successes": 5,
+      "cpu_observations": 3,
+      "median_cpu_ms": 4.222,
+      "max_cpu_ms": 9.788,
+      "median_wall_ms": 181.14,
+      "metered": [
+        {
+          "rows_read": 13,
+          "rows_written": 9,
+          "d1_duration_ms": 5.6435
+        }
+      ]
+    }
+  }
+}

@@ -21,7 +21,7 @@ function ComponentList({ group, inherited, query }) {
   const status = text(group.list_type) || inherited;
   const values = [...asArray(group.card_numbers), ...asArray(group.card_ranges), ...asArray(group.items)];
   const type = status === 'uncertain' ? text(group.source_list_type) : status;
-  const title = status === 'complete' ? 'Complete portion' : status === 'uncertain'
+  const title = status === 'pending' ? 'Already expected — please do not send duplicates' : status === 'complete' ? 'Complete portion' : status === 'uncertain'
     ? `Uncertain ${type === 'have_list' ? 'owned items' : type === 'want_list' ? 'wanted items' : 'source information'}`
     : STATUS[status]?.heading || 'Source information';
   return <section className={`component-list ${status}`} aria-label={group.label || title}>
@@ -32,7 +32,7 @@ function ComponentList({ group, inherited, query }) {
   </section>;
 }
 
-export default function RecordCard({ record, query = '' }) {
+export default function RecordCard({ record, query = '', ownerAction }) {
   const status = text(record.list_type) || 'needs_review';
   const info = STATUS[status] || STATUS.needs_review;
   const values = [...asArray(record.card_numbers), ...asArray(record.card_ranges), ...asArray(record.items)];
@@ -67,5 +67,6 @@ export default function RecordCard({ record, query = '' }) {
       {!record.normalized_wording && text(record.payload) && <p>{record.payload}</p>}
       {groups(record.source_refs).length > 0 && <p className="source-reference">Source reference: {record.source_refs.map(ref => `paragraph ${ref.paragraph}, line ${ref.line}`).join('; ')}.</p>}
     </details>}
+    {ownerAction}
   </article>;
 }

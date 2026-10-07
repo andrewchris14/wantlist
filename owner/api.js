@@ -1,0 +1,16 @@
+export async function request(path,body){
+ let response;
+ try{response=await fetch(path,{credentials:'same-origin',cache:'no-store',headers:body?{'Content-Type':'application/json'}:{},...(body?{method:'POST',body:JSON.stringify(body)}:{})});}
+ catch{throw Object.assign(Error('We couldn’t connect. Your change is not confirmed. Try again when you’re connected.'),{retry:true});}
+ if(!response.ok){
+  const message=response.status===401&&path==='/login'?'That access code didn’t work. Please try again.':response.status===401?'This computer needs to be verified again. Enter your Owner access code to continue.':response.status===409?'This set changed since you opened it. Open it again before making this change.':response.status===429?'Please wait a little before trying to sign in again.':response.status===400?'This change couldn’t be saved. Check the entries. A Complete set cannot still have cards needed or expected.':'We couldn’t confirm your change. Please try again.';
+  throw Object.assign(Error(message),{status:response.status,retry:response.status>=500});
+ }
+ try{return await response.json();}
+ catch{throw Object.assign(Error('We couldn’t read the result. Please try again.'),{retry:true});}
+}
+export async function publicRecords(){
+ let result=[],after='';
+ do{const page=await request('/public/page?after='+encodeURIComponent(after));result.push(...page.records);after=page.next;}while(after);
+ return result;
+}

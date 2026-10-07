@@ -1,0 +1,85 @@
+{
+  "actual_d1": true,
+  "plans": {
+    "owner_record_header": [
+      {
+        "id": 3,
+        "parent": 0,
+        "notused": 39,
+        "detail": "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+      }
+    ],
+    "owner_record_groups": [
+      {
+        "id": 3,
+        "parent": 0,
+        "notused": 62,
+        "detail": "SEARCH record_groups USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)"
+      }
+    ],
+    "owner_record_items": [
+      {
+        "id": 6,
+        "parent": 0,
+        "notused": 62,
+        "detail": "SEARCH g USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)"
+      },
+      {
+        "id": 13,
+        "parent": 0,
+        "notused": 62,
+        "detail": "SEARCH i USING INDEX items_group_value (group_id=?)"
+      },
+      {
+        "id": 27,
+        "parent": 0,
+        "notused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ],
+    "recent_history": [
+      {
+        "id": 7,
+        "parent": 0,
+        "notused": 224,
+        "detail": "SCAN h USING INDEX history_recent"
+      },
+      {
+        "id": 10,
+        "parent": 0,
+        "notused": 46,
+        "detail": "SEARCH r USING INDEX sqlite_autoindex_records_1 (id=?)"
+      },
+      {
+        "id": 51,
+        "parent": 0,
+        "notused": 0,
+        "detail": "USE TEMP B-TREE FOR LAST 2 TERMS OF ORDER BY"
+      }
+    ],
+    "removed_records": [
+      {
+        "id": 4,
+        "parent": 0,
+        "notused": 216,
+        "detail": "SCAN records"
+      },
+      {
+        "id": 19,
+        "parent": 0,
+        "notused": 0,
+        "detail": "USE TEMP B-TREE FOR ORDER BY"
+      }
+    ],
+    "undo_history_by_id": [
+      {
+        "id": 3,
+        "parent": 0,
+        "notused": 39,
+        "detail": "SEARCH change_history USING INDEX sqlite_autoindex_change_history_1 (id=?)"
+      }
+    ]
+  },
+  "removed_records_note": "Small records-table scan/sort only; no items-table scan. No speculative indexes added.",
+  "history_order_note": "Explicit existing chronological history_recent index; actual D1 sorts only last two terms (timestamp ties). Undo safety uses saved revision plus atomic CAS."
+}

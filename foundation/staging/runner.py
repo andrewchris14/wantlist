@@ -20,7 +20,7 @@ def state():
     return json.loads(STATE.read_text())
 
 
-def deploy_staging(instrumented=True, benchmark_version=None):
+def deploy_staging(instrumented=True, benchmark_version=None, editor=False):
     benchmark_version = benchmark_version or 'cpu-review-' + secrets.token_hex(12)
     s = state()
     assert s['worker'] == WORKER
@@ -28,10 +28,21 @@ def deploy_staging(instrumented=True, benchmark_version=None):
     bindings = [{'type':'secret_text','name':'OWNER_AUTH_CONFIG','text':json.dumps(cfg)},
                 {'type':'secret_text','name':'PROBE_KEY','text':s['operator_key']},
                 {'type':'plain_text','name':'STAGING_ONLY','text':'true'},
+                {'type':'plain_text','name':'STAGING_EDITOR','text':'true' if editor else 'false'},
                 {'type':'plain_text','name':'STAGING_BENCH_VERSION','text':benchmark_version},
                 {'type':'plain_text','name':'STAGING_METRICS','text':'true' if instrumented else 'false'},
                 {'type':'d1','name':'DB','id':s['database_id']}]
-    modules = {name: (ROOT / 'foundation/staging' / name).read_text() for name in ('worker.mjs','auth.js','records.js')}
+    modules = {name: (ROOT / 'foundation/staging' / name).read_text() for name in ('worker.mjs','auth.js','records.js','owner.js','editor-assets.js')}
+    if editor:
+        assets={}
+        dist=ROOT/'foundation/.local/editor-dist'
+        for p in dist.rglob('*'):
+            if p.is_file():
+                key='/' + str(p.relative_to(dist))
+                assets[key]={'body':p.read_text(),'type':'text/html; charset=utf-8' if p.suffix=='.html' else 'text/css; charset=utf-8' if p.suffix=='.css' else 'application/javascript; charset=utf-8'}
+        assert '/index.html' in assets,'Build the isolated editor first'
+        assets['/']=assets['/index.html']
+        modules['editor-assets.js']='export const editorAssets='+json.dumps(assets)+';'
     deploy(WORKER, modules, 'worker.mjs', bindings)
     endpoint(WORKER, True)
     return benchmark_version

@@ -1,5 +1,6 @@
 // Staging data-layer reference, not a public production API or editor.
 import {hash} from './auth.js';
+import {inverseOf} from './owner.js';
 const fail=(code='INVALID')=>{const e=Error(code);e.code=code;throw e;};
 const statement=(sql,...params)=>({sql,params});
 const metadataKeys=['year','brand','set_name','category','section','notes','prefixes','uncertainty','set_size'];
@@ -42,9 +43,18 @@ export async function mutate(db,input,preflight,prefetchedRow){
   const receipt=control?.result_json?control:null;
   if(receipt){if(receipt.request_sha256!==requestHash)fail('CONFLICT');return {...JSON.parse(receipt.result_json),replayed:true};}
   if(!control?.completed)fail('CONFLICT');
+  let undoing=false;
+  if(input.op==='undo'){
+    if(typeof input.history_id!=='string'||typeof input.record_id!=='string')fail();
+    const h=await db.prepare('SELECT * FROM change_history WHERE id=? AND record_id=?').bind(input.history_id,input.record_id).first();
+    if(!h)fail();
+    const inverse=inverseOf(h);if(!inverse||JSON.parse(h.after_json)._record_revision!==input.revision)fail('CONFLICT');
+    // CAS in the existing atomic delta commit rejects concurrent/newer saves.
+    input={...input,...inverse};undoing=true;
+  }
   if(input.op==='add')return addOne(db,input,requestHash,prefetchedRow);
   if(['remove_item','restore_item'].includes(input.op))return removeRestoreOne(db,input,requestHash,prefetchedRow);
-  if(input.op==='transition')return transitionOne(db,input,requestHash,prefetchedRow);
+  if(input.op==='transition')return transitionOne(db,input,requestHash,prefetchedRow,undoing);
   if(['edit','delete','restore'].includes(input.op))return editHeaderOne(db,input,requestHash,prefetchedRow);
   const stamp=new Date().toISOString(),sql=[];let r,before={},after={},itemId=null;
   if(input.op==='create'){
@@ -78,7 +88,7 @@ export async function mutate(db,input,preflight,prefetchedRow){
   if(input.op!=='create')sql.unshift(statement(`INSERT INTO mutation_receipts VALUES(?,?,?,CASE WHEN (SELECT revision FROM records WHERE id=?)=? THEN 1 ELSE 0 END,?,?)`,input.request_id,requestHash,r.id,r.id,input.revision,JSON.stringify(result),stamp));
   else sql.push(statement('INSERT INTO mutation_receipts VALUES(?,?,?,1,?,?)',input.request_id,requestHash,r.id,JSON.stringify(result),stamp));
   if(input.op!=='create')sql.push(statement('UPDATE records SET content_json=?,list_type=?,revision=?,updated_at=?,deleted_at=? WHERE id=?',JSON.stringify(r.content),r.list_type,r.revision,stamp,r.deleted_at,r.id));
-  sql.push(statement('INSERT INTO change_history VALUES(?,?,?,?,?,?,?,?)',crypto.randomUUID(),r.id,itemId,'owner',input.op,JSON.stringify(before),JSON.stringify(after),stamp));
+  sql.push(statement('INSERT INTO change_history VALUES(?,?,?,?,?,?,?,?)',crypto.randomUUID(),r.id,itemId,'owner',input.op,JSON.stringify(before),JSON.stringify({...after,_record_revision:r.revision}),stamp));
   sql.push(statement(`INSERT INTO public_records VALUES(?,?,?,?,?) ON CONFLICT(record_id) DO UPDATE SET revision=excluded.revision,updated_at=excluded.updated_at,deleted=excluded.deleted,public_json=excluded.public_json`,r.id,r.revision,stamp,r.deleted_at?1:0,JSON.stringify(publicProjection(r))));
   // Consolidate item inserts; at most 96 bindings per statement.
   const inserts=sql.filter(s=>s.sql==='INSERT INTO items VALUES(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL)');
@@ -99,11 +109,11 @@ export async function mutate(db,input,preflight,prefetchedRow){
 
 // Common card-state changes must not deserialize/serialize a whole large set.
 // D1 locates the affected JSON entry; only a path and one item leave D1.
-async function transitionOne(db,input,requestHash,prefetched){
+async function transitionOne(db,input,requestHash,prefetched,undoing=false){
   if(!Number.isInteger(input.revision)||input.revision<1||!['wanted','pending','owned'].includes(input.state))fail();
   const row=prefetched ?? await readtransitionOne(db,input).first();
   if(!row||row.record_revision!==input.revision||row.record_deleted)fail('CONFLICT');
-  if(!row.actionable||row.deleted_at||!({wanted:['pending','owned'],pending:['wanted','owned'],owned:['wanted']}[row.state]||[]).includes(input.state))fail();
+  if(!row.actionable||row.deleted_at||!({wanted:['pending','owned'],pending:['wanted','owned'],owned:['wanted']}[row.state]||[]).includes(input.state)&&!(undoing&&row.state==='owned'&&input.state==='pending'))fail();
   if(row.record_list_type==='complete'&&['wanted','pending'].includes(input.state))fail();
   if(!row.public_path||row.public_revision!==input.revision)fail('CONFLICT');
   const stamp=new Date().toISOString(),revision=input.revision+1;
@@ -115,7 +125,7 @@ async function transitionOne(db,input,requestHash,prefetched){
     statement(`INSERT INTO mutation_receipts VALUES(?,?,?,CASE WHEN (SELECT revision FROM records WHERE id=?)=? THEN 1 ELSE 0 END,?,?)`,input.request_id,requestHash,row.record_id,row.record_id,input.revision,JSON.stringify(result),stamp),
     statement('UPDATE items SET state=?,pending_at=?,received_at=? WHERE id=?',after.state,after.pending_at,after.received_at,row.id),
     statement('UPDATE records SET revision=?,updated_at=? WHERE id=?',revision,stamp,row.record_id),
-    statement('INSERT INTO change_history VALUES(?,?,?,?,?,?,?,?)',crypto.randomUUID(),row.record_id,row.id,'owner','transition',JSON.stringify(before),JSON.stringify(after),stamp),
+    statement('INSERT INTO change_history VALUES(?,?,?,?,?,?,?,?)',crypto.randomUUID(),row.record_id,row.id,'owner','transition',JSON.stringify(before),JSON.stringify({...after,_record_revision:revision}),stamp),
     statement("UPDATE public_records SET revision=?,updated_at=?,public_json=json_set(public_json,'$.revision',?,'$.updated_at',?, ?,json(?)) WHERE record_id=?",revision,stamp,revision,stamp,row.public_path,JSON.stringify(published),row.record_id)
   ];
   try{await db.batch(statements.map(s=>db.prepare(s.sql).bind(...s.params)));}
@@ -154,7 +164,7 @@ async function editHeaderOne(db,input,requestHash,prefetched){
   const statements=[
     statement(`INSERT INTO mutation_receipts VALUES(?,?,?,CASE WHEN (SELECT revision FROM records WHERE id=?)=? THEN 1 ELSE 0 END,?,?)`,input.request_id,requestHash,row.id,row.id,input.revision,JSON.stringify(result),stamp),
     statement('UPDATE records SET content_json='+ (keys.length?'json_set(content_json'+keys.map(()=>',?,json(?)').join('')+')':'content_json')+',list_type=?,revision=?,updated_at=?,deleted_at=? WHERE id=?',...keys.flatMap(k=>['$.'+k,JSON.stringify(input.metadata[k])]),mode,revision,stamp,deleted,row.id),
-    statement('INSERT INTO change_history VALUES(?,?,?,?,?,?,?,?)',crypto.randomUUID(),row.id,null,'owner',input.op,JSON.stringify(before),JSON.stringify(after),stamp),
+    statement('INSERT INTO change_history VALUES(?,?,?,?,?,?,?,?)',crypto.randomUUID(),row.id,null,'owner',input.op,JSON.stringify(before),JSON.stringify({...after,_record_revision:revision}),stamp),
     statement('UPDATE public_records SET revision=?,updated_at=?,deleted=?,public_json=json_set(public_json'+paths+') WHERE record_id=?',revision,stamp,deleted?1:0,...pairs.flatMap(([key,value])=>['$.'+key,JSON.stringify(value)]),row.id)
   ];
   try{await db.batch(statements.map(s=>db.prepare(s.sql).bind(...s.params)));}
@@ -207,7 +217,7 @@ async function addOne(db,input,requestHash,prefetched){
   if(!groupPath)patch=statement(`UPDATE public_records SET revision=?,updated_at=?,public_json=json_set(public_json,'$.groups',json((SELECT json_group_array(json(body)) FROM
     (SELECT j.value body,CASE g.kind WHEN 'primary' THEN 0 WHEN 'mixed' THEN 1 ELSE 2 END kind_order,g.position position FROM json_each(public_json,'$.groups') j JOIN record_groups g ON g.id=json_extract(j.value,'$.id')
      UNION ALL SELECT json_object('id',id,'kind',kind,'list_type',list_type,'entries',json(?)),CASE kind WHEN 'primary' THEN 0 WHEN 'mixed' THEN 1 ELSE 2 END,position FROM record_groups WHERE id=? ORDER BY kind_order,position))), '$.revision',?,'$.updated_at',?) WHERE record_id=?`,revision,stamp,JSON.stringify(published),gid,revision,stamp,row.id);
-  return commitDelta(db,input,requestHash,row.id,revision,stamp,null,{}, {items:entries},statements,patch);
+  return commitDelta(db,input,requestHash,row.id,revision,stamp,null,{}, {items:entries},statements,patch,{added_items:entries.map(i=>({...publicItem(i),group_id:gid,deleted_at:null}))});
 }
 function publicItem(i){return Object.fromEntries(['id','value','position','field_key','state','actionable','pending_at','received_at'].map(k=>[k,i[k]]));}
 async function removeRestoreOne(db,input,requestHash,prefetched){
@@ -215,7 +225,7 @@ async function removeRestoreOne(db,input,requestHash,prefetched){
   const row=prefetched ?? await readremoveRestoreOne(db,input).first();
   if(!row||row.record_revision!==input.revision||row.public_revision!==input.revision||row.record_deleted)fail('CONFLICT');
   const restoring=input.op==='restore_item';
-  if(restoring?(!row.deleted_at||(row.record_list_type==='complete'&&['wanted','pending'].includes(row.state))):!!row.deleted_at)fail();
+  if(restoring?(!row.deleted_at||(row.record_list_type==='complete'&&(['wanted','pending'].includes(row.state)||(!row.actionable&&row.group_list_type==='want_list')))):!!row.deleted_at)fail();
   const location=await db.prepare(`SELECT '$.groups['||g.key||'].entries' group_path,
     (SELECT key FROM json_each(g.value,'$.entries') WHERE json_extract(value,'$.id')=?) item_index,
     (SELECT id FROM items WHERE group_id=? AND value=? AND id<>? AND deleted_at IS NULL LIMIT 1) duplicate,
@@ -235,11 +245,11 @@ async function removeRestoreOne(db,input,requestHash,prefetched){
   }
   return commitDelta(db,input,requestHash,row.record_id,revision,stamp,row.id,before,after,[statement('UPDATE items SET deleted_at=? WHERE id=?',after.deleted_at,row.id)],patch);
 }
-async function commitDelta(db,input,requestHash,id,revision,stamp,itemId,before,after,changes,projection){
-  const result={saved:true,record_id:id,revision};
+async function commitDelta(db,input,requestHash,id,revision,stamp,itemId,before,after,changes,projection,extra={}){
+  const result={saved:true,record_id:id,revision,...extra};
   const statements=[statement(`INSERT INTO mutation_receipts VALUES(?,?,?,CASE WHEN (SELECT revision FROM records WHERE id=?)=? THEN 1 ELSE 0 END,?,?)`,input.request_id,requestHash,id,id,input.revision,JSON.stringify(result),stamp),...changes,
     statement('UPDATE records SET revision=?,updated_at=? WHERE id=?',revision,stamp,id),
-    statement('INSERT INTO change_history VALUES(?,?,?,?,?,?,?,?)',crypto.randomUUID(),id,itemId,'owner',input.op,JSON.stringify(before),JSON.stringify(after),stamp),projection];
+    statement('INSERT INTO change_history VALUES(?,?,?,?,?,?,?,?)',crypto.randomUUID(),id,itemId,'owner',input.op,JSON.stringify(before),JSON.stringify({...after,_record_revision:revision}),stamp),projection];
   try{await db.batch(statements.map(s=>db.prepare(s.sql).bind(...s.params)));}
   catch(error){const existing=await db.prepare('SELECT request_sha256,result_json FROM mutation_receipts WHERE id=?').bind(input.request_id).first();if(existing&&existing.request_sha256===requestHash)return {...JSON.parse(existing.result_json),replayed:true};if(/CHECK constraint|UNIQUE constraint/i.test(error.message))fail('CONFLICT');throw error;}
   return result;
@@ -261,7 +271,7 @@ function readaddOne(db,input){return db.prepare(`SELECT r.id,r.revision,r.list_t
     g.id group_id,g.kind,g.position FROM records r JOIN public_records p ON p.record_id=r.id
     LEFT JOIN record_groups g ON g.record_id=r.id AND g.list_type=? WHERE r.id=? ORDER BY CASE g.kind WHEN 'primary' THEN 0 WHEN 'mixed' THEN 1 ELSE 2 END,g.position LIMIT 1`).bind((input.state||'wanted')==='wanted'?'want_list':'have_list',typeof input.record_id==='string'?input.record_id:null);}
 
-function readremoveRestoreOne(db,input){return db.prepare(`SELECT i.*,g.record_id,r.revision record_revision,r.list_type record_list_type,r.deleted_at record_deleted,p.revision public_revision
+function readremoveRestoreOne(db,input){return db.prepare(`SELECT i.*,g.record_id,g.list_type group_list_type,r.revision record_revision,r.list_type record_list_type,r.deleted_at record_deleted,p.revision public_revision
     FROM items i JOIN record_groups g ON g.id=i.group_id JOIN records r ON r.id=g.record_id JOIN public_records p ON p.record_id=r.id
     WHERE i.id=? AND g.record_id=?`).bind(typeof input.item_id==='string'?input.item_id:null,typeof input.record_id==='string'?input.record_id:null);}
 

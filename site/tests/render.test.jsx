@@ -88,3 +88,9 @@ it('loads the site data asynchronously and provides retry on failure', async () 
   expect(await screen.findByText('Blue Border Griffey', { selector: 'li' })).toBeVisible();
   vi.unstubAllGlobals();
 });
+
+it('supplied records update when a staging read or save finishes', async () => {
+  const {rerender}=render(<App initialRecords={[]} />);
+  rerender(<App initialRecords={[{id:'new-owner-record',year:'2027',brand:'Topps',set_name:'Future practice set',category:'baseball_cards',list_type:'want_list',card_numbers:['47']}]} />);
+  expect(await screen.findByRole('heading',{name:'Future practice set'})).toBeInTheDocument();
+});

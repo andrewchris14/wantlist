@@ -1,4 +1,9 @@
-# OBC wantlists — read-only website
+# OBC wantlists — public read-only website
+
+**Phase 3B.3 adds a separate staging-only owner preview.** The public build still
+loads its approved static JSON and has no owner login or database dependency.
+See [the staging editor, review instructions, evidence and limitations](docs/PHASE_3B3.md).
+No full import or production cutover is authorized.
 
 Phase 3B.1 adds an isolated local storage/authentication foundation alongside the
 approved static site. It does **not** change the public data source or create
@@ -12,7 +17,7 @@ owner-created sets, indexed operations, size growth and free-tier usage estimate
 Reproducible normalized collecting data rebuilt from the user-provided **Wantlists 10-5-26.docx**.
 The Word document and the user's 23 reviewed interpretations are authoritative. No external checklists or
 Blogger data were used. The Phase 3A public website reads the committed dataset without changing
-normalization semantics. Editing and authentication are reserved for later phases.
+normalization semantics. Production editing and authentication remain unactivated; their staging preview is isolated.
 
 ## Website development
 
@@ -25,7 +30,7 @@ npm run dev -- --host 0.0.0.0 --port 5173 --strictPort
 
 Vite prints the local development address. The app is React with plain CSS; all 3,392 records are
 searched in the browser, with 30 results rendered per page. No database, credentials, backend service,
-or external card database is needed. There are no editing, authentication, Pending, or trade features.
+or external card database is needed. The public build has no editing, authentication, Pending, or trade features.
 
 Run the website tests:
 
@@ -64,7 +69,7 @@ raw Word source → import_docx.py → normalization + reviewed corrections
 `site/model.js` handles indexing, selection, facets, and sorting independently of React.
 `site/RecordCard.jsx` renders record and component ownership semantics; `site/App.jsx` contains
 the read-only browse controls. A future data service can replace the loader without replacing these
-public components. No future admin or trade infrastructure has been implemented speculatively.
+public components. The optional owner hooks are used only by the separate staging entry point; trade workflow infrastructure is not implemented.
 
 Search is case/spacing/punctuation tolerant and requires all entered words to match across normalized
 fields, names, notes, prefixes, and explicit mixed components. Numeric tokens match exactly: `12` does
@@ -165,3 +170,33 @@ Topps complete set are distinct records, not duplicates.
 
 Never manually edit generated JSON to correct source interpretation: change the normalization or
 reviewed correction logic, then regenerate and run the checks.
+
+
+## Staging owner preview (technical operator only)
+
+Dad uses the website; these commands are for the technical recovery person.
+They do not change `npm run dev`, `npm run build`, or the public data loader.
+No extra dependencies are required.
+
+```sh
+npm run build:owner
+# Only when a temporary staging review is authorized:
+python -m foundation.staging.editor_preview --enable
+npm run test:owner:browser
+python -m foundation.staging.editor_preview --disable
+```
+
+The separate bundle is generated into ignored `foundation/.local/editor-dist/`.
+The harness requires the existing secure, ignored staging checkpoint and scoped
+Cloudflare environment bindings. Never paste credentials into code, GitHub or URLs.
+Use the disposable staging access code in the login form; never a production code.
+The browser suite contacts actual staging Worker/D1 through a loopback-only test
+transport because Chromium cannot directly use this environment's egress proxy.
+It preserves the real HTTPS browser origin and secure cookie behavior. It is not a
+mock database or a production proxy. Browser traces/HAR are disabled to protect
+login material. Tests reset disposable staging throttle counters between cases;
+this is not a login bypass in the application.
+
+Keep staging disabled outside a deliberate test/review window. The public site
+remains independent even during a staging review. Full baseline import, production
+owner deployment and public data cutover each need separate approval.

@@ -1,5 +1,7 @@
-// Isolated staging backend. No production site integration or Dad-facing editor.
+// Isolated staging backend and optional owner preview. No production integration.
 import {verifyCredential, throttle, issue, validate, cookieToken, hash, config, logoutCookie} from './auth.js';
+import {ownerRecord,recentOwner} from './owner.js';
+import {editorAssets} from './editor-assets.js';
 import {mutate, mutationReads, openRecord, catalog, publicProjection} from './records.js';
 let operatorConfig;
 async function operatorVerifier(key){
@@ -10,10 +12,17 @@ const json = (body, status=200, headers={}) => Response.json(body,{status,header
 async function handle(request,env){
   if(env.STAGING_ONLY !== 'true') return json({error:'Staging only'},503);
   const url=new URL(request.url), origin=url.origin;
-  // Operator gate isolates ALL staging routes, including the test-only batch tool.
+  // Optional staging editor has no operator key in its client. Diagnostic routes
+  // retain the extra operator gate; owner APIs still require owner authorization.
+  const editor=env.STAGING_EDITOR==='true';
+  if(editor&&request.method==='GET'&&Object.hasOwn(editorAssets,url.pathname)){
+    const asset=editorAssets[url.pathname];return new Response(asset.body,{headers:{'Content-Type':asset.type,'Cache-Control':'no-store','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",'X-Content-Type-Options':'nosniff'}});
+  }
+  const ownerRoutes=new Set(['/login','/session','/logout','/catalog','/owner/record','/owner/recent','/action','/public/catalog','/public/record','/public/page']);
+  // Operator gate isolates diagnostic routes and all requests in non-editor mode.
   // Comparing digests avoids ordinary string comparison of the operator secret.
   const supplied=request.headers.get('X-Staging-Probe') || '';
-  if(!env.PROBE_KEY || !await verifyCredential(supplied,await operatorVerifier(env.PROBE_KEY))) return json({error:'Forbidden'},403);
+  if(!(editor&&ownerRoutes.has(url.pathname))&&(!env.PROBE_KEY || !await verifyCredential(supplied,await operatorVerifier(env.PROBE_KEY)))) return json({error:'Forbidden'},403);
   if(request.method!=='GET' && request.headers.get('Origin')!==origin) return json({error:'Forbidden'},403);
   try {
     if(url.pathname==='/health') return json({staging:true,benchmark_version:env.STAGING_BENCH_VERSION});
@@ -49,10 +58,13 @@ async function handle(request,env){
     if(url.pathname==='/test/publish' && request.method==='POST') {
       const r=await openRecord(env.DB,body.record_id);if(!r)return json({error:'Not found'},404);
       // Guard baseline projection publication against stale reads atomically.
+      // Retain inventories internally for soft-delete recovery. Public read
+      // routes still hide deleted records/entries entirely.
+      const projection=publicProjection({...r,deleted_at:null});projection.deleted=!!r.deleted_at;
       const id='publish-guard-'+crypto.randomUUID();
       await env.DB.batch([
         env.DB.prepare("INSERT INTO foundation_meta VALUES(?,CASE WHEN (SELECT revision FROM records WHERE id=?)=? THEN '1' ELSE NULL END)").bind(id,r.id,r.revision),
-        env.DB.prepare('INSERT INTO public_records VALUES(?,?,?,?,?) ON CONFLICT(record_id) DO UPDATE SET revision=excluded.revision,updated_at=excluded.updated_at,deleted=excluded.deleted,public_json=excluded.public_json').bind(r.id,r.revision,r.updated_at,r.deleted_at?1:0,JSON.stringify(publicProjection(r))),
+        env.DB.prepare('INSERT INTO public_records VALUES(?,?,?,?,?) ON CONFLICT(record_id) DO UPDATE SET revision=excluded.revision,updated_at=excluded.updated_at,deleted=excluded.deleted,public_json=excluded.public_json').bind(r.id,r.revision,r.updated_at,r.deleted_at?1:0,JSON.stringify(projection)),
         env.DB.prepare('DELETE FROM foundation_meta WHERE key=?').bind(id)
       ]);
       return json({published:true,revision:r.revision});
@@ -70,6 +82,8 @@ async function handle(request,env){
       await env.DB.prepare('UPDATE auth_control SET generation=generation+1 WHERE id=1').run();
       return json({revoked:true},200,{'Set-Cookie':logoutCookie});
     }
+    if(url.pathname==='/owner/record'){const r=await ownerRecord(env.DB,url.searchParams.get('id'));return r?json(r):json({error:'Not found'},404);}
+    if(url.pathname==='/owner/recent')return json(await recentOwner(env.DB));
     if(url.pathname==='/catalog')return json({records:await catalog(env.DB)});
     if(url.pathname==='/record')return json(await openRecord(env.DB,url.searchParams.get('id')));
     if(url.pathname==='/recent')return json({changes:(await env.DB.prepare('SELECT id,record_id,action,created_at FROM change_history ORDER BY created_at DESC,id DESC LIMIT 20').all()).results});

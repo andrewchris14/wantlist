@@ -1,0 +1,172 @@
+{
+  "phase": "3B.3 staging only",
+  "checked_at": "2026-10-07T23:36:41.811066+00:00",
+  "approved_start_commit": "ca20add0ae071ced1668ac9e255e88e2fa7388f5",
+  "tests": {
+    "phase2": 21,
+    "foundation_python": 39,
+    "foundation_node": 35,
+    "website": 43,
+    "public_browser": 16,
+    "owner_browser": 8,
+    "actual_backend_checks": 330,
+    "actual_owner_api_checks": 21,
+    "targeted_raw_edits_successful": 25
+  },
+  "builds": {
+    "production": "passed",
+    "isolated_owner": "passed"
+  },
+  "workers": {
+    "wantlist-staging": {
+      "enabled": false,
+      "previews_enabled": false
+    },
+    "wantlist-staging-3b2-probe": {
+      "enabled": false,
+      "previews_enabled": false
+    }
+  },
+  "databases": [
+    {
+      "name": "wantlist-staging-import-budget",
+      "counts": {
+        "records": 27,
+        "items": 960,
+        "history": 0
+      },
+      "size_bytes": 1286144
+    },
+    {
+      "name": "wantlist-staging",
+      "counts": {
+        "records": 154,
+        "items": 4645,
+        "history": 1495
+      },
+      "size_bytes": 6737920
+    }
+  ],
+  "sample_import_state": {
+    "expected_records": 27,
+    "completed": 1
+  },
+  "foreign_key_violations": [],
+  "full_baseline_import_executed": false,
+  "production_cutover": false,
+  "current_public_source": "site/data-source.js -> static wantlists.json",
+  "historical_tracked_sources_byte_identical": true,
+  "source_sha256": {
+    "data/wantlists.json": "38a7ee7ad07ede1ae744dbe91b819c1bb78a294c70ca30f933bc66604d44c98a",
+    "data/raw/Wantlists 10-5-26.docx": "75d968d267b9ee551e3d45343d7ce8966e7ee81f82ff26a62eac5a7239e3cda7"
+  },
+  "backup_archive_retained": true,
+  "owner_access_code_expiration": "none",
+  "session_hours": {
+    "remembered": 2160,
+    "non_remembered": 8
+  },
+  "cpu_summary": {
+    "add_1": {
+      "raw_runs": 5,
+      "successes": 5,
+      "cpu_observations": 2,
+      "median_cpu_ms": 2.4935,
+      "max_cpu_ms": 2.592,
+      "median_wall_ms": 157.235,
+      "metered": [
+        {
+          "rows_read": 15,
+          "rows_written": 12,
+          "d1_duration_ms": 4.9535
+        }
+      ]
+    },
+    "add_2": {
+      "raw_runs": 5,
+      "successes": 5,
+      "cpu_observations": 2,
+      "median_cpu_ms": 2.686,
+      "max_cpu_ms": 2.8,
+      "median_wall_ms": 146.803,
+      "metered": [
+        {
+          "rows_read": 19,
+          "rows_written": 16,
+          "d1_duration_ms": 5.7425
+        }
+      ]
+    },
+    "add_20": {
+      "raw_runs": 5,
+      "successes": 5,
+      "cpu_observations": 3,
+      "median_cpu_ms": 3.238,
+      "max_cpu_ms": 3.356,
+      "median_wall_ms": 169.662,
+      "metered": [
+        {
+          "rows_read": 73,
+          "rows_written": 88,
+          "d1_duration_ms": 5.959300000000001
+        }
+      ]
+    },
+    "add_delta": {
+      "raw_runs": 0,
+      "successes": 0,
+      "cpu_observations": 0,
+      "median_cpu_ms": null,
+      "max_cpu_ms": null,
+      "median_wall_ms": null,
+      "metered": [
+        {
+          "rows_read": 19,
+          "rows_written": 16,
+          "d1_duration_ms": 5.615200000000001
+        }
+      ]
+    },
+    "pending": {
+      "raw_runs": 5,
+      "successes": 5,
+      "cpu_observations": 1,
+      "median_cpu_ms": 1.706,
+      "max_cpu_ms": 1.706,
+      "median_wall_ms": 126.53,
+      "metered": [
+        {
+          "rows_read": 12,
+          "rows_written": 9,
+          "d1_duration_ms": 3.7253
+        }
+      ]
+    },
+    "undo_pending": {
+      "raw_runs": 5,
+      "successes": 5,
+      "cpu_observations": 3,
+      "median_cpu_ms": 4.222,
+      "max_cpu_ms": 9.788,
+      "median_wall_ms": 181.14,
+      "metered": [
+        {
+          "rows_read": 13,
+          "rows_written": 9,
+          "d1_duration_ms": 5.6435
+        }
+      ]
+    }
+  },
+  "unverified_recovery": [
+    "native signed D1 SQL download / remote restore",
+    "Time Travel"
+  ],
+  "known_accepted_limitations": [
+    "11.656 ms first-edit-after-redeployment observation from Phase 3B.2",
+    "large-group restore approximately 5661\u20135799 reads"
+  ],
+  "human_ux_review_recommended": true,
+  "new_cloudflare_resources_created": false,
+  "paid_features_enabled": false
+}

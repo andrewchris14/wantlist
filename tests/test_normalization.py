@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'tools'))
 from import_docx import EXPECTED_SHA256, SOURCE, extract
-from normalize_wantlists import LIST_TYPES, build, new_record, review_markdown
+from normalize_wantlists import LIST_TYPES, build, category, new_record, review_markdown
 from source_corrections import DECISIONS, correct
 
 
@@ -210,6 +210,17 @@ class Phase2Tests(unittest.TestCase):
         r = new_record('1997 Example', '100104', [{'paragraph': 1, 'line': 1}], ['1997 Example: 100104'], 'baseball')
         self.assertEqual(r['list_type'], 'needs_review')
         self.assertIn('100104', r['review_reasons'][0])
+
+    def test_boundary_aware_non_sport_categories(self):
+        for title in ('2025 Topps Flagship (Costco)', '2024 Topps Flagship (Costco Exclusive)',
+                      '2023 Topps Flagship (Costco Exclusive)', '2000 Example Objects'):
+            self.assertEqual(category(title, 'baseball'), 'baseball_cards', title)
+        for title in ('1956 Topps Flags of the Word', '1956 Topps Jets',
+                      '1959 Topps Funny Valentines', '1956 Topps US Presidents', '1958 Topps Westerns'):
+            self.assertEqual(category(title, 'baseball'), 'non_sport_cards', title)
+        for title in ('2025 Topps Flagship (Costco)', '2024 Topps Flagship (Costco Exclusive)',
+                      '2023 Topps Flagship (Costco Exclusive)'):
+            self.assertEqual(self.find(title)['category'], 'baseball_cards')
 
     def test_generated_files_match_reproducible_build(self):
         expected = json.dumps(self.data, ensure_ascii=False, indent=2) + '\n'

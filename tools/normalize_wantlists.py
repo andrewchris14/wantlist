@@ -129,7 +129,9 @@ def category(title, section):
                        ('photo', 'photos'), ('stamp', 'stamps'), ('coin', 'coins'),
                        ('autograph', 'autograph_cards')]:
         if word in t: return kind
-    if re.search(r'star wars|star trek|superman|dukes of|hazzard|elvis|moonraker|rocky|wacky|kiss|bionic|jaws|battlestar|casper|yule|idiot|crazy|valentine|fabian|zorro|western|dogs|robin hood|crockett|president|frontier|tv|movie|lone ranger|hopalong|freedom|wild west|horrors|sky birds|indian gum|famous people|olympia|peppers|missiles|planes|jets|flags|the andy griffith|non-sport|bull durham', t):
+    # Match whole words/phrases, not fragments such as flags in Flagship,
+    # jets in objects, or TV inside another word. Preserve meaningful plurals.
+    if re.search(r'\b(?:star wars|star trek|superman|dukes of|hazzard|elvis|moonraker|rocky|wacky|kiss|bionic|jaws|battlestar|casper|yule|idiot|crazy|valentines?|fabian|zorro|westerns?|dogs|robin hood|crockett|presidents?|frontier|tv|movies?|lone ranger|hopalong|freedom|wild west|horrors|sky birds|indian gum|famous people|olympia|peppers|missiles|planes|jets|flags|the andy griffith|non-sport|bull durham)\b', t):
         return 'non_sport_cards'
     return 'baseball_cards' if section != 'other_collectibles' else 'other_collectibles'
 

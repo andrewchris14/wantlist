@@ -10,7 +10,9 @@ describe('authoritative data and search', () => {
   it('loads every Phase 2 record without modifying normalized fields', () => {
     expect(records).toHaveLength(3392);
     expect(data.records.find(r => r.id === 'p1566-l003').items).toEqual(['Blue Border Griffey']);
-    expect(data.records.find(r => r.id === 'p0672-l001').category).toBe('non_sport_cards');
+    for (const id of ['p0672-l001', 'p0694-l001', 'p0730-l001']) {
+      expect(data.records.find(r => r.id === id).category).toBe('baseball_cards');
+    }
   });
   it.each(['Topps', '2012 Topps', 'Griffey', 'Blue Border Griffey', 'Milwaukee Brewers', 'BCP', 'postcard', 'bobblehead', 'football'])('finds the requested example %s', query => {
     expect(find(query).length).toBeGreaterThan(0);

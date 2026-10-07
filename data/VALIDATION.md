@@ -4,7 +4,7 @@ Commands: `python tools/normalize_wantlists.py` then `python tools/validate_want
 
 Result: **PASS**
 
-- Tests executed: 20
+- Tests executed: 21
 - Failures: 0
 - Errors: 0
 - Skipped: 0

@@ -11,7 +11,7 @@ Use Node.js 24 (pinned in `.node-version`) and npm. From the existing `work` che
 
 ```sh
 npm ci
-npm run dev
+npm run dev -- --host 0.0.0.0 --port 5173 --strictPort
 ```
 
 Vite prints the local development address. The app is React with plain CSS; all 3,392 records are
@@ -70,10 +70,17 @@ Long lists can be expanded, and matching card IDs are visible even before expans
 
 ## Phase 3A findings and validation
 
-See `docs/PHASE_3A.md` for the acceptance checks and known data concerns. In particular, three Costco
-Flagship records have the existing Phase 2 category `non_sport_cards` because of a substring match on
-“flags”. They are intentionally not reclassified in the presentation layer. This should be reviewed
-in a separate Phase 2 category correction, not hidden in UI code.
+See `docs/PHASE_3A.md` for the acceptance checks and maintenance results. The Flagship category
+false positive has been corrected in the normalizer using whole-word/phrase matching. Regeneration
+changed only the three 2023–2025 Costco Flagship categories to `baseball_cards`; list contents and
+statuses remain unchanged. There are now 2,879 baseball-card and 62 non-sport-card records.
+
+For the live development server, run `node tools/check_dev_preview.mjs`. This uses Chromium to check
+actual rendering and interactive search/filter behavior independently of the production build.
+To test a platform-provided external preview route, set `WANTLIST_PREVIEW_URL` to that URL before
+running it. The development server binds to `0.0.0.0:5173` and fails rather than silently moving to
+a different port. An external cloud preview still requires the platform to expose/forward port 5173;
+starting a local server does not itself configure that route.
 
 The Phase 2 backup archive has been retained. Keep all meaningful changes committed and push `work`
 before leaving a cloud workspace. No branch merge is part of Phase 3A.

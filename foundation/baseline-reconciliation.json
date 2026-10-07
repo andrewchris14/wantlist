@@ -1,0 +1,2084 @@
+{
+  "passed": true,
+  "baseline_commit": "d452f58d9006a498db7a8c65827c645b8f817703",
+  "dataset_sha256": "38a7ee7ad07ede1ae744dbe91b819c1bb78a294c70ca30f933bc66604d44c98a",
+  "baseline_record_count": 3392,
+  "imported_record_count": 3392,
+  "baseline_list_types": {
+    "want_list": 997,
+    "complete": 1001,
+    "have_list": 1366,
+    "uncertain": 28
+  },
+  "list_types": {
+    "want_list": 997,
+    "complete": 1001,
+    "have_list": 1366,
+    "uncertain": 28
+  },
+  "baseline_categories": {
+    "baseball_cards": 2879,
+    "non_sport_cards": 62,
+    "matchbooks": 1,
+    "postcards": 35,
+    "patches": 5,
+    "discs": 28,
+    "playing_cards": 6,
+    "autograph_cards": 17,
+    "photos": 17,
+    "stamps": 26,
+    "coins": 15,
+    "posters": 5,
+    "other_collectibles": 9,
+    "tobacco_and_candy_cards": 193,
+    "football_cards": 65,
+    "player_interests": 2,
+    "bobbleheads": 26,
+    "autographs": 1
+  },
+  "categories": {
+    "baseball_cards": 2879,
+    "non_sport_cards": 62,
+    "matchbooks": 1,
+    "postcards": 35,
+    "patches": 5,
+    "discs": 28,
+    "playing_cards": 6,
+    "autograph_cards": 17,
+    "photos": 17,
+    "stamps": 26,
+    "coins": 15,
+    "posters": 5,
+    "other_collectibles": 9,
+    "tobacco_and_candy_cards": 193,
+    "football_cards": 65,
+    "player_interests": 2,
+    "bobbleheads": 26,
+    "autographs": 1
+  },
+  "records_with_groups": 61,
+  "group_count": 3458,
+  "literal_value_rows": 59104,
+  "actionable_items": 56772,
+  "records_not_fully_itemized": [
+    {
+      "id": "p0010-l001",
+      "set_name": "1980-87 Baseball Immortals First Printing",
+      "literal_count": 1
+    },
+    {
+      "id": "p0029-l001",
+      "set_name": "1980 Nostalgic Enterprises 1903 NY Highlanders",
+      "literal_count": 3
+    },
+    {
+      "id": "p0050-l002",
+      "set_name": "1980 TCMA NY Giants (Yellow Border)",
+      "literal_count": 1
+    },
+    {
+      "id": "p0060-l001",
+      "set_name": "1980 Unknown Manufacturer New York Yankees All-Time Greats",
+      "literal_count": 1
+    },
+    {
+      "id": "p0075-l001",
+      "set_name": "1979 Mitock Publishing Postcards",
+      "literal_count": 5
+    },
+    {
+      "id": "p0080-l001",
+      "set_name": "1979-? Panarizon Publishing",
+      "literal_count": 1
+    },
+    {
+      "id": "p0082-l001",
+      "set_name": "1979 Post Raisin Bran Baseball Tips",
+      "literal_count": 1
+    },
+    {
+      "id": "p0082-l005",
+      "set_name": "1979 TCMA Baseball History Series",
+      "literal_count": 2
+    },
+    {
+      "id": "p0092-l005",
+      "set_name": "1978 Baseball Player Patches",
+      "literal_count": 5
+    },
+    {
+      "id": "p0101-l001",
+      "set_name": "1978 Burger King Yankees",
+      "literal_count": 1
+    },
+    {
+      "id": "p0122-l001",
+      "set_name": "1978 Whiffle Ball Box Side Disk (Regulation/Junior Baseball Size on back)",
+      "literal_count": 2
+    },
+    {
+      "id": "p0124-l003",
+      "set_name": "1977 Burger Chef",
+      "literal_count": 12
+    },
+    {
+      "id": "p0126-l001",
+      "set_name": "1977 Burger Chef Complete Boxes",
+      "literal_count": 5
+    },
+    {
+      "id": "p0126-l003",
+      "set_name": "1977 Dairy Isle Discs",
+      "literal_count": 6
+    },
+    {
+      "id": "p0126-l005",
+      "set_name": "1977 Detroit Caesars Discs",
+      "literal_count": 28
+    },
+    {
+      "id": "p0126-l007",
+      "set_name": "1977 Holiday Inn Discs",
+      "literal_count": 10
+    },
+    {
+      "id": "p0130-l001",
+      "set_name": "1977 Jim Rowe",
+      "literal_count": 1
+    },
+    {
+      "id": "p0132-l003",
+      "set_name": "1977-81 Bob Parker Hall of Famers",
+      "literal_count": 11
+    },
+    {
+      "id": "p0136-l001",
+      "set_name": "1977 Pepsi Cincinnati Reds Playing Cards",
+      "literal_count": 1
+    },
+    {
+      "id": "p0136-l003",
+      "set_name": "1977 Pepsi Sadaharu Oh Round Disk Giant",
+      "literal_count": 1
+    },
+    {
+      "id": "p0137-l002",
+      "set_name": "1977 Pepsi Bromides Sadaharu Oh Giant Sized",
+      "literal_count": 3
+    },
+    {
+      "id": "p0139-l003",
+      "set_name": "1977 Sertoma Stars",
+      "literal_count": 3
+    },
+    {
+      "id": "p0139-l005",
+      "set_name": "1977 Sertoma Stars Puzzle Backs",
+      "literal_count": 14
+    },
+    {
+      "id": "p0141-l001",
+      "set_name": "1977-79 Sportscasters",
+      "literal_count": 12
+    },
+    {
+      "id": "p0149-l001",
+      "set_name": "1977 Venezuelan Sticker",
+      "literal_count": 2
+    },
+    {
+      "id": "p0151-l001",
+      "set_name": "1977 Whiffle Insert Discs (Sports Spectacular Back)",
+      "literal_count": 3
+    },
+    {
+      "id": "p0153-l003",
+      "set_name": "1977 Zip'z Discs",
+      "literal_count": 7
+    },
+    {
+      "id": "p0155-l001",
+      "set_name": "1976 A&P Brewers",
+      "literal_count": 2
+    },
+    {
+      "id": "p0157-l001",
+      "set_name": "1976 Carousel Discs",
+      "literal_count": 9
+    },
+    {
+      "id": "p0159-l003",
+      "set_name": "1976 Chilly Wilee Discs",
+      "literal_count": 7
+    },
+    {
+      "id": "p0161-l001",
+      "set_name": "1976 Coca Cola Phoenix Giants",
+      "literal_count": 7
+    },
+    {
+      "id": "p0161-l003",
+      "set_name": "1976 Crane Discs",
+      "literal_count": 16
+    },
+    {
+      "id": "p0163-l001",
+      "set_name": "1976 Dairy Isle Discs",
+      "literal_count": 18
+    },
+    {
+      "id": "p0175-l001",
+      "set_name": "1976 Linnett Portraits",
+      "literal_count": 9
+    },
+    {
+      "id": "p0179-l001",
+      "set_name": "1976 Midwest Sports Collectors Convention",
+      "literal_count": 4
+    },
+    {
+      "id": "p0179-l003",
+      "set_name": "1976 MSA Discs",
+      "literal_count": 10
+    },
+    {
+      "id": "p0179-l007",
+      "set_name": "1976 Orbaker's Discs",
+      "literal_count": 21
+    },
+    {
+      "id": "p0179-l009",
+      "set_name": "1976 Playboy Press Who Was Harry Steinfeldt",
+      "literal_count": 3
+    },
+    {
+      "id": "p0179-l011",
+      "set_name": "1976 Safelon Discs",
+      "literal_count": 12
+    },
+    {
+      "id": "p0179-l013",
+      "set_name": "1976 Sportstix",
+      "literal_count": 3
+    },
+    {
+      "id": "p0183-l001",
+      "set_name": "1976 SSPC 1963 New York Mets singles",
+      "literal_count": 2
+    },
+    {
+      "id": "p0187-l001",
+      "set_name": "1976 SSPC World's Series 1887",
+      "literal_count": 1
+    },
+    {
+      "id": "p0189-l001",
+      "set_name": "1976 SSPC Yankees Old Timers Day",
+      "literal_count": 2
+    },
+    {
+      "id": "p0195-l005",
+      "set_name": "1976 Towne Club Discs",
+      "literal_count": 19
+    },
+    {
+      "id": "p0195-l011",
+      "set_name": "1975-76 Great Plains Greats",
+      "literal_count": 2
+    },
+    {
+      "id": "p0199-l001",
+      "set_name": "1975 Linnett Portraits (note: has name printed on front as well as autograph. 1976 has no printed name)",
+      "literal_count": 6
+    },
+    {
+      "id": "p0201-l001",
+      "set_name": "1975 Clarence Mengler Baseball's Best",
+      "literal_count": 5
+    },
+    {
+      "id": "p0207-l001",
+      "set_name": "1975 Monty Gum Kojak Card Deck — Hearts",
+      "literal_count": 1
+    },
+    {
+      "id": "p0208-l001",
+      "set_name": "1975 Monty Gum Kojak Card Deck — Spades",
+      "literal_count": 1
+    },
+    {
+      "id": "p0215-l001",
+      "set_name": "1975 SSPC Mets/Yankees",
+      "literal_count": 1
+    },
+    {
+      "id": "p0221-l003",
+      "set_name": "1975 TCMA 1954 Cleveland Indians",
+      "literal_count": 2
+    },
+    {
+      "id": "p0221-l005",
+      "set_name": "1975 TCMA 1961 Rochester Red Wings",
+      "literal_count": 4
+    },
+    {
+      "id": "p0221-l007",
+      "set_name": "1975 TCMA All Time Brooklyn/Los Angeles Dodgers",
+      "literal_count": 1
+    },
+    {
+      "id": "p0221-l009",
+      "set_name": "1975 TCMA All Time Greats (not the Postcard set) (note: This is type 1--Black and White Front, blank back)",
+      "literal_count": 1
+    },
+    {
+      "id": "p0221-l011",
+      "set_name": "1975 TCMA All Time Greats (not the Postcard set) (note: This is type 2--Blue and White Fronts, red type on back)",
+      "literal_count": 16
+    },
+    {
+      "id": "p0221-l015",
+      "set_name": "1975 TCMA All Time Greats (not the Postcard set) Uncut strips",
+      "literal_count": 1
+    },
+    {
+      "id": "p0222-l002",
+      "set_name": "1975 TCMA All Time New York Yankees",
+      "literal_count": 3
+    },
+    {
+      "id": "p0230-l003",
+      "set_name": "1974 Bob Parker 2nd Best",
+      "literal_count": 10
+    },
+    {
+      "id": "p0235-l001",
+      "set_name": "1974 OPC",
+      "literal_count": 4
+    },
+    {
+      "id": "p0237-l001",
+      "set_name": "1974 St. Louis Cardinals Photocards",
+      "literal_count": 13
+    },
+    {
+      "id": "p0239-l007",
+      "set_name": "1974 TCMA 1934 Cardinals",
+      "literal_count": 2
+    },
+    {
+      "id": "p0239-l009",
+      "set_name": "1974 TCMA 1936-37 Yankee Dynasty",
+      "literal_count": 5
+    },
+    {
+      "id": "p0239-l011",
+      "set_name": "1974 TCMA 1952 Dodgers",
+      "literal_count": 9
+    },
+    {
+      "id": "p0239-l017",
+      "set_name": "1974 TCMA Sporting News — 1909",
+      "literal_count": 14
+    },
+    {
+      "id": "p0239-l018",
+      "set_name": "1974 TCMA Sporting News — 1910",
+      "literal_count": 14
+    },
+    {
+      "id": "p0249-l001",
+      "set_name": "1973 Fleer Crazy Covers",
+      "literal_count": 4
+    },
+    {
+      "id": "p0255-l001",
+      "set_name": "1973 TCMA 1940 Cincinnati Reds",
+      "literal_count": 1
+    },
+    {
+      "id": "p0257-l001",
+      "set_name": "1973 TCMA 1874 Philadelphia A's",
+      "literal_count": 1
+    },
+    {
+      "id": "p0259-l004",
+      "set_name": "1973-1978 TCMA All-Time Greats Postcards lists — Series 1",
+      "literal_count": 1
+    },
+    {
+      "id": "p0259-l005",
+      "set_name": "1973-1978 TCMA All-Time Greats Postcards lists — Series 2",
+      "literal_count": 5
+    },
+    {
+      "id": "p0259-l006",
+      "set_name": "1973-1978 TCMA All-Time Greats Postcards lists — Series 3",
+      "literal_count": 6
+    },
+    {
+      "id": "p0259-l007",
+      "set_name": "1973-1978 TCMA All-Time Greats Postcards lists — Series 4",
+      "literal_count": 5
+    },
+    {
+      "id": "p0259-l008",
+      "set_name": "1973-1978 TCMA All-Time Greats Postcards lists — Series 5",
+      "literal_count": 3
+    },
+    {
+      "id": "p0259-l009",
+      "set_name": "1973-1978 TCMA All-Time Greats Postcards lists — Series 6",
+      "literal_count": 20
+    },
+    {
+      "id": "p0261-l003",
+      "set_name": "1973 TCMA Christmas Cards (possibly complete)",
+      "literal_count": 2
+    },
+    {
+      "id": "p0263-l001",
+      "set_name": "1973 TCMA Harper's Weekly Woodcut",
+      "literal_count": 2
+    },
+    {
+      "id": "p0263-l010",
+      "set_name": "1973 TCMA Polo Grounds Game",
+      "literal_count": 2
+    },
+    {
+      "id": "p0263-l013",
+      "set_name": "1973 TCMA 1905-06 Sporting Life Team Composites — 1905",
+      "literal_count": 2
+    },
+    {
+      "id": "p0263-l014",
+      "set_name": "1973 TCMA 1905-06 Sporting Life Team Composites — 1906",
+      "literal_count": 4
+    },
+    {
+      "id": "p0263-l016",
+      "set_name": "1973 TCMA Stan Martucci Postcards",
+      "literal_count": 2
+    },
+    {
+      "id": "p0265-l001",
+      "set_name": "1973 TCMA Tattoo Orbit Reprint Set",
+      "literal_count": 8
+    },
+    {
+      "id": "p0267-l001",
+      "set_name": "1973 TCMA Tom Barker",
+      "literal_count": 4
+    },
+    {
+      "id": "p0269-l005",
+      "set_name": "1972 Classic Cards",
+      "literal_count": 2
+    },
+    {
+      "id": "p0271-l001",
+      "set_name": "1972 Milton Bradley",
+      "literal_count": 22
+    },
+    {
+      "id": "p0271-l003",
+      "set_name": "1972 New York Yankees Schedule Cards",
+      "literal_count": 1
+    },
+    {
+      "id": "p0271-l007",
+      "set_name": "1972 TCMA 1941 St. Louis Browns",
+      "literal_count": 1
+    },
+    {
+      "id": "p0273-l003",
+      "set_name": "1972 TCMA American Caramel",
+      "literal_count": 2
+    },
+    {
+      "id": "p0273-l007",
+      "set_name": "1972-1973 TCMA Exhibit Reprints — 1921 Style",
+      "literal_count": 35
+    },
+    {
+      "id": "p0273-l009",
+      "set_name": "1972-1973 TCMA Exhibit Reprints — 1922 Style",
+      "literal_count": 34
+    },
+    {
+      "id": "p0273-l011",
+      "set_name": "1972-1973 TCMA Exhibit Reprints — 1923-24 Style",
+      "literal_count": 1
+    },
+    {
+      "id": "p0273-l013",
+      "set_name": "1972-1973 TCMA Exhibit Reprints — 1925 Style",
+      "literal_count": 1
+    },
+    {
+      "id": "p0273-l015",
+      "set_name": "1972-1973 TCMA Exhibit Reprints — 1925-31 PC Back Style",
+      "literal_count": 5
+    },
+    {
+      "id": "p0273-l017",
+      "set_name": "1972-1973 TCMA Exhibit Reprints — 1926 Style",
+      "literal_count": 1
+    },
+    {
+      "id": "p0273-l019",
+      "set_name": "1972-1973 TCMA Exhibit Reprints — 1927 Style",
+      "literal_count": 1
+    },
+    {
+      "id": "p0273-l025",
+      "set_name": "1972 TCMA 1936 Goudey Widepens",
+      "literal_count": 39
+    },
+    {
+      "id": "p0273-l029",
+      "set_name": "1972 (?) TCMA Nu Grape World Champion Athletics 1929",
+      "literal_count": 1
+    },
+    {
+      "id": "p0273-l035",
+      "set_name": "1972 TCMA The Thirties",
+      "literal_count": 2
+    },
+    {
+      "id": "p0273-l039",
+      "set_name": "1972-73 TCMA 1940 Team Composites (unconfirmed wantlist--availability is unknown)",
+      "literal_count": 8
+    },
+    {
+      "id": "p0273-l041",
+      "set_name": "1972 (?) TCMA Team Composites, Postcard size,",
+      "literal_count": 1
+    },
+    {
+      "id": "p0273-l043",
+      "set_name": "1971 Bazooka",
+      "literal_count": 1
+    },
+    {
+      "id": "p0273-l047",
+      "set_name": "1971 Dells Team Stamps",
+      "literal_count": 2
+    },
+    {
+      "id": "p0273-l053",
+      "set_name": "1971 Kelloggs",
+      "literal_count": 2
+    },
+    {
+      "id": "p0275-l001",
+      "set_name": "1971 NY Yankees Clinic Schedule Postcards",
+      "literal_count": 3
+    },
+    {
+      "id": "p0277-l001",
+      "set_name": "1971 St. Louis Cardinals Picture Pack",
+      "literal_count": 2
+    },
+    {
+      "id": "p0284-l001",
+      "set_name": "1970 Chemtoy",
+      "literal_count": 9
+    },
+    {
+      "id": "p0289-l009",
+      "set_name": "1970 Topps Scratch Off",
+      "literal_count": 3
+    },
+    {
+      "id": "p0289-l015",
+      "set_name": "1970 Washington Senators Traffic Safety Yellow (one uncut sheet)",
+      "literal_count": 6
+    },
+    {
+      "id": "p0291-l001",
+      "set_name": "1969 Citgo Coins",
+      "literal_count": 2
+    },
+    {
+      "id": "p0291-l003",
+      "set_name": "1969 Fleer Stadium Card",
+      "literal_count": 10
+    },
+    {
+      "id": "p0291-l007",
+      "set_name": "1969 Milton Bradley",
+      "literal_count": 46
+    },
+    {
+      "id": "p0291-l009",
+      "set_name": "1969 MLBPA Photostamp singles",
+      "literal_count": 4
+    },
+    {
+      "id": "p0291-l011",
+      "set_name": "1969 MLBPA Photostamp sheets",
+      "literal_count": 1
+    },
+    {
+      "id": "p0293-l001",
+      "set_name": "1969 OPC Deckle Edge",
+      "literal_count": 1
+    },
+    {
+      "id": "p0293-l007",
+      "set_name": "1969 Topps Decals",
+      "literal_count": 3
+    },
+    {
+      "id": "p0294-l005",
+      "set_name": "1969 Nabisco Team Flakes",
+      "literal_count": 7
+    },
+    {
+      "id": "p0296-l003",
+      "set_name": "1968 Bazooka",
+      "literal_count": 1
+    },
+    {
+      "id": "p0298-l001",
+      "set_name": "1968 Goodman Dodgers",
+      "literal_count": 1
+    },
+    {
+      "id": "p0301-l001",
+      "set_name": "1968-69 Pittsburgh Pirates Team Issue (Combined)",
+      "literal_count": 11
+    },
+    {
+      "id": "p0303-l001",
+      "set_name": "1968-69 Sports Cards for Collectors",
+      "literal_count": 3
+    },
+    {
+      "id": "p0304-l002",
+      "set_name": "1968 Sports Cards For Collectors Hangtags",
+      "literal_count": 1
+    },
+    {
+      "id": "p0320-l001",
+      "set_name": "1967 Pittsburgh Pirates team issue (higher gloss) — Series A",
+      "literal_count": 2
+    },
+    {
+      "id": "p0321-l001",
+      "set_name": "1967 Pittsburgh Pirates team issue (higher gloss) — Series B",
+      "literal_count": 2
+    },
+    {
+      "id": "p0327-l001",
+      "set_name": "1967 Topps Who Am I",
+      "literal_count": 4
+    },
+    {
+      "id": "p0335-l001",
+      "set_name": "1966 Goodman Dodgers",
+      "literal_count": 1
+    },
+    {
+      "id": "p0338-l003",
+      "set_name": "1966 Topps Rub Offs",
+      "literal_count": 20
+    },
+    {
+      "id": "p0344-l001",
+      "set_name": "1965 Jay Publishing Cleveland Indians",
+      "literal_count": 1
+    },
+    {
+      "id": "p0346-l001",
+      "set_name": "1965 Jay Publishing Detroit Tigers",
+      "literal_count": 1
+    },
+    {
+      "id": "p0348-l001",
+      "set_name": "1965 Jay Publishing SF Giants",
+      "literal_count": 1
+    },
+    {
+      "id": "p0356-l001",
+      "set_name": "1965 Kahn's",
+      "literal_count": 7
+    },
+    {
+      "id": "p0357-l002",
+      "set_name": "1965 Sports Service Milwaukee Braves Set A",
+      "literal_count": 2
+    },
+    {
+      "id": "p0357-l008",
+      "set_name": "1965 Topps Transfers",
+      "literal_count": 13
+    },
+    {
+      "id": "p0359-l001",
+      "set_name": "1964 Auravision Records",
+      "literal_count": 6
+    },
+    {
+      "id": "p0361-l001",
+      "set_name": "1964 Challenge The Yankees",
+      "literal_count": 1
+    },
+    {
+      "id": "p0367-l001",
+      "set_name": "1964 Jay Publishing Milwaukee Braves",
+      "literal_count": 3
+    },
+    {
+      "id": "p0369-l001",
+      "set_name": "1964 New York Worlds Fair Set",
+      "literal_count": 6
+    },
+    {
+      "id": "p0373-l005",
+      "set_name": "1964 Topps Stand Ups",
+      "literal_count": 2
+    },
+    {
+      "id": "p0373-l009",
+      "set_name": "1964 Wheaties",
+      "literal_count": 6
+    },
+    {
+      "id": "p0375-l001",
+      "set_name": "1963 Jay Publishing Milwaukee Braves",
+      "literal_count": 2
+    },
+    {
+      "id": "p0377-l001",
+      "set_name": "1963 Jay Publishing SF Giants",
+      "literal_count": 1
+    },
+    {
+      "id": "p0380-l001",
+      "set_name": "1963 Pepsi Cola Tulsa Oilers",
+      "literal_count": 7
+    },
+    {
+      "id": "p0390-l001",
+      "set_name": "1962 Play-Rite Roger Maris",
+      "literal_count": 1
+    },
+    {
+      "id": "p0391-l002",
+      "set_name": "1961 Goodman Dodgers",
+      "literal_count": 1
+    },
+    {
+      "id": "p0393-l001",
+      "set_name": "1961 Jays Publishing Cincy Reds Set A",
+      "literal_count": 3
+    },
+    {
+      "id": "p0395-l001",
+      "set_name": "1961 Jays Publishing KC A's",
+      "literal_count": 1
+    },
+    {
+      "id": "p0397-l001",
+      "set_name": "1961 Jays Publishing Milwaukee Braves",
+      "literal_count": 1
+    },
+    {
+      "id": "p0401-l001",
+      "set_name": "1961 Sports Service Yankees",
+      "literal_count": 1
+    },
+    {
+      "id": "p0406-l002",
+      "set_name": "1961 Topps Magic Rub Offs",
+      "literal_count": 2
+    },
+    {
+      "id": "p0406-l004",
+      "set_name": "1961 Topps Stamps",
+      "literal_count": 8
+    },
+    {
+      "id": "p0408-l003",
+      "set_name": "1961 Wrigley Field Exhibits",
+      "literal_count": 12
+    },
+    {
+      "id": "p0417-l001",
+      "set_name": "1960 Jay Publishing Braves — Set A",
+      "literal_count": 12
+    },
+    {
+      "id": "p0418-l001",
+      "set_name": "1960 Jay Publishing Braves — Set B",
+      "literal_count": 12
+    },
+    {
+      "id": "p0419-l001",
+      "set_name": "1960 Jay Publishing Braves — Sets C, D, E",
+      "literal_count": 1
+    },
+    {
+      "id": "p0421-l001",
+      "set_name": "1960 Jay Publishing Reds",
+      "literal_count": 4
+    },
+    {
+      "id": "p0421-l003",
+      "set_name": "1960 Lake to Lake Braves",
+      "literal_count": 7
+    },
+    {
+      "id": "p0424-l002",
+      "set_name": "1960 Morrell Meats",
+      "literal_count": 1
+    },
+    {
+      "id": "p0427-l001",
+      "set_name": "1959 Jay Publishing Cincy Reds",
+      "literal_count": 3
+    },
+    {
+      "id": "p0434-l001",
+      "set_name": "1959 YooHoo",
+      "literal_count": 1
+    },
+    {
+      "id": "p0436-l001",
+      "set_name": "1958 Goodman Dodgers",
+      "literal_count": 1
+    },
+    {
+      "id": "p0444-l001",
+      "set_name": "1957 Oak Manufacturing Premier Dogs",
+      "literal_count": 4
+    },
+    {
+      "id": "p0446-l001",
+      "set_name": "1957 Spic and Span",
+      "literal_count": 6
+    },
+    {
+      "id": "p0446-l003",
+      "set_name": "1957 Topps",
+      "literal_count": 1
+    },
+    {
+      "id": "p0463-l001",
+      "set_name": "1954 Dan Dee",
+      "literal_count": 10
+    },
+    {
+      "id": "p0465-l001",
+      "set_name": "1954 Dixie Lids",
+      "literal_count": 1
+    },
+    {
+      "id": "p0465-l005",
+      "set_name": "1954 Red Heart",
+      "literal_count": 2
+    },
+    {
+      "id": "p0467-l001",
+      "set_name": "1954 Redman",
+      "literal_count": 2
+    },
+    {
+      "id": "p0469-l001",
+      "set_name": "1954 Spic and Span Braves",
+      "literal_count": 2
+    },
+    {
+      "id": "p0469-l005",
+      "set_name": "1954 Wilson Franks",
+      "literal_count": 1
+    },
+    {
+      "id": "p0481-l001",
+      "set_name": "1953-57 Spic and Span Braves 7x10 photos",
+      "literal_count": 5
+    },
+    {
+      "id": "p0481-l003",
+      "set_name": "1953 Topps",
+      "literal_count": 1
+    },
+    {
+      "id": "p0485-l001",
+      "set_name": "1952-53 Dell Comics/Wheaties \"Sparks\"",
+      "literal_count": 7
+    },
+    {
+      "id": "p0485-l003",
+      "set_name": "1952 Redman",
+      "literal_count": 8
+    },
+    {
+      "id": "p0487-l001",
+      "set_name": "1952 Wheaties",
+      "literal_count": 1
+    },
+    {
+      "id": "p0489-l001",
+      "set_name": "1952 Wheaties Tins",
+      "literal_count": 1
+    },
+    {
+      "id": "p0493-l005",
+      "set_name": "1950-56 Callahan Hall of Fame",
+      "literal_count": 28
+    },
+    {
+      "id": "p0503-l005",
+      "set_name": "1949-50 Alerta Premiums (Cuban 8x10 issue)",
+      "literal_count": 16
+    },
+    {
+      "id": "p0505-l001",
+      "set_name": "1948 Kellogg's Pep",
+      "literal_count": 1
+    },
+    {
+      "id": "p0505-l005",
+      "set_name": "1948 Signal Oil",
+      "literal_count": 11
+    },
+    {
+      "id": "p0507-l001",
+      "set_name": "1944 Grand Studio Milwaukee Brewers",
+      "literal_count": 11
+    },
+    {
+      "id": "p0509-l001",
+      "set_name": "1940 Wheaties Champs of the USA Panels",
+      "literal_count": 1
+    },
+    {
+      "id": "p0511-l001",
+      "set_name": "1943 Grand Studio Milwaukee Brewers",
+      "literal_count": 4
+    },
+    {
+      "id": "p0515-l003",
+      "set_name": "1936 Goudey Wide Pen Type 1",
+      "literal_count": 16
+    },
+    {
+      "id": "p0515-l005",
+      "set_name": "1936 National Chicle R313 \"Fine Pen\"",
+      "literal_count": 16
+    },
+    {
+      "id": "p0519-l005",
+      "set_name": "1932 Sanella",
+      "literal_count": 1
+    },
+    {
+      "id": "p0519-l009",
+      "set_name": "1932 Weitere Werke Olympia",
+      "literal_count": 4
+    },
+    {
+      "id": "p0526-l006",
+      "set_name": "Milwaukee Brewers/Milwaukee Braves/Seattle Pilots cards",
+      "literal_count": 2
+    },
+    {
+      "id": "p0526-l008",
+      "set_name": "Players that came through Eau Claire and either played or managed in the majors. Here's a list",
+      "literal_count": 1
+    },
+    {
+      "id": "p0528-l001",
+      "set_name": "Exhibit cards — 1949-50 (say \"An Exhibit Card\" on them)",
+      "literal_count": 12
+    },
+    {
+      "id": "p0528-l003",
+      "set_name": "Exhibit cards — 47-66",
+      "literal_count": 121
+    },
+    {
+      "id": "p0528-l005",
+      "set_name": "Exhibit cards — 39-46 Salutation",
+      "literal_count": 24
+    },
+    {
+      "id": "p0528-l007",
+      "set_name": "Exhibit cards — Older",
+      "literal_count": 4
+    },
+    {
+      "id": "p0528-l009",
+      "set_name": "Exhibit cards — 63 Stat Backs",
+      "literal_count": 9
+    },
+    {
+      "id": "p0528-l011",
+      "set_name": "Exhibit cards — 62 Stat Backs",
+      "literal_count": 4
+    },
+    {
+      "id": "p0528-l013",
+      "set_name": "Exhibit cards — Actors and Actresses (believe from 1950-62) --focus would be on Twilight Zone actors/actresses, but I dig all of these",
+      "literal_count": 25
+    },
+    {
+      "id": "p0573-l030",
+      "set_name": "Imperial Tobacco Company of Canada — Fishes of the World",
+      "literal_count": 1
+    },
+    {
+      "id": "p0573-l058",
+      "set_name": "John Player and Sons Cigarettes — Coronation Series",
+      "literal_count": 1
+    },
+    {
+      "id": "p0573-l070",
+      "set_name": "John Player and Sons Cigarettes — Foreign Butterflies",
+      "literal_count": 1
+    },
+    {
+      "id": "p0592-l001",
+      "set_name": "1965 Topps",
+      "literal_count": 1
+    },
+    {
+      "id": "p0600-l001",
+      "set_name": "1973 Topps",
+      "literal_count": 4
+    },
+    {
+      "id": "p0601-l001",
+      "set_name": "1974 Topps",
+      "literal_count": 2
+    },
+    {
+      "id": "p0645-l005",
+      "set_name": "Eau Claire Express player cards",
+      "literal_count": 22
+    },
+    {
+      "id": "p0666-l001",
+      "set_name": "2025 Fleet Farm Packers",
+      "literal_count": 3
+    },
+    {
+      "id": "p0696-l001",
+      "set_name": "2024 Topps Heritage",
+      "literal_count": 1
+    },
+    {
+      "id": "p0712-l001",
+      "set_name": "2023 Historic Autographs 1918",
+      "literal_count": 1
+    },
+    {
+      "id": "p0843-l001",
+      "set_name": "2020 Panini Diamond Kings",
+      "literal_count": 1
+    },
+    {
+      "id": "p0976-l017",
+      "set_name": "2017 Topps Gypsy Queen",
+      "literal_count": 1
+    },
+    {
+      "id": "p0998-l007",
+      "set_name": "2016 Historic Autographs Crime Doesn't Pay 2016 National Cards",
+      "literal_count": 3
+    },
+    {
+      "id": "p1002-l003",
+      "set_name": "2016 Topps Heritage",
+      "literal_count": 1
+    },
+    {
+      "id": "p1003-l001",
+      "set_name": "2016 Topps Heritage — High Numbers",
+      "literal_count": 3
+    },
+    {
+      "id": "p1018-l010",
+      "set_name": "2015 Panini Donruss",
+      "literal_count": 1
+    },
+    {
+      "id": "p1078-l005",
+      "set_name": "2012 Milwaukee Brewers Police",
+      "literal_count": 10
+    },
+    {
+      "id": "p1082-l005",
+      "set_name": "2012 Topps Archives",
+      "literal_count": 1
+    },
+    {
+      "id": "p1084-l009",
+      "set_name": "2012-present Twin Cities Sports Collector's Club",
+      "literal_count": 1
+    },
+    {
+      "id": "p1109-l009",
+      "set_name": "2011 Topps Lineage base set",
+      "literal_count": 1
+    },
+    {
+      "id": "p1128-l001",
+      "set_name": "2010 Topps Attak Silver Foil (Hot Streak)",
+      "literal_count": 4
+    },
+    {
+      "id": "p1130-l001",
+      "set_name": "2010 Topps Attak Opening Day",
+      "literal_count": 1
+    },
+    {
+      "id": "p1132-l001",
+      "set_name": "2010 Topps Attak Gold Foil (Superstar)",
+      "literal_count": 1
+    },
+    {
+      "id": "p1134-l001",
+      "set_name": "2010 Topps Attak Code Cards",
+      "literal_count": 1
+    },
+    {
+      "id": "p1187-l003",
+      "set_name": "2008 Milwaukee Brewers Safety",
+      "literal_count": 1
+    },
+    {
+      "id": "p1234-l001",
+      "set_name": "2007 Topps Screen Plays Private Screening",
+      "literal_count": 1
+    },
+    {
+      "id": "p1266-l001",
+      "set_name": "2006 CrackerJack Ballpark Legends 2",
+      "literal_count": 3
+    },
+    {
+      "id": "p1272-l001",
+      "set_name": "2006 San Francisco Giants/DAV",
+      "literal_count": 1
+    },
+    {
+      "id": "p1272-l011",
+      "set_name": "2006 Topps '52 Edition",
+      "literal_count": 1
+    },
+    {
+      "id": "p1290-l001",
+      "set_name": "2005 Cracker Jack Ballpark Legends",
+      "literal_count": 1
+    },
+    {
+      "id": "p1316-l003",
+      "set_name": "2005 Fleer Tradition",
+      "literal_count": 1
+    },
+    {
+      "id": "p1324-l001",
+      "set_name": "2005 Leaf",
+      "literal_count": 4
+    },
+    {
+      "id": "p1324-l005",
+      "set_name": "2005 Leaf Certified Materials",
+      "literal_count": 1
+    },
+    {
+      "id": "p1328-l021",
+      "set_name": "2005 Topps Heritage",
+      "literal_count": 1
+    },
+    {
+      "id": "p1342-l009",
+      "set_name": "2004 Donruss",
+      "literal_count": 1
+    },
+    {
+      "id": "p1374-l001",
+      "set_name": "2004 Kahn's Cincy Reds",
+      "literal_count": 1
+    },
+    {
+      "id": "p1388-l024",
+      "set_name": "2004 Upper Deck Vintage",
+      "literal_count": 1
+    },
+    {
+      "id": "p1420-l001",
+      "set_name": "2003 Fleer Fall Classic",
+      "literal_count": 1
+    },
+    {
+      "id": "p1430-l001",
+      "set_name": "2003 Fleer Hot Prospects",
+      "literal_count": 1
+    },
+    {
+      "id": "p1442-l005",
+      "set_name": "2003 Milwaukee Brewers Diamond Celebration",
+      "literal_count": 1
+    },
+    {
+      "id": "p1498-l005",
+      "set_name": "2002 Fleer Tradition Update (U-)",
+      "literal_count": 1
+    },
+    {
+      "id": "p1504-l003",
+      "set_name": "2002 Milwaukee Brewers Diamond Celebration",
+      "literal_count": 2
+    },
+    {
+      "id": "p1508-l017",
+      "set_name": "2002 Topps Heritage",
+      "literal_count": 1
+    },
+    {
+      "id": "p1520-l027",
+      "set_name": "2002 Upper Deck Prospect Premiers--UD Heroes of Baseball — Gwynn",
+      "literal_count": 1
+    },
+    {
+      "id": "p1520-l028",
+      "set_name": "2002 Upper Deck Prospect Premiers--UD Heroes of Baseball — Mantle",
+      "literal_count": 1
+    },
+    {
+      "id": "p1520-l034",
+      "set_name": "2002 Upper Deck Prospect Premiers--UD Heroes of Baseball — Stargell",
+      "literal_count": 1
+    },
+    {
+      "id": "p1548-l001",
+      "set_name": "2001 Fleer Premium",
+      "literal_count": 1
+    },
+    {
+      "id": "p1558-l001",
+      "set_name": "2001 Hasbro (formerly Kenner)",
+      "literal_count": 2
+    },
+    {
+      "id": "p1558-l003",
+      "set_name": "2001 King B",
+      "literal_count": 3
+    },
+    {
+      "id": "p1576-l003",
+      "set_name": "2001 Topps Heritage",
+      "literal_count": 1
+    },
+    {
+      "id": "p1582-l001",
+      "set_name": "2001 Topps Traded",
+      "literal_count": 1
+    },
+    {
+      "id": "p1610-l001",
+      "set_name": "2000 Hasbro (formerly Kenner) Baseball All-Century",
+      "literal_count": 8
+    },
+    {
+      "id": "p1620-l001",
+      "set_name": "2000 Pacific Back Yard Baseball",
+      "literal_count": 6
+    },
+    {
+      "id": "p1645-l007",
+      "set_name": "2000 Upper Deck Gold Reserve",
+      "literal_count": 1
+    },
+    {
+      "id": "p1647-l001",
+      "set_name": "2000 USPS Legends of Baseball Postcards",
+      "literal_count": 2
+    },
+    {
+      "id": "p1663-l001",
+      "set_name": "1999 Frozsnacks",
+      "literal_count": 6
+    },
+    {
+      "id": "p1669-l005",
+      "set_name": "1999 Milwaukee Brewers Diamond Celebration",
+      "literal_count": 1
+    },
+    {
+      "id": "p1741-l001",
+      "set_name": "1998 Hasboro Starting Lineup cards",
+      "literal_count": 1
+    },
+    {
+      "id": "p1747-l005",
+      "set_name": "1998 Milwaukee Brewers Diamond Celebration",
+      "literal_count": 1
+    },
+    {
+      "id": "p1780-l001",
+      "set_name": "1998 Pinnacle Snapshots — Mets",
+      "literal_count": 1
+    },
+    {
+      "id": "p1789-l003",
+      "set_name": "1998 Pro Magnets Heroes of the Locker Room",
+      "literal_count": 1
+    },
+    {
+      "id": "p1809-l001",
+      "set_name": "1997 Collect-a-sport/College Division",
+      "literal_count": 1
+    },
+    {
+      "id": "p1819-l001",
+      "set_name": "1997 Donruss VXP (Looking for booklet and disk)",
+      "literal_count": 4
+    },
+    {
+      "id": "p1831-l001",
+      "set_name": "1997 Jimmy Dean Great Moments",
+      "literal_count": 1
+    },
+    {
+      "id": "p1833-l001",
+      "set_name": "1997 Kenner Cooperstown Collection",
+      "literal_count": 1
+    },
+    {
+      "id": "p1859-l007",
+      "set_name": "1997 Topps Finest",
+      "literal_count": 2
+    },
+    {
+      "id": "p1863-l001",
+      "set_name": "1997 Tuff Stuff phone cards",
+      "literal_count": 1
+    },
+    {
+      "id": "p1865-l001",
+      "set_name": "1997 Wheaties All-Stars",
+      "literal_count": 9
+    },
+    {
+      "id": "p1869-l001",
+      "set_name": "1996 (?) Airtech Cellular Minnesota Twins Magnets",
+      "literal_count": 3
+    },
+    {
+      "id": "p1908-l001",
+      "set_name": "1996 Kenner Cooperstown Collection",
+      "literal_count": 6
+    },
+    {
+      "id": "p1941-l001",
+      "set_name": "1995-2000 Athletes in Action Tract Cards",
+      "literal_count": 5
+    },
+    {
+      "id": "p1959-l003",
+      "set_name": "1995 Coca Cola Minnesota Twins POGs",
+      "literal_count": 10
+    },
+    {
+      "id": "p1965-l001",
+      "set_name": "1995 Fleer Flair",
+      "literal_count": 1
+    },
+    {
+      "id": "p1973-l003",
+      "set_name": "1995 Jimmy Dean All Time Greats",
+      "literal_count": 3
+    },
+    {
+      "id": "p1977-l001",
+      "set_name": "1995 Kodak Chicago White Sox",
+      "literal_count": 1
+    },
+    {
+      "id": "p1985-l001",
+      "set_name": "1995 National Packtime Welcome to the Show",
+      "literal_count": 1
+    },
+    {
+      "id": "p1987-l001",
+      "set_name": "1995 Oh Henry Blue Jays",
+      "literal_count": 1
+    },
+    {
+      "id": "p1996-l007",
+      "set_name": "1995 JSW — 33 Goudey Red Box",
+      "literal_count": 28
+    },
+    {
+      "id": "p1996-l008",
+      "set_name": "1995 JSW — 35 Goudey 4-in-1's in Blue, Red, and Yellow",
+      "literal_count": 1
+    },
+    {
+      "id": "p1996-l009",
+      "set_name": "1995 JSW — 48 Bowman B&W",
+      "literal_count": 28
+    },
+    {
+      "id": "p1996-l010",
+      "set_name": "1995 JSW — 50 Bowman Black Border",
+      "literal_count": 6
+    },
+    {
+      "id": "p1996-l011",
+      "set_name": "1995 JSW — 50 Bowman Red Border",
+      "literal_count": 6
+    },
+    {
+      "id": "p1996-l012",
+      "set_name": "1995 JSW — 50 Bowman White Border",
+      "literal_count": 28
+    },
+    {
+      "id": "p1996-l013",
+      "set_name": "1995 JSW — 51 Bowman",
+      "literal_count": 15
+    },
+    {
+      "id": "p1996-l014",
+      "set_name": "1995 JSW — 52 Bowman",
+      "literal_count": 17
+    },
+    {
+      "id": "p1996-l015",
+      "set_name": "1995 JSW — 52 Topps",
+      "literal_count": 22
+    },
+    {
+      "id": "p1996-l016",
+      "set_name": "1995 JSW — 53 Bowman Black Box",
+      "literal_count": 16
+    },
+    {
+      "id": "p1996-l017",
+      "set_name": "1995 JSW — 53 Bowman Script",
+      "literal_count": 16
+    },
+    {
+      "id": "p1996-l018",
+      "set_name": "1995 JSW — 53 Topps Black Box",
+      "literal_count": 24
+    },
+    {
+      "id": "p1996-l019",
+      "set_name": "1995 JSW — 53 Topps Red Box",
+      "literal_count": 14
+    },
+    {
+      "id": "p1996-l020",
+      "set_name": "1995 JSW — 61 Topps",
+      "literal_count": 12
+    },
+    {
+      "id": "p2028-l001",
+      "set_name": "1994 Ameritech Phone Cards",
+      "literal_count": 4
+    },
+    {
+      "id": "p2044-l001",
+      "set_name": "1994 Coors Colorado Silver Bullets",
+      "literal_count": 2
+    },
+    {
+      "id": "p2058-l001",
+      "set_name": "1994 Investor's Focus",
+      "literal_count": 1
+    },
+    {
+      "id": "p2060-l001",
+      "set_name": "1994 Kenner Cooperstown Collection",
+      "literal_count": 4
+    },
+    {
+      "id": "p2073-l007",
+      "set_name": "1994 Pacific Saved by the Bell",
+      "literal_count": 1
+    },
+    {
+      "id": "p2079-l001",
+      "set_name": "1994 Red Foley",
+      "literal_count": 10
+    },
+    {
+      "id": "p2099-l001",
+      "set_name": "1994 Topps Spanish",
+      "literal_count": 1
+    },
+    {
+      "id": "p2105-l001",
+      "set_name": "1994 U.S. Department of Transportation panels",
+      "literal_count": 1
+    },
+    {
+      "id": "p2185-l001",
+      "set_name": "1993 Stadium Club Team — Rangers",
+      "literal_count": 2
+    },
+    {
+      "id": "p2187-l001",
+      "set_name": "1993 Stadium Club Team — WhiteSox",
+      "literal_count": 2
+    },
+    {
+      "id": "p2189-l009",
+      "set_name": "1993 Topps Black Gold",
+      "literal_count": 2
+    },
+    {
+      "id": "p2213-l001",
+      "set_name": "1992 Bicycle Rookies",
+      "literal_count": 8
+    },
+    {
+      "id": "p2215-l001",
+      "set_name": "1992 Carlson Travel 1982 Brewers",
+      "literal_count": 2
+    },
+    {
+      "id": "p2277-l001",
+      "set_name": "1992 High Five Decals",
+      "literal_count": 5
+    },
+    {
+      "id": "p2297-l001",
+      "set_name": "1992 McDonalds MVP",
+      "literal_count": 1
+    },
+    {
+      "id": "p2299-l001",
+      "set_name": "1992 Milwaukee Brewers Yearbook '82 Anniversary",
+      "literal_count": 5
+    },
+    {
+      "id": "p2333-l001",
+      "set_name": "1992 Stadium Club Master Photos",
+      "literal_count": 5
+    },
+    {
+      "id": "p2357-l001",
+      "set_name": "1991 Classic 1991 Draft Picks Bi-Lingual Edition",
+      "literal_count": 1
+    },
+    {
+      "id": "p2383-l001",
+      "set_name": "1991 Fleer Box Toppers",
+      "literal_count": 1
+    },
+    {
+      "id": "p2395-l001",
+      "set_name": "1991 Kellogg's Leyendas",
+      "literal_count": 1
+    },
+    {
+      "id": "p2397-l001",
+      "set_name": "1991 Kodak White Sox",
+      "literal_count": 2
+    },
+    {
+      "id": "p2401-l007",
+      "set_name": "1991 Miller Beer Brewers",
+      "literal_count": 15
+    },
+    {
+      "id": "p2413-l001",
+      "set_name": "1991 Pepsi Cincy Reds",
+      "literal_count": 1
+    },
+    {
+      "id": "p2445-l009",
+      "set_name": "1991 Upper Deck Comic Ball 2 Holograms",
+      "literal_count": 1
+    },
+    {
+      "id": "p2458-l001",
+      "set_name": "1990 CMC (Minor Leagues)",
+      "literal_count": 1
+    },
+    {
+      "id": "p2464-l001",
+      "set_name": "1990 Collegiate Collection Michigan",
+      "literal_count": 1
+    },
+    {
+      "id": "p2468-l001",
+      "set_name": "1990 Collegiate Collection North Carolina",
+      "literal_count": 1
+    },
+    {
+      "id": "p2493-l003",
+      "set_name": "1990 Long John Silvers",
+      "literal_count": 1
+    },
+    {
+      "id": "p2501-l001",
+      "set_name": "1990(?) Negro Leagues Baseball Museum All Star Paige Postcard",
+      "literal_count": 1
+    },
+    {
+      "id": "p2510-l003",
+      "set_name": "1990 Starline",
+      "literal_count": 1
+    },
+    {
+      "id": "p2529-l001",
+      "set_name": "1989 (ca.) Dairy Council of Wisconsin Milwaukee Brewers magnets (possibly complete)",
+      "literal_count": 3
+    },
+    {
+      "id": "p2534-l004",
+      "set_name": "1989 Donruss Pop Up",
+      "literal_count": 12
+    },
+    {
+      "id": "p2549-l007",
+      "set_name": "1989 Franklin Caramel Series 1 and Series 2 (Broder set)",
+      "literal_count": 1
+    },
+    {
+      "id": "p2561-l001",
+      "set_name": "1989 Kahn's Cincy Reds",
+      "literal_count": 1
+    },
+    {
+      "id": "p2569-l001",
+      "set_name": "1989 Kenner Baseball Greats",
+      "literal_count": 3
+    },
+    {
+      "id": "p2571-l005",
+      "set_name": "1989 Milwaukee Brewers Yearbook Cards",
+      "literal_count": 3
+    },
+    {
+      "id": "p2600-l001",
+      "set_name": "1988 Baseball Cards Magazine Replicards",
+      "literal_count": 5
+    },
+    {
+      "id": "p2606-l003",
+      "set_name": "1988 Conlin Collector Series 3 (World Wide Sports)",
+      "literal_count": 1
+    },
+    {
+      "id": "p2606-l007",
+      "set_name": "1988 Conlin Collection Series 5 (World Wide Sports)",
+      "literal_count": 4
+    },
+    {
+      "id": "p2608-l001",
+      "set_name": "1988 Dominos Pizza '68 Tigers",
+      "literal_count": 1
+    },
+    {
+      "id": "p2635-l001",
+      "set_name": "1988 Foot Locker Slam Fest",
+      "literal_count": 6
+    },
+    {
+      "id": "p2663-l001",
+      "set_name": "1987 Baseball Cards Magazine Replicards",
+      "literal_count": 2
+    },
+    {
+      "id": "p2681-l001",
+      "set_name": "1987 Gatorade Cleveland Indians",
+      "literal_count": 1
+    },
+    {
+      "id": "p2687-l001",
+      "set_name": "1987 Hygrade",
+      "literal_count": 1
+    },
+    {
+      "id": "p2691-l001",
+      "set_name": "1987 Hygrade Promo--Orange Border, Yellow Back",
+      "literal_count": 1
+    },
+    {
+      "id": "p2713-l001",
+      "set_name": "1987 Smokey Bear Fire Prevention Team National League",
+      "literal_count": 1
+    },
+    {
+      "id": "p2715-l001",
+      "set_name": "1987 Stuart Super Stars Singles",
+      "literal_count": 1
+    },
+    {
+      "id": "p2719-l003",
+      "set_name": "1987 TCMA Baseballs Greatest Teams",
+      "literal_count": 1
+    },
+    {
+      "id": "p2733-l001",
+      "set_name": "1986 Baseball Cards Magazine Replicards",
+      "literal_count": 3
+    },
+    {
+      "id": "p2751-l001",
+      "set_name": "1986 Jay's",
+      "literal_count": 4
+    },
+    {
+      "id": "p2763-l001",
+      "set_name": "1986 Oh Henry Cleveland Indians",
+      "literal_count": 1
+    },
+    {
+      "id": "p2774-l001",
+      "set_name": "1986 Sportflics Jumbo Discs",
+      "literal_count": 1
+    },
+    {
+      "id": "p2814-l001",
+      "set_name": "1985 Baseball Cards Magazine Replicards",
+      "literal_count": 2
+    },
+    {
+      "id": "p2843-l001",
+      "set_name": "1985 General Mills Sticker Panels",
+      "literal_count": 5
+    },
+    {
+      "id": "p2851-l007",
+      "set_name": "1985(?) Pacific Trading Cards Babe Ruth Postcard",
+      "literal_count": 1
+    },
+    {
+      "id": "p2865-l003",
+      "set_name": "1984 Donruss",
+      "literal_count": 1
+    },
+    {
+      "id": "p2879-l003",
+      "set_name": "1984 National Sports Collectors Convention",
+      "literal_count": 9
+    },
+    {
+      "id": "p2887-l001",
+      "set_name": "1984 TCMA Baseball Advertiser Roberto Clemente FDC",
+      "literal_count": 2
+    },
+    {
+      "id": "p2887-l003",
+      "set_name": "1984 TCMA Baseball's All-Time All Star Teams",
+      "literal_count": 3
+    },
+    {
+      "id": "p2889-l003",
+      "set_name": "1984 TCMA Fifth Annual National",
+      "literal_count": 8
+    },
+    {
+      "id": "p2917-l001",
+      "set_name": "1983 English's Chicken",
+      "literal_count": 1
+    },
+    {
+      "id": "p2924-l007",
+      "set_name": "1983 Homeplate Sports",
+      "literal_count": 2
+    },
+    {
+      "id": "p2942-l001",
+      "set_name": "1983 Topps Stickers Boxes",
+      "literal_count": 1
+    },
+    {
+      "id": "p2942-l007",
+      "set_name": "1982 Baseball Card News",
+      "literal_count": 2
+    },
+    {
+      "id": "p2948-l001",
+      "set_name": "1982 Granny Goose A's",
+      "literal_count": 6
+    },
+    {
+      "id": "p2950-l001",
+      "set_name": "1982 Hygrade Montreal Expos",
+      "literal_count": 1
+    },
+    {
+      "id": "p2956-l001",
+      "set_name": "1982 Permagraphics Superstar",
+      "literal_count": 4
+    },
+    {
+      "id": "p2958-l001",
+      "set_name": "1982 Renata Galasso Turkey Red Reprint",
+      "literal_count": 1
+    },
+    {
+      "id": "p2986-l001",
+      "set_name": "1981-93 Lousville Slugger",
+      "literal_count": 16
+    },
+    {
+      "id": "p2988-l001",
+      "set_name": "1981 Minnesota Twins Postcards (with facsimile signatures)",
+      "literal_count": 17
+    },
+    {
+      "id": "p2990-l001",
+      "set_name": "1981 MSA Discs",
+      "literal_count": 6
+    },
+    {
+      "id": "p3000-l001",
+      "set_name": "1981 Topps Home Team Photos-Boston",
+      "literal_count": 5
+    },
+    {
+      "id": "p3014-l001",
+      "set_name": "1981 Topps Home Team Photos-Texas/Houston",
+      "literal_count": 2
+    },
+    {
+      "id": "p3022-l005",
+      "set_name": "Baseball All-Time Greats (unsure of make: Orange border, playing years in oval on lower left).",
+      "literal_count": 5
+    },
+    {
+      "id": "p3022-l006",
+      "set_name": "Baseball All-Time Greats (unsure of make--Green border)",
+      "literal_count": 1
+    },
+    {
+      "id": "p3023-l001",
+      "set_name": "Gary Carter Testimonial Booklet",
+      "literal_count": 1
+    },
+    {
+      "id": "p3035-l001",
+      "set_name": "2003 Milwaukee Brewers Bobbleheads",
+      "literal_count": 1
+    },
+    {
+      "id": "p3047-l001",
+      "set_name": "2007 Milwaukee Brewers Bobbleheads",
+      "literal_count": 3
+    },
+    {
+      "id": "p3055-l001",
+      "set_name": "2009 Milwaukee Brewers Bobbleheads",
+      "literal_count": 2
+    },
+    {
+      "id": "p3059-l001",
+      "set_name": "2010 Milwaukee Brewers Bobbleheads",
+      "literal_count": 1
+    },
+    {
+      "id": "p3062-l001",
+      "set_name": "2011 Milwaukee Brewers Bobbleheads",
+      "literal_count": 2
+    },
+    {
+      "id": "p3066-l001",
+      "set_name": "2012 Milwaukee Brewers Bobbleheads",
+      "literal_count": 1
+    },
+    {
+      "id": "p3072-l001",
+      "set_name": "2014 Milwaukee Brewers Bobbleheads",
+      "literal_count": 2
+    },
+    {
+      "id": "p3076-l001",
+      "set_name": "2015 Milwaukee Brewers Bobbleheads",
+      "literal_count": 2
+    },
+    {
+      "id": "p3080-l001",
+      "set_name": "2016 Milwaukee Brewers Bobbleheads",
+      "literal_count": 4
+    },
+    {
+      "id": "p3086-l001",
+      "set_name": "2017 Milwaukee Brewers Bobbleheads",
+      "literal_count": 1
+    },
+    {
+      "id": "p3089-l001",
+      "set_name": "2018 Milwaukee Brewers Bobbleheads",
+      "literal_count": 1
+    },
+    {
+      "id": "p3092-l001",
+      "set_name": "2019 Milwaukee Brewers Bobbleheads",
+      "literal_count": 2
+    },
+    {
+      "id": "p3099-l001",
+      "set_name": "2021 Milwaukee Brewers Bobbleheads",
+      "literal_count": 2
+    },
+    {
+      "id": "p3103-l001",
+      "set_name": "2022 Milwaukee Brewers Bobbleheads",
+      "literal_count": 1
+    },
+    {
+      "id": "p3106-l001",
+      "set_name": "2023 Milwaukee Brewers Bobbleheads",
+      "literal_count": 1
+    },
+    {
+      "id": "p3109-l001",
+      "set_name": "2024 Milwaukee Brewers Bobbleheads",
+      "literal_count": 1
+    },
+    {
+      "id": "p3112-l001",
+      "set_name": "2025 Milwaukee Brewers Bobbleheads",
+      "literal_count": 3
+    },
+    {
+      "id": "p3117-l001",
+      "set_name": "2026 Milwaukee Brewers Bobbleheads",
+      "literal_count": 5
+    },
+    {
+      "id": "p3128-l001",
+      "set_name": "Milwaukee Baseball 8x10 Autographs",
+      "literal_count": 250
+    },
+    {
+      "id": "p3380-l001",
+      "set_name": "Eau Claire player cards/photos/scans",
+      "literal_count": 117
+    }
+  ],
+  "provenance_coverage": 3392,
+  "header_matches": true,
+  "import_identity_matches": true,
+  "missing": [],
+  "extra": [],
+  "field_differences": {},
+  "duplicate_ids": 0,
+  "provenance_errors": [],
+  "item_state_errors": [],
+  "identity_differences": {
+    "missing_groups": [],
+    "extra_groups": [],
+    "missing_items": [],
+    "extra_items": []
+  },
+  "reviewed_edge_cases": {
+    "p1566-l003": {
+      "set_name": "2001 Ritz/Oreo (Fleer)",
+      "matches_baseline": true
+    },
+    "p0672-l001": {
+      "set_name": "2025 Topps Flagship (Costco)",
+      "matches_baseline": true
+    },
+    "p0694-l001": {
+      "set_name": "2024 Topps Flagship (Costco Exclusive)",
+      "matches_baseline": true
+    },
+    "p0730-l001": {
+      "set_name": "2023 Topps Flagship (Costco Exclusive)",
+      "matches_baseline": true
+    },
+    "Griffey_states": {
+      "Blue Border Griffey": "wanted",
+      "Red Border Griffey": "owned"
+    }
+  },
+  "representative_statuses_and_categories": {
+    "have_list": {
+      "id": "p0014-l001",
+      "matches_baseline": true
+    },
+    "complete": {
+      "id": "p0012-l001",
+      "matches_baseline": true
+    },
+    "uncertain": {
+      "id": "p0023-l001",
+      "matches_baseline": true
+    },
+    "autograph_cards": {
+      "id": "p0199-l001",
+      "matches_baseline": true
+    },
+    "autographs": {
+      "id": "p3128-l001",
+      "matches_baseline": true
+    },
+    "bobbleheads": {
+      "id": "p3029-l001",
+      "matches_baseline": true
+    },
+    "coins": {
+      "id": "p0277-l007",
+      "matches_baseline": true
+    },
+    "discs": {
+      "id": "p0122-l001",
+      "matches_baseline": true
+    },
+    "football_cards": {
+      "id": "p0581-l001",
+      "matches_baseline": true
+    },
+    "matchbooks": {
+      "id": "p0026-l001",
+      "matches_baseline": true
+    },
+    "non_sport_cards": {
+      "id": "p0019-l001",
+      "matches_baseline": true
+    },
+    "other_collectibles": {
+      "id": "p0526-l006",
+      "matches_baseline": true
+    },
+    "patches": {
+      "id": "p0092-l005",
+      "matches_baseline": true
+    },
+    "photos": {
+      "id": "p0237-l001",
+      "matches_baseline": true
+    },
+    "player_interests": {
+      "id": "p0645-l005",
+      "matches_baseline": true
+    },
+    "playing_cards": {
+      "id": "p0136-l001",
+      "matches_baseline": true
+    },
+    "postcards": {
+      "id": "p0028-l001",
+      "matches_baseline": true
+    },
+    "posters": {
+      "id": "p0289-l007",
+      "matches_baseline": true
+    },
+    "stamps": {
+      "id": "p0273-l047",
+      "matches_baseline": true
+    },
+    "tobacco_and_candy_cards": {
+      "id": "p0531-l001",
+      "matches_baseline": true
+    }
+  }
+}

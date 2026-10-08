@@ -290,3 +290,5 @@ by the technical maintainer; automated tests used only a disposable PIN.
 Empty historical primary Complete placeholders are not presented as current completion after reopening a set as WANT; meaningful completed-year sublists remain. The fixed special-container delete API was tested against actual staging and rejected without changing data.
 
 Some legacy source-text entries remain non-actionable until their individual identity is confirmed through explicit owner entry/list replacement. Their literal contents are preserved; no card identity or checklist complement is guessed. Human UX review should include these exceptional entries.
+
+The meaningful Milwaukee “Autographs” qualifier remains visible in the expanded photograph list. A final desktop/mobile category-browser recheck passed (2/2); staging endpoints and previews were disabled again afterward.

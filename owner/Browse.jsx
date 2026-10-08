@@ -15,7 +15,7 @@ function Contents({record:r}){
   if(!values.length&&g.list_type!=='complete')return null;
   const declared=g.list_type||r.list_type;const mode=declared==='uncertain'&&compactStatus(r)==='HAVE list'?'have_list':declared;
   return <section key={n}>{g.label&&<h3>{itemMode?g.label.replace(/ · Preserved source information$/, ''):g.label}</h3>}{g.description&&<p>{g.description}</p>}{mode==='complete'?<p>Complete</p>:<p><strong>{mode==='pending'?'Already expected — please do not send duplicates:':mode==='have_list'?`${itemMode?'Items':'Cards'} I have:`:mode==='want_list'?`${itemMode?'Items':'Cards'} I need:`:'Preserved source information:'}</strong> {values.join(g.items?.length&&!g.card_numbers?.length?'; ':', ')}</p>}{(n?asArray(g.notes):[]).map((s,i)=><p key={i}>{s}</p>)}</section>;
- })}{asArray(r.notes).filter(n=>!itemMode||!['Milwaukee Baseball 8x10 Autographs','Milwaukee Baseball 8x10 HAVE list','Eau Claire Players',r.set_name].includes(n)&&!/^_+$/.test(n)).map((s,i)=><p key={'note'+i}>{s}</p>)}{asArray(r.uncertainty).length>0&&<p className="source-note">Original wording: {r.uncertainty.join(' ')}</p>}</div>;
+ })}{asArray(r.notes).filter(n=>!itemMode||!['Milwaukee Baseball 8x10 HAVE list','Eau Claire Players',r.set_name].includes(n)&&!/^_+$/.test(n)).map((s,i)=><p key={'note'+i}>{s}</p>)}{asArray(r.uncertainty).length>0&&<p className="source-note">Original wording: {r.uncertainty.join(' ')}</p>}</div>;
 }
 
 function ListingRow({record:r,ownerAction}){

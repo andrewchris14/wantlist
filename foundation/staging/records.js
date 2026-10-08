@@ -1,9 +1,10 @@
 // Staging data-layer reference, not a public production API or editor.
 import {hash} from './auth.js';
+import {replaceList} from './replace-list.js';
 import {inverseOf} from './owner.js';
 const fail=(code='INVALID')=>{const e=Error(code);e.code=code;throw e;};
 const statement=(sql,...params)=>({sql,params});
-const metadataKeys=['year','brand','set_name','category','section','notes','prefixes','uncertainty','set_size'];
+const metadataKeys=['year','brand','set_name','category','section','notes','prefixes','uncertainty','set_size','display_category'];
 const publicKeys=['id',...metadataKeys,'source_list_type','completed_sets','source_refs','creation_origin'];
 const modes=['want_list','have_list','complete','uncertain'];
 export async function catalog(db){return (await db.prepare(`SELECT id,revision,list_type,json_extract(content_json,'$.year') year,
@@ -28,9 +29,10 @@ export function publicProjection(r){
 function validateMetadata(data,creating=false){
   if(!data||typeof data!=='object'||Array.isArray(data)||Object.keys(data).some(k=>!metadataKeys.includes(k)))fail();
   if(Object.values(data).some(v=>v===undefined))fail();
-  for(const k of ['year','brand','set_name','category','section'])if(k in data&&data[k]!==null&&(typeof data[k]!=='string'||data[k].length>500))fail();
+  for(const k of ['year','brand','set_name','category','section','display_category'])if(k in data&&data[k]!==null&&(typeof data[k]!=='string'||data[k].length>500))fail();
   if((creating||'set_name'in data)&&(!data.set_name||!data.set_name.trim()))fail();
   for(const k of ['notes','prefixes','uncertainty'])if(k in data&&(!Array.isArray(data[k])||data[k].some(x=>typeof x!=='string'||x.length>10000)))fail();
+  if(data.display_category!=null&&!['OBC Wantlist','UV Wantlist','Eau Claire Players','Milwaukee 8x10 List','Brewers Bobblehead Wantlist','Football Wantlist','Other Stuff'].includes(data.display_category))fail();
   if(data.set_size!=null&&(!Number.isInteger(data.set_size)||data.set_size<1))fail();
 }
 export function mutationControl(db,input){
@@ -52,12 +54,14 @@ export async function mutate(db,input,preflight,prefetchedRow){
     // CAS in the existing atomic delta commit rejects concurrent/newer saves.
     input={...input,...inverse};undoing=true;
   }
+  if(['replace_list','restore_representation'].includes(input.op)){if(input.op==='restore_representation'&&!undoing)fail();return replaceList(db,input,requestHash);}
   if(input.op==='add')return addOne(db,input,requestHash,prefetchedRow);
   if(['remove_item','restore_item'].includes(input.op))return removeRestoreOne(db,input,requestHash,prefetchedRow);
   if(input.op==='transition')return transitionOne(db,input,requestHash,prefetchedRow,undoing);
   if(['edit','delete','restore'].includes(input.op))return editHeaderOne(db,input,requestHash,prefetchedRow);
   const stamp=new Date().toISOString(),sql=[];let r,before={},after={},itemId=null;
   if(input.op==='create'){
+    if(['Eau Claire Players','Milwaukee 8x10 List','Brewers Bobblehead Wantlist'].includes(input.metadata?.display_category))fail();
     validateMetadata(input.metadata,true);const mode=input.list_type||'want_list';if(!modes.includes(mode))fail();
     const id='owner-record-'+crypto.randomUUID();
     r={id,import_id:null,list_type:mode,revision:1,created_at:stamp,updated_at:stamp,deleted_at:null,content:{id,creation_origin:'owner',notes:[],prefixes:[],uncertainty:[],...input.metadata},groups:[]};
@@ -146,6 +150,9 @@ async function editHeaderOne(db,input,requestHash,prefetched){
   const row=prefetched ?? await readHeader(db,input).first();
   if(!row||row.revision!==input.revision||(row.deleted_at&&input.op!=='restore')||(!row.deleted_at&&input.op==='restore'))fail('CONFLICT');
   if(row.public_revision!==input.revision)fail('CONFLICT');
+  if(input.metadata?.display_category&&['Eau Claire Players','Milwaukee 8x10 List','Brewers Bobblehead Wantlist'].includes(input.metadata.display_category)&&!row.id.startsWith('display-'))fail();
+  if(row.id.startsWith('display-')&&input.op==='delete')fail();
+  if(row.id.startsWith('display-')&&(Object.keys(input.metadata||{}).some(k=>k!=='notes')||input.list_type&&input.list_type!==row.list_type))fail();
   const old=JSON.parse(row.old_metadata),stamp=new Date().toISOString(),revision=input.revision+1;
   let mode=row.list_type,deleted=row.deleted_at,before={},after={},patch={revision,updated_at:stamp};
   if(input.op==='edit'){
@@ -154,6 +161,7 @@ async function editHeaderOne(db,input,requestHash,prefetched){
       const needed=await db.prepare(`SELECT i.id FROM record_groups g JOIN items i ON i.group_id=g.id WHERE g.record_id=? AND i.deleted_at IS NULL
         AND (i.state IN ('wanted','pending') OR (i.actionable=0 AND g.list_type='want_list')) LIMIT 1`).bind(row.id).first();if(needed)fail();
     }
+    if(['want_list','have_list'].includes(row.list_type)&&['want_list','have_list'].includes(mode)&&mode!==row.list_type)fail();
     before={metadata:old,list_type:row.list_type};
     after={metadata:input.metadata||{},list_type:mode};patch={...patch,...input.metadata,list_type:mode};
   }else{
@@ -225,6 +233,9 @@ async function removeRestoreOne(db,input,requestHash,prefetched){
   const row=prefetched ?? await readremoveRestoreOne(db,input).first();
   if(!row||row.record_revision!==input.revision||row.public_revision!==input.revision||row.record_deleted)fail('CONFLICT');
   const restoring=input.op==='restore_item';
+  // Whole-list replacement changes group meaning. Never reactivate an old
+  // opaque HAVE identifier under a newly WANT group through individual Restore.
+  if(restoring){const removed=await db.prepare("SELECT json_extract(before_json,'$.group_list_type') group_type FROM change_history INDEXED BY history_record_recent WHERE record_id=? AND created_at=? AND item_id=? AND action='remove_item' LIMIT 1").bind(row.record_id,row.deleted_at,row.id).first();if(!removed||!row.actionable&&removed.group_type!==row.group_list_type)fail();}
   if(restoring?(!row.deleted_at||(row.record_list_type==='complete'&&(['wanted','pending'].includes(row.state)||(!row.actionable&&row.group_list_type==='want_list')))):!!row.deleted_at)fail();
   const location=await db.prepare(`SELECT '$.groups['||g.key||'].entries' group_path,
     (SELECT key FROM json_each(g.value,'$.entries') WHERE json_extract(value,'$.id')=?) item_index,

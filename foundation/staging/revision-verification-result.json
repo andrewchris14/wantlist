@@ -1,0 +1,243 @@
+{
+  "checks": {
+    "pin_login": true,
+    "remembered_cookie_secure": true,
+    "create_have_future_set": true,
+    "owner_read": true,
+    "want_list": true,
+    "have_list": true,
+    "old_representation_individual_restore_rejected": true,
+    "duplicate_retry_receipt": true,
+    "exact_have_public_projection": true,
+    "no_inferred_complement": true,
+    "recent_changes": true,
+    "undo_replacement": true,
+    "undo_exact_previous_projection": true,
+    "stale_undo_rejected": true,
+    "internal_restore_cannot_bypass_undo": true,
+    "metadata_relabel_rejected": true,
+    "public_replace_rejected": true,
+    "csrf_rejected": true,
+    "future_set_no_word_provenance": true,
+    "section_display-eau-claire-players": true,
+    "section_display-milwaukee-8x10-list": true,
+    "section_display-brewers-bobblehead-wantlist": true,
+    "reserved_duplicate_section_rejected": true,
+    "logout": true
+  },
+  "record_id": "owner-record-4facead7-6207-4bc2-b396-deaa201e6725",
+  "samples": [
+    {
+      "operation": "want_list",
+      "started": "2026-10-08T04:05:43.231Z",
+      "ended": "2026-10-08T04:05:43.442Z",
+      "status": 200,
+      "client_wall_ms": 210.722,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 6.697
+    },
+    {
+      "operation": "have_list",
+      "started": "2026-10-08T04:05:44.492Z",
+      "ended": "2026-10-08T04:05:44.772Z",
+      "status": 200,
+      "client_wall_ms": 279.29,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 10.781
+    },
+    {
+      "operation": "want_list",
+      "started": "2026-10-08T04:05:45.822Z",
+      "ended": "2026-10-08T04:05:46.000Z",
+      "status": 200,
+      "client_wall_ms": 177.875,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 4.39
+    },
+    {
+      "operation": "have_list",
+      "started": "2026-10-08T04:05:47.050Z",
+      "ended": "2026-10-08T04:05:47.198Z",
+      "status": 200,
+      "client_wall_ms": 147.155,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 3.033
+    },
+    {
+      "operation": "want_list",
+      "started": "2026-10-08T04:05:48.248Z",
+      "ended": "2026-10-08T04:05:48.464Z",
+      "status": 200,
+      "client_wall_ms": 215.562,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 7.239
+    },
+    {
+      "operation": "have_list",
+      "started": "2026-10-08T04:05:49.514Z",
+      "ended": "2026-10-08T04:05:49.711Z",
+      "status": 200,
+      "client_wall_ms": 196.719,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 3.782
+    },
+    {
+      "operation": "want_list",
+      "started": "2026-10-08T04:05:50.761Z",
+      "ended": "2026-10-08T04:05:50.929Z",
+      "status": 200,
+      "client_wall_ms": 167.09,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 5.509
+    },
+    {
+      "operation": "have_list",
+      "started": "2026-10-08T04:05:51.979Z",
+      "ended": "2026-10-08T04:05:52.140Z",
+      "status": 200,
+      "client_wall_ms": 161.275,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0
+    },
+    {
+      "operation": "want_list",
+      "started": "2026-10-08T04:05:53.190Z",
+      "ended": "2026-10-08T04:05:53.363Z",
+      "status": 200,
+      "client_wall_ms": 172.098,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 2.825
+    },
+    {
+      "operation": "have_list",
+      "started": "2026-10-08T04:05:54.413Z",
+      "ended": "2026-10-08T04:05:54.568Z",
+      "status": 200,
+      "client_wall_ms": 154.934,
+      "instrumented": false,
+      "rows_read": 0,
+      "rows_written": 0,
+      "d1_duration_ms": 0.0,
+      "cpu_ms": 3.762
+    },
+    {
+      "operation": "want_list",
+      "started": "2026-10-08T04:05:55.618Z",
+      "ended": "2026-10-08T04:05:55.757Z",
+      "status": 200,
+      "client_wall_ms": 138.282,
+      "instrumented": true,
+      "rows_read": 115,
+      "rows_written": 23,
+      "d1_duration_ms": 3.5256,
+      "cpu_ms": 3.386
+    },
+    {
+      "operation": "have_list",
+      "started": "2026-10-08T04:05:56.807Z",
+      "ended": "2026-10-08T04:05:56.960Z",
+      "status": 200,
+      "client_wall_ms": 152.999,
+      "instrumented": true,
+      "rows_read": 121,
+      "rows_written": 20,
+      "d1_duration_ms": 5.9003,
+      "cpu_ms": 2.676
+    }
+  ],
+  "start": "2026-10-08T04:05:42.181Z",
+  "end": "2026-10-08T04:05:58.625Z",
+  "full_import": false,
+  "production_cutover": false,
+  "permanent_owner_pin_configured": false,
+  "replacement_query_plans": {
+    "next_position": [
+      {
+        "id": 3,
+        "parent": 0,
+        "notused": 54,
+        "detail": "SEARCH items USING COVERING INDEX sqlite_autoindex_items_2 (group_id=? AND field_key=?)"
+      }
+    ],
+    "history_membership": [
+      {
+        "id": 3,
+        "parent": 0,
+        "notused": 62,
+        "detail": "SEARCH items USING INDEX items_group_value (group_id=?)"
+      }
+    ],
+    "affected_public_group": [
+      {
+        "id": 4,
+        "parent": 0,
+        "notused": 62,
+        "detail": "SEARCH items USING INDEX sqlite_autoindex_items_2 (group_id=?)"
+      }
+    ],
+    "record_projection": [
+      {
+        "id": 3,
+        "parent": 0,
+        "notused": 39,
+        "detail": "SEARCH public_records USING INDEX sqlite_autoindex_public_records_1 (record_id=?)"
+      }
+    ],
+    "individual_restore_event": [
+      {
+        "id": 4,
+        "parent": 0,
+        "notused": 61,
+        "detail": "SEARCH change_history USING INDEX history_record_recent (record_id=? AND created_at=?)"
+      }
+    ]
+  },
+  "summary": {
+    "want_list": {
+      "runs": 5,
+      "successes": 5,
+      "cpu_samples": 5,
+      "median_cpu_ms": 5.509,
+      "max_cpu_ms": 7.239,
+      "median_wall_ms": 177.875,
+      "d1_reads": 115,
+      "d1_writes": 23
+    },
+    "have_list": {
+      "runs": 5,
+      "successes": 5,
+      "cpu_samples": 4,
+      "median_cpu_ms": 3.7720000000000002,
+      "max_cpu_ms": 10.781,
+      "median_wall_ms": 161.275,
+      "d1_reads": 121,
+      "d1_writes": 20
+    }
+  }
+}

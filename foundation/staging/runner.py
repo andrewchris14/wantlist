@@ -10,7 +10,7 @@ import time
 import urllib.error
 import urllib.request
 from pathlib import Path
-from .cloudflare import WORKER, deploy, endpoint, query
+from .cloudflare import WORKER, deploy, endpoint, query, api
 
 ROOT = Path(__file__).resolve().parents[2]
 STATE = ROOT / 'foundation/.local/staging-access.json'
@@ -32,7 +32,17 @@ def deploy_staging(instrumented=True, benchmark_version=None, editor=False):
                 {'type':'plain_text','name':'STAGING_BENCH_VERSION','text':benchmark_version},
                 {'type':'plain_text','name':'STAGING_METRICS','text':'true' if instrumented else 'false'},
                 {'type':'d1','name':'DB','id':s['database_id']}]
-    modules = {name: (ROOT / 'foundation/staging' / name).read_text() for name in ('worker.mjs','auth.js','records.js','owner.js','editor-assets.js')}
+    if s.get('pin'):
+        bindings.extend([{'type':'secret_text','name':'OWNER_PIN','text':s['pin']},{'type':'secret_text','name':'OWNER_PIN_VERSION','text':s['pin_version']}])
+    # Cloudflare's documented inherit binding preserves dashboard-configured
+    # secrets on code deployment. Never reset a manually changed owner PIN.
+    existing={b['name'] for b in api('/workers/scripts/'+WORKER+'/settings')['bindings'] if b['type']=='secret_text'}
+    # Preserve server-configured PIN/version even if a later technical
+    # checkpoint has no local PIN (secrets are intentionally not retrievable).
+    bound={b['name'] for b in bindings}
+    bindings.extend({'type':'inherit','name':name} for name in sorted(existing-bound))
+    bindings=[{'type':'inherit','name':b['name']} if b['type']=='secret_text' and b['name'] in existing else b for b in bindings]
+    modules = {name: (ROOT / 'foundation/staging' / name).read_text() for name in ('worker.mjs','auth.js','records.js','owner.js','replace-list.js','editor-assets.js')}
     if editor:
         assets={}
         dist=ROOT/'foundation/.local/editor-dist'
@@ -51,6 +61,7 @@ def deploy_staging(instrumented=True, benchmark_version=None, editor=False):
 class Client:
     def __init__(self):
         self.state = state()
+        if self.state.get('pin'): self.state['credential']=self.state['pin']
         self.origin = 'https://' + WORKER + '.andrewchris14.workers.dev'
         self.cookie = None
         self.measurements = []

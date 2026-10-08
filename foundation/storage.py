@@ -16,7 +16,7 @@ BASELINE_COMMIT = 'd452f58d9006a498db7a8c65827c645b8f817703'
 BASELINE_SHA256 = '38a7ee7ad07ede1ae744dbe91b819c1bb78a294c70ca30f933bc66604d44c98a'
 ROOT = Path(__file__).resolve().parents[1]
 INVENTORIES = ('card_numbers', 'items', 'card_ranges')
-PUBLIC_FIELDS = ('id', 'year', 'brand', 'set_name', 'category', 'section',
+PUBLIC_FIELDS = ('id', 'year', 'brand', 'set_name', 'category', 'display_category', 'section',
                  'list_type', 'source_list_type', 'notes', 'prefixes', 'set_size',
                  'uncertainty', 'sublists', 'mixed_lists', 'completed_sets',
                  'card_numbers', 'items', 'card_ranges', 'source_refs')

@@ -1,5 +1,6 @@
 // Staging-only approved owner-secret authentication. Access codes NEVER expire.
-// This accepts a provisioned high-entropy credential, not a human-chosen password.
+// Strong-code mode remains unchanged. Explicit PIN-secret mode intentionally
+// has only 10,000 possibilities; it is not equivalent to a strong credential.
 export const COOKIE = '__Host-wantlist_owner';
 export const REMEMBERED = 90 * 86400;
 export const SHORT = 8 * 3600;
@@ -8,14 +9,19 @@ export const hex = bytes => [...bytes].map(b => b.toString(16).padStart(2, '0'))
 export const random = () => hex(crypto.getRandomValues(new Uint8Array(32)));
 export const hash = async value => hex(new Uint8Array(await crypto.subtle.digest('SHA-256', enc.encode(value))));
 export function config(env) {
+  if(env.OWNER_PIN!==undefined){
+    if(!/^\d{4}$/.test(env.OWNER_PIN)||!/^[-\w]{16,100}$/.test(env.OWNER_PIN_VERSION||''))throw Error('Invalid PIN secret configuration');
+    return {algorithm:'SHA-256',version:env.OWNER_PIN_VERSION,pin:true};
+  }
   const c = JSON.parse(env.OWNER_AUTH_CONFIG);
   if (c.algorithm !== 'SHA-256' || !/^[a-f0-9]{64}$/.test(c.digest) || !/^[\w-]{16,100}$/.test(c.version)) throw Error('Invalid secret configuration');
   return c;
 }
 export async function verifyCredential(value, env) {
-  if (typeof value !== 'string' || value.length > 256 || value.length < 20) return false;
+  const c=config(env);
+  if(typeof value!=='string'||(c.pin?!/^\d{4}$/.test(value):value.length>256||value.length<20))return false;
   const actual = await crypto.subtle.digest('SHA-256', enc.encode(value));
-  const expected = Uint8Array.from(config(env).digest.match(/../g), x => parseInt(x, 16));
+  const expected = c.pin ? new Uint8Array(await crypto.subtle.digest('SHA-256',enc.encode(env.OWNER_PIN))) : Uint8Array.from(c.digest.match(/../g), x => parseInt(x, 16));
   return crypto.subtle.timingSafeEqual(actual, expected);
 }
 export async function throttle(db, ip) {

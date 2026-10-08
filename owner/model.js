@@ -3,6 +3,8 @@ export function browseRecord(r) {
  const {groups=[],...header}=r;
  return {...header,card_numbers:[],items:[],card_ranges:[],mixed_lists:groups.flatMap(g=>{
   const entries=g.entries||[];
+  if(g.kind==='primary'&&g.list_type==='complete'&&!entries.length&&header.list_type!=='complete')return [];
+  if(g.list_type==='complete'&&!entries.length)return [{label:g.label,list_type:'complete',items:[],notes:g.notes||[],description:g.description}];
   return ['wanted','pending','owned','opaque'].map(state=>({
    label:[g.label,state==='pending'?'Someone is sending these':state==='opaque'?'Preserved source information':''].filter(Boolean).join(' · '),
    list_type:state==='wanted'?'want_list':state==='owned'?'have_list':state==='pending'?'pending':g.list_type||header.list_type,
@@ -18,13 +20,19 @@ export function parseCards(input,kind='numbers') {
  if(new Set(values).size!==values.length)throw Error('A card is listed twice. Please remove the repeated entry.');
  return values;
 }
-export const statusNames={want_list:'Cards I need',have_list:'Cards I have',complete:'Complete — nothing needed',uncertain:'Uncertain'};
+export const statusNames={want_list:'Cards I need',have_list:'Cards I have',complete:'Complete — nothing needed',uncertain:'Original source wording'};
 export function titleOf(r){const c=r.content||r,name=c.set_name||'Untitled set',lower=name.toLowerCase();return [c.year&&!lower.includes(String(c.year).toLowerCase())?c.year:null,c.brand&&!lower.includes(c.brand.toLowerCase())?c.brand:null,name].filter(Boolean).join(' · ');}
 export function historyLabel(h){
  const value=h.after?.value||h.before?.value;
  if(h.action==='transition')return `Marked ${value} as ${h.after.state==='owned'?'Received':h.after.state==='pending'?'Someone is sending this':'Still need this'}`;
  if(h.action==='add')return `Added cards ${(h.after.items||[]).map(i=>i.value).join(', ')}`;
+ if(h.action==='replace_list')return h.before?.list_type&&h.after?.list_type?`Replaced ${h.before.list_type==='have_list'?'HAVE':'WANT'} list with ${h.after.list_type==='have_list'?'HAVE':'WANT'} list`:'Replaced WANT/HAVE list';
+ if(h.action==='restore_representation')return 'Restored previous list';
  if(h.action==='create')return 'Created this set';
  if(h.action==='edit')return Object.keys(h.after.metadata||{}).length===1&&h.after.metadata.notes?'Changed notes':'Changed set information';
  return ({remove_item:`Removed ${value}`,restore_item:`Restored ${value}`,delete:'Removed this set',restore:'Restored this set'})[h.action]||'Updated this set';
 }
+
+// Explicit owner-selected section defaults for NEW sets only; never reclassifies
+// historical records from their brand/name or alters preserved source categories.
+export function newSetCategory(section){return section==='Football Wantlist'?'football_cards':section==='Other Stuff'?'other_collectibles':'baseball_cards';}

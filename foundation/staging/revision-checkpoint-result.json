@@ -1,0 +1,140 @@
+{
+  "approved_baseline_commit": "504a96bc92458013de1fa8b153d68d0a18767a47",
+  "baseline_records": 3392,
+  "display_listings": 3367,
+  "baseline_category_counts": {
+    "OBC Wantlist": 583,
+    "Other Stuff": 202,
+    "Football Wantlist": 62,
+    "UV Wantlist": 2517,
+    "Brewers Bobblehead Wantlist": 26,
+    "Milwaukee 8x10 List": 1,
+    "Eau Claire Players": 1
+  },
+  "display_category_counts": {
+    "OBC Wantlist": 583,
+    "Other Stuff": 202,
+    "Football Wantlist": 62,
+    "UV Wantlist": 2517,
+    "Eau Claire Players": 1,
+    "Milwaukee 8x10 List": 1,
+    "Brewers Bobblehead Wantlist": 1
+  },
+  "uncertainty": {
+    "preserved": 28,
+    "explicit_have_display": 21,
+    "human_review": 7
+  },
+  "special_source_values": {
+    "Eau Claire Players": 112,
+    "Milwaukee 8x10 List": 250,
+    "Brewers Bobblehead Wantlist": 35
+  },
+  "regressions": {
+    "phase2": 21,
+    "foundation_python": 44,
+    "foundation_node": 42,
+    "website": 49,
+    "public_browser": 16,
+    "owner_desktop_mobile": 14,
+    "final_presentation_rechecks": 4,
+    "actual_backend_assertions": 518,
+    "actual_revision_assertions": 24,
+    "production_build": "passed",
+    "staging_owner_build": "passed",
+    "axe_violations": 0,
+    "horizontal_overflow": false,
+    "actual_fixed_container_delete_rejection": true,
+    "historical_complete_reopen_presentation": "passed"
+  },
+  "actual_replacement_cpu": {
+    "want_list": {
+      "runs": 5,
+      "successes": 5,
+      "cpu_samples": 5,
+      "median_cpu_ms": 5.509,
+      "max_cpu_ms": 7.239,
+      "median_wall_ms": 177.875,
+      "d1_reads": 115,
+      "d1_writes": 23
+    },
+    "have_list": {
+      "runs": 5,
+      "successes": 5,
+      "cpu_samples": 4,
+      "median_cpu_ms": 3.7720000000000002,
+      "max_cpu_ms": 10.781,
+      "median_wall_ms": 161.275,
+      "d1_reads": 121,
+      "d1_writes": 20
+    }
+  },
+  "resources": {
+    "wantlist-staging": {
+      "enabled": false,
+      "previews_enabled": false
+    },
+    "wantlist-staging-3b2-probe": {
+      "enabled": false,
+      "previews_enabled": false
+    }
+  },
+  "d1": {
+    "name": "wantlist-staging",
+    "file_size_bytes": 8749056,
+    "counts": {
+      "records": 231,
+      "items": 5542,
+      "history": 2129,
+      "original_historical_samples": 27
+    },
+    "binding_staging_only_verified": true,
+    "initial_import_guard": {
+      "expected_records": 27,
+      "completed": 1
+    }
+  },
+  "authentication": {
+    "mode": "server-side Worker PIN secret",
+    "permanent_requested_pin_configured": false,
+    "actual_tests": "disposable staging PIN only",
+    "remembered_seconds": 7776000,
+    "nonremembered_seconds": 28800,
+    "pin_expiration": null,
+    "forced_rotation": false,
+    "secret_deployments": "inherit existing secret bindings",
+    "secret_inheritance_without_local_pin_test": "passed actual deployment/login/logout"
+  },
+  "public_site": "unchanged approved static loader and production components",
+  "protected_file_checksums": {
+    "data/wantlists.json": "38a7ee7ad07ede1ae744dbe91b819c1bb78a294c70ca30f933bc66604d44c98a",
+    "data/raw/Wantlists 10-5-26.docx": "75d968d267b9ee551e3d45343d7ce8966e7ee81f82ff26a62eac5a7239e3cda7"
+  },
+  "backup_archive_retained": true,
+  "full_import_executed": false,
+  "production_cutover": false,
+  "paid_features_enabled": false,
+  "new_cloudflare_resources": [],
+  "supplemental_section_import_indexed_writes": 1699,
+  "eau_safe_materialization_indexed_writes": 116,
+  "full_import_daily_write_budget": 80000,
+  "full_import_reservation": 471733,
+  "unverified": [
+    "native signed D1 download/remote restore",
+    "D1 Time Travel"
+  ],
+  "known_limits": [
+    "weak four-digit PIN is not strong authentication",
+    "7 historical source notes need human interpretation",
+    "broad Eau Claire player interests are not unique actionable cards",
+    "500-entry ordinary representation replacement cap",
+    "accepted prior 11.656 ms redeployment-first-edit outlier",
+    "accepted prior 5661\u20135799 item-restore reads",
+    "Chromium tested; no Opera-specific claim",
+    "additional raw HAVE replacement CPU outlier 10.781 ms; cause not established, not automatically equated to accepted first-after-redeploy outlier"
+  ],
+  "supplemental_section_idempotent_rerun": {
+    "added_records": 0,
+    "rows_written": 0
+  }
+}

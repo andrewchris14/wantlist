@@ -189,7 +189,7 @@ python -m foundation.staging.editor_preview --disable
 The separate bundle is generated into ignored `foundation/.local/editor-dist/`.
 The harness requires the existing secure, ignored staging checkpoint and scoped
 Cloudflare environment bindings. Never paste credentials into code, GitHub or URLs.
-Use the disposable staging access code in the login form; never a production code.
+Use the disposable staging PIN in the login form; never a production credential.
 The browser suite contacts actual staging Worker/D1 through a loopback-only test
 transport because Chromium cannot directly use this environment's egress proxy.
 It preserves the real HTTPS browser origin and secure cookie behavior. It is not a
@@ -200,3 +200,21 @@ this is not a login bypass in the application.
 Keep staging disabled outside a deliberate test/review window. The public site
 remains independent even during a staging review. Full baseline import, production
 owner deployment and public data cutover each need separate approval.
+
+
+## Compact staging revision
+
+See [the complete UX revision checkpoint](docs/PHASE_3B3_UX_REVISION.md), including
+original-section mapping, seven unresolved historical notes, screenshots, PIN tradeoffs
+and beginner-friendly Cloudflare secret configuration steps for the technical maintainer.
+
+The staging bundle now uses compact expandable rows and the seven original document
+categories. `npm run build:owner` also runs `tools/build_display_wantlists.py`, producing
+additive `data/display-wantlists.json` and `data/display-map.json` from the unchanged
+Word/raw/Phase 2 snapshot. Regenerate these through the script; do not manually edit them.
+The three consolidated sections retain every original member/provenance reference.
+
+The production build/data loader remains unchanged. Staging PIN secrets are
+`OWNER_PIN` and `OWNER_PIN_VERSION`; do not put either in frontend configuration.
+Deployment inherits existing Worker secrets, preserving values configured in the dashboard.
+Dad only uses the website. No full import or production switch is authorized.

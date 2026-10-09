@@ -188255,17 +188255,120 @@
       "display_year": "2026"
     },
     {
-      "id": "display-eau-claire-players",
+      "id": "display-eau-claire-1",
       "year": null,
       "brand": null,
-      "set_name": "Eau Claire Players",
+      "set_name": "Major League Players",
       "category": "player_interests",
       "display_category": "Eau Claire Players",
       "section": "player_interests",
       "list_type": "want_list",
       "source_list_type": "want_list",
       "card_numbers": [],
-      "items": [],
+      "items": [
+        "Henry Aaron",
+        "Tommie Aaron",
+        "\"Tug\" Arundel",
+        "Tom Asmussen",
+        "Loren Bain",
+        "Stephen Behel",
+        "Frank Bishop (no known photo, per SABR)",
+        "Bob Botz",
+        "Julie Bowers",
+        "John Braun",
+        "Jack Brennan",
+        "Bruce Brubaker",
+        "Bill Bruton",
+        "William Burdick",
+        "Bill Butland",
+        "John Cahill",
+        "Dave Callahan",
+        "Rico Carty",
+        "Vince Castino",
+        "Larry Chappell",
+        "Otis Clark",
+        "Tony Cloninger",
+        "Wes Covington",
+        "Clarence Cross (no known photo, per SABR)",
+        "Douglas Crothers",
+        "Jack Daniels",
+        "Jim Delsing",
+        "Charles Dexter",
+        "Charles Dougherty (no known photo, per SABR)",
+        "Dave Eilers",
+        "Al Epperly",
+        "Jim Fanning",
+        "Hank Fischer",
+        "Max Fiske",
+        "Jim Gallagher (no known photo, per SABR)",
+        "Ed \"Patsy\" Gharrity",
+        "John Goryl",
+        "Frank Gregory",
+        "Ivy Griffin",
+        "Burleigh Grimes",
+        "James Handiboe (no known photo, per SABR)",
+        "Vern Handrahan",
+        "Harry Hanebrink",
+        "Roy \"Snipe\" Hansen",
+        "Frank \"Red\" Hardy",
+        "Andrew \"Frank\" Harrington",
+        "Clint Hartung",
+        "Frank Hemphill",
+        "Walt Hriniak",
+        "Charles Ingraham",
+        "Manuel Jimenez",
+        "Vic Johnson",
+        "Jack Kading",
+        "Joe Lafata",
+        "Denny LeMaster",
+        "Charles Levis",
+        "Em Lindbeck",
+        "Walt Linden",
+        "Jack Littrell",
+        "Bobby Lowe",
+        "Hank Majeski",
+        "Georges Maranda",
+        "Phil Masi",
+        "Larry Maxie",
+        "Lee Maye",
+        "Ed Mayer",
+        "James McKeever",
+        "Tom Morrissey",
+        "John Mostil",
+        "Tom Nagle",
+        "Andy Pafko",
+        "Elias Peak (no known photo, per SABR)",
+        "Dick Phillips",
+        "Ron Piche",
+        "Bill Queen",
+        "Joseph Quest",
+        "Jeremiah Reardon (no known photo, per SABR)",
+        "Charles Reilly",
+        "Bill Robinson",
+        "Ernest Rudolph",
+        "Rosy Ryan",
+        "Amado Samuel",
+        "Lou (Lew) Say",
+        "Tom Sexton (no known photo, per SABR)",
+        "Lev Shreve",
+        "John Skopec",
+        "Stan Spence",
+        "Stan Sperry",
+        "Charlie Sproull",
+        "Len Stockwell",
+        "Pat Sullivan (no known photo, per SABR)",
+        "Chuck Tanner",
+        "Bert Thiel",
+        "Joe Torre",
+        "Bob Trowbridge",
+        "Bob Uecker",
+        "Arnold Umbach",
+        "Art Watson",
+        "Peter Weckbecker",
+        "Wes Westrum",
+        "Don Wheeler",
+        "Pete Whisenant"
+      ],
       "card_ranges": [],
       "notes": [
         "Eau Claire Players",
@@ -188274,609 +188377,8 @@
       "prefixes": [],
       "uncertainty": [],
       "mixed_lists": [],
-      "sublists": [
-        {
-          "label": "Major League Players",
-          "list_type": "want_list",
-          "items": [
-            "Henry Aaron",
-            "Tommie Aaron",
-            "\"Tug\" Arundel",
-            "Tom Asmussen",
-            "Loren Bain",
-            "Stephen Behel",
-            "Frank Bishop (no known photo, per SABR)",
-            "Bob Botz",
-            "Julie Bowers",
-            "John Braun",
-            "Jack Brennan",
-            "Bruce Brubaker",
-            "Bill Bruton",
-            "William Burdick",
-            "Bill Butland",
-            "John Cahill",
-            "Dave Callahan",
-            "Rico Carty",
-            "Vince Castino",
-            "Larry Chappell",
-            "Otis Clark",
-            "Tony Cloninger",
-            "Wes Covington",
-            "Clarence Cross (no known photo, per SABR)",
-            "Douglas Crothers",
-            "Jack Daniels",
-            "Jim Delsing",
-            "Charles Dexter",
-            "Charles Dougherty (no known photo, per SABR)",
-            "Dave Eilers",
-            "Al Epperly",
-            "Jim Fanning",
-            "Hank Fischer",
-            "Max Fiske",
-            "Jim Gallagher (no known photo, per SABR)",
-            "Ed \"Patsy\" Gharrity",
-            "John Goryl",
-            "Frank Gregory",
-            "Ivy Griffin",
-            "Burleigh Grimes",
-            "James Handiboe (no known photo, per SABR)",
-            "Vern Handrahan",
-            "Harry Hanebrink",
-            "Roy \"Snipe\" Hansen",
-            "Frank \"Red\" Hardy",
-            "Andrew \"Frank\" Harrington",
-            "Clint Hartung",
-            "Frank Hemphill",
-            "Walt Hriniak",
-            "Charles Ingraham",
-            "Manuel Jimenez",
-            "Vic Johnson",
-            "Jack Kading",
-            "Joe Lafata",
-            "Denny LeMaster",
-            "Charles Levis",
-            "Em Lindbeck",
-            "Walt Linden",
-            "Jack Littrell",
-            "Bobby Lowe",
-            "Hank Majeski",
-            "Georges Maranda",
-            "Phil Masi",
-            "Larry Maxie",
-            "Lee Maye",
-            "Ed Mayer",
-            "James McKeever",
-            "Tom Morrissey",
-            "John Mostil",
-            "Tom Nagle",
-            "Andy Pafko",
-            "Elias Peak (no known photo, per SABR)",
-            "Dick Phillips",
-            "Ron Piche",
-            "Bill Queen",
-            "Joseph Quest",
-            "Jeremiah Reardon (no known photo, per SABR)",
-            "Charles Reilly",
-            "Bill Robinson",
-            "Ernest Rudolph",
-            "Rosy Ryan",
-            "Amado Samuel",
-            "Lou (Lew) Say",
-            "Tom Sexton (no known photo, per SABR)",
-            "Lev Shreve",
-            "John Skopec",
-            "Stan Spence",
-            "Stan Sperry",
-            "Charlie Sproull",
-            "Len Stockwell",
-            "Pat Sullivan (no known photo, per SABR)",
-            "Chuck Tanner",
-            "Bert Thiel",
-            "Joe Torre",
-            "Bob Trowbridge",
-            "Bob Uecker",
-            "Arnold Umbach",
-            "Art Watson",
-            "Peter Weckbecker",
-            "Wes Westrum",
-            "Don Wheeler",
-            "Pete Whisenant"
-          ],
-          "source_refs": [
-            {
-              "paragraph": 3380,
-              "line": 3
-            },
-            {
-              "paragraph": 3380,
-              "line": 4
-            },
-            {
-              "paragraph": 3380,
-              "line": 5
-            },
-            {
-              "paragraph": 3380,
-              "line": 6
-            },
-            {
-              "paragraph": 3380,
-              "line": 7
-            },
-            {
-              "paragraph": 3380,
-              "line": 8
-            },
-            {
-              "paragraph": 3380,
-              "line": 9
-            },
-            {
-              "paragraph": 3380,
-              "line": 10
-            },
-            {
-              "paragraph": 3380,
-              "line": 11
-            },
-            {
-              "paragraph": 3381,
-              "line": 1
-            },
-            {
-              "paragraph": 3381,
-              "line": 2
-            },
-            {
-              "paragraph": 3381,
-              "line": 3
-            },
-            {
-              "paragraph": 3381,
-              "line": 4
-            },
-            {
-              "paragraph": 3381,
-              "line": 5
-            },
-            {
-              "paragraph": 3381,
-              "line": 6
-            },
-            {
-              "paragraph": 3381,
-              "line": 7
-            },
-            {
-              "paragraph": 3381,
-              "line": 8
-            },
-            {
-              "paragraph": 3381,
-              "line": 9
-            },
-            {
-              "paragraph": 3381,
-              "line": 10
-            },
-            {
-              "paragraph": 3381,
-              "line": 11
-            },
-            {
-              "paragraph": 3381,
-              "line": 12
-            },
-            {
-              "paragraph": 3381,
-              "line": 13
-            },
-            {
-              "paragraph": 3381,
-              "line": 14
-            },
-            {
-              "paragraph": 3381,
-              "line": 15
-            },
-            {
-              "paragraph": 3381,
-              "line": 16
-            },
-            {
-              "paragraph": 3381,
-              "line": 17
-            },
-            {
-              "paragraph": 3381,
-              "line": 18
-            },
-            {
-              "paragraph": 3381,
-              "line": 19
-            },
-            {
-              "paragraph": 3381,
-              "line": 20
-            },
-            {
-              "paragraph": 3381,
-              "line": 21
-            },
-            {
-              "paragraph": 3381,
-              "line": 22
-            },
-            {
-              "paragraph": 3381,
-              "line": 23
-            },
-            {
-              "paragraph": 3381,
-              "line": 24
-            },
-            {
-              "paragraph": 3381,
-              "line": 25
-            },
-            {
-              "paragraph": 3381,
-              "line": 26
-            },
-            {
-              "paragraph": 3381,
-              "line": 27
-            },
-            {
-              "paragraph": 3381,
-              "line": 28
-            },
-            {
-              "paragraph": 3381,
-              "line": 29
-            },
-            {
-              "paragraph": 3381,
-              "line": 30
-            },
-            {
-              "paragraph": 3381,
-              "line": 31
-            },
-            {
-              "paragraph": 3381,
-              "line": 32
-            },
-            {
-              "paragraph": 3381,
-              "line": 33
-            },
-            {
-              "paragraph": 3381,
-              "line": 34
-            },
-            {
-              "paragraph": 3381,
-              "line": 35
-            },
-            {
-              "paragraph": 3381,
-              "line": 36
-            },
-            {
-              "paragraph": 3381,
-              "line": 37
-            },
-            {
-              "paragraph": 3381,
-              "line": 38
-            },
-            {
-              "paragraph": 3381,
-              "line": 39
-            },
-            {
-              "paragraph": 3381,
-              "line": 40
-            },
-            {
-              "paragraph": 3381,
-              "line": 41
-            },
-            {
-              "paragraph": 3381,
-              "line": 42
-            },
-            {
-              "paragraph": 3381,
-              "line": 43
-            },
-            {
-              "paragraph": 3381,
-              "line": 44
-            },
-            {
-              "paragraph": 3381,
-              "line": 45
-            },
-            {
-              "paragraph": 3381,
-              "line": 46
-            },
-            {
-              "paragraph": 3381,
-              "line": 47
-            },
-            {
-              "paragraph": 3381,
-              "line": 48
-            },
-            {
-              "paragraph": 3381,
-              "line": 49
-            },
-            {
-              "paragraph": 3381,
-              "line": 50
-            },
-            {
-              "paragraph": 3381,
-              "line": 51
-            },
-            {
-              "paragraph": 3381,
-              "line": 52
-            },
-            {
-              "paragraph": 3381,
-              "line": 53
-            },
-            {
-              "paragraph": 3381,
-              "line": 54
-            },
-            {
-              "paragraph": 3381,
-              "line": 55
-            },
-            {
-              "paragraph": 3381,
-              "line": 56
-            },
-            {
-              "paragraph": 3381,
-              "line": 57
-            },
-            {
-              "paragraph": 3381,
-              "line": 58
-            },
-            {
-              "paragraph": 3381,
-              "line": 59
-            },
-            {
-              "paragraph": 3381,
-              "line": 60
-            },
-            {
-              "paragraph": 3381,
-              "line": 61
-            },
-            {
-              "paragraph": 3381,
-              "line": 62
-            },
-            {
-              "paragraph": 3381,
-              "line": 63
-            },
-            {
-              "paragraph": 3381,
-              "line": 64
-            },
-            {
-              "paragraph": 3381,
-              "line": 65
-            },
-            {
-              "paragraph": 3381,
-              "line": 66
-            },
-            {
-              "paragraph": 3381,
-              "line": 67
-            },
-            {
-              "paragraph": 3381,
-              "line": 68
-            },
-            {
-              "paragraph": 3381,
-              "line": 69
-            },
-            {
-              "paragraph": 3381,
-              "line": 70
-            },
-            {
-              "paragraph": 3381,
-              "line": 71
-            },
-            {
-              "paragraph": 3381,
-              "line": 72
-            },
-            {
-              "paragraph": 3381,
-              "line": 73
-            },
-            {
-              "paragraph": 3381,
-              "line": 74
-            },
-            {
-              "paragraph": 3381,
-              "line": 75
-            },
-            {
-              "paragraph": 3381,
-              "line": 76
-            },
-            {
-              "paragraph": 3381,
-              "line": 77
-            },
-            {
-              "paragraph": 3381,
-              "line": 78
-            },
-            {
-              "paragraph": 3381,
-              "line": 79
-            },
-            {
-              "paragraph": 3381,
-              "line": 80
-            },
-            {
-              "paragraph": 3381,
-              "line": 81
-            },
-            {
-              "paragraph": 3381,
-              "line": 82
-            },
-            {
-              "paragraph": 3381,
-              "line": 83
-            },
-            {
-              "paragraph": 3381,
-              "line": 84
-            },
-            {
-              "paragraph": 3381,
-              "line": 85
-            },
-            {
-              "paragraph": 3381,
-              "line": 86
-            },
-            {
-              "paragraph": 3381,
-              "line": 87
-            },
-            {
-              "paragraph": 3381,
-              "line": 88
-            },
-            {
-              "paragraph": 3381,
-              "line": 89
-            },
-            {
-              "paragraph": 3381,
-              "line": 90
-            },
-            {
-              "paragraph": 3381,
-              "line": 91
-            },
-            {
-              "paragraph": 3381,
-              "line": 92
-            },
-            {
-              "paragraph": 3381,
-              "line": 93
-            },
-            {
-              "paragraph": 3381,
-              "line": 94
-            }
-          ]
-        },
-        {
-          "label": "Major League Managers",
-          "list_type": "want_list",
-          "items": [
-            "Bill Adair",
-            "Joe Cantillon",
-            "Dave Garcia"
-          ],
-          "source_refs": [
-            {
-              "paragraph": 3381,
-              "line": 96
-            },
-            {
-              "paragraph": 3381,
-              "line": 97
-            },
-            {
-              "paragraph": 3381,
-              "line": 98
-            },
-            {
-              "paragraph": 3381,
-              "line": 99
-            }
-          ]
-        },
-        {
-          "label": "EC Managers (but did not play for EC) with major league experience",
-          "list_type": "want_list",
-          "items": [
-            "Andy Cohen (also one game as a major league manager)",
-            "Travis Jackson",
-            "Joe Just",
-            "Gordon Maltzberger",
-            "Charlie Root",
-            "Bill Steinecke",
-            "Hugh Wise"
-          ],
-          "source_refs": [
-            {
-              "paragraph": 3381,
-              "line": 101
-            },
-            {
-              "paragraph": 3381,
-              "line": 102
-            },
-            {
-              "paragraph": 3381,
-              "line": 103
-            },
-            {
-              "paragraph": 3381,
-              "line": 104
-            },
-            {
-              "paragraph": 3381,
-              "line": 105
-            },
-            {
-              "paragraph": 3381,
-              "line": 106
-            },
-            {
-              "paragraph": 3381,
-              "line": 107
-            },
-            {
-              "paragraph": 3381,
-              "line": 108
-            }
-          ]
-        }
-      ],
+      "sublists": [],
       "source_refs": [
-        {
-          "paragraph": 3380,
-          "line": 1
-        },
         {
           "paragraph": 3380,
           "line": 3
@@ -189288,54 +188790,6 @@
         {
           "paragraph": 3381,
           "line": 94
-        },
-        {
-          "paragraph": 3381,
-          "line": 96
-        },
-        {
-          "paragraph": 3381,
-          "line": 97
-        },
-        {
-          "paragraph": 3381,
-          "line": 98
-        },
-        {
-          "paragraph": 3381,
-          "line": 99
-        },
-        {
-          "paragraph": 3381,
-          "line": 101
-        },
-        {
-          "paragraph": 3381,
-          "line": 102
-        },
-        {
-          "paragraph": 3381,
-          "line": 103
-        },
-        {
-          "paragraph": 3381,
-          "line": 104
-        },
-        {
-          "paragraph": 3381,
-          "line": 105
-        },
-        {
-          "paragraph": 3381,
-          "line": 106
-        },
-        {
-          "paragraph": 3381,
-          "line": 107
-        },
-        {
-          "paragraph": 3381,
-          "line": 108
         }
       ],
       "source_wording": [
@@ -190203,22 +189657,6 @@
       "section_line_ledger": [
         {
           "source_ref": {
-            "paragraph": 3379,
-            "line": 1
-          },
-          "kind": "note",
-          "text": "Eau Claire Players"
-        },
-        {
-          "source_ref": {
-            "paragraph": 3380,
-            "line": 1
-          },
-          "kind": "note",
-          "text": "I'm interested in all cards/photos/scans of photos or cards from major leaguers who played in Eau Claire. I'm an Eau Claire baseball history enthusiast and have a book published on the subject. Some of these names are very, very easy while others are nearly impossible. I'd like to become THE source for Eau Claire baseball images and cards. Here's the list (please email me first as I might already have the card or photo. I don't have all that many cards, though.):"
-        },
-        {
-          "source_ref": {
             "paragraph": 3380,
             "line": 3
           },
@@ -191040,7 +190478,711 @@
           },
           "kind": "item",
           "text": "Pete Whisenant"
+        }
+      ],
+      "section_view_notes": [
+        "Original section lines used without comma splitting; approved legacy parser representations retained in source_records."
+      ],
+      "display_parent": "display-eau-claire-players",
+      "source_group": {
+        "label": "Major League Players",
+        "list_type": "want_list",
+        "items": [
+          "Henry Aaron",
+          "Tommie Aaron",
+          "\"Tug\" Arundel",
+          "Tom Asmussen",
+          "Loren Bain",
+          "Stephen Behel",
+          "Frank Bishop (no known photo, per SABR)",
+          "Bob Botz",
+          "Julie Bowers",
+          "John Braun",
+          "Jack Brennan",
+          "Bruce Brubaker",
+          "Bill Bruton",
+          "William Burdick",
+          "Bill Butland",
+          "John Cahill",
+          "Dave Callahan",
+          "Rico Carty",
+          "Vince Castino",
+          "Larry Chappell",
+          "Otis Clark",
+          "Tony Cloninger",
+          "Wes Covington",
+          "Clarence Cross (no known photo, per SABR)",
+          "Douglas Crothers",
+          "Jack Daniels",
+          "Jim Delsing",
+          "Charles Dexter",
+          "Charles Dougherty (no known photo, per SABR)",
+          "Dave Eilers",
+          "Al Epperly",
+          "Jim Fanning",
+          "Hank Fischer",
+          "Max Fiske",
+          "Jim Gallagher (no known photo, per SABR)",
+          "Ed \"Patsy\" Gharrity",
+          "John Goryl",
+          "Frank Gregory",
+          "Ivy Griffin",
+          "Burleigh Grimes",
+          "James Handiboe (no known photo, per SABR)",
+          "Vern Handrahan",
+          "Harry Hanebrink",
+          "Roy \"Snipe\" Hansen",
+          "Frank \"Red\" Hardy",
+          "Andrew \"Frank\" Harrington",
+          "Clint Hartung",
+          "Frank Hemphill",
+          "Walt Hriniak",
+          "Charles Ingraham",
+          "Manuel Jimenez",
+          "Vic Johnson",
+          "Jack Kading",
+          "Joe Lafata",
+          "Denny LeMaster",
+          "Charles Levis",
+          "Em Lindbeck",
+          "Walt Linden",
+          "Jack Littrell",
+          "Bobby Lowe",
+          "Hank Majeski",
+          "Georges Maranda",
+          "Phil Masi",
+          "Larry Maxie",
+          "Lee Maye",
+          "Ed Mayer",
+          "James McKeever",
+          "Tom Morrissey",
+          "John Mostil",
+          "Tom Nagle",
+          "Andy Pafko",
+          "Elias Peak (no known photo, per SABR)",
+          "Dick Phillips",
+          "Ron Piche",
+          "Bill Queen",
+          "Joseph Quest",
+          "Jeremiah Reardon (no known photo, per SABR)",
+          "Charles Reilly",
+          "Bill Robinson",
+          "Ernest Rudolph",
+          "Rosy Ryan",
+          "Amado Samuel",
+          "Lou (Lew) Say",
+          "Tom Sexton (no known photo, per SABR)",
+          "Lev Shreve",
+          "John Skopec",
+          "Stan Spence",
+          "Stan Sperry",
+          "Charlie Sproull",
+          "Len Stockwell",
+          "Pat Sullivan (no known photo, per SABR)",
+          "Chuck Tanner",
+          "Bert Thiel",
+          "Joe Torre",
+          "Bob Trowbridge",
+          "Bob Uecker",
+          "Arnold Umbach",
+          "Art Watson",
+          "Peter Weckbecker",
+          "Wes Westrum",
+          "Don Wheeler",
+          "Pete Whisenant"
+        ],
+        "source_refs": [
+          {
+            "paragraph": 3380,
+            "line": 3
+          },
+          {
+            "paragraph": 3380,
+            "line": 4
+          },
+          {
+            "paragraph": 3380,
+            "line": 5
+          },
+          {
+            "paragraph": 3380,
+            "line": 6
+          },
+          {
+            "paragraph": 3380,
+            "line": 7
+          },
+          {
+            "paragraph": 3380,
+            "line": 8
+          },
+          {
+            "paragraph": 3380,
+            "line": 9
+          },
+          {
+            "paragraph": 3380,
+            "line": 10
+          },
+          {
+            "paragraph": 3380,
+            "line": 11
+          },
+          {
+            "paragraph": 3381,
+            "line": 1
+          },
+          {
+            "paragraph": 3381,
+            "line": 2
+          },
+          {
+            "paragraph": 3381,
+            "line": 3
+          },
+          {
+            "paragraph": 3381,
+            "line": 4
+          },
+          {
+            "paragraph": 3381,
+            "line": 5
+          },
+          {
+            "paragraph": 3381,
+            "line": 6
+          },
+          {
+            "paragraph": 3381,
+            "line": 7
+          },
+          {
+            "paragraph": 3381,
+            "line": 8
+          },
+          {
+            "paragraph": 3381,
+            "line": 9
+          },
+          {
+            "paragraph": 3381,
+            "line": 10
+          },
+          {
+            "paragraph": 3381,
+            "line": 11
+          },
+          {
+            "paragraph": 3381,
+            "line": 12
+          },
+          {
+            "paragraph": 3381,
+            "line": 13
+          },
+          {
+            "paragraph": 3381,
+            "line": 14
+          },
+          {
+            "paragraph": 3381,
+            "line": 15
+          },
+          {
+            "paragraph": 3381,
+            "line": 16
+          },
+          {
+            "paragraph": 3381,
+            "line": 17
+          },
+          {
+            "paragraph": 3381,
+            "line": 18
+          },
+          {
+            "paragraph": 3381,
+            "line": 19
+          },
+          {
+            "paragraph": 3381,
+            "line": 20
+          },
+          {
+            "paragraph": 3381,
+            "line": 21
+          },
+          {
+            "paragraph": 3381,
+            "line": 22
+          },
+          {
+            "paragraph": 3381,
+            "line": 23
+          },
+          {
+            "paragraph": 3381,
+            "line": 24
+          },
+          {
+            "paragraph": 3381,
+            "line": 25
+          },
+          {
+            "paragraph": 3381,
+            "line": 26
+          },
+          {
+            "paragraph": 3381,
+            "line": 27
+          },
+          {
+            "paragraph": 3381,
+            "line": 28
+          },
+          {
+            "paragraph": 3381,
+            "line": 29
+          },
+          {
+            "paragraph": 3381,
+            "line": 30
+          },
+          {
+            "paragraph": 3381,
+            "line": 31
+          },
+          {
+            "paragraph": 3381,
+            "line": 32
+          },
+          {
+            "paragraph": 3381,
+            "line": 33
+          },
+          {
+            "paragraph": 3381,
+            "line": 34
+          },
+          {
+            "paragraph": 3381,
+            "line": 35
+          },
+          {
+            "paragraph": 3381,
+            "line": 36
+          },
+          {
+            "paragraph": 3381,
+            "line": 37
+          },
+          {
+            "paragraph": 3381,
+            "line": 38
+          },
+          {
+            "paragraph": 3381,
+            "line": 39
+          },
+          {
+            "paragraph": 3381,
+            "line": 40
+          },
+          {
+            "paragraph": 3381,
+            "line": 41
+          },
+          {
+            "paragraph": 3381,
+            "line": 42
+          },
+          {
+            "paragraph": 3381,
+            "line": 43
+          },
+          {
+            "paragraph": 3381,
+            "line": 44
+          },
+          {
+            "paragraph": 3381,
+            "line": 45
+          },
+          {
+            "paragraph": 3381,
+            "line": 46
+          },
+          {
+            "paragraph": 3381,
+            "line": 47
+          },
+          {
+            "paragraph": 3381,
+            "line": 48
+          },
+          {
+            "paragraph": 3381,
+            "line": 49
+          },
+          {
+            "paragraph": 3381,
+            "line": 50
+          },
+          {
+            "paragraph": 3381,
+            "line": 51
+          },
+          {
+            "paragraph": 3381,
+            "line": 52
+          },
+          {
+            "paragraph": 3381,
+            "line": 53
+          },
+          {
+            "paragraph": 3381,
+            "line": 54
+          },
+          {
+            "paragraph": 3381,
+            "line": 55
+          },
+          {
+            "paragraph": 3381,
+            "line": 56
+          },
+          {
+            "paragraph": 3381,
+            "line": 57
+          },
+          {
+            "paragraph": 3381,
+            "line": 58
+          },
+          {
+            "paragraph": 3381,
+            "line": 59
+          },
+          {
+            "paragraph": 3381,
+            "line": 60
+          },
+          {
+            "paragraph": 3381,
+            "line": 61
+          },
+          {
+            "paragraph": 3381,
+            "line": 62
+          },
+          {
+            "paragraph": 3381,
+            "line": 63
+          },
+          {
+            "paragraph": 3381,
+            "line": 64
+          },
+          {
+            "paragraph": 3381,
+            "line": 65
+          },
+          {
+            "paragraph": 3381,
+            "line": 66
+          },
+          {
+            "paragraph": 3381,
+            "line": 67
+          },
+          {
+            "paragraph": 3381,
+            "line": 68
+          },
+          {
+            "paragraph": 3381,
+            "line": 69
+          },
+          {
+            "paragraph": 3381,
+            "line": 70
+          },
+          {
+            "paragraph": 3381,
+            "line": 71
+          },
+          {
+            "paragraph": 3381,
+            "line": 72
+          },
+          {
+            "paragraph": 3381,
+            "line": 73
+          },
+          {
+            "paragraph": 3381,
+            "line": 74
+          },
+          {
+            "paragraph": 3381,
+            "line": 75
+          },
+          {
+            "paragraph": 3381,
+            "line": 76
+          },
+          {
+            "paragraph": 3381,
+            "line": 77
+          },
+          {
+            "paragraph": 3381,
+            "line": 78
+          },
+          {
+            "paragraph": 3381,
+            "line": 79
+          },
+          {
+            "paragraph": 3381,
+            "line": 80
+          },
+          {
+            "paragraph": 3381,
+            "line": 81
+          },
+          {
+            "paragraph": 3381,
+            "line": 82
+          },
+          {
+            "paragraph": 3381,
+            "line": 83
+          },
+          {
+            "paragraph": 3381,
+            "line": 84
+          },
+          {
+            "paragraph": 3381,
+            "line": 85
+          },
+          {
+            "paragraph": 3381,
+            "line": 86
+          },
+          {
+            "paragraph": 3381,
+            "line": 87
+          },
+          {
+            "paragraph": 3381,
+            "line": 88
+          },
+          {
+            "paragraph": 3381,
+            "line": 89
+          },
+          {
+            "paragraph": 3381,
+            "line": 90
+          },
+          {
+            "paragraph": 3381,
+            "line": 91
+          },
+          {
+            "paragraph": 3381,
+            "line": 92
+          },
+          {
+            "paragraph": 3381,
+            "line": 93
+          },
+          {
+            "paragraph": 3381,
+            "line": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "display-eau-claire-2",
+      "year": null,
+      "brand": null,
+      "set_name": "Major League Managers",
+      "category": "player_interests",
+      "display_category": "Eau Claire Players",
+      "section": "player_interests",
+      "list_type": "want_list",
+      "source_list_type": "want_list",
+      "card_numbers": [],
+      "items": [
+        "Bill Adair",
+        "Joe Cantillon",
+        "Dave Garcia"
+      ],
+      "card_ranges": [],
+      "notes": [
+        "Eau Claire Players",
+        "I'm interested in all cards/photos/scans of photos or cards from major leaguers who played in Eau Claire. I'm an Eau Claire baseball history enthusiast and have a book published on the subject. Some of these names are very, very easy while others are nearly impossible. I'd like to become THE source for Eau Claire baseball images and cards. Here's the list (please email me first as I might already have the card or photo. I don't have all that many cards, though.):"
+      ],
+      "prefixes": [],
+      "uncertainty": [],
+      "mixed_lists": [],
+      "sublists": [],
+      "source_refs": [
+        {
+          "paragraph": 3381,
+          "line": 96
         },
+        {
+          "paragraph": 3381,
+          "line": 97
+        },
+        {
+          "paragraph": 3381,
+          "line": 98
+        },
+        {
+          "paragraph": 3381,
+          "line": 99
+        }
+      ],
+      "source_wording": [
+        "I'm interested in all cards/photos/scans of photos or cards from major leaguers who played in Eau Claire. I'm an Eau Claire baseball history enthusiast and have a book published on the subject. Some of these names are very, very easy while others are nearly impossible. I'd like to become THE source for Eau Claire baseball images and cards. Here's the list (please email me first as I might already have the card or photo. I don't have all that many cards, though.):",
+        "Major League Players:",
+        "Henry Aaron",
+        "Tommie Aaron",
+        "\"Tug\" Arundel",
+        "Tom Asmussen",
+        "Loren Bain",
+        "Stephen Behel",
+        "Frank Bishop (no known photo, per SABR)",
+        "Bob Botz",
+        "Julie Bowers  ",
+        "John Braun",
+        "Jack Brennan",
+        "Bruce Brubaker",
+        "Bill Bruton",
+        "William Burdick",
+        "Bill Butland",
+        "John Cahill",
+        "Dave Callahan",
+        "Rico Carty",
+        "Vince Castino",
+        "Larry Chappell",
+        "Otis Clark",
+        "Tony Cloninger",
+        "Wes Covington",
+        "Clarence Cross (no known photo, per SABR)",
+        "Douglas Crothers",
+        "Jack Daniels",
+        "Jim Delsing",
+        "Charles Dexter",
+        "Charles Dougherty (no known photo, per SABR)",
+        "Dave Eilers",
+        "Al Epperly",
+        "Jim Fanning",
+        "Hank Fischer",
+        "Max Fiske",
+        "Jim Gallagher (no known photo, per SABR)",
+        "Ed \"Patsy\" Gharrity",
+        "John Goryl",
+        "Frank Gregory",
+        "Ivy Griffin",
+        "Burleigh Grimes",
+        "James Handiboe (no known photo, per SABR)",
+        "Vern Handrahan",
+        "Harry Hanebrink",
+        "Roy \"Snipe\" Hansen",
+        "Frank \"Red\" Hardy",
+        "Andrew \"Frank\" Harrington",
+        "Clint Hartung",
+        "Frank Hemphill",
+        "Walt Hriniak",
+        "Charles Ingraham",
+        "Manuel Jimenez",
+        "Vic Johnson",
+        "Jack Kading",
+        "Joe Lafata",
+        "Denny LeMaster",
+        "Charles Levis",
+        "Em Lindbeck",
+        "Walt Linden",
+        "Jack Littrell",
+        "Bobby Lowe",
+        "Hank Majeski",
+        "Georges Maranda",
+        "Phil Masi",
+        "Larry Maxie",
+        "Lee Maye",
+        "Ed Mayer",
+        "James McKeever",
+        "Tom Morrissey",
+        "John Mostil",
+        "Tom Nagle",
+        "Andy Pafko",
+        "Elias Peak (no known photo, per SABR)",
+        "Dick Phillips",
+        "Ron Piche",
+        "Bill Queen",
+        "Joseph Quest",
+        "Jeremiah Reardon (no known photo, per SABR)",
+        "Charles Reilly",
+        "Bill Robinson",
+        "Ernest Rudolph",
+        "Rosy Ryan",
+        "Amado Samuel",
+        "Lou (Lew) Say",
+        "Tom Sexton (no known photo, per SABR)",
+        "Lev Shreve",
+        "John Skopec",
+        "Stan Spence",
+        "Stan Sperry",
+        "Charlie Sproull",
+        "Len Stockwell",
+        "Pat Sullivan (no known photo, per SABR)",
+        "Chuck Tanner",
+        "Bert Thiel",
+        "Joe Torre",
+        "Bob Trowbridge",
+        "Bob Uecker",
+        "Arnold Umbach",
+        "Art Watson",
+        "Peter Weckbecker",
+        "Wes Westrum",
+        "Don Wheeler",
+        "Pete Whisenant",
+        "Major League Managers:",
+        "Bill Adair",
+        "Joe Cantillon",
+        "Dave Garcia",
+        "EC Managers (but did not play for EC) with major league experience:",
+        "Andy Cohen (also one game as a major league manager)",
+        "Travis Jackson",
+        "Joe Just",
+        "Gordon Maltzberger",
+        "Charlie Root",
+        "Bill Steinecke",
+        "Hugh Wise"
+      ],
+      "source_records": [],
+      "display_members": [
+        "p3380-l001"
+      ],
+      "source_section_context": [
+        {
+          "source_ref": {
+            "paragraph": 3379,
+            "line": 1
+          },
+          "text": "Eau Claire Players",
+          "section": "player_interests"
+        }
+      ],
+      "section_line_ledger": [
         {
           "source_ref": {
             "paragraph": 3381,
@@ -191072,7 +191214,236 @@
           },
           "kind": "item",
           "text": "Dave Garcia"
+        }
+      ],
+      "section_view_notes": [
+        "Original section lines used without comma splitting; approved legacy parser representations retained in source_records."
+      ],
+      "display_parent": "display-eau-claire-players",
+      "source_group": {
+        "label": "Major League Managers",
+        "list_type": "want_list",
+        "items": [
+          "Bill Adair",
+          "Joe Cantillon",
+          "Dave Garcia"
+        ],
+        "source_refs": [
+          {
+            "paragraph": 3381,
+            "line": 96
+          },
+          {
+            "paragraph": 3381,
+            "line": 97
+          },
+          {
+            "paragraph": 3381,
+            "line": 98
+          },
+          {
+            "paragraph": 3381,
+            "line": 99
+          }
+        ]
+      }
+    },
+    {
+      "id": "display-eau-claire-3",
+      "year": null,
+      "brand": null,
+      "set_name": "EC Managers (but did not play for EC) with major league experience",
+      "category": "player_interests",
+      "display_category": "Eau Claire Players",
+      "section": "player_interests",
+      "list_type": "want_list",
+      "source_list_type": "want_list",
+      "card_numbers": [],
+      "items": [
+        "Andy Cohen (also one game as a major league manager)",
+        "Travis Jackson",
+        "Joe Just",
+        "Gordon Maltzberger",
+        "Charlie Root",
+        "Bill Steinecke",
+        "Hugh Wise"
+      ],
+      "card_ranges": [],
+      "notes": [
+        "Eau Claire Players",
+        "I'm interested in all cards/photos/scans of photos or cards from major leaguers who played in Eau Claire. I'm an Eau Claire baseball history enthusiast and have a book published on the subject. Some of these names are very, very easy while others are nearly impossible. I'd like to become THE source for Eau Claire baseball images and cards. Here's the list (please email me first as I might already have the card or photo. I don't have all that many cards, though.):"
+      ],
+      "prefixes": [],
+      "uncertainty": [],
+      "mixed_lists": [],
+      "sublists": [],
+      "source_refs": [
+        {
+          "paragraph": 3381,
+          "line": 101
         },
+        {
+          "paragraph": 3381,
+          "line": 102
+        },
+        {
+          "paragraph": 3381,
+          "line": 103
+        },
+        {
+          "paragraph": 3381,
+          "line": 104
+        },
+        {
+          "paragraph": 3381,
+          "line": 105
+        },
+        {
+          "paragraph": 3381,
+          "line": 106
+        },
+        {
+          "paragraph": 3381,
+          "line": 107
+        },
+        {
+          "paragraph": 3381,
+          "line": 108
+        }
+      ],
+      "source_wording": [
+        "I'm interested in all cards/photos/scans of photos or cards from major leaguers who played in Eau Claire. I'm an Eau Claire baseball history enthusiast and have a book published on the subject. Some of these names are very, very easy while others are nearly impossible. I'd like to become THE source for Eau Claire baseball images and cards. Here's the list (please email me first as I might already have the card or photo. I don't have all that many cards, though.):",
+        "Major League Players:",
+        "Henry Aaron",
+        "Tommie Aaron",
+        "\"Tug\" Arundel",
+        "Tom Asmussen",
+        "Loren Bain",
+        "Stephen Behel",
+        "Frank Bishop (no known photo, per SABR)",
+        "Bob Botz",
+        "Julie Bowers  ",
+        "John Braun",
+        "Jack Brennan",
+        "Bruce Brubaker",
+        "Bill Bruton",
+        "William Burdick",
+        "Bill Butland",
+        "John Cahill",
+        "Dave Callahan",
+        "Rico Carty",
+        "Vince Castino",
+        "Larry Chappell",
+        "Otis Clark",
+        "Tony Cloninger",
+        "Wes Covington",
+        "Clarence Cross (no known photo, per SABR)",
+        "Douglas Crothers",
+        "Jack Daniels",
+        "Jim Delsing",
+        "Charles Dexter",
+        "Charles Dougherty (no known photo, per SABR)",
+        "Dave Eilers",
+        "Al Epperly",
+        "Jim Fanning",
+        "Hank Fischer",
+        "Max Fiske",
+        "Jim Gallagher (no known photo, per SABR)",
+        "Ed \"Patsy\" Gharrity",
+        "John Goryl",
+        "Frank Gregory",
+        "Ivy Griffin",
+        "Burleigh Grimes",
+        "James Handiboe (no known photo, per SABR)",
+        "Vern Handrahan",
+        "Harry Hanebrink",
+        "Roy \"Snipe\" Hansen",
+        "Frank \"Red\" Hardy",
+        "Andrew \"Frank\" Harrington",
+        "Clint Hartung",
+        "Frank Hemphill",
+        "Walt Hriniak",
+        "Charles Ingraham",
+        "Manuel Jimenez",
+        "Vic Johnson",
+        "Jack Kading",
+        "Joe Lafata",
+        "Denny LeMaster",
+        "Charles Levis",
+        "Em Lindbeck",
+        "Walt Linden",
+        "Jack Littrell",
+        "Bobby Lowe",
+        "Hank Majeski",
+        "Georges Maranda",
+        "Phil Masi",
+        "Larry Maxie",
+        "Lee Maye",
+        "Ed Mayer",
+        "James McKeever",
+        "Tom Morrissey",
+        "John Mostil",
+        "Tom Nagle",
+        "Andy Pafko",
+        "Elias Peak (no known photo, per SABR)",
+        "Dick Phillips",
+        "Ron Piche",
+        "Bill Queen",
+        "Joseph Quest",
+        "Jeremiah Reardon (no known photo, per SABR)",
+        "Charles Reilly",
+        "Bill Robinson",
+        "Ernest Rudolph",
+        "Rosy Ryan",
+        "Amado Samuel",
+        "Lou (Lew) Say",
+        "Tom Sexton (no known photo, per SABR)",
+        "Lev Shreve",
+        "John Skopec",
+        "Stan Spence",
+        "Stan Sperry",
+        "Charlie Sproull",
+        "Len Stockwell",
+        "Pat Sullivan (no known photo, per SABR)",
+        "Chuck Tanner",
+        "Bert Thiel",
+        "Joe Torre",
+        "Bob Trowbridge",
+        "Bob Uecker",
+        "Arnold Umbach",
+        "Art Watson",
+        "Peter Weckbecker",
+        "Wes Westrum",
+        "Don Wheeler",
+        "Pete Whisenant",
+        "Major League Managers:",
+        "Bill Adair",
+        "Joe Cantillon",
+        "Dave Garcia",
+        "EC Managers (but did not play for EC) with major league experience:",
+        "Andy Cohen (also one game as a major league manager)",
+        "Travis Jackson",
+        "Joe Just",
+        "Gordon Maltzberger",
+        "Charlie Root",
+        "Bill Steinecke",
+        "Hugh Wise"
+      ],
+      "source_records": [],
+      "display_members": [
+        "p3380-l001"
+      ],
+      "source_section_context": [
+        {
+          "source_ref": {
+            "paragraph": 3379,
+            "line": 1
+          },
+          "text": "Eau Claire Players",
+          "section": "player_interests"
+        }
+      ],
+      "section_line_ledger": [
         {
           "source_ref": {
             "paragraph": 3381,
@@ -191140,7 +191511,55 @@
       ],
       "section_view_notes": [
         "Original section lines used without comma splitting; approved legacy parser representations retained in source_records."
-      ]
+      ],
+      "display_parent": "display-eau-claire-players",
+      "source_group": {
+        "label": "EC Managers (but did not play for EC) with major league experience",
+        "list_type": "want_list",
+        "items": [
+          "Andy Cohen (also one game as a major league manager)",
+          "Travis Jackson",
+          "Joe Just",
+          "Gordon Maltzberger",
+          "Charlie Root",
+          "Bill Steinecke",
+          "Hugh Wise"
+        ],
+        "source_refs": [
+          {
+            "paragraph": 3381,
+            "line": 101
+          },
+          {
+            "paragraph": 3381,
+            "line": 102
+          },
+          {
+            "paragraph": 3381,
+            "line": 103
+          },
+          {
+            "paragraph": 3381,
+            "line": 104
+          },
+          {
+            "paragraph": 3381,
+            "line": 105
+          },
+          {
+            "paragraph": 3381,
+            "line": 106
+          },
+          {
+            "paragraph": 3381,
+            "line": 107
+          },
+          {
+            "paragraph": 3381,
+            "line": 108
+          }
+        ]
+      }
     },
     {
       "id": "display-milwaukee-8x10-list",
@@ -197817,7 +198236,7 @@
     "Football Wantlist": 62,
     "UV Wantlist": 2517,
     "Brewers Bobblehead Wantlist": 26,
-    "Eau Claire Players": 1,
+    "Eau Claire Players": 3,
     "Milwaukee 8x10 List": 1
   },
   "classification_approvals": {
@@ -197891,6 +198310,20 @@
       "source_refs": [
         {
           "paragraph": 3022,
+          "line": 6
+        }
+      ]
+    }
+  },
+  "source_note_fields": {
+    "p0526-l006": {
+      "fields": [
+        "items"
+      ],
+      "reason": "Original paragraph states existing ownership and broad interests; it does not identify needed card identifiers.",
+      "source_refs": [
+        {
+          "paragraph": 526,
           "line": 6
         }
       ]

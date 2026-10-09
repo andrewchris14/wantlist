@@ -5,13 +5,14 @@ import {readFileSync,existsSync} from 'node:fs';
 import {timingSafeEqual} from 'node:crypto';
 import {localD1} from '../foundation/tests/d1-local-adapter.mjs';
 import worker from '../foundation/staging/worker.mjs';
-import {openRecord,publicProjection} from '../foundation/staging/records.js';
+import {mutate,openRecord,publicProjection} from '../foundation/staging/records.js';
 const origin='https://isolated.wantlist.test';
 Object.defineProperty(crypto.subtle,'timingSafeEqual',{value:(a,b)=>timingSafeEqual(Buffer.from(a),Buffer.from(b)),configurable:true});
 function fixture(){
  const db=localD1();db.sqlite.exec(readFileSync('foundation/staging/schema.sql','utf8'));db.sqlite.exec("INSERT INTO staging_import_state VALUES(1,'isolated','isolated',0,1)");
  const view=JSON.parse(readFileSync('foundation/staging/historical-view.json','utf8'));
- const chosen=view.records.filter(r=>r.display_category==='Brewers Bobblehead Wantlist'||r.id==='p0060-l001'||r.id==='p1237-l004'||r.id==='p1996-l008'||r.id==='p2501-l001'||r.id.startsWith('display-'));
+ const extra=view.records.find(r=>r.brand==='Topps'),year1951=view.records.find(r=>r.year==='1951');
+ const chosen=view.records.filter(r=>r.display_category==='Brewers Bobblehead Wantlist'||r.id===year1951.id||r.id===extra.id||r.id==='p0060-l001'||r.id==='p1237-l004'||r.id==='p1996-l008'||r.id==='p2501-l001'||r.id.startsWith('display-'));
  const stamp=new Date().toISOString();
  for(const r of chosen){
   const mode=r.display_list_type||r.list_type,content={...r};for(const k of ['card_numbers','items','card_ranges','mixed_lists','sublists','source_records','source_wording'])delete content[k];
@@ -37,6 +38,7 @@ http.createServer(async(req,res)=>{
   const data=[];for await(const chunk of req)data.push(chunk);
   const body=Buffer.concat(data).toString();
   if(req.url==='/reset'&&req.method==='POST'){db.close();db=fixture();await publish();res.end('reset');return;}
+  if(req.url==='/external-edit'&&req.method==='POST'){const {id}=JSON.parse(body),r=await openRecord(db,id);await mutate(db,{op:'edit_session',request_id:crypto.randomUUID(),record_id:id,revision:r.revision,metadata:{notes:['Other device edit']}});res.end('saved');return;}
   if(req.url==='/expire'&&req.method==='POST'){const now=Math.floor(Date.now()/1000);db.sqlite.prepare('UPDATE sessions SET created_at=?,expires_at=?').run(now-100,now-1);res.end('expired');return;}
   if(req.url==='/relay'&&req.method==='POST'){
    const call=JSON.parse(body),path=call.path;

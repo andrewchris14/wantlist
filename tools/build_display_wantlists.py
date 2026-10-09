@@ -60,7 +60,17 @@ def build():
    aggregate['sublists']=[g for g in groups if g['items']];aggregate['section_line_ledger']=ledger
    aggregate['section_view_notes']=['Original section lines used without comma splitting; approved legacy parser representations retained in source_records.']
 
-  records=[r for r in records if r['display_category']!=name]+[aggregate]
+  if name=='Eau Claire Players':
+   assert [g['label'] for g in aggregate['sublists']]==['Major League Players','Major League Managers','EC Managers (but did not play for EC) with major league experience']
+   assert [len(g['items']) for g in aggregate['sublists']]==[102,3,7]
+   replacements=[]
+   for i,g in enumerate(aggregate['sublists']):
+    listing=copy.deepcopy(aggregate)
+    listing.update(id='display-eau-claire-'+str(i+1),set_name=g['label'],items=g['items'],sublists=[],source_refs=g['source_refs'],source_records=members if i==0 else [],display_parent='display-eau-claire-players',source_group=g,section_line_ledger=[line for line in ledger if line['source_ref'] in g['source_refs']])
+    replacements.append(listing)
+   records=[r for r in records if r['display_category']!=name]+replacements
+  else:
+   records=[r for r in records if r['display_category']!=name]+[aggregate]
  assert sum(len(r.get('source_records',[r])) for r in records)==len(baseline['records'])
  return {'baseline_sha256':hashlib.sha256((ROOT/'data/wantlists.json').read_bytes()).hexdigest(),'categories':CATEGORIES,'mapping':mapping,'records':records,'uncertainty_audit':audit,'baseline_category_counts':dict(Counter(mapping.values())),'display_category_counts':dict(Counter(r['display_category'] for r in records))}
 # Owner-approved classifications are display/live overrides, never source edits.
@@ -79,11 +89,12 @@ def build():
   if a['id'] in APPROVED:
    a.update(display_list_type=APPROVED[a['id']],requires_review=False,reason='Explicit owner approval, Phase 3B.4; original uncertainty and source unchanged.')
  out['classification_approvals']={rid:{'list_type':mode,'authority':'Owner approval — Phase 3B.4','source_refs':next(r for r in out['records'] if r['id']==rid)['source_refs']} for rid,mode in APPROVED.items()}
- assert len(out['records'])==3392
+ out['source_note_fields']={'p0526-l006':{'fields':['items'],'reason':'Original paragraph states existing ownership and broad interests; it does not identify needed card identifiers.','source_refs':next(r['source_refs'] for r in out['records'] if r['id']=='p0526-l006')}}
+ assert len(out['records'])==3394
  return out
 if __name__=='__main__':
  out=build()
  target=ROOT/'foundation/staging'
  (target/'historical-view.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
- (target/'historical-map.json').write_text(json.dumps({'categories':CATEGORIES,'mapping':out['mapping'],'uncertainty_display':{a['id']:a['display_list_type'] for a in out['uncertainty_audit']},'classification_approvals':out['classification_approvals']},ensure_ascii=False,indent=2)+'\n')
+ (target/'historical-map.json').write_text(json.dumps({'categories':CATEGORIES,'mapping':out['mapping'],'uncertainty_display':{a['id']:a['display_list_type'] for a in out['uncertainty_audit']},'classification_approvals':out['classification_approvals'],'source_note_fields':out['source_note_fields']},ensure_ascii=False,indent=2)+'\n')
  print(json.dumps({k:out[k] for k in ('baseline_category_counts','display_category_counts')},indent=2))

@@ -16,11 +16,13 @@ class DisplayRevisionTests(unittest.TestCase):
  def test_special_sections_are_single_listings_and_word_lines_have_exact_coverage(self):
   raw=json.loads((ROOT/'data/raw/paragraphs.json').read_text())['paragraphs']
   for name,mode in SPECIAL.items():
-   rows=[r for r in self.view['records'] if r['display_category']==name];self.assertEqual(len(rows),1);r=rows[0];self.assertEqual(r['list_type'],mode)
+   rows=[r for r in self.view['records'] if r['display_category']==name];self.assertEqual(len(rows),3 if name=='Eau Claire Players' else 1);r=rows[0];self.assertEqual(r['list_type'],mode)
    if 'section_line_ledger' in r:
     bounds=(3124,3379) if name=='Milwaukee 8x10 List' else (3379,3383)
     lines=[(p['paragraph'],n,s.strip()) for p in raw if bounds[0]<=p['paragraph']<bounds[1] for n,s in enumerate(p['text'].splitlines(),1) if s.strip()]
-    ledger=[(v['source_ref']['paragraph'],v['source_ref']['line'],v['text']) for v in r['section_line_ledger']];self.assertEqual(ledger,lines)
+    ledger=[(v['source_ref']['paragraph'],v['source_ref']['line'],v['text']) for row in rows for v in row['section_line_ledger']];
+    if name=='Eau Claire Players':lines=[v for v in lines if v[0]!=3379 and not v[2].startswith("I'm interested")]
+    self.assertEqual(ledger,lines)
  def test_bobblehead_groups_and_uncertainty_are_lossless(self):
   r=next(r for r in self.view['records'] if r['display_category']=='Brewers Bobblehead Wantlist');rows=[r for r in self.view['records'] if r['display_category']=='Brewers Bobblehead Wantlist'];self.assertEqual(len(rows),26)
   original={r['id']:r for r in self.baseline['records']}

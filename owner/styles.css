@@ -7,3 +7,22 @@ dialog{width:min(860px,calc(100% - 24px));max-height:90dvh;margin:auto;padding:2
 .owner-feedback.error{pointer-events:auto}.owner-feedback.error button{display:block;min-height:44px;margin-top:8px;padding:8px;background:#fffefa;border:1px solid #782d19;color:#782d19}
 
 .year-note{font-size:.75rem;font-weight:normal;color:#555}.browse-controls{flex-wrap:wrap}.browse-controls label{min-width:9rem}.bulk-editor{padding:1rem;border:1px solid #aaa;margin:.5rem 0}.bulk-editor textarea{width:100%;box-sizing:border-box}
+.owner-name{margin:0;font-size:.85rem}
+.searchable-select{position:relative;min-width:0}
+.select-input{display:flex;align-items:center;gap:.2rem}
+.select-input input{width:100%;min-width:0}
+.searchable-select ul{position:absolute;top:100%;left:0;right:0;z-index:5;max-height:15rem;overflow:auto;background:#fffdf5;border:1px solid #75644c;list-style:none;margin:0;padding:.25rem;box-shadow:0 2px 5px #0003}
+.searchable-select li{padding:.5rem;cursor:pointer;overflow-wrap:anywhere}
+.searchable-select li[aria-selected=true]{background:#ead8b1;color:#292116}
+.dialog-header{position:sticky;top:0;z-index:4;background:#fffdf5;min-height:3rem}
+.listing-editor .save-bar{position:sticky;top:3.5rem;z-index:3;background:#fffdf5;padding:.5rem 0;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid #d6c59e}
+.save-bar span{font-size:.8rem}
+.discard-confirm{position:sticky;top:3.5rem;z-index:6;background:#fff8df;border:2px solid #76603e;padding:.75rem}
+.owner-item strong{overflow-wrap:anywhere}
+.remove-set{margin-top:1rem;color:#8f2626}
+@media(max-width:600px){.dialog-header h2{font-size:1rem;max-width:75%;overflow-wrap:anywhere}.browse-controls{grid-template-columns:1fr 1fr}.browse-controls>label:nth-child(2){grid-column:1/-1}.listing-editor .save-bar{top:3.5rem}.owner-item{align-items:flex-start}}
+.listing-editor .save-bar,.discard-confirm{top:var(--dialog-header-height,4rem)}
+.searchable-select{flex:1;min-width:9rem}
+.searchable-select label{margin-bottom:5px}
+@media(max-width:600px){.searchable-select{flex-basis:calc(50% - 10px);min-width:0}}
+dialog{padding-top:0}.dialog-header{padding-top:16px;margin-top:0}

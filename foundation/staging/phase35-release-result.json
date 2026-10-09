@@ -1,0 +1,53 @@
+{
+  "backup": {
+    "file": "foundation/.local/phase35-pre-maintenance.json",
+    "sha256": "d4e416cee93ab4c9d8a114a7d587d2ae2299e4b9d20cca43098c84bb45e42a1b",
+    "local_restore_verified": true,
+    "exact_rows_verified": true,
+    "authentication_excluded": true,
+    "tables": 15
+  },
+  "staging_only": true,
+  "automated_test_writes": false,
+  "owner_secrets_inherited": true,
+  "full_import": false,
+  "production_modified": false,
+  "maintenance": [
+    {
+      "operation": "cleanup",
+      "saved": true,
+      "record_id": "p1237-l004",
+      "revision": 796,
+      "statements": 6,
+      "soft_removed": 1403,
+      "manifest_sha256": "4fa99a5a9b9f06e64b6193518cd48d579e5780fa27186da452ec8cbda991ad7f"
+    },
+    {
+      "operation": "eau-split",
+      "saved": true,
+      "record_id": "display-eau-claire-players",
+      "revision": 140,
+      "statements": 25,
+      "listings": [
+        {
+          "id": "display-eau-claire-1",
+          "name": "Major League Players",
+          "count": 102
+        },
+        {
+          "id": "display-eau-claire-2",
+          "name": "Major League Managers",
+          "count": 3
+        },
+        {
+          "id": "display-eau-claire-3",
+          "name": "EC Managers (but did not play for EC) with major league experience",
+          "count": 7
+        }
+      ],
+      "parent_history_preserved": true
+    }
+  ],
+  "sessions_preserved": true,
+  "maintenance_gate_removed": true
+}

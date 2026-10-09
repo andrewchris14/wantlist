@@ -30,10 +30,10 @@ test('PIN sessions remain revocable, expire normally, rotate only deliberately a
 test('leading-zero PINs remain strings and never accept coerced shorter numbers',async()=>{
  const pin='0'+String(Math.floor(Math.random()*1000)).padStart(3,'0');const env={OWNER_PIN:pin,OWNER_PIN_VERSION:'leading-zero-test-version-0001'};assert.equal(await auth.verifyCredential(pin,env),true);assert.equal(await auth.verifyCredential(Number(pin),env),false);assert.equal(await auth.verifyCredential(String(Number(pin)),env),false);
 });
-test('fixed special section meanings cannot be relabeled/replaced or duplicated by ordinary set APIs',async()=>{
+test('legacy special section guards remain; removal is soft and recoverable like ordinary listings',async()=>{
  const db=fixture();try{const id='display-milwaukee-8x10-list',stamp=new Date().toISOString();db.sqlite.prepare('INSERT INTO records VALUES(?,NULL,?,?,1,?,?,NULL)').run(id,'have_list',JSON.stringify({id,set_name:'Milwaukee 8x10 List',notes:[]}),stamp,stamp);db.sqlite.prepare('INSERT INTO public_records VALUES(?,1,?,0,?)').run(id,stamp,JSON.stringify({id,list_type:'have_list',groups:[]}));
- await assert.rejects(action(db,{op:'delete',record_id:id,revision:1}));await assert.rejects(action(db,{op:'edit',record_id:id,revision:1,list_type:'uncertain',metadata:{notes:[]}}));await assert.rejects(action(db,{op:'replace_list',record_id:id,revision:1,list_type:'want_list',values:['1']}));await assert.rejects(action(db,{op:'create',metadata:{set_name:'Duplicate',display_category:'Milwaukee 8x10 List'}}));
- const r=await action(db,{op:'edit',record_id:id,revision:1,metadata:{notes:['Photos I own']},list_type:'have_list'});assert.equal(r.revision,2);
+ await assert.rejects(action(db,{op:'edit',record_id:id,revision:1,list_type:'uncertain',metadata:{notes:[]}}));await assert.rejects(action(db,{op:'replace_list',record_id:id,revision:1,list_type:'want_list',values:['1']}));await assert.rejects(action(db,{op:'create',metadata:{set_name:'Duplicate',display_category:'Milwaukee 8x10 List'}}));
+ const r=await action(db,{op:'edit',record_id:id,revision:1,metadata:{notes:['Photos I own']},list_type:'have_list'});assert.equal(r.revision,2);const deleted=await action(db,{op:'delete',record_id:id,revision:2});assert.ok((await openRecord(db,id)).deleted_at);await action(db,{op:'restore',record_id:id,revision:deleted.revision});assert.equal((await openRecord(db,id)).deleted_at,null);
  }finally{db.close();}
 });
 test('opaque HAVE item removed before conversion cannot reappear as wanted; restoring group meaning makes its normal restore safe',async()=>{

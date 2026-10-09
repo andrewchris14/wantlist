@@ -3507,5 +3507,19 @@
         }
       ]
     }
+  },
+  "source_note_fields": {
+    "p0526-l006": {
+      "fields": [
+        "items"
+      ],
+      "reason": "Original paragraph states existing ownership and broad interests; it does not identify needed card identifiers.",
+      "source_refs": [
+        {
+          "paragraph": 526,
+          "line": 6
+        }
+      ]
+    }
   }
 }

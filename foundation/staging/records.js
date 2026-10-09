@@ -1,10 +1,11 @@
 // Staging data-layer reference, not a public production API or editor.
 import {hash} from './auth.js';
+import {editSession,undoSession} from './edit-session.js';
 import {replaceList} from './replace-list.js';
 import {inverseOf} from './owner.js';
 const fail=(code='INVALID')=>{const e=Error(code);e.code=code;throw e;};
 const statement=(sql,...params)=>({sql,params});
-const metadataKeys=['year','brand','set_name','category','section','notes','prefixes','uncertainty','set_size','display_category'];
+const metadataKeys=['year','brand','set_name','category','section','notes','prefixes','uncertainty','set_size','display_category','entry_order'];
 const publicKeys=['id','display_year',...metadataKeys,'source_list_type','completed_sets','source_refs','creation_origin'];
 const modes=['want_list','have_list','complete','uncertain'];
 export async function catalog(db){return (await db.prepare(`SELECT id,revision,list_type,json_extract(content_json,'$.year') year,
@@ -33,6 +34,7 @@ function validateMetadata(data,creating=false){
   if((creating||'set_name'in data)&&(!data.set_name||!data.set_name.trim()))fail();
   for(const k of ['notes','prefixes','uncertainty'])if(k in data&&(!Array.isArray(data[k])||data[k].some(x=>typeof x!=='string'||x.length>10000)))fail();
 
+  if('entry_order' in data && !['natural','original',null].includes(data.entry_order))fail();
   if(data.set_size!=null&&(!Number.isInteger(data.set_size)||data.set_size<1))fail();
 }
 export function mutationControl(db,input){
@@ -48,12 +50,14 @@ export async function mutate(db,input,preflight,prefetchedRow){
   let undoing=false;
   if(input.op==='undo'){
     if(typeof input.history_id!=='string'||typeof input.record_id!=='string')fail();
-    const h=await db.prepare('SELECT * FROM change_history WHERE id=? AND record_id=?').bind(input.history_id,input.record_id).first();
+    const h=await db.prepare(`SELECT id,record_id,item_id,action,CASE WHEN action IN ('edit_session','benchmark_cleanup') THEN '{}' ELSE before_json END before_json,CASE WHEN action IN ('edit_session','benchmark_cleanup') THEN json_object('_record_revision',json_extract(after_json,'$._record_revision')) ELSE after_json END after_json FROM change_history WHERE id=? AND record_id=?`).bind(input.history_id,input.record_id).first();
     if(!h)fail();
     const inverse=inverseOf(h);if(!inverse||JSON.parse(h.after_json)._record_revision!==input.revision)fail('CONFLICT');
     // CAS in the existing atomic delta commit rejects concurrent/newer saves.
     input={...input,...inverse};undoing=true;
   }
+  if(input.op==='edit_session'){validateMetadata(input.metadata||{});return editSession(db,input,requestHash);}
+  if(input.op==='undo_session'){if(!undoing)fail();return undoSession(db,input,requestHash);}
   if(['replace_list','restore_representation'].includes(input.op)){if(input.op==='restore_representation'&&!undoing)fail();validateMetadata(input.metadata||{});if(['Eau Claire Players','Milwaukee 8x10 List'].includes(input.metadata?.display_category))fail();return replaceList(db,input,requestHash);}
   if(input.op==='add')return addOne(db,input,requestHash,prefetchedRow);
   if(['remove_item','restore_item'].includes(input.op))return removeRestoreOne(db,input,requestHash,prefetchedRow);
@@ -151,8 +155,8 @@ async function editHeaderOne(db,input,requestHash,prefetched,undoing=false){
   if(!row||row.revision!==input.revision||(row.deleted_at&&input.op!=='restore')||(!row.deleted_at&&input.op==='restore'))fail('CONFLICT');
   if(row.public_revision!==input.revision)fail('CONFLICT');
   if(input.metadata?.display_category&&['Eau Claire Players','Milwaukee 8x10 List'].includes(input.metadata.display_category)&&!row.id.startsWith('display-'))fail();
-  if(row.id.startsWith('display-')&&input.op==='delete')fail();
-  if(row.id==='display-brewers-bobblehead-wantlist'&&input.op==='restore')fail();
+  if(['display-brewers-bobblehead-wantlist','display-eau-claire-players'].includes(row.id)&&input.op==='delete')fail();
+  if(['display-brewers-bobblehead-wantlist','display-eau-claire-players'].includes(row.id)&&input.op==='restore')fail();
   if(row.id.startsWith('display-')&&(Object.keys(input.metadata||{}).some(k=>k!=='notes')||input.list_type&&input.list_type!==row.list_type))fail();
   const old=JSON.parse(row.old_metadata),stamp=new Date().toISOString(),revision=input.revision+1;
   let mode=row.list_type,deleted=row.deleted_at,before={},after={},patch={revision,updated_at:stamp};

@@ -11,9 +11,9 @@ describe('owner input and public presentation',()=>{
  });
  it('keeps wanted, pending, owned and unstructured source information distinct and searchable',()=>{
   const r=browseRecord({id:'r',year:'2001',brand:'Fleer',set_name:'Ritz/Oreo',category:'baseball_cards',list_type:'want_list',groups:[{label:'Variants',entries:[{value:'Blue Border Griffey',state:'wanted',actionable:1},{value:'Red Border Griffey',state:'owned',actionable:1},{value:'47',state:'pending',actionable:1},{value:'Names/prose preserved',state:null,actionable:0}]}]});
-  expect(r.mixed_lists.find(g=>g.list_type==='have_list').items).toEqual(['Red Border Griffey']);
-  expect(r.mixed_lists.find(g=>g.list_type==='pending').items).toEqual(['47']);
-  expect(r.mixed_lists.find(g=>g.label.includes('Preserved')).items).toEqual(['Names/prose preserved']);
+  expect(r.mixed_lists.some(g=>g.list_type==='have_list')).toBe(false);expect(r.supplemental_notes.join(' ')).toContain('Red Border Griffey');
+  expect(r.logical_inventories[0].entries.filter(i=>i.state==='pending').map(i=>i.value)).toEqual(['47']);
+  expect(r.logical_inventories[0].entries.some(i=>i.value==='Names/prose preserved')).toBe(true);
   expect(selectRecords(prepareRecords([r]),{query:'blue border griffey'})).toHaveLength(1);
  });
  it('HAVE never creates wanted or inferred missing values',()=>{

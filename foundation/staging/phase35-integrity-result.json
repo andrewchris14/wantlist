@@ -1,0 +1,14 @@
+{
+  "unchanged_against_approved_baseline": {
+    "data/wantlists.json": "38a7ee7ad07ede1ae744dbe91b819c1bb78a294c70ca30f933bc66604d44c98a",
+    "data/raw/Wantlists 10-5-26.docx": "75d968d267b9ee551e3d45343d7ce8966e7ee81f82ff26a62eac5a7239e3cda7",
+    "data/raw/paragraphs.json": "a75e26ff9da6ebfb63e1027cc072c3f0587befa0f8c0dbf5d241ced13c1570fe",
+    "data/display-wantlists.json": "eadfd2fbe0e7e423ebd6c5dc3755e415766d6dccd083e0f7e0dd69f4559ff4c1",
+    "data/display-map.json": "792888079133bac9971d26e11bcb793f9c84c62994dd9671b428175b9ed4377e",
+    "site/App.jsx": "fb1a2815ec0741b364738065afaeeb449dea322453847601d75383141853c928",
+    "site/RecordCard.jsx": "0c1031cee86c4d5214bb92eeabcde40418eee3ad017139c02112b49723956ccc",
+    "site/data-source.js": "f8b6dc05475297f56754705633e001e7d1db546d6cb562285f8a17cd4a4b645c"
+  },
+  "production_deployed": false,
+  "full_import_performed": false
+}

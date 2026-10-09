@@ -1,6 +1,7 @@
 // Isolated staging backend and optional owner preview. No production integration.
 import {verifyCredential, throttle, issue, validate, cookieToken, hash, config, logoutCookie} from './auth.js';
 import {ownerRecord,recentOwner} from './owner.js';
+import {maintainPhase35,rollbackEauSplit} from './phase35-maintenance.js';
 import {recoverHistoricalSamples} from './phase34-migration.js';
 import {categories,categoryMutation} from './categories.js';
 import {editorAssets} from './editor-assets.js';
@@ -19,6 +20,12 @@ async function handle(request,env){
   const editor=env.STAGING_EDITOR==='true';
   // Operator-only one-time migration. Its ephemeral digest is absent from normal
   // deployments. Existing owner PIN, gate, and sessions remain unchanged.
+  if(url.pathname==='/operator/phase35-maintenance'){
+   if(request.method!=='POST'||request.headers.get('Origin')!==origin||!env.PHASE35_MAINTENANCE_DIGEST)return json({error:'Forbidden'},403);
+   const supplied=request.headers.get('X-Phase35-Maintenance')||'';
+   if(!await verifyCredential(supplied,{OWNER_AUTH_CONFIG:JSON.stringify({algorithm:'SHA-256',digest:env.PHASE35_MAINTENANCE_DIGEST,version:'phase35-maintenance-only'})}))return json({error:'Forbidden'},403);
+   try{const body=await request.json();return json(await (body.operation==='eau-rollback'?rollbackEauSplit(env.DB):maintainPhase35(env.DB,body.operation)));}catch{return json({error:'Maintenance conflict; no changes applied'},409);}
+  }
   if(url.pathname==='/operator/phase34-migration'){
    if(request.method!=='POST'||request.headers.get('Origin')!==origin||!env.PHASE34_MIGRATION_DIGEST)return json({error:'Forbidden'},403);
    const supplied=request.headers.get('X-Phase34-Migration')||'';

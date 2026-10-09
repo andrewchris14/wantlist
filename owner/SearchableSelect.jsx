@@ -1,0 +1,8 @@
+import {useId,useState} from 'react';
+export default function SearchableSelect({label,value,onChange,options,all}){
+ const id=useId(),[open,setOpen]=useState(false),[query,setQuery]=useState(''),[index,setIndex]=useState(0);
+ const choices=[{value:'',label:all},...options].filter(o=>o.label.toLowerCase().includes(query.toLowerCase()));
+ const selected=options.find(o=>o.value===value)?.label||all;
+ const choose=o=>{onChange(o.value);setQuery('');setOpen(false);setIndex(0);};
+ return <div className="searchable-select"><label htmlFor={id}>{label}</label><div className="select-input"><input id={id} role="combobox" aria-expanded={open} aria-controls={id+'-options'} aria-autocomplete="list" aria-activedescendant={open&&choices[index]?id+'-'+index:undefined} value={open?query:selected} onFocus={()=>{setQuery('');setIndex(0);setOpen(true);}} onBlur={()=>setOpen(false)} onChange={e=>{setQuery(e.target.value);setIndex(0);setOpen(true);}} onKeyDown={e=>{if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();setOpen(true);setIndex(i=>Math.max(0,Math.min(choices.length-1,i+(e.key==='ArrowDown'?1:-1))));}if(e.key==='Enter'&&open){e.preventDefault();if(choices[index])choose(choices[index]);}if(e.key==='Escape'){e.preventDefault();setOpen(false);setQuery('');}}}/>{value&&<button type="button" aria-label={'Clear '+label} onClick={()=>choose({value:''})}>×</button>}</div>{open&&<ul id={id+'-options'} role="listbox" aria-label={label+' options'}>{choices.map((o,i)=><li id={id+'-'+i} role="option" aria-selected={i===index} key={o.value} onMouseDown={e=>e.preventDefault()} onClick={()=>choose(o)} onPointerMove={()=>setIndex(i)}>{o.label}</li>)}{!choices.length&&<li role="presentation">No matching options</li>}</ul>}</div>;
+}

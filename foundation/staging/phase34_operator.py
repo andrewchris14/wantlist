@@ -35,7 +35,7 @@ def backup(db):
  path.write_text(json.dumps(snapshot,ensure_ascii=False));path.chmod(0o600)
  return {'backup_file':str(path.relative_to(ROOT)),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'local_restore_verified':True,'tables':len(tables),'records':len(before),'authentication_excluded':True}
 
-def worker_backup():
+def worker_backup(path=None):
  account=os.environ['CLOUDFLARE_ACCOUNT_ID']
  req=urllib.request.Request('https://api.cloudflare.com/client/v4/accounts/'+account+'/workers/scripts/'+WORKER,headers={'Authorization':'Bearer '+os.environ['CLOUDFLARE_API_TOKEN'],'User-Agent':'Mozilla/5.0'})
  with urllib.request.urlopen(req,timeout=45) as response:
@@ -47,7 +47,7 @@ def worker_backup():
   name=part.get_filename() or part.get_param('name',header='content-disposition')
   if name and name!='metadata':modules[name]=part.get_payload(decode=True).decode()
  assert 'worker.mjs' in modules,'Expected staging main module'
- path=ROOT/'foundation/.local/phase34-worker-rollback.json';path.write_text(json.dumps(modules));path.chmod(0o600)
+ path=path or ROOT/'foundation/.local/phase34-worker-rollback.json';path.write_text(json.dumps(modules));path.chmod(0o600)
  return modules
 
 def release(s,digest=None):

@@ -1,17 +1,25 @@
+import historicalMap from '../foundation/staging/historical-map.json' with {type:'json'};
+export const sourceNoteFields=id=>historicalMap.source_note_fields?.[id]?.fields||[];
 // Presentation adapter only; historical data is never normalized again here.
+export function logicalInventories(r){
+ const c=r.content||r,mode=r.list_type;
+ const same=(r.groups||[]).map(g=>({...g,entries:g.entries.filter(i=>g.kind!=='primary'||!sourceNoteFields(r.id).includes(i.field_key))})).filter(g=>(g.list_type||mode)===mode);
+ const special=['Milwaukee 8x10 List','Eau Claire Players'].includes(c.display_category);
+ if(special)same.sort((a,b)=>(a.kind==='sublist'?0:1)-(b.kind==='sublist'?0:1));
+ if(special)return [{id:same.find(g=>g.entries.some(i=>!i.deleted_at))?.id||same[0]?.id||'new-primary',label:c.set_name,notes:same.flatMap(g=>[...(g.notes||[]),...(g.description?[g.description]:[])]),entries:same.flatMap(g=>g.entries.map(i=>({...i,group_id:g.id}))),groups:same}];
+ const primary=same.filter(g=>g.kind!=='sublist'&&!g.label),variants=same.filter(g=>g.kind==='sublist'||g.label);
+ return [...(primary.length?[{id:primary[0].id,notes:primary.flatMap(g=>[...(g.notes||[]),...(g.description?[g.description]:[])]),entries:primary.flatMap(g=>g.entries.map(i=>({...i,group_id:g.id}))),groups:primary}]:[]),...variants.map(g=>({...g,groups:[g]}))].filter(g=>g.entries.some(i=>!i.deleted_at)||g.list_type!=='complete');
+}
 export function browseRecord(r) {
  const {groups=[],...header}=r;
- return {...header,card_numbers:[],items:[],card_ranges:[],mixed_lists:groups.flatMap(g=>{
-  const entries=g.entries||[];
-  if(g.kind==='primary'&&g.list_type==='complete'&&!entries.length&&header.list_type!=='complete')return [];
-  if(g.list_type==='complete'&&!entries.length)return [{label:g.label,list_type:'complete',items:[],notes:g.notes||[],description:g.description}];
-  return ['wanted','pending','owned','opaque'].map(state=>({
-   label:[g.label,state==='pending'?'Someone is sending these':state==='opaque'?'Preserved source information':''].filter(Boolean).join(' · '),
-   list_type:state==='wanted'?'want_list':state==='owned'?'have_list':state==='pending'?'pending':g.list_type||header.list_type,
-   items:entries.filter(i=>state==='opaque'?!i.actionable:i.actionable&&i.state===state).map(i=>i.value),
-   notes:g.notes||[],description:g.description,
-  })).filter(g=>g.items.length);
- })};
+ const inventories=logicalInventories(r);
+ const supplemental=groups.flatMap(g=>{
+  const opposite=g.list_type!==r.list_type;
+  const values=g.entries.filter(i=>!i.deleted_at&&(opposite||i.state==='owned'&&r.list_type==='want_list'||g.kind==='primary'&&sourceNoteFields(r.id).includes(i.field_key))).map(i=>i.value);
+  const qualifications=opposite?[...(g.notes||[]),...(g.description?[g.description]:[])].map(n=>(g.label?g.label+': ':'')+n):[];
+  return [...qualifications,...(values.length?[`${g.label?g.label+': ':''}${g.list_type==='have_list'||r.list_type==='want_list'&&values.some(v=>g.entries.some(i=>i.value===v&&i.state==='owned'))?'Historical owned information':g.list_type==='want_list'&&opposite?'Historical wanted information':'Historical note'}: ${values.join('; ')}`]:[])];
+ });
+ return {...header,card_numbers:[],items:[],card_ranges:[],logical_inventories:inventories.map(g=>({...g,entries:sortedEntries(g.entries.filter(i=>!i.deleted_at&&(r.list_type!=='want_list'||i.state!=='owned')),r.entry_order==='original')})),supplemental_notes:[...supplemental,...groups.filter(g=>g.kind==='sublist'&&g.list_type==='complete').map(g=>(g.label||'Historical group')+': Complete')],mixed_lists:[...groups.filter(g=>g.kind==='sublist'&&g.list_type==='complete').map(g=>({...g,items:[]})),...inventories.map(g=>({label:g.label,list_type:r.list_type,items:g.entries.filter(i=>!i.deleted_at&&i.state!=='pending'&&(r.list_type!=='want_list'||i.state!=='owned')).map(i=>i.value)}))]};
 }
 export function parseCards(input,kind='numbers') {
  // Names are one per line; commas may be part of an item name. No range expansion.
@@ -24,6 +32,8 @@ export const statusNames={want_list:'WANT list',have_list:'HAVE list',complete:'
 export function titleOf(r={}){const c=r.content||r,name=c.set_name||'Untitled set',lower=name.toLowerCase();return [c.year&&!lower.includes(String(c.year).toLowerCase())?c.year:null,c.brand&&!lower.includes(c.brand.toLowerCase())?c.brand:null,name].filter(Boolean).join(' · ');}
 export function historyLabel(h){
  const value=h.after?.value||h.before?.value;
+ if(h.action==='edit_session')return 'Saved set information and list changes';
+ if(h.action==='benchmark_cleanup')return 'Removed verified benchmark entries';
  if(h.action==='transition')return `Marked ${value} as ${h.after.state==='owned'?'Received':h.after.state==='pending'?'Someone is sending this':'Still need this'}`;
  if(h.action==='add')return `Added cards ${(h.after.items||[]).map(i=>i.value).join(', ')}`;
  if(h.action==='replace_list')return h.before?.list_type&&h.after?.list_type?`Replaced ${h.before.list_type==='have_list'?'HAVE':'WANT'} list with ${h.after.list_type==='have_list'?'HAVE':'WANT'} list`:'Replaced WANT/HAVE list';
@@ -39,7 +49,7 @@ export function newSetCategory(section){return section==='Football Wantlist'?'fo
 
 const collator=new Intl.Collator('en',{numeric:true,sensitivity:'base'});
 export const naturalCompare=(a,b)=>collator.compare(String(a),String(b));
-export function sortedEntries(entries,original=false){return [...entries].sort(original?(a,b)=>a.field_key.localeCompare(b.field_key)||a.position-b.position:(a,b)=>naturalCompare(a.value,b.value));}
+export function sortedEntries(entries,original=false){return [...entries].sort(original?(a,b)=>(a.source_order??entries.indexOf(a))-(b.source_order??entries.indexOf(b)):(a,b)=>naturalCompare(a.value,b.value));}
 export function yearInfo(value){
  const text=String(value||'');
  const match=text.match(/\b((?:18|19|20)\d{2})(?:\s*[-–—/]\s*(\d{2,4}))?/);

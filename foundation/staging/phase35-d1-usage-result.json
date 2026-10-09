@@ -1,0 +1,24 @@
+{
+  "window_start": "2026-10-09T00:00:00+00:00",
+  "window_end": "2026-10-09T02:34:38.459906+00:00",
+  "database": "wantlist-staging",
+  "analytics": {
+    "viewer": {
+      "accounts": [
+        {
+          "d1AnalyticsAdaptiveGroups": [
+            {
+              "sum": {
+                "readQueries": 577,
+                "rowsRead": 175311,
+                "rowsWritten": 2896,
+                "writeQueries": 250
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "errors": null
+}

@@ -1,0 +1,1809 @@
+{
+  "record_counts": {
+    "total": 267,
+    "active": 264
+  },
+  "items": 5629,
+  "history_events": 2221,
+  "cleanup": {
+    "record": "p1237-l004",
+    "revision": 796,
+    "soft_removed": 1403,
+    "remaining_active_cpu_test": 0,
+    "metadata": {
+      "year": "2007",
+      "brand": "Upper Deck",
+      "notes": []
+    },
+    "all_other_item_properties_preserved": true,
+    "all_prior_history_preserved": true
+  },
+  "eau": [
+    {
+      "id": "display-eau-claire-1",
+      "name": "Major League Players",
+      "active_entries": 102
+    },
+    {
+      "id": "display-eau-claire-2",
+      "name": "Major League Managers",
+      "active_entries": 3
+    },
+    {
+      "id": "display-eau-claire-3",
+      "name": "EC Managers (but did not play for EC) with major league experience",
+      "active_entries": 7
+    }
+  ],
+  "historical_staging_categories": [
+    {
+      "category": null,
+      "n": 155
+    },
+    {
+      "category": "Brewers Bobblehead Wantlist",
+      "n": 26
+    },
+    {
+      "category": "Eau Claire Players",
+      "n": 3
+    },
+    {
+      "category": "Milwaukee 8x10 List",
+      "n": 1
+    },
+    {
+      "category": "OBC Wantlist",
+      "n": 73
+    },
+    {
+      "category": "Other Stuff",
+      "n": 1
+    },
+    {
+      "category": "UV Wantlist",
+      "n": 5
+    }
+  ],
+  "approved_classifications": {
+    "p0060-l001": "complete",
+    "p0273-l029": "complete",
+    "p0273-l039": "want_list",
+    "p1996-l008": "complete",
+    "p2501-l001": "complete",
+    "p2851-l007": "complete",
+    "p3022-l006": "have_list"
+  },
+  "old_records_unchanged_except_reviewed_targets": true,
+  "protected_existing_provenance_unchanged": true,
+  "owner_created_records_preserved": 202,
+  "other_review_candidates": [
+    {
+      "id": "owner-record-010f3a35-d6ff-4b6e-8664-5c5c23606d4d",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Complete Practice owner-desktop 1791411996213",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-01573e45-a884-4cb9-8a5e-4a8f4df9414d",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 12",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-0bd34189-7cf8-45e9-bccc-f2171fed98ac",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Practice owner-mobile 1791412364302",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-0c803d3c-2e25-4ec5-80e9-28cf6e94bcd3",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 18",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-0e0df596-feef-4492-abc2-973932c257a0",
+      "active_known_prefix_items": 0,
+      "name": "2027 Owned-only staging test",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-10e239e7-dabc-4965-9d87-04d40acfb355",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 16",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-13b9e57b-eb81-41e0-bbdf-3d34f3883fda",
+      "active_known_prefix_items": 0,
+      "name": "2027 Replacement API Practice",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-1400d206-ecf4-4e24-b56a-7f66ef450a07",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 2",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-161592e9-2811-43cd-a676-4530880b9646",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 3",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-17f36b24-6934-47e7-97df-4a0695f04456",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 6",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-18adc75b-786b-4392-99e5-9eaac3b7b6ed",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 3",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-1aa955e7-8b5b-4262-97db-3d840fd9a269",
+      "active_known_prefix_items": 0,
+      "name": "2027 Owned-only staging test",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-209442cd-c093-44ef-83c5-844f1877f17a",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 22",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-21b75cb6-264c-4461-8c35-5620e19d279a",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Complete Practice owner-desktop 1791412082584",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-24a8c84a-a140-41e4-9927-342a1b69d251",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 0",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-2596f2ff-da37-40e8-b4a1-c3f0efb78090",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 13",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-27ae859c-54ea-4da0-803d-42fdf4daa8f3",
+      "active_known_prefix_items": 0,
+      "name": "2027 Owned-only staging test",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-2a7116d8-4f06-47de-a49f-e086722b1242",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 4",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-2b6ce563-6517-4063-9f51-69c33743d8b0",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 2",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-2bdec8eb-0422-4109-865f-5aa6ca9f6a29",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 20",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-2d7cf294-836c-4a72-8d45-98ba2884631e",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Practice owner-desktop 1791411875014",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-30345069-f237-4585-a99e-effafea93764",
+      "active_known_prefix_items": 0,
+      "name": "2027 Owned-only staging test",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-31874bd5-175d-4501-b09b-d4b964317d9b",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 8",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-33d8a19c-e5c4-4b7c-bfac-d768c0932709",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 0",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-39dac18c-a081-4e6d-96f7-0d1df41ca954",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 12",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-4288f796-32b3-458c-95a9-369ac838abdd",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 14",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-448906be-4e77-4f84-a662-6309bf2a74a9",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 3",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-4a414fdb-2bbd-4e03-a2f6-80ac27df0fbc",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 15",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-4d998b3f-11e7-4673-a8b1-465b53866413",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 5",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-4facead7-6207-4bc2-b396-deaa201e6725",
+      "active_known_prefix_items": 0,
+      "name": "2027 Replacement API Practice",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-515ccc54-5e21-4d59-a3e9-64f8a9b7861c",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 4",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-54547a3b-68e4-4d50-8192-0cec5be92fa3",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Practice owner-mobile 1791412553677",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-54a52bde-4033-46b0-b157-1e54859d2bcc",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 17",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-580e9ccf-cc28-41be-bc0a-2e4973b634af",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 15",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-58e5176d-4165-45ac-a26b-e7022e2201df",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Complete Practice owner-mobile 1791412565387",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-5fde09fc-5da2-4e7b-bc14-a3785cbb8aed",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Complete Practice owner-mobile 1791412111342",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-6372d8e0-6a6b-4637-b7e6-7a746e95f9df",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 7",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-6707ec2d-da31-4347-be1e-4009f93b2283",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 6",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-6ac5c55a-1752-4863-9651-d50e8415f414",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 8",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-6ccb75ff-e1e9-46e9-9ec1-7c277ae0cbf7",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Practice owner-desktop 1791412534615",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-711da841-fe60-4add-9296-9ab67acf636a",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 1",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-741dce6b-9251-410f-9d09-1709db7bac59",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 8",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-76c7e11b-eb55-4f72-bcbb-322be095f116",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Complete Practice owner-desktop 1791412547277",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-76c80bf4-f304-4195-8f1d-f053fbc84e9f",
+      "active_known_prefix_items": 0,
+      "name": "2027 Owned-only staging test",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-76d76404-d665-4b7c-a717-0ee2244012b2",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 7",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-7ba8e10b-4a0d-4d73-87ee-e034a9289e14",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Practice owner-mobile 1791412094722",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-85416600-2752-4fd5-8350-ccaf0a9829ba",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 6",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-8b95523c-8644-48ac-be94-06c6f81bdccf",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 2",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-8bd6cebb-8348-4ac9-981b-67753d51e56b",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Practice owner-desktop 1791412340517",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-9ab89299-e735-43a5-bfc9-312a713c8dd6",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Practice owner-desktop 1791412063729",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-9f51bbfc-4b5f-407a-976d-bc64cb8b2913",
+      "active_known_prefix_items": 0,
+      "name": "2027 Owned-only staging test",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-a093fcde-3a62-455c-a87d-15da0509d2dc",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 20",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-a20a5204-e2b7-4ad7-932c-d289e08b0d3a",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 22",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-a5da2def-afda-455f-88e2-3c83ebfd8ad4",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 10",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-a606dac2-a0ba-451d-8516-14cce469bb46",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 11",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-a87b4890-9b2f-4162-afaa-eb4c762de26d",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 14",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-a8c9d0ab-e070-4880-87a7-b930e3b60af1",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 21",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-aa1cfef5-6876-4382-b4e0-61acf52e8b68",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 13",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-ab591b3a-164b-47b6-9989-de977ffa4de8",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Practice owner-mobile 1791412008307",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-ae5d1f79-6ad2-49b3-a31b-506ed3ea5e09",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 4",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-af323f15-b7a2-4b87-9c31-57c994463c81",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 5",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-af6351ae-1d5e-4a85-8a2d-492fe3cfc56a",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Complete Practice owner-desktop 1791412357244",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-bb27f736-ec97-4b59-9988-6738f03e3dce",
+      "active_known_prefix_items": 0,
+      "name": "2027 Owned-only staging test",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-bf7b7fdb-38c2-449c-90e1-8bdd0d08a0a7",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 12",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-c37b83e1-e0a7-4c31-b94f-32a64759ee3b",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 11",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-c614c433-f823-4442-942e-d097910c1357",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 13",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-ca06b056-c16f-4fbb-b040-b3c989e57d33",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 17",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-ce5f7312-0a28-4bc0-b82d-8fd43fd2a242",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 1",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-d579f5ff-9677-41bd-9398-9f70f912d886",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 9",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-d66001a4-890d-4775-9e94-f78003dc6165",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 5",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-d7633ff8-c94d-4143-a88d-268cd1ceacd7",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 1",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-d889be42-fb52-454a-8010-0e868793900a",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 10",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-d8e1c73c-acd8-40ca-9740-cb4bc7bf4a9e",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 11",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-e6ef7225-c138-41b1-b992-91474f996cbf",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 9",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-e8bebcac-4748-41c8-8232-8be5f14fb268",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 18",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-e984005b-82ea-4d8e-9fd3-a860c82a9d89",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 9",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-ea33fe39-a11f-4278-b6fc-ef7533962764",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 0",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-ea74105b-9790-47f8-95bc-a714318727d1",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 21",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-ee9afff4-f89f-4852-9a4e-d9924768160c",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 10",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-f206734d-0d4e-40d4-8d0a-3ab520db7c1a",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 19",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-f39592f1-ca0b-4dde-952e-08ea069bf5ae",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 14",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-f6e907ff-e389-4c83-8989-c5d10fe7fe31",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps Complete Practice owner-mobile 1791412380464",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-f75db2a4-9484-4476-abc7-5deab7c5413a",
+      "active_known_prefix_items": 0,
+      "name": "2027 Owned-only staging test",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-f7a4a282-56b0-46c3-8474-9eb140e16faa",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 16",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-fba4e10e-4538-4aee-8400-d608de09ffff",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 19",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    },
+    {
+      "id": "owner-record-fddc22b8-0615-49ce-8863-9b01bf590f76",
+      "active_known_prefix_items": 0,
+      "name": "2027 Topps CPU staging 7",
+      "known_fixture_title_candidate": true,
+      "benchmark_note": false,
+      "duplicates": 0,
+      "action": "only confirmed cpu-test entries authorized for cleanup; other records preserved for review"
+    }
+  ],
+  "test_storage_enabled": false,
+  "maintenance_gate_enabled": false,
+  "public_checks": {
+    "/": 200,
+    "/public/categories": 200,
+    "/owner/record?id=p1237-l004": 401,
+    "/operator/phase35-maintenance": 403,
+    "/test/batch": 403
+  },
+  "derived_display_count": 3394,
+  "derived_category_counts": {
+    "OBC Wantlist": 583,
+    "Other Stuff": 202,
+    "Football Wantlist": 62,
+    "UV Wantlist": 2517,
+    "Brewers Bobblehead Wantlist": 26,
+    "Eau Claire Players": 3,
+    "Milwaukee 8x10 List": 1
+  },
+  "derived_classifications": {
+    "want_list": 1000,
+    "complete": 1006,
+    "have_list": 1388
+  },
+  "all_staging_duplicate_value_candidates": [
+    {
+      "record_id": "p1237-l004",
+      "group_id": "p1237-l004:primary:0",
+      "value": "38",
+      "count": 2,
+      "action": "preserved; source/group/history review required",
+      "item_ids": [
+        "p1237-l004:primary:0:card_numbers:17",
+        "p1237-l004:primary:0:card_numbers:25"
+      ],
+      "provenance": "Both unchanged original item IDs match protected Phase 2 card_numbers positions 17 and 25; not benchmark-generated."
+    }
+  ],
+  "owner_group_review_candidates": [
+    {
+      "record_id": "owner-record-73e60900-02f1-46ab-ba0e-019920f31154",
+      "group_id": "owner-group-000864c6-3320-44a1-9b03-83f34ef8b75c",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-0bd34189-7cf8-45e9-bccc-f2171fed98ac",
+      "group_id": "owner-group-0140a035-5fae-4c65-b5d9-5d47cffab6d0",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-f07baad4-5ece-4006-9d25-4d61a14bbb59",
+      "group_id": "owner-group-01c3486e-71d5-4b10-ba41-a543cfa79a2f",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-feaffbb7-27ca-46fe-b910-0924be05363a",
+      "group_id": "owner-group-05a51f85-4f29-41b2-a21b-f40a4e919919",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-68210376-b236-43dd-9e0b-ca2f9bf3bd18",
+      "group_id": "owner-group-06628196-80bb-4f33-b3be-3fd0d9a8e3a3",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-b9981a8a-355c-44ce-925a-2d6663e2b288",
+      "group_id": "owner-group-068cd893-3357-473f-b67e-8e30cf75e76b",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-375e30bb-be24-45b6-b4bb-7414cbb01d63",
+      "group_id": "owner-group-07dd4eb5-14fe-4995-8be9-e04e9b234974",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-7534b41e-8a4f-4028-a0cf-8c14a27e2fd3",
+      "group_id": "owner-group-08129f85-1f59-4c93-b801-516629ac5e5d",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-4ba877ad-e41e-4cf0-8665-b9e41db26eea",
+      "group_id": "owner-group-08a97f0a-72a3-4d8e-9f3c-8267e8bd9ec1",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-a2155d40-e928-49b3-81b9-ec9373c910bd",
+      "group_id": "owner-group-09c69b30-419e-4bd5-8105-c60ef5148d89",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-5fde09fc-5da2-4e7b-bc14-a3785cbb8aed",
+      "group_id": "owner-group-09d5978f-0167-4f93-bf47-7fa5aa823b4d",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-c3812c0b-025d-4664-bece-5fe042e71c64",
+      "group_id": "owner-group-0d24aa8f-2bcb-4657-acce-a07dabe757f0",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 3,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-58e5176d-4165-45ac-a26b-e7022e2201df",
+      "group_id": "owner-group-10d04b4c-d2ad-48ed-9f1b-132c03444798",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-d5087aa4-5696-41f1-927b-dfea5220f724",
+      "group_id": "owner-group-13fd073d-5e63-40b0-96b7-edf21034fc91",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-6926225b-eeb3-4f10-bb95-98a4b43227d5",
+      "group_id": "owner-group-1684087e-fc9c-4c5d-9940-a8976888e350",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 3,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-f8815117-1195-4257-8145-433f99d598b3",
+      "group_id": "owner-group-192a14dc-8bd5-4739-b5a6-eb648d2b3535",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-f8815117-1195-4257-8145-433f99d598b3",
+      "group_id": "owner-group-1b97bb3c-0cf2-4caf-b064-185cd4dc907b",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-9ab89299-e735-43a5-bfc9-312a713c8dd6",
+      "group_id": "owner-group-1ccd097a-4f8e-4914-9db0-f9f662f45c7d",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-0703598c-b74e-499b-9e1f-647cea883dc9",
+      "group_id": "owner-group-20e2a2bc-de27-4c9d-9cb6-b746de435d5e",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-d5087aa4-5696-41f1-927b-dfea5220f724",
+      "group_id": "owner-group-21d65632-c9cb-4d70-8ae5-6a3e573f3244",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-ab591b3a-164b-47b6-9989-de977ffa4de8",
+      "group_id": "owner-group-245a147d-48e7-498f-9b7c-65ae22cb0b0f",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-5771798a-3ce6-480b-8129-2b230266aab8",
+      "group_id": "owner-group-263f4c11-8dc6-4475-a6ac-573c4ae85d6c",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-cf50a620-8778-4be1-bf44-b3804e3e4649",
+      "group_id": "owner-group-2c2ba22a-cd45-49ae-a27a-9ff98e939a82",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-41e34fb4-150e-4fa3-b6f7-5c2830d1cce2",
+      "group_id": "owner-group-2c80d1dc-7773-47e9-8fdc-7d86d08d953c",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-0bd34189-7cf8-45e9-bccc-f2171fed98ac",
+      "group_id": "owner-group-2d3c4756-016b-4812-834d-2bbc98133561",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-41e34fb4-150e-4fa3-b6f7-5c2830d1cce2",
+      "group_id": "owner-group-2d99f9f4-ece3-47b7-ae64-050dd5f42005",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-9f70aeef-10b5-42f6-a754-f2d4c961d152",
+      "group_id": "owner-group-30696709-84d3-4600-a930-5e669db8797a",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-7fa005d0-ae02-4856-a2c2-d397dd97b223",
+      "group_id": "owner-group-339be2ed-9abd-48ba-b23b-1ecea62bcb57",
+      "group_type": "want_list",
+      "record_type": "have_list",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-6ccb75ff-e1e9-46e9-9ec1-7c277ae0cbf7",
+      "group_id": "owner-group-392cb042-36cc-46d2-ac63-e5173217a58a",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-4e5c9fd2-fce3-496c-9674-5d39029daa6f",
+      "group_id": "owner-group-3e40bb83-8595-45ae-ace8-9bf983eb4d73",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-45d4303f-b029-4acc-926f-fb2ec0b3b983",
+      "group_id": "owner-group-420391f6-3174-4c84-a4be-3d14ccdbc563",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-8d1d1cb8-c557-4848-85d8-9b710b9bdb88",
+      "group_id": "owner-group-43d7c653-989b-4325-8887-fa6c51d48bb8",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-6ae8fa06-0b65-4f58-8b13-a503bacb6bc2",
+      "group_id": "owner-group-4a101f10-0ee4-4e48-84d4-859abc957802",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-b5b24f66-e9d7-4955-8a28-9172e2cdd280",
+      "group_id": "owner-group-4b434fc0-f739-4dcf-a28e-e4810f69e74f",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 3,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-5771798a-3ce6-480b-8129-2b230266aab8",
+      "group_id": "owner-group-4b7016c2-be1e-4e0e-9bbf-0442c0238efd",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-58e5176d-4165-45ac-a26b-e7022e2201df",
+      "group_id": "owner-group-4b90accb-1d25-4018-9b3f-aeb701387f85",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-ab591b3a-164b-47b6-9989-de977ffa4de8",
+      "group_id": "owner-group-4e453016-3978-4014-9326-2beb81b59062",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-ccff882a-2206-4355-aa1d-d75b826a4788",
+      "group_id": "owner-group-51a4b37d-5e8b-4069-83d4-1f3aa32359a3",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-01acd815-9d81-454d-8e52-a4e5c3d47603",
+      "group_id": "owner-group-53545418-c4f2-453d-8719-07af3ab70c99",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-8b756a2f-ab85-41fd-9fb0-c568cac35f20",
+      "group_id": "owner-group-557e04e8-7811-436f-b810-dd8c2b72c6ef",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-03f37fe4-41c3-4e03-b510-f117b0d993dd",
+      "group_id": "owner-group-63b0cc5f-3be0-44ae-8a91-73752e0da21e",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-6ae8fa06-0b65-4f58-8b13-a503bacb6bc2",
+      "group_id": "owner-group-694f02ea-051d-4744-a18f-eab195eb6918",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-8bd6cebb-8348-4ac9-981b-67753d51e56b",
+      "group_id": "owner-group-69b1e6c6-fc4c-4fdc-9813-52926d9d8331",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-63a64a60-8e10-4ee0-a5a8-a567712d9896",
+      "group_id": "owner-group-6dd91b4e-e386-43dc-9e1c-b36d90843552",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-acebfcbb-7f8e-437a-b162-64e660ffacdd",
+      "group_id": "owner-group-6eb7e097-3570-4296-8e97-a43344e4311c",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-6c324678-af4a-44b9-bd38-c9dc44801e80",
+      "group_id": "owner-group-70b5703d-aa4f-4774-83e7-9b8fd6433673",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-54547a3b-68e4-4d50-8192-0cec5be92fa3",
+      "group_id": "owner-group-7453be64-01df-4ef3-a8dc-4e0acd026e66",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-21b75cb6-264c-4461-8c35-5620e19d279a",
+      "group_id": "owner-group-788161f2-3073-4dc0-8d3b-b223cb3dfd67",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-3dad4260-0703-48f4-a99f-ea0410240e98",
+      "group_id": "owner-group-78b2d97d-5ead-4be6-a505-b6e4b6c92a73",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-9145fa9b-79a3-4194-90f9-a8fddc9dc7d7",
+      "group_id": "owner-group-7905b50b-5fa8-4775-a21a-3d73cba4e154",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-a2155d40-e928-49b3-81b9-ec9373c910bd",
+      "group_id": "owner-group-7abea2b7-7656-42dd-95da-fa93e85f78e7",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-6c324678-af4a-44b9-bd38-c9dc44801e80",
+      "group_id": "owner-group-7b46a5b6-3233-4e2b-9dae-fa0f25b3179e",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-ccff882a-2206-4355-aa1d-d75b826a4788",
+      "group_id": "owner-group-7b7c84de-5891-4994-80ff-9d8858646339",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-f6e907ff-e389-4c83-8989-c5d10fe7fe31",
+      "group_id": "owner-group-82b2bebf-4c39-49ec-87a7-9e00f2c68e46",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-73e60900-02f1-46ab-ba0e-019920f31154",
+      "group_id": "owner-group-85a20d24-ffe4-4535-900d-3dc08da6037d",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-af6351ae-1d5e-4a85-8a2d-492fe3cfc56a",
+      "group_id": "owner-group-85c090aa-4c8d-47c3-b17b-2010059d8d72",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-7ba8e10b-4a0d-4d73-87ee-e034a9289e14",
+      "group_id": "owner-group-85f29799-0ef3-4ccb-8bb2-5abab08a77c1",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-afafe74c-4d57-4927-a109-05b7cc62ff8f",
+      "group_id": "owner-group-8bc636b4-86ff-4b6e-84b5-1fca6370bc7e",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-967afa4a-830d-4d37-806b-e9109f53ba62",
+      "group_id": "owner-group-8d3fde36-df15-4f17-8ad0-8f888968ecbb",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-9fcf5f91-4a67-4db6-a802-3cb17bc484db",
+      "group_id": "owner-group-8f7c4800-ff0a-4e07-a20c-aa4e411ffa38",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-cd27a294-b5e1-41ed-a96c-68b670b06184",
+      "group_id": "owner-group-8f7d0a19-93ef-4c36-bbd8-a0b8ee967e8c",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 3,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-63a64a60-8e10-4ee0-a5a8-a567712d9896",
+      "group_id": "owner-group-8fa60577-a4d9-4fe7-94ad-52902cd85b04",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-2d7cf294-836c-4a72-8d45-98ba2884631e",
+      "group_id": "owner-group-91d305b6-7735-4414-95df-ee9327696388",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-6783fa29-3cdd-4d5e-9279-4e985148e34a",
+      "group_id": "owner-group-9579028b-4124-48d3-b8e2-d5c42ba0e735",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 3,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-f6e3d599-bf21-4b1d-b7dc-0b1b20f12a4c",
+      "group_id": "owner-group-99f41ce4-0a09-4c17-a7fa-5f2fbb08a86e",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-cf50a620-8778-4be1-bf44-b3804e3e4649",
+      "group_id": "owner-group-9ad6deee-20f7-45fd-a362-771e6f33c590",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-9f70aeef-10b5-42f6-a754-f2d4c961d152",
+      "group_id": "owner-group-9e4cceeb-9ea9-4d6d-a9e3-62ffad169e30",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-010f3a35-d6ff-4b6e-8664-5c5c23606d4d",
+      "group_id": "owner-group-a042d1c3-e82e-456e-9e76-14f88af234a7",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-8feeea37-ad9a-4de4-95c6-080602134944",
+      "group_id": "owner-group-a0616eb5-7e53-4bca-893f-0cb3cc6e6818",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-56006987-54da-4dae-bf25-a143ee254549",
+      "group_id": "owner-group-a11b4d1a-4bdd-4548-b06f-ce214c1fd464",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-7534b41e-8a4f-4028-a0cf-8c14a27e2fd3",
+      "group_id": "owner-group-a1a24994-b1bc-4036-9cee-4144bfebd58a",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-76c7e11b-eb55-4f72-bcbb-322be095f116",
+      "group_id": "owner-group-a2d90526-e6a0-4504-9fe1-8d7ca10be753",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-54547a3b-68e4-4d50-8192-0cec5be92fa3",
+      "group_id": "owner-group-a3a18b6f-51a9-4271-b569-252a70a2c7df",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-9ab89299-e735-43a5-bfc9-312a713c8dd6",
+      "group_id": "owner-group-a7b7e982-9f56-4f83-96d7-466514bb6f20",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-010f3a35-d6ff-4b6e-8664-5c5c23606d4d",
+      "group_id": "owner-group-a8e2a505-cbde-4d22-8d72-766979daf1e6",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-f6e3d599-bf21-4b1d-b7dc-0b1b20f12a4c",
+      "group_id": "owner-group-ac447018-cd82-4315-ade0-089c1d0867f2",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-01acd815-9d81-454d-8e52-a4e5c3d47603",
+      "group_id": "owner-group-afc7944f-a3f2-4012-b298-bb03f3007c12",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-8d1d1cb8-c557-4848-85d8-9b710b9bdb88",
+      "group_id": "owner-group-b02c4356-435d-4bca-9922-9f651d776003",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-3a1f22cf-654e-4394-9966-a24f8249a484",
+      "group_id": "owner-group-b8ee588c-4192-4ae0-bb30-e0e5e7b48ec0",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-00aee308-1e60-4eb7-b061-7d7967ef1be8",
+      "group_id": "owner-group-b956f781-a0a6-4abd-b788-d35a6d073048",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-2d7cf294-836c-4a72-8d45-98ba2884631e",
+      "group_id": "owner-group-bc3729f3-2887-4e02-a7c2-90b67922b1b4",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-231e4b24-36ae-4812-9769-265a82eb78b5",
+      "group_id": "owner-group-bc375217-98fe-4efa-a026-9395d2271948",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-0703598c-b74e-499b-9e1f-647cea883dc9",
+      "group_id": "owner-group-bd7a1a08-7f2f-49a2-b022-2dc043346a08",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-dd8ae4c4-2253-4f81-a121-6110555026d7",
+      "group_id": "owner-group-bfe66d63-3e40-4a4d-aefe-875a2188cc97",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 3,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-0cb16bcd-506f-4d8d-8bfa-2cb529a4f12b",
+      "group_id": "owner-group-c427cf8f-41be-4b3e-8944-82120585db6d",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 3,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-f07baad4-5ece-4006-9d25-4d61a14bbb59",
+      "group_id": "owner-group-c8ace473-49b7-4565-9aeb-f3cdd90195f7",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-03f37fe4-41c3-4e03-b510-f117b0d993dd",
+      "group_id": "owner-group-d07d3e3d-e016-421f-9c44-c7b2e2f92399",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-76df2ca2-018c-4b78-bf7d-52fc21bcfe7d",
+      "group_id": "owner-group-d132d498-91c6-4ec1-99c4-166f464881cb",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 3,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-a9a66b81-ba05-4b6d-834e-1fc2d0369ef5",
+      "group_id": "owner-group-d4d45d86-bc35-47c1-b72e-54ae5b84e48b",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 3,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-9145fa9b-79a3-4194-90f9-a8fddc9dc7d7",
+      "group_id": "owner-group-d51c13ed-8d0f-4a46-ac9a-e6f5bc0bbd99",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-00aee308-1e60-4eb7-b061-7d7967ef1be8",
+      "group_id": "owner-group-d69414bb-9aec-46db-b5ac-c2912629992d",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-af6351ae-1d5e-4a85-8a2d-492fe3cfc56a",
+      "group_id": "owner-group-d7915b66-9adc-46d2-88ff-0013fda10c59",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-231e4b24-36ae-4812-9769-265a82eb78b5",
+      "group_id": "owner-group-d94c0a31-bf92-4e03-8810-37b59cf34328",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-3a1f22cf-654e-4394-9966-a24f8249a484",
+      "group_id": "owner-group-da2af421-0146-4fb7-8dcb-2a41b27c9677",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-feaffbb7-27ca-46fe-b910-0924be05363a",
+      "group_id": "owner-group-da6b9b17-6e25-48b0-8b51-cfa5b768ecdb",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-7bdff8c2-7929-480d-9b67-9a45652528f0",
+      "group_id": "owner-group-e04107b4-4263-498e-935e-b9ccddb3d7fa",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-6ccb75ff-e1e9-46e9-9ec1-7c277ae0cbf7",
+      "group_id": "owner-group-e0613743-9767-4cad-87e2-115ea6e38b26",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-4e5c9fd2-fce3-496c-9674-5d39029daa6f",
+      "group_id": "owner-group-e11cc941-efa9-48dc-b668-be4e7ab8d529",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-ae118f17-86a2-4090-b650-a1c8d2d06998",
+      "group_id": "owner-group-e168d35c-a96f-453b-b9cd-b77eb1f1a6a1",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 3,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-da5d7b59-9cf4-4c20-9ae8-08cd2e253a4b",
+      "group_id": "owner-group-e323ab80-2a4b-4705-81b2-6397c4e5a197",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-6a9a1723-e3f2-4991-97cc-ecc08c56b37c",
+      "group_id": "owner-group-e3a88664-4635-45b0-b1de-b5c2f32be2f7",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-60fe5bb0-47d0-4c7a-a138-8ec43a07828c",
+      "group_id": "owner-group-e71fa427-3aa8-46d7-9671-106d2b5da042",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-b475c21b-7dd3-4a39-ab6b-4075e591469a",
+      "group_id": "owner-group-e8e2a974-c530-4ff6-b0aa-17a06b96505d",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-21b75cb6-264c-4461-8c35-5620e19d279a",
+      "group_id": "owner-group-e96fa714-4c14-44a3-a3b0-1cc4eca95386",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-afafe74c-4d57-4927-a109-05b7cc62ff8f",
+      "group_id": "owner-group-e9bd488f-b428-4b0b-b17d-5c4bcbd5a2ec",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-76c7e11b-eb55-4f72-bcbb-322be095f116",
+      "group_id": "owner-group-ec46281c-519d-4b35-9bb8-96b23da26fd9",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-8feeea37-ad9a-4de4-95c6-080602134944",
+      "group_id": "owner-group-ee519798-4bf9-4769-ba2f-ffca7df944cf",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-7ba8e10b-4a0d-4d73-87ee-e034a9289e14",
+      "group_id": "owner-group-ef3cade5-bde3-4783-9774-6f6b28170cea",
+      "group_type": "want_list",
+      "record_type": "uncertain",
+      "active_entries": 5,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-78727281-899b-4e98-86ff-97996f3e04bb",
+      "group_id": "owner-group-f65dbbd0-4b10-4d67-a89e-652e881874e2",
+      "group_type": "have_list",
+      "record_type": "want_list",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-60fe5bb0-47d0-4c7a-a138-8ec43a07828c",
+      "group_id": "owner-group-f6d0af0a-748c-4ea6-a209-6d850d63342f",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-8bd6cebb-8348-4ac9-981b-67753d51e56b",
+      "group_id": "owner-group-faf24fed-b22d-4b36-8d80-b1d4d3ae8834",
+      "group_type": "have_list",
+      "record_type": "uncertain",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-f6e907ff-e389-4c83-8989-c5d10fe7fe31",
+      "group_id": "owner-group-fb73ca64-d8c6-42b9-8894-8afdfa846b1b",
+      "group_type": "want_list",
+      "record_type": "complete",
+      "active_entries": 2,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-7bdff8c2-7929-480d-9b67-9a45652528f0",
+      "group_id": "owner-group-fc591c23-9578-475a-b86a-b1579c36d501",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    },
+    {
+      "record_id": "owner-record-6a9a1723-e3f2-4991-97cc-ecc08c56b37c",
+      "group_id": "owner-group-fc745bf6-a387-457e-a866-c43dc748ae8c",
+      "group_type": "have_list",
+      "record_type": "complete",
+      "active_entries": 1,
+      "action": "preserved; empty/recovery/mixed groups can be legitimate"
+    }
+  ],
+  "database_size_bytes": 9121792
+}

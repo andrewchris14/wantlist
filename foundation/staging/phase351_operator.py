@@ -1,5 +1,5 @@
 """Release only the tested staging Worker; audit verification performs no D1 writes."""
-import json,hashlib,re,urllib.request,time
+import json,hashlib,re,urllib.request,urllib.error,time
 from pathlib import Path
 from .phase34_operator import settings,worker_backup,ORIGIN
 from .phase35_operator import release
@@ -27,8 +27,11 @@ def run():
  assert b'mailto:jschris@triwest.net' in live
  public=json.loads(fetch('/public/record?id=p0581-l001'));assert public['id']=='p0581-l001' and public['list_type']=='have_list'
  assert public.get('display_category') in (None,'Football Wantlist')
+ try:fetch('/owner/record?id=p0581-l001');guest_status=200
+ except urllib.error.HTTPError as error:guest_status=error.code
+ assert guest_status==401,'Guest owner read was not rejected'
  after=state();assert before==after,'Concurrent staging changes detected: inspect before claiming unchanged D1'
  current,_=settings();assert {b['name'] for b in s['bindings'] if b['type']=='secret_text'}=={b['name'] for b in current['bindings'] if b['type']=='secret_text'}
- result={'staging_only':True,'deployment':deployed,'tested_asset_sha256':hashlib.sha256(local).hexdigest(),'deployed_asset_matches_tested_build':True,'public_football_id':public['id'],'public_football_type':public['list_type'],'d1_records_and_history_unchanged':True,'sessions_and_auth_generation_unchanged':True,'secret_names_preserved':True,'d1_test_writes':False,'record_count':len(before['records'])}
+ result={'staging_only':True,'guest_owner_read_status':guest_status,'deployment':deployed,'tested_asset_sha256':hashlib.sha256(local).hexdigest(),'deployed_asset_matches_tested_build':True,'public_football_id':public['id'],'public_football_type':public['list_type'],'d1_records_and_history_unchanged':True,'sessions_and_auth_generation_unchanged':True,'secret_names_preserved':True,'d1_test_writes':False,'record_count':len(before['records'])}
  (ROOT/'foundation/staging/phase351-release-result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
 if __name__=='__main__':run()

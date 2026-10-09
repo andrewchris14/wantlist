@@ -29,5 +29,6 @@
   "sessions_and_auth_generation_unchanged": true,
   "secret_names_preserved": true,
   "d1_test_writes": false,
-  "record_count": 267
+  "record_count": 267,
+  "guest_owner_read_status": 401
 }

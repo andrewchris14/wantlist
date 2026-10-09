@@ -1,0 +1,383 @@
+{
+  "baseline_commit": "1aa32e17494d155bc2714bffa3290b77baf63668",
+  "local_only": true,
+  "not_cloudflare_cpu_or_billed_reads": true,
+  "fixture": {
+    "active_items": 526,
+    "removed_items": 1503,
+    "unrelated_items": 2000,
+    "maximum_changes": 500,
+    "maximum_additions": 500,
+    "addition_characters": 500
+  },
+  "baseline": {
+    "sqlite_version": "3.53.1",
+    "vm_instructions": {
+      "owner_large_record": 90768,
+      "notes_save": 92420,
+      "normal_save": 115797,
+      "maximum_save": 15148334,
+      "large_undo": 132206
+    },
+    "query_counts": {
+      "owner_large_record": 3,
+      "notes_save": 10,
+      "normal_save": 12,
+      "maximum_save": 12,
+      "large_undo": 10
+    },
+    "bound_parameter_bytes": {
+      "owner_large_record": 81,
+      "notes_save": 930,
+      "normal_save": 2024,
+      "maximum_save": 972528,
+      "large_undo": 25992
+    },
+    "node_timings": [
+      {
+        "operation": "owner_large_record",
+        "node_process_cpu_ms": 17.445,
+        "local_wall_ms": 17.046307999999954
+      },
+      {
+        "operation": "notes_save",
+        "node_process_cpu_ms": 31.373,
+        "local_wall_ms": 32.57483400000001
+      },
+      {
+        "operation": "normal_save",
+        "node_process_cpu_ms": 18.587,
+        "local_wall_ms": 20.404239999999845
+      },
+      {
+        "operation": "maximum_save",
+        "node_process_cpu_ms": 1428.66,
+        "local_wall_ms": 1431.5888030000006
+      },
+      {
+        "operation": "large_undo",
+        "node_process_cpu_ms": 79.767,
+        "local_wall_ms": 73.2147270000005
+      }
+    ]
+  },
+  "optimized": {
+    "sqlite_version": "3.53.1",
+    "vm_instructions": {
+      "owner_large_record": 91916,
+      "notes_save": 640,
+      "normal_save": 50591,
+      "maximum_save": 241736,
+      "large_undo": 88943
+    },
+    "query_counts": {
+      "owner_large_record": 1,
+      "notes_save": 6,
+      "normal_save": 11,
+      "maximum_save": 11,
+      "large_undo": 9
+    },
+    "bound_parameter_bytes": {
+      "owner_large_record": 27,
+      "notes_save": 771,
+      "normal_save": 1516,
+      "maximum_save": 734496,
+      "large_undo": 25965
+    },
+    "node_timings": [
+      {
+        "operation": "owner_large_record",
+        "node_process_cpu_ms": 24.086,
+        "local_wall_ms": 24.174825999998575
+      },
+      {
+        "operation": "notes_save",
+        "node_process_cpu_ms": 17.897,
+        "local_wall_ms": 19.936687000001257
+      },
+      {
+        "operation": "normal_save",
+        "node_process_cpu_ms": 14.038,
+        "local_wall_ms": 16.000804000001153
+      },
+      {
+        "operation": "maximum_save",
+        "node_process_cpu_ms": 55.005,
+        "local_wall_ms": 58.6350280000006
+      },
+      {
+        "operation": "large_undo",
+        "node_process_cpu_ms": 20.97,
+        "local_wall_ms": 24.678109000000404
+      }
+    ]
+  },
+  "owner_javascript_only": {
+    "local_only": true,
+    "not_cloudflare_cpu": true,
+    "iterations": 200,
+    "baseline_returned_rows": 2031,
+    "optimized_returned_rows": 1,
+    "baseline_js_cpu_ms_per_open": 3.16055,
+    "optimized_js_cpu_ms_per_open": 0.003025
+  },
+  "maximum_save_query_plans": {
+    "baseline": [
+      {
+        "sql": "SELECT s.completed,m.request_sha256,m.result_json FROM staging_import_state s LEFT JOIN mutation_receipts m ON m.id=? WHERE s.id=1",
+        "vm_instructions": 24,
+        "query_plan": [
+          "SEARCH s USING INTEGER PRIMARY KEY (rowid=?)",
+          "SEARCH m USING INDEX sqlite_autoindex_mutation_receipts_1 (id=?) LEFT-JOIN"
+        ]
+      },
+      {
+        "sql": "SELECT r.id,r.revision,r.list_type,r.deleted_at,json_extract(r.content_json,'$.source_list_type') source_list_type,EXISTS(SELECT 1 FROM record_groups g JOIN items i ON i.group_id=g.id WHERE g.record_id=r.id AND i.deleted_at IS NULL) has_entries,p.revision public_revision FROM records r JOIN public_records p ON p.record_id=r.id WHERE r.id=?",
+        "vm_instructions": 48,
+        "query_plan": [
+          "SEARCH r USING INDEX sqlite_autoindex_records_1 (id=?)",
+          "SEARCH p USING INDEX sqlite_autoindex_public_records_1 (record_id=?)",
+          "CORRELATED SCALAR SUBQUERY 1",
+          "SEARCH g USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)",
+          "SEARCH i USING INDEX items_group_value (group_id=?)"
+        ]
+      },
+      {
+        "sql": "SELECT count(*) n,\n COALESCE(sum(i.deleted_at IS NOT NULL),0) deleted,\n COALESCE(sum(CASE WHEN json_extract(c.value,'$.removed')=0 AND json_extract(c.value,'$.state') IS NOT i.state AND\n (?!='want_list' OR (g.list_type!='want_list' AND NOT(g.kind='primary' AND g.list_type='uncertain')) OR COALESCE(i.state,'wanted') NOT IN ('wanted','pending') OR json_extract(c.value,'$.state') NOT IN ('wanted','pending') OR json_extract(c.value,'$.state') IS NULL) THEN 1 ELSE 0 END),0) invalid,\n COALESCE(sum(i.state='pending' AND json_extract(c.value,'$.removed')=1),0) pending_removed\n FROM items i JOIN record_groups g ON g.id=i.group_id JOIN json_each(?) c ON i.id=json_extract(c.value,'$.id') WHERE g.record_id=?",
+        "vm_instructions": 5110255,
+        "query_plan": [
+          "SEARCH g USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)",
+          "SEARCH i USING INDEX items_group_value (group_id=?)",
+          "SCAN c VIRTUAL TABLE INDEX 1:"
+        ]
+      },
+      {
+        "sql": "SELECT * FROM record_groups WHERE record_id=?",
+        "vm_instructions": 21,
+        "query_plan": [
+          "SEARCH record_groups USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)"
+        ]
+      },
+      {
+        "sql": "SELECT i.id FROM items i JOIN record_groups g ON g.id=i.group_id JOIN json_each(?) a ON json_extract(a.value,'$.value')=i.value WHERE g.record_id=? AND (g.list_type=? OR g.kind='primary' AND g.list_type='uncertain') AND i.deleted_at IS NULL AND i.id NOT IN (SELECT json_extract(value,'$.id') FROM json_each(?) WHERE json_extract(value,'$.removed')=1) LIMIT 1",
+        "vm_instructions": 1337065,
+        "query_plan": [
+          "SEARCH g USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)",
+          "SEARCH i USING INDEX items_group_value (group_id=?)",
+          "LIST SUBQUERY 1",
+          "SCAN json_each VIRTUAL TABLE INDEX 1:",
+          "CREATE BLOOM FILTER",
+          "SCAN a VIRTUAL TABLE INDEX 1:"
+        ]
+      },
+      {
+        "sql": "INSERT INTO mutation_receipts VALUES(?,?,?,CASE WHEN (SELECT revision FROM records WHERE id=?)=? THEN 1 ELSE 0 END,?,?)",
+        "vm_instructions": 56,
+        "query_plan": [
+          "SCALAR SUBQUERY 1",
+          "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+        ]
+      },
+      {
+        "sql": "INSERT INTO change_history SELECT ?,r.id,NULL,'owner','edit_session',json_object('metadata',json(json_object('notes',json_extract(r.content_json,'$.notes'))),'list_type',r.list_type,'items',json((SELECT json_group_array(json(json_object('id',i.id,'group_id',i.group_id,'field_key',i.field_key,'position',i.position,'value',i.value,'state',i.state,'actionable',i.actionable,'limitation',i.limitation,'pending_at',i.pending_at,'received_at',i.received_at,'deleted_at',i.deleted_at))) FROM items i WHERE i.id IN (SELECT json_extract(value,'$.id') FROM json_each(?))))),?,? FROM records r WHERE r.id=?",
+        "vm_instructions": 12116,
+        "query_plan": [
+          "SEARCH r USING INDEX sqlite_autoindex_records_1 (id=?)",
+          "SCALAR SUBQUERY 2",
+          "SEARCH i USING INDEX sqlite_autoindex_items_1 (id=?)",
+          "LIST SUBQUERY 1",
+          "SCAN json_each VIRTUAL TABLE INDEX 1:"
+        ]
+      },
+      {
+        "sql": "UPDATE items SET actionable=CASE WHEN (SELECT json_extract(value,'$.state') FROM json_each(?) WHERE json_extract(value,'$.id')=items.id) IN ('wanted','pending') THEN 1 ELSE actionable END,limitation=CASE WHEN (SELECT json_extract(value,'$.state') FROM json_each(?) WHERE json_extract(value,'$.id')=items.id) IN ('wanted','pending') THEN NULL ELSE limitation END,state=(SELECT json_extract(value,'$.state') FROM json_each(?) WHERE json_extract(value,'$.id')=items.id),pending_at=CASE WHEN (SELECT json_extract(value,'$.state') FROM json_each(?) WHERE json_extract(value,'$.id')=items.id)='pending' THEN COALESCE(pending_at,?) ELSE NULL END,deleted_at=CASE WHEN (SELECT json_extract(value,'$.removed') FROM json_each(?) WHERE json_extract(value,'$.id')=items.id)=1 THEN ? ELSE NULL END WHERE id IN (SELECT json_extract(value,'$.id') FROM json_each(?))",
+        "vm_instructions": 3443781,
+        "query_plan": [
+          "SEARCH items USING COVERING INDEX sqlite_autoindex_items_1 (id=?)",
+          "LIST SUBQUERY 6",
+          "SCAN json_each VIRTUAL TABLE INDEX 1:",
+          "CORRELATED SCALAR SUBQUERY 3",
+          "SCAN json_each VIRTUAL TABLE INDEX 1:",
+          "CORRELATED SCALAR SUBQUERY 1",
+          "SCAN json_each VIRTUAL TABLE INDEX 1:",
+          "CORRELATED SCALAR SUBQUERY 2",
+          "SCAN json_each VIRTUAL TABLE INDEX 1:",
+          "CORRELATED SCALAR SUBQUERY 4",
+          "SCAN json_each VIRTUAL TABLE INDEX 1:",
+          "CORRELATED SCALAR SUBQUERY 5",
+          "SCAN json_each VIRTUAL TABLE INDEX 1:"
+        ]
+      },
+      {
+        "sql": "INSERT INTO items SELECT json_extract(a.value,'$.id'),json_extract(a.value,'$.group_id'),json_extract(a.value,'$.field_key'),COALESCE((SELECT max(position) FROM items WHERE group_id=json_extract(a.value,'$.group_id')),-1)+1+CAST(a.key AS INTEGER),json_extract(a.value,'$.value'),json_extract(a.value,'$.state'),1,NULL,CASE WHEN json_extract(a.value,'$.state')='pending' THEN ? ELSE NULL END,NULL,NULL FROM json_each(?) a",
+        "vm_instructions": 5144529,
+        "query_plan": [
+          "SCAN a VIRTUAL TABLE INDEX 1:",
+          "CORRELATED SCALAR SUBQUERY 1",
+          "SEARCH items USING COVERING INDEX sqlite_autoindex_items_2 (group_id=?)",
+          "SCAN change_history",
+          "SEARCH private_details USING COVERING INDEX sqlite_autoindex_private_details_1 (item_id=?)"
+        ]
+      },
+      {
+        "sql": "UPDATE records SET content_json=json_set(content_json,?,json(?)),list_type=?,revision=?,updated_at=? WHERE id=?",
+        "vm_instructions": 121,
+        "query_plan": [
+          "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+        ]
+      },
+      {
+        "sql": "UPDATE public_records SET public_json=json_set(public_json,?,json(?)) WHERE record_id=?",
+        "vm_instructions": 17107,
+        "query_plan": [
+          "SEARCH public_records USING INDEX sqlite_autoindex_public_records_1 (record_id=?)"
+        ]
+      },
+      {
+        "sql": "UPDATE public_records SET revision=?,updated_at=?,public_json=json_set(public_json,'$.revision',?,'$.updated_at',?,'$.list_type',(SELECT list_type FROM records WHERE id=?),'$.entry_order',COALESCE((SELECT json_extract(content_json,'$.entry_order') FROM records WHERE id=?),'natural'),'$.groups',json((SELECT json_group_array(json(body)) FROM (SELECT json_patch(json_object('id',g.id,'kind',g.kind,'list_type',g.list_type),json_patch(json_object('label',json_extract(g.metadata_json,'$.label'),'description',json_extract(g.metadata_json,'$.description'),'notes',json(json_extract(g.metadata_json,'$.notes')),'source_list_type',json_extract(g.metadata_json,'$.source_list_type')),json_object('entries',json((SELECT json_group_array(json(entry)) FROM (SELECT json_object('id',i.id,'value',i.value,'field_key',i.field_key,'position',i.position,'state',i.state,'actionable',i.actionable,'pending_at',i.pending_at,'received_at',i.received_at) entry FROM items i WHERE i.group_id=g.id AND i.deleted_at IS NULL ORDER BY CASE WHEN i.id LIKE 'owner-item-%' THEN 1 ELSE 0 END,CASE WHEN i.id NOT LIKE 'owner-item-%' THEN i.field_key END,i.position)))))) body FROM record_groups g WHERE g.record_id=? ORDER BY CASE g.kind WHEN 'primary' THEN 0 WHEN 'mixed' THEN 1 ELSE 2 END,g.position)))) WHERE record_id=?",
+        "vm_instructions": 83211,
+        "query_plan": [
+          "SEARCH public_records USING INDEX sqlite_autoindex_public_records_1 (record_id=?)",
+          "SCALAR SUBQUERY 1",
+          "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)",
+          "SCALAR SUBQUERY 2",
+          "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)",
+          "SCALAR SUBQUERY 6",
+          "CO-ROUTINE (subquery-5)",
+          "SEARCH g USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)",
+          "CORRELATED SCALAR SUBQUERY 4",
+          "CO-ROUTINE (subquery-3)",
+          "SEARCH i USING INDEX items_group_value (group_id=?)",
+          "USE TEMP B-TREE FOR ORDER BY",
+          "SCAN (subquery-3)",
+          "USE TEMP B-TREE FOR ORDER BY",
+          "SCAN (subquery-5)"
+        ]
+      }
+    ],
+    "optimized": [
+      {
+        "sql": "SELECT s.completed,m.request_sha256,m.result_json FROM staging_import_state s LEFT JOIN mutation_receipts m ON m.id=? WHERE s.id=1",
+        "vm_instructions": 24,
+        "query_plan": [
+          "SEARCH s USING INTEGER PRIMARY KEY (rowid=?)",
+          "SEARCH m USING INDEX sqlite_autoindex_mutation_receipts_1 (id=?) LEFT-JOIN"
+        ]
+      },
+      {
+        "sql": "SELECT r.id,r.revision,r.list_type,r.deleted_at,json_extract(r.content_json,'$.source_list_type') source_list_type,CASE WHEN r.list_type='uncertain' THEN EXISTS(SELECT 1 FROM record_groups g JOIN items i ON i.group_id=g.id WHERE g.record_id=r.id AND i.deleted_at IS NULL) ELSE 0 END has_entries,p.revision public_revision FROM records r JOIN public_records p ON p.record_id=r.id WHERE r.id=?",
+        "vm_instructions": 31,
+        "query_plan": [
+          "SEARCH r USING INDEX sqlite_autoindex_records_1 (id=?)",
+          "SEARCH p USING INDEX sqlite_autoindex_public_records_1 (record_id=?)",
+          "CORRELATED SCALAR SUBQUERY 1",
+          "SEARCH g USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)",
+          "SEARCH i USING INDEX items_group_value (group_id=?)"
+        ]
+      },
+      {
+        "sql": "SELECT count(*) n,\n COALESCE(sum(i.deleted_at IS NOT NULL),0) deleted,\n COALESCE(sum(CASE WHEN json_extract(c.value,'$.removed')=0 AND json_extract(c.value,'$.state') IS NOT i.state AND\n (?!='want_list' OR (g.list_type!='want_list' AND NOT(g.kind='primary' AND g.list_type='uncertain')) OR COALESCE(i.state,'wanted') NOT IN ('wanted','pending') OR json_extract(c.value,'$.state') NOT IN ('wanted','pending') OR json_extract(c.value,'$.state') IS NULL) THEN 1 ELSE 0 END),0) invalid,\n COALESCE(sum(i.state='pending' AND json_extract(c.value,'$.removed')=1),0) pending_removed\n FROM json_each(?) c CROSS JOIN items i CROSS JOIN record_groups g WHERE i.id=json_extract(c.value,'$.id') AND g.id=i.group_id AND g.record_id=?",
+        "vm_instructions": 27041,
+        "query_plan": [
+          "SCAN c VIRTUAL TABLE INDEX 1:",
+          "SEARCH i USING INDEX sqlite_autoindex_items_1 (id=?)",
+          "SEARCH g USING INDEX sqlite_autoindex_record_groups_1 (id=?)"
+        ]
+      },
+      {
+        "sql": "SELECT * FROM record_groups WHERE record_id=?",
+        "vm_instructions": 21,
+        "query_plan": [
+          "SEARCH record_groups USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)"
+        ]
+      },
+      {
+        "sql": "SELECT i.id FROM json_each(?) a CROSS JOIN record_groups g CROSS JOIN items i INDEXED BY items_group_value WHERE g.record_id=? AND i.group_id=g.id AND i.value=a.value AND (g.list_type=? OR g.kind='primary' AND g.list_type='uncertain') AND i.deleted_at IS NULL AND i.id NOT IN (SELECT json_extract(value,'$.id') FROM json_each(?) WHERE json_extract(value,'$.removed')=1) LIMIT 1",
+        "vm_instructions": 7521,
+        "query_plan": [
+          "SCAN a VIRTUAL TABLE INDEX 1:",
+          "SEARCH g USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)",
+          "SEARCH i USING INDEX items_group_value (group_id=? AND value=?)",
+          "LIST SUBQUERY 1",
+          "SCAN json_each VIRTUAL TABLE INDEX 1:",
+          "CREATE BLOOM FILTER"
+        ]
+      },
+      {
+        "sql": "INSERT INTO mutation_receipts VALUES(?,?,?,CASE WHEN (SELECT revision FROM records WHERE id=?)=? THEN 1 ELSE 0 END,?,?)",
+        "vm_instructions": 56,
+        "query_plan": [
+          "SCALAR SUBQUERY 1",
+          "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+        ]
+      },
+      {
+        "sql": "INSERT INTO change_history SELECT ?,r.id,NULL,'owner','edit_session',json_object('metadata',json(json_object('notes',json_extract(r.content_json,'$.notes'))),'list_type',r.list_type,'items',json((SELECT json_group_array(json(json_object('id',i.id,'group_id',i.group_id,'field_key',i.field_key,'position',i.position,'value',i.value,'state',i.state,'actionable',i.actionable,'limitation',i.limitation,'pending_at',i.pending_at,'received_at',i.received_at,'deleted_at',i.deleted_at))) FROM items i WHERE i.id IN (SELECT json_extract(value,'$.id') FROM json_each(?))))),?,? FROM records r WHERE r.id=?",
+        "vm_instructions": 12120,
+        "query_plan": [
+          "SEARCH r USING INDEX sqlite_autoindex_records_1 (id=?)",
+          "SCALAR SUBQUERY 2",
+          "SEARCH i USING INDEX sqlite_autoindex_items_1 (id=?)",
+          "LIST SUBQUERY 1",
+          "SCAN json_each VIRTUAL TABLE INDEX 1:"
+        ]
+      },
+      {
+        "sql": "UPDATE items SET actionable=CASE WHEN json_extract(c.value,'$.state') IN ('wanted','pending') THEN 1 ELSE items.actionable END,limitation=CASE WHEN json_extract(c.value,'$.state') IN ('wanted','pending') THEN NULL ELSE items.limitation END,state=json_extract(c.value,'$.state'),pending_at=CASE WHEN json_extract(c.value,'$.state')='pending' THEN COALESCE(items.pending_at,?) ELSE NULL END,deleted_at=CASE WHEN json_extract(c.value,'$.removed')=1 THEN ? ELSE NULL END FROM json_each(?) c WHERE items.id=json_extract(c.value,'$.id')",
+        "vm_instructions": 41522,
+        "query_plan": [
+          "SCAN c VIRTUAL TABLE INDEX 1:",
+          "SEARCH items USING INDEX sqlite_autoindex_items_1 (id=?)"
+        ]
+      },
+      {
+        "sql": "WITH additions AS MATERIALIZED (SELECT CAST(key AS INTEGER) ordinal,json_extract(value,'$.id') id,json_extract(value,'$.group_id') group_id,json_extract(value,'$.field_key') field_key,json_extract(value,'$.value') value,json_extract(value,'$.state') state FROM json_each(?)),bases AS MATERIALIZED (SELECT group_id,COALESCE((SELECT max(position) FROM items WHERE items.group_id=g.group_id),-1)+1 base FROM (SELECT DISTINCT group_id FROM additions) g) INSERT INTO items SELECT a.id,a.group_id,a.field_key,b.base+a.ordinal,a.value,a.state,1,NULL,CASE WHEN a.state='pending' THEN ? ELSE NULL END,NULL,NULL FROM additions a JOIN bases b ON b.group_id=a.group_id",
+        "vm_instructions": 80735,
+        "query_plan": [
+          "MATERIALIZE additions",
+          "SCAN json_each VIRTUAL TABLE INDEX 1:",
+          "MATERIALIZE bases",
+          "CO-ROUTINE g",
+          "SCAN additions",
+          "USE TEMP B-TREE FOR DISTINCT",
+          "SCAN g",
+          "CORRELATED SCALAR SUBQUERY 2",
+          "SEARCH items USING COVERING INDEX sqlite_autoindex_items_2 (group_id=?)",
+          "SCAN a",
+          "BLOOM FILTER ON b (group_id=?)",
+          "SEARCH b USING AUTOMATIC COVERING INDEX (group_id=?)",
+          "SEARCH change_history USING COVERING INDEX history_item_reference (item_id=?)",
+          "SEARCH private_details USING COVERING INDEX sqlite_autoindex_private_details_1 (item_id=?)"
+        ]
+      },
+      {
+        "sql": "UPDATE records SET content_json=json_set(content_json,?,json(?)),list_type=?,revision=?,updated_at=? WHERE id=?",
+        "vm_instructions": 121,
+        "query_plan": [
+          "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+        ]
+      },
+      {
+        "sql": "UPDATE public_records SET revision=?,updated_at=?,public_json=json_set(public_json,?,json(?),'$.revision',?,'$.updated_at',?,'$.list_type',(SELECT list_type FROM records WHERE id=?),'$.entry_order',COALESCE((SELECT json_extract(content_json,'$.entry_order') FROM records WHERE id=?),'natural'),'$.groups',json((SELECT json_group_array(json(body)) FROM (SELECT json_patch(json_object('id',g.id,'kind',g.kind,'list_type',g.list_type),json_patch(json_object('label',json_extract(g.metadata_json,'$.label'),'description',json_extract(g.metadata_json,'$.description'),'notes',json(json_extract(g.metadata_json,'$.notes')),'source_list_type',json_extract(g.metadata_json,'$.source_list_type')),json_object('entries',json((SELECT json_group_array(json(entry)) FROM (SELECT json_object('id',i.id,'value',i.value,'field_key',i.field_key,'position',i.position,'state',i.state,'actionable',i.actionable,'pending_at',i.pending_at,'received_at',i.received_at) entry FROM items i WHERE i.group_id=g.id AND i.deleted_at IS NULL ORDER BY CASE WHEN i.id LIKE 'owner-item-%' THEN 1 ELSE 0 END,CASE WHEN i.id NOT LIKE 'owner-item-%' THEN i.field_key END,i.position)))))) body FROM record_groups g WHERE g.record_id=? ORDER BY CASE g.kind WHEN 'primary' THEN 0 WHEN 'mixed' THEN 1 ELSE 2 END,g.position)))) WHERE record_id=?",
+        "vm_instructions": 72544,
+        "query_plan": [
+          "SEARCH public_records USING INDEX sqlite_autoindex_public_records_1 (record_id=?)",
+          "SCALAR SUBQUERY 1",
+          "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)",
+          "SCALAR SUBQUERY 2",
+          "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)",
+          "SCALAR SUBQUERY 6",
+          "CO-ROUTINE (subquery-5)",
+          "SEARCH g USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)",
+          "CORRELATED SCALAR SUBQUERY 4",
+          "CO-ROUTINE (subquery-3)",
+          "SEARCH i USING INDEX items_group_value (group_id=?)",
+          "USE TEMP B-TREE FOR ORDER BY",
+          "SCAN (subquery-3)",
+          "USE TEMP B-TREE FOR ORDER BY",
+          "SCAN (subquery-5)"
+        ]
+      }
+    ]
+  }
+}

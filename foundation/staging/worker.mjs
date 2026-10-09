@@ -1,6 +1,6 @@
 // Isolated staging backend and optional owner preview. No production integration.
 import {verifyCredential, throttle, issue, validate, cookieToken, hash, config, logoutCookie} from './auth.js';
-import {ownerRecord,recentOwner} from './owner.js';
+import {ownerRecordJSON,recentOwner} from './owner.js';
 import {maintainPhase35,rollbackEauSplit} from './phase35-maintenance.js';
 import {recoverHistoricalSamples} from './phase34-migration.js';
 import {categories,categoryMutation} from './categories.js';
@@ -108,7 +108,7 @@ async function handle(request,env){
       return json({revoked:true},200,{'Set-Cookie':logoutCookie});
     }
     if(url.pathname==='/owner/category'&&request.method==='POST')return json(await categoryMutation(env.DB,body));
-    if(url.pathname==='/owner/record'){const r=await ownerRecord(env.DB,url.searchParams.get('id'));return r?json(r):json({error:'Not found'},404);}
+    if(url.pathname==='/owner/record'){const body=await ownerRecordJSON(env.DB,url.searchParams.get('id'));return body?new Response(body,{headers:{'Content-Type':'application/json','Cache-Control':'no-store'}}):json({error:'Not found'},404);}
     if(url.pathname==='/owner/recent')return json(await recentOwner(env.DB));
     if(url.pathname==='/catalog')return json({records:await catalog(env.DB)});
     if(url.pathname==='/record')return json(await openRecord(env.DB,url.searchParams.get('id')));

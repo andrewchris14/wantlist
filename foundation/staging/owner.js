@@ -1,16 +1,20 @@
 // Owner-facing read models. Historical source blobs stay in D1, not editor forms.
+// Build the lean response in one consistent SQL read. The HTTP route forwards
+// this JSON string without materializing/re-serializing thousands of item objects.
+export async function ownerRecordJSON(db,id){
+ const row=await db.prepare(`SELECT substr(header,1,length(header)-1)||',"groups":'||groups_json||'}' body FROM (SELECT json_object('id',r.id,'revision',r.revision,'list_type',r.list_type,'deleted_at',r.deleted_at,'content',json_object('source_list_type',json_extract(r.content_json,'$.source_list_type'),'entry_order',json_extract(r.content_json,'$.entry_order'),'display_year',json_extract(r.content_json,'$.display_year'),'display_category',json_extract(r.content_json,'$.display_category'),'year',json_extract(r.content_json,'$.year'),'brand',json_extract(r.content_json,'$.brand'),'set_name',json_extract(r.content_json,'$.set_name'),'category',json_extract(r.content_json,'$.category'),'notes',json_extract(r.content_json,'$.notes'),'prefixes',json_extract(r.content_json,'$.prefixes'),'uncertainty',json_extract(r.content_json,'$.uncertainty'))) header,(SELECT '['||COALESCE(group_concat(body,','),'')||']' FROM (SELECT substr(header,1,length(header)-1)||',"entries":'||entries||'}' body FROM (
+ SELECT (SELECT json_group_object(key,json(value)) FROM (
+  SELECT 'id' key,json_quote(g.id) value UNION ALL SELECT 'kind',json_quote(g.kind) UNION ALL SELECT 'list_type',json_quote(g.list_type)
+  UNION ALL SELECT key,CASE WHEN type IN ('array','object') THEN value WHEN type IN ('true','false','null') THEN type ELSE json_quote(value) END FROM json_each(g.metadata_json) WHERE key IN ('label','description','notes')
+ )) header,(SELECT json_group_array(json(entry)) FROM (
+   SELECT json_object('id',i.id,'group_id',i.group_id,'value',i.value,'field_key',i.field_key,'position',i.position,'state',i.state,'actionable',i.actionable,'deleted_at',i.deleted_at,'individually_removed',CASE WHEN i.deleted_at IS NULL THEN 0 ELSE EXISTS(SELECT 1 FROM change_history h WHERE h.item_id=i.id AND h.record_id=g.record_id AND h.created_at=i.deleted_at AND h.action='remove_item' AND (i.actionable=1 OR json_extract(h.before_json,'$.group_list_type')=g.list_type)) END) entry
+   FROM items i WHERE i.group_id=g.id ORDER BY CASE WHEN i.id LIKE 'owner-item-%' THEN 1 ELSE 0 END,CASE WHEN i.id NOT LIKE 'owner-item-%' THEN i.field_key END,i.position
+  )) entries FROM record_groups g WHERE g.record_id=r.id ORDER BY CASE g.kind WHEN 'primary' THEN 0 WHEN 'mixed' THEN 1 ELSE 2 END,g.position
+ ))) groups_json FROM records r WHERE r.id=?)`).bind(id).first();
+ return row?.body||null;
+}
 export async function ownerRecord(db,id){
- const r=await db.prepare(`SELECT id,revision,list_type,deleted_at,json_object(
- 'source_list_type',json_extract(content_json,'$.source_list_type'),'entry_order',json_extract(content_json,'$.entry_order'),'display_year',json_extract(content_json,'$.display_year'),'display_category',json_extract(content_json,'$.display_category'),'year',json_extract(content_json,'$.year'),'brand',json_extract(content_json,'$.brand'),
- 'set_name',json_extract(content_json,'$.set_name'),'category',json_extract(content_json,'$.category'),
- 'notes',json_extract(content_json,'$.notes'),'prefixes',json_extract(content_json,'$.prefixes'),
- 'uncertainty',json_extract(content_json,'$.uncertainty')) content FROM records WHERE id=?`).bind(id).first();
- if(!r)return null;r.content=JSON.parse(r.content);
- const groups=(await db.prepare('SELECT id,kind,list_type,metadata_json FROM record_groups WHERE record_id=? ORDER BY CASE kind WHEN \'primary\' THEN 0 WHEN \'mixed\' THEN 1 ELSE 2 END,position').bind(id).all()).results;
- const entries=(await db.prepare(`SELECT i.id,i.group_id,i.value,i.field_key,i.position,i.state,i.actionable,i.deleted_at,CASE WHEN i.deleted_at IS NULL THEN 0 ELSE EXISTS(SELECT 1 FROM change_history h INDEXED BY history_record_recent WHERE h.record_id=g.record_id AND h.created_at=i.deleted_at AND h.item_id=i.id AND h.action='remove_item' AND (i.actionable=1 OR json_extract(h.before_json,'$.group_list_type')=g.list_type)) END individually_removed FROM record_groups g JOIN items i ON i.group_id=g.id WHERE g.record_id=? ORDER BY CASE WHEN i.id LIKE 'owner-item-%' THEN 1 ELSE 0 END,CASE WHEN i.id NOT LIKE 'owner-item-%' THEN i.field_key END,i.position`).bind(id).all()).results;
- const byGroup=new Map();for(const i of entries){if(!byGroup.has(i.group_id))byGroup.set(i.group_id,[]);byGroup.get(i.group_id).push(i);}
- r.groups=groups.map(g=>{const m=JSON.parse(g.metadata_json);return {id:g.id,kind:g.kind,list_type:g.list_type,label:m.label,description:m.description,notes:m.notes,entries:byGroup.get(g.id)||[]};});
- return r;
+ const body=await ownerRecordJSON(db,id);return body?JSON.parse(body):null;
 }
 export function inverseOf(h){
  if(h.record_id?.startsWith('display-')&&['restore','create'].includes(h.action))return null;

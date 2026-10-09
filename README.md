@@ -218,3 +218,14 @@ The production build/data loader remains unchanged. Staging PIN secrets are
 `OWNER_PIN` and `OWNER_PIN_VERSION`; do not put either in frontend configuration.
 Deployment inherits existing Worker secrets, preserving values configured in the dashboard.
 Dad only uses the website. No full import or production switch is authorized.
+
+### Phase 3B.4 staging review
+
+See [the Phase 3B.4 checkpoint](docs/PHASE_3B4.md) for collection corrections,
+filters, unified editing, category management, screenshots, test results,
+confirmed old staging test contamination, and the separate cleanup proposal.
+The original production/static JSON and historical sources remain unchanged.
+`npm run test:owner:browser` now uses disposable local Worker/SQLite fixtures;
+the previous human-staging write-test runner and relay fail closed.
+Only the approved supplemental historical samples were migrated; full import
+and production cutover remain prohibited pending human review.

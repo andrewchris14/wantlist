@@ -1,0 +1,58 @@
+{
+  "counts": {
+    "records": 264,
+    "active_records": 262,
+    "items": 5613,
+    "history": 2181,
+    "owner_records": 202,
+    "active_cpu_test_values": 1403
+  },
+  "bobblehead_listings": 26,
+  "approved_classifications": [
+    {
+      "id": "p0060-l001",
+      "list_type": "complete"
+    },
+    {
+      "id": "p0273-l029",
+      "list_type": "complete"
+    },
+    {
+      "id": "p0273-l039",
+      "list_type": "want_list"
+    },
+    {
+      "id": "p1996-l008",
+      "list_type": "complete"
+    },
+    {
+      "id": "p2501-l001",
+      "list_type": "complete"
+    },
+    {
+      "id": "p2851-l007",
+      "list_type": "complete"
+    },
+    {
+      "id": "p3022-l006",
+      "list_type": "have_list"
+    }
+  ],
+  "existing_records_changed": [
+    "display-brewers-bobblehead-wantlist",
+    "p3029-l001"
+  ],
+  "other_existing_records_unchanged": true,
+  "no_test_data_deleted": true,
+  "temporary_migration_gate_removed": true,
+  "diagnostic_write_flag_absent": true,
+  "read_only_http_checks": {
+    "/": 200,
+    "/public/categories": 200,
+    "/owner/record?id=p1996-l008": 401,
+    "/operator/phase34-migration": 403,
+    "/test/batch": 403
+  },
+  "released_browser_asset_sha256": "6ec7486931c343f64dd46d1e5b680c4e87c5455999e332cb31f3134f1a771ab6",
+  "released_browser_asset_matches_tested_build": true
+}

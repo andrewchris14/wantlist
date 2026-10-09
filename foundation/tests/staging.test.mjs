@@ -11,7 +11,7 @@ const code='disposable-generated-owner-code-'+crypto.randomUUID();
 async function fixture(){
   const db=localD1();db.sqlite.exec(readFileSync(new URL('../staging/schema.sql',import.meta.url),'utf8'));
   db.sqlite.exec("INSERT INTO staging_import_state VALUES(1,'test','test',0,1)");
-  const env={DB:db,STAGING_ONLY:'true',PROBE_KEY:'operator-only-disposable-'+crypto.randomUUID(),OWNER_AUTH_CONFIG:JSON.stringify({algorithm:'SHA-256',digest:await auth.hash(code),version:'disposable-version-0001'})};
+  const env={DB:db,STAGING_ONLY:'true',ISOLATED_TEST_STORAGE:'true',PROBE_KEY:'operator-only-disposable-'+crypto.randomUUID(),OWNER_AUTH_CONFIG:JSON.stringify({algorithm:'SHA-256',digest:await auth.hash(code),version:'disposable-version-0001'})};
   return {db,env};
 }
 const action=(db,input)=>mutate(db,{request_id:crypto.randomUUID(),...input});

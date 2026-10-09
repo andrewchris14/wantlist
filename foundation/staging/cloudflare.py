@@ -32,6 +32,8 @@ def api(path, method='GET', payload=None, raw=None, content_type=None):
 def deploy(name, modules, main, bindings):
     if name not in (WORKER, PROBE):
         raise ValueError('Only the approved staging Worker names may be deployed')
+    if name == WORKER and any(b.get('name') == 'ISOLATED_TEST_STORAGE' and b.get('text') == 'true' for b in bindings):
+        raise ValueError('Human-review staging cannot enable diagnostic test writes')
     metadata = {'main_module': main, 'compatibility_date': '2026-10-01', 'bindings': bindings}
     boundary = '----staging' + secrets.token_hex(12)
     parts = []

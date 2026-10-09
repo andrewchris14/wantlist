@@ -1,0 +1,7 @@
+import {useState} from 'react';
+import {request} from './api.js';
+export default function CategoryManager({categories,onChanged}){
+ const [name,setName]=useState(''),[rename,setRename]=useState({}),[busy,setBusy]=useState(false),[error,setError]=useState('');
+ async function save(body){setBusy(true);setError('');try{await request('/owner/category',{...body,request_id:crypto.randomUUID()});await onChanged();setName('');}catch(e){setError(e.message);}finally{setBusy(false);}}
+ return <section><p>The seven historical categories are protected. Owner-created categories can be renamed or removed when empty.</p>{error&&<p role="alert">{error}</p>}<form onSubmit={e=>{e.preventDefault();save({op:'create',name});}}><label>New category name<input required maxLength={100} disabled={busy} value={name} onChange={e=>setName(e.target.value)} placeholder="Twilight Zone Actor Wantlist"/></label><button disabled={busy||!name.trim()}>Create category</button></form>{categories.filter(c=>!c.historical).map(c=><div key={c.id}><label>Rename {c.name}<input disabled={busy} maxLength={100} value={rename[c.id]??c.name} onChange={e=>setRename({...rename,[c.id]:e.target.value})}/></label><button disabled={busy} onClick={()=>save({op:'rename',id:c.id,revision:c.revision,name:rename[c.id]??c.name})}>Rename category</button><button disabled={busy} onClick={()=>save({op:'remove',id:c.id,revision:c.revision})}>Remove empty category</button></div>)}</section>;
+}

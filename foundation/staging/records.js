@@ -5,7 +5,7 @@ import {inverseOf} from './owner.js';
 const fail=(code='INVALID')=>{const e=Error(code);e.code=code;throw e;};
 const statement=(sql,...params)=>({sql,params});
 const metadataKeys=['year','brand','set_name','category','section','notes','prefixes','uncertainty','set_size','display_category'];
-const publicKeys=['id',...metadataKeys,'source_list_type','completed_sets','source_refs','creation_origin'];
+const publicKeys=['id','display_year',...metadataKeys,'source_list_type','completed_sets','source_refs','creation_origin'];
 const modes=['want_list','have_list','complete','uncertain'];
 export async function catalog(db){return (await db.prepare(`SELECT id,revision,list_type,json_extract(content_json,'$.year') year,
   json_extract(content_json,'$.brand') brand,json_extract(content_json,'$.set_name') set_name FROM records WHERE deleted_at IS NULL ORDER BY id`).all()).results;}
@@ -32,7 +32,7 @@ function validateMetadata(data,creating=false){
   for(const k of ['year','brand','set_name','category','section','display_category'])if(k in data&&data[k]!==null&&(typeof data[k]!=='string'||data[k].length>500))fail();
   if((creating||'set_name'in data)&&(!data.set_name||!data.set_name.trim()))fail();
   for(const k of ['notes','prefixes','uncertainty'])if(k in data&&(!Array.isArray(data[k])||data[k].some(x=>typeof x!=='string'||x.length>10000)))fail();
-  if(data.display_category!=null&&!['OBC Wantlist','UV Wantlist','Eau Claire Players','Milwaukee 8x10 List','Brewers Bobblehead Wantlist','Football Wantlist','Other Stuff'].includes(data.display_category))fail();
+
   if(data.set_size!=null&&(!Number.isInteger(data.set_size)||data.set_size<1))fail();
 }
 export function mutationControl(db,input){
@@ -54,14 +54,14 @@ export async function mutate(db,input,preflight,prefetchedRow){
     // CAS in the existing atomic delta commit rejects concurrent/newer saves.
     input={...input,...inverse};undoing=true;
   }
-  if(['replace_list','restore_representation'].includes(input.op)){if(input.op==='restore_representation'&&!undoing)fail();return replaceList(db,input,requestHash);}
+  if(['replace_list','restore_representation'].includes(input.op)){if(input.op==='restore_representation'&&!undoing)fail();validateMetadata(input.metadata||{});if(['Eau Claire Players','Milwaukee 8x10 List'].includes(input.metadata?.display_category))fail();return replaceList(db,input,requestHash);}
   if(input.op==='add')return addOne(db,input,requestHash,prefetchedRow);
   if(['remove_item','restore_item'].includes(input.op))return removeRestoreOne(db,input,requestHash,prefetchedRow);
   if(input.op==='transition')return transitionOne(db,input,requestHash,prefetchedRow,undoing);
-  if(['edit','delete','restore'].includes(input.op))return editHeaderOne(db,input,requestHash,prefetchedRow);
+  if(['edit','delete','restore'].includes(input.op))return editHeaderOne(db,input,requestHash,prefetchedRow,undoing);
   const stamp=new Date().toISOString(),sql=[];let r,before={},after={},itemId=null;
   if(input.op==='create'){
-    if(['Eau Claire Players','Milwaukee 8x10 List','Brewers Bobblehead Wantlist'].includes(input.metadata?.display_category))fail();
+    if(['Eau Claire Players','Milwaukee 8x10 List'].includes(input.metadata?.display_category))fail();
     validateMetadata(input.metadata,true);const mode=input.list_type||'want_list';if(!modes.includes(mode))fail();
     const id='owner-record-'+crypto.randomUUID();
     r={id,import_id:null,list_type:mode,revision:1,created_at:stamp,updated_at:stamp,deleted_at:null,content:{id,creation_origin:'owner',notes:[],prefixes:[],uncertainty:[],...input.metadata},groups:[]};
@@ -142,7 +142,7 @@ async function transitionOne(db,input,requestHash,prefetched,undoing=false){
 }
 
 // Notes/status/deletion changes similarly patch the saved public JSON in D1.
-async function editHeaderOne(db,input,requestHash,prefetched){
+async function editHeaderOne(db,input,requestHash,prefetched,undoing=false){
   if(!Number.isInteger(input.revision)||input.revision<1)fail();
   validateMetadata(input.metadata||{});
   const keys=Object.keys(input.metadata||{});
@@ -150,18 +150,18 @@ async function editHeaderOne(db,input,requestHash,prefetched){
   const row=prefetched ?? await readHeader(db,input).first();
   if(!row||row.revision!==input.revision||(row.deleted_at&&input.op!=='restore')||(!row.deleted_at&&input.op==='restore'))fail('CONFLICT');
   if(row.public_revision!==input.revision)fail('CONFLICT');
-  if(input.metadata?.display_category&&['Eau Claire Players','Milwaukee 8x10 List','Brewers Bobblehead Wantlist'].includes(input.metadata.display_category)&&!row.id.startsWith('display-'))fail();
+  if(input.metadata?.display_category&&['Eau Claire Players','Milwaukee 8x10 List'].includes(input.metadata.display_category)&&!row.id.startsWith('display-'))fail();
   if(row.id.startsWith('display-')&&input.op==='delete')fail();
+  if(row.id==='display-brewers-bobblehead-wantlist'&&input.op==='restore')fail();
   if(row.id.startsWith('display-')&&(Object.keys(input.metadata||{}).some(k=>k!=='notes')||input.list_type&&input.list_type!==row.list_type))fail();
   const old=JSON.parse(row.old_metadata),stamp=new Date().toISOString(),revision=input.revision+1;
   let mode=row.list_type,deleted=row.deleted_at,before={},after={},patch={revision,updated_at:stamp};
   if(input.op==='edit'){
     validateMetadata(input.metadata||{});mode=input.list_type||mode;if(!modes.includes(mode))fail();
-    if(mode==='complete'){
-      const needed=await db.prepare(`SELECT i.id FROM record_groups g JOIN items i ON i.group_id=g.id WHERE g.record_id=? AND i.deleted_at IS NULL
-        AND (i.state IN ('wanted','pending') OR (i.actionable=0 AND g.list_type='want_list')) LIMIT 1`).bind(row.id).first();if(needed)fail();
+    if(mode==='complete'&&row.list_type!=='complete'&&!undoing&&input.confirm_complete!==true)fail();
+    if(['want_list','have_list'].includes(row.list_type)&&['want_list','have_list'].includes(mode)&&mode!==row.list_type){
+      if(input.confirm_empty_conversion!==true||await db.prepare('SELECT i.id FROM record_groups g JOIN items i ON i.group_id=g.id WHERE g.record_id=? AND i.deleted_at IS NULL LIMIT 1').bind(row.id).first())fail();
     }
-    if(['want_list','have_list'].includes(row.list_type)&&['want_list','have_list'].includes(mode)&&mode!==row.list_type)fail();
     before={metadata:old,list_type:row.list_type};
     after={metadata:input.metadata||{},list_type:mode};patch={...patch,...input.metadata,list_type:mode};
   }else{
@@ -193,7 +193,7 @@ async function addOne(db,input,requestHash,prefetched){
   const mode=state==='wanted'?'want_list':'have_list';
   const row=prefetched ?? await readaddOne(db,input).first();
   if(!row||row.revision!==input.revision||row.public_revision!==input.revision||row.deleted_at)fail('CONFLICT');
-  if(state==='wanted'&&row.list_type==='complete')fail();
+  if(row.list_type==='complete')fail();
   const stamp=new Date().toISOString(),revision=input.revision+1,statements=[];
   let gid=row.group_id,groupPath;
   if(gid){

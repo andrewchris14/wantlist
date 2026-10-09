@@ -9,3 +9,5 @@ foundation/.local/
 .wrangler/
 .dev.vars
 .dev.vars.*
+
+work/

@@ -8,6 +8,7 @@ export function localD1() {
   for (const file of readdirSync(directory).filter(f => f.endsWith('.sql')).sort()) {
     sqlite.exec(readFileSync(new URL(file, directory), 'utf8'));
   }
+  sqlite.exec(readFileSync(new URL('../staging/categories.sql',import.meta.url),'utf8'));
   function statement(sql, args = []) {
     return {
       bind(...values) { return statement(sql, values); },

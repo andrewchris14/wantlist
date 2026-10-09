@@ -1,6 +1,8 @@
 // Isolated staging backend and optional owner preview. No production integration.
 import {verifyCredential, throttle, issue, validate, cookieToken, hash, config, logoutCookie} from './auth.js';
 import {ownerRecord,recentOwner} from './owner.js';
+import {recoverHistoricalSamples} from './phase34-migration.js';
+import {categories,categoryMutation} from './categories.js';
 import {editorAssets} from './editor-assets.js';
 import {mutate, mutationReads, openRecord, catalog, publicProjection} from './records.js';
 let operatorConfig;
@@ -15,10 +17,19 @@ async function handle(request,env){
   // Optional staging editor has no operator key in its client. Diagnostic routes
   // retain the extra operator gate; owner APIs still require owner authorization.
   const editor=env.STAGING_EDITOR==='true';
+  // Operator-only one-time migration. Its ephemeral digest is absent from normal
+  // deployments. Existing owner PIN, gate, and sessions remain unchanged.
+  if(url.pathname==='/operator/phase34-migration'){
+   if(request.method!=='POST'||request.headers.get('Origin')!==origin||!env.PHASE34_MIGRATION_DIGEST)return json({error:'Forbidden'},403);
+   const supplied=request.headers.get('X-Phase34-Migration')||'';
+   if(!await verifyCredential(supplied,{OWNER_AUTH_CONFIG:JSON.stringify({algorithm:'SHA-256',digest:env.PHASE34_MIGRATION_DIGEST,version:'phase34-migration-only'})}))return json({error:'Forbidden'},403);
+   try{return json(await recoverHistoricalSamples(env.DB));}catch{return json({error:'Migration conflicts with staging edits; no changes applied'},409);}
+  }
+
   if(editor&&request.method==='GET'&&Object.hasOwn(editorAssets,url.pathname)){
     const asset=editorAssets[url.pathname];return new Response(asset.body,{headers:{'Content-Type':asset.type,'Cache-Control':'no-store','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",'X-Content-Type-Options':'nosniff'}});
   }
-  const ownerRoutes=new Set(['/login','/session','/logout','/catalog','/owner/record','/owner/recent','/action','/public/catalog','/public/record','/public/page']);
+  const ownerRoutes=new Set(['/login','/session','/logout','/catalog','/owner/record','/owner/recent','/action','/public/catalog','/public/record','/public/page','/public/categories','/owner/category']);
   // Operator gate isolates diagnostic routes and all requests in non-editor mode.
   // Comparing digests avoids ordinary string comparison of the operator secret.
   const supplied=request.headers.get('X-Staging-Probe') || '';
@@ -41,10 +52,12 @@ async function handle(request,env){
     // Operator diagnostics exist only on staging and never accept owner secrets
     // or session tokens in JSON responses. No production route exposes this API.
     if(url.pathname==='/test/batch' && request.method==='POST') {
+      if(env.ISOLATED_TEST_STORAGE!=='true')return json({error:'Diagnostic writes disabled'},403);
       if(!Array.isArray(body.statements)||!body.statements.length||body.statements.length>44) return json({error:'Invalid batch'},400);
       const statements=body.statements.map(s=>env.DB.prepare(s.sql).bind(...(s.params||[])));
       return json({results:await env.DB.batch(statements)});
     }
+    if(url.pathname==='/public/categories')return json({categories:await categories(env.DB)});
     if(url.pathname==='/public/catalog')return json({records:(await env.DB.prepare('SELECT record_id,revision,updated_at,deleted FROM public_records ORDER BY record_id').all()).results});
     if(url.pathname==='/public/record') {
       const row=await env.DB.prepare('SELECT * FROM public_records WHERE record_id=?').bind(url.searchParams.get('id')).first();
@@ -56,6 +69,7 @@ async function handle(request,env){
       return new Response('{"records":['+rows.filter(r=>!r.deleted).map(r=>r.public_json).join(',')+'],"next":'+JSON.stringify(rows.length===50?rows.at(-1).record_id:null)+'}',{headers:{'Content-Type':'application/json','Cache-Control':'public, max-age=30'}});
     }
     if(url.pathname==='/test/publish' && request.method==='POST') {
+      if(env.ISOLATED_TEST_STORAGE!=='true')return json({error:'Diagnostic writes disabled'},403);
       const r=await openRecord(env.DB,body.record_id);if(!r)return json({error:'Not found'},404);
       // Guard baseline projection publication against stale reads atomically.
       // Retain inventories internally for soft-delete recovery. Public read
@@ -82,6 +96,7 @@ async function handle(request,env){
       await env.DB.prepare('UPDATE auth_control SET generation=generation+1 WHERE id=1').run();
       return json({revoked:true},200,{'Set-Cookie':logoutCookie});
     }
+    if(url.pathname==='/owner/category'&&request.method==='POST')return json(await categoryMutation(env.DB,body));
     if(url.pathname==='/owner/record'){const r=await ownerRecord(env.DB,url.searchParams.get('id'));return r?json(r):json({error:'Not found'},404);}
     if(url.pathname==='/owner/recent')return json(await recentOwner(env.DB));
     if(url.pathname==='/catalog')return json({records:await catalog(env.DB)});

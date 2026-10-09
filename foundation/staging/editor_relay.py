@@ -31,4 +31,4 @@ class Handler(BaseHTTPRequestHandler):
    try:
     self.send_response(502);self.end_headers();self.wfile.write(b'Upstream staging request failed; no sensitive details logged')
    except (BrokenPipeError,ConnectionResetError):pass
-if __name__=='__main__':ThreadingHTTPServer(('127.0.0.1',5181),Handler).serve_forever()
+if __name__=='__main__':raise SystemExit('Remote browser relay disabled: use owner isolated local server; human-review staging is not a test target.')

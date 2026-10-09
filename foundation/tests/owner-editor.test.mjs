@@ -8,7 +8,7 @@ import {ownerRecord,recentOwner} from '../staging/owner.js';
 import worker from '../staging/worker.mjs';
 import * as auth from '../staging/auth.js';
 Object.defineProperty(crypto.subtle,'timingSafeEqual',{value:(a,b)=>timingSafeEqual(Buffer.from(a),Buffer.from(b)),configurable:true});
-async function fixture(){const db=localD1();db.sqlite.exec(readFileSync(new URL('../staging/schema.sql',import.meta.url),'utf8'));db.sqlite.exec("INSERT INTO staging_import_state VALUES(1,'test','test',0,1)");const code='disposable-'+crypto.randomUUID();const env={DB:db,STAGING_ONLY:'true',STAGING_EDITOR:'true',PROBE_KEY:'operator-'+crypto.randomUUID(),OWNER_AUTH_CONFIG:JSON.stringify({algorithm:'SHA-256',digest:await auth.hash(code),version:'staging-test-version-0001'})};return {db,env,code};}
+async function fixture(){const db=localD1();db.sqlite.exec(readFileSync(new URL('../staging/schema.sql',import.meta.url),'utf8'));db.sqlite.exec("INSERT INTO staging_import_state VALUES(1,'test','test',0,1)");const code='disposable-'+crypto.randomUUID();const env={DB:db,STAGING_ONLY:'true',ISOLATED_TEST_STORAGE:'true',STAGING_EDITOR:'true',PROBE_KEY:'operator-'+crypto.randomUUID(),OWNER_AUTH_CONFIG:JSON.stringify({algorithm:'SHA-256',digest:await auth.hash(code),version:'staging-test-version-0001'})};return {db,env,code};}
 const action=(db,input)=>mutate(db,{request_id:crypto.randomUUID(),...input});
 test('owner preview rejects public writes, private reads, diagnostics and cross-origin login without exposing gate',async()=>{
  const {db,env,code}=await fixture();try{
@@ -76,7 +76,7 @@ test('Complete cannot restore opaque historical wanted wording; source stays rec
  // Disposable stand-in for a literal historical range, never alter baseline data.
  db.sqlite.prepare("UPDATE items SET actionable=0,state=NULL,limitation='Preserved range' WHERE id=?").run(item.id);
  r=await openRecord(db,r.id);const {publicProjection}=await import('../staging/records.js');db.sqlite.prepare('UPDATE public_records SET public_json=? WHERE record_id=?').run(JSON.stringify(publicProjection(r)),r.id);
- let saved=await action(db,{op:'remove_item',record_id:r.id,revision:1,item_id:item.id});saved=await action(db,{op:'edit',record_id:r.id,revision:saved.revision,metadata:{},list_type:'complete'});
+ let saved=await action(db,{op:'remove_item',record_id:r.id,revision:1,item_id:item.id});saved=await action(db,{op:'edit',record_id:r.id,revision:saved.revision,metadata:{},list_type:'complete',confirm_complete:true});
  await assert.rejects(action(db,{op:'restore_item',record_id:r.id,revision:saved.revision,item_id:item.id}),e=>e.code==='INVALID');
  assert.ok((await ownerRecord(db,r.id)).groups[0].entries[0].deleted_at);
  saved=await action(db,{op:'edit',record_id:r.id,revision:saved.revision,metadata:{},list_type:'want_list'});await action(db,{op:'restore_item',record_id:r.id,revision:saved.revision,item_id:item.id});

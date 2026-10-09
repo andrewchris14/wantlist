@@ -2,7 +2,7 @@
 Section membership comes ONLY from verified Word paragraph boundaries.
 Never overwrites wantlists.json, raw extraction, or Phase 2 corrections.
 """
-import copy,json,hashlib
+import copy,json,hashlib,re
 from collections import Counter
 from pathlib import Path
 from import_docx import extract
@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 CATEGORIES=['OBC Wantlist','UV Wantlist','Eau Claire Players','Milwaukee 8x10 List','Brewers Bobblehead Wantlist','Football Wantlist','Other Stuff']
 # Verified literal headings in the original Word document, not keyword taxonomy.
 BOUNDARIES=[(1,526,'OBC Wantlist'),(526,579,'Other Stuff'),(579,644,'Football Wantlist'),(644,3025,'UV Wantlist'),(3025,3124,'Brewers Bobblehead Wantlist'),(3124,3379,'Milwaukee 8x10 List'),(3379,3383,'Eau Claire Players')]
-SPECIAL={'Eau Claire Players':'want_list','Milwaukee 8x10 List':'have_list','Brewers Bobblehead Wantlist':'want_list'}
+SPECIAL={'Eau Claire Players':'want_list','Milwaukee 8x10 List':'have_list'}
 def category(record):
  found={label for ref in record['source_refs'] for start,end,label in BOUNDARIES if start<=ref['paragraph']<end}
  if len(found)!=1:raise ValueError(f"Ambiguous source boundary: {record['id']}: {found}")
@@ -63,5 +63,27 @@ def build():
   records=[r for r in records if r['display_category']!=name]+[aggregate]
  assert sum(len(r.get('source_records',[r])) for r in records)==len(baseline['records'])
  return {'baseline_sha256':hashlib.sha256((ROOT/'data/wantlists.json').read_bytes()).hexdigest(),'categories':CATEGORIES,'mapping':mapping,'records':records,'uncertainty_audit':audit,'baseline_category_counts':dict(Counter(mapping.values())),'display_category_counts':dict(Counter(r['display_category'] for r in records))}
+# Owner-approved classifications are display/live overrides, never source edits.
+APPROVED={'p0060-l001':'complete','p0273-l029':'complete','p0273-l039':'want_list','p1996-l008':'complete','p2501-l001':'complete','p2851-l007':'complete','p3022-l006':'have_list'}
+_source_build=build
+def build():
+ out=_source_build()
+ for r in out['records']:
+  if r.get('year'):
+   # Recover the literal leading year label from source wording, without changing
+   # the protected normalized year or guessing dates from unrelated names.
+   match=re.match(r'^((?:18|19|20)\d{2}(?:\s*[-–]\s*\d{2,4})?(?:\s*\((?:\?|ca\.?|circa|approx\.?)\))?)',r.get('set_name',''),re.I)
+   if match and match.group(1).startswith(str(r['year'])[:4]):r['display_year']=match.group(1)
+  if r['id'] in APPROVED:r['display_list_type']=APPROVED[r['id']]
+ for a in out['uncertainty_audit']:
+  if a['id'] in APPROVED:
+   a.update(display_list_type=APPROVED[a['id']],requires_review=False,reason='Explicit owner approval, Phase 3B.4; original uncertainty and source unchanged.')
+ out['classification_approvals']={rid:{'list_type':mode,'authority':'Owner approval — Phase 3B.4','source_refs':next(r for r in out['records'] if r['id']==rid)['source_refs']} for rid,mode in APPROVED.items()}
+ assert len(out['records'])==3392
+ return out
 if __name__=='__main__':
- out=build();(ROOT/'data/display-wantlists.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n');(ROOT/'data/display-map.json').write_text(json.dumps({'categories':CATEGORIES,'mapping':out['mapping'],'uncertainty_display':{a['id']:a['display_list_type'] for a in out['uncertainty_audit']}},ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:out[k] for k in ('baseline_category_counts','display_category_counts')},indent=2))
+ out=build()
+ target=ROOT/'foundation/staging'
+ (target/'historical-view.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
+ (target/'historical-map.json').write_text(json.dumps({'categories':CATEGORIES,'mapping':out['mapping'],'uncertainty_display':{a['id']:a['display_list_type'] for a in out['uncertainty_audit']},'classification_approvals':out['classification_approvals']},ensure_ascii=False,indent=2)+'\n')
+ print(json.dumps({k:out[k] for k in ('baseline_category_counts','display_category_counts')},indent=2))

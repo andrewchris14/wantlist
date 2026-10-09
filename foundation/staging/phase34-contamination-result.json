@@ -1,0 +1,27 @@
+{
+  "affected_record": "p1237-l004",
+  "active_cpu_test_entries": 1403,
+  "distinct_benchmark_rounds": 61,
+  "all_rounds_match_exact_1_2_20_addition_signature": true,
+  "history_add_events": 183,
+  "matching_metadata_test_events": {
+    "count": 61,
+    "first_edit": "2026-10-07T21:02:13.277Z",
+    "last_edit": "2026-10-07T21:23:51.205Z"
+  },
+  "original_metadata": {
+    "year": "2007",
+    "manufacturer": "Upper Deck",
+    "set_name": "2007 Upper Deck"
+  },
+  "current_metadata": {
+    "year": "2027",
+    "manufacturer": "Topps",
+    "set_name": "2007 Upper Deck"
+  },
+  "historical_record_revision": 795,
+  "owner_created_records_preserved": 202,
+  "test_entry_cleanup_performed": false,
+  "other_fixture_classification": "202 owner-created records require event-by-event review; owner actor alone does not identify a test",
+  "isolation": "In-memory local Worker browser tests; remote harness fails closed; deployed diagnostic writes disabled"
+}

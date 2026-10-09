@@ -36,6 +36,6 @@ export async function recentOwner(db){
   const summary=x=>({value:x.value,state:x.state,list_type:x.group_list_type||x.list_type,items:x.items?.map(i=>({value:i.value})),metadata:x.metadata?Object.fromEntries(Object.keys(x.metadata).map(k=>[k,true])):undefined});
   return {id:h.id,record_id:h.record_id,item_id:h.item_id,action:h.action,created_at:h.created_at,revision:h.revision,content:JSON.parse(h.content),before:summary(before),after:summary(after),undoable:!!inverse&&latest,undo_reason:!latest?'A newer change was made. Open this set to correct it.':'Open this set to remove the added cards individually.'};
  });
- const removed=(await db.prepare(`SELECT id,revision,json_object('year',json_extract(content_json,'$.year'),'brand',json_extract(content_json,'$.brand'),'set_name',json_extract(content_json,'$.set_name')) content FROM records WHERE deleted_at IS NOT NULL ORDER BY deleted_at DESC LIMIT 20`).all()).results.map(r=>({...r,content:JSON.parse(r.content)}));
+ const removed=(await db.prepare(`SELECT id,revision,json_object('year',json_extract(content_json,'$.year'),'brand',json_extract(content_json,'$.brand'),'set_name',json_extract(content_json,'$.set_name')) content FROM records WHERE deleted_at IS NOT NULL AND id!='display-brewers-bobblehead-wantlist' ORDER BY deleted_at DESC LIMIT 20`).all()).results.map(r=>({...r,content:JSON.parse(r.content)}));
  return {changes,removed};
 }

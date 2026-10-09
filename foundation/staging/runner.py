@@ -17,7 +17,11 @@ STATE = ROOT / 'foundation/.local/staging-access.json'
 
 
 def state():
-    return json.loads(STATE.read_text())
+    s=json.loads(STATE.read_text())
+    # Human-review staging is never a test target. Old state files fail closed.
+    if s.get('test_isolation') is not True or not str(s.get('worker','')).startswith('wantlist-test-'):
+        raise RuntimeError('Remote write-producing tests disabled: use disposable localD1/browser storage, never human-review staging.')
+    raise RuntimeError('Remote test provisioning is not enabled; use disposable local test storage.')
 
 
 def deploy_staging(instrumented=True, benchmark_version=None, editor=False):

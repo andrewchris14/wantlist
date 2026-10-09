@@ -20,8 +20,8 @@ export function parseCards(input,kind='numbers') {
  if(new Set(values).size!==values.length)throw Error('A card is listed twice. Please remove the repeated entry.');
  return values;
 }
-export const statusNames={want_list:'Cards I need',have_list:'Cards I have',complete:'Complete — nothing needed',uncertain:'Original source wording'};
-export function titleOf(r){const c=r.content||r,name=c.set_name||'Untitled set',lower=name.toLowerCase();return [c.year&&!lower.includes(String(c.year).toLowerCase())?c.year:null,c.brand&&!lower.includes(c.brand.toLowerCase())?c.brand:null,name].filter(Boolean).join(' · ');}
+export const statusNames={want_list:'WANT list',have_list:'HAVE list',complete:'COMPLETE',uncertain:'Original source wording'};
+export function titleOf(r={}){const c=r.content||r,name=c.set_name||'Untitled set',lower=name.toLowerCase();return [c.year&&!lower.includes(String(c.year).toLowerCase())?c.year:null,c.brand&&!lower.includes(c.brand.toLowerCase())?c.brand:null,name].filter(Boolean).join(' · ');}
 export function historyLabel(h){
  const value=h.after?.value||h.before?.value;
  if(h.action==='transition')return `Marked ${value} as ${h.after.state==='owned'?'Received':h.after.state==='pending'?'Someone is sending this':'Still need this'}`;
@@ -36,3 +36,24 @@ export function historyLabel(h){
 // Explicit owner-selected section defaults for NEW sets only; never reclassifies
 // historical records from their brand/name or alters preserved source categories.
 export function newSetCategory(section){return section==='Football Wantlist'?'football_cards':section==='Other Stuff'?'other_collectibles':'baseball_cards';}
+
+const collator=new Intl.Collator('en',{numeric:true,sensitivity:'base'});
+export const naturalCompare=(a,b)=>collator.compare(String(a),String(b));
+export function sortedEntries(entries,original=false){return [...entries].sort(original?(a,b)=>a.field_key.localeCompare(b.field_key)||a.position-b.position:(a,b)=>naturalCompare(a.value,b.value));}
+export function yearInfo(value){
+ const text=String(value||'');
+ const match=text.match(/\b((?:18|19|20)\d{2})(?:\s*[-–—/]\s*(\d{2,4}))?/);
+ if(!match)return {label:'Year unknown',keys:['unknown'],sort:null};
+ const start=Number(match[1]);let end=match[2]?Number(match[2]):start;
+ if(match[2]?.length===2)end+=Math.floor(start/100)*100+(end<start%100?100:0);
+ // A backwards full-year range remains literal; endpoints only, no guessed dates.
+ const keys=end>=start&&end-start<=100?Array.from({length:end-start+1},(_,i)=>String(start+i)):[String(start),String(end)];
+ return {label:/\?|\bca\.?|circa|approx/i.test(text)?'Year uncertain':null,keys,sort:Math.max(start,end)};
+}
+
+export function recordYear(r){
+ const year=r.year;
+ const prefix=String(r.set_name||'').match(/^((?:18|19|20)\d{2}(?:\s*[-–]\s*\d{2,4})?(?:\s*\((?:\?|ca\.?|circa|approx\.?)\))?)/i)?.[1];
+ const literal=r.display_year||prefix;
+ return year&&literal&&yearInfo(literal).sort===yearInfo(year).sort?literal:year;
+}

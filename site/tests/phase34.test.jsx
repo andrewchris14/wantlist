@@ -1,0 +1,19 @@
+import {describe,it,expect} from 'vitest';import {render,screen,fireEvent} from '@testing-library/react';
+import Browse,{compactSort,compactStatus} from '../../owner/Browse.jsx';import {yearInfo,naturalCompare,parseCards} from '../../owner/model.js';import view from '../../foundation/staging/historical-view.json';
+it('uncertain years retain numeric position, ranges span filters, and undated is last',()=>{
+ const rows=['1989 (ca.)',null,'1991','1990(?)','1972 (?)'].map((year,i)=>({year,id:i})).sort(compactSort);expect(rows.map(r=>r.year)).toEqual(['1991','1990(?)','1989 (ca.)','1972 (?)',null]);expect(yearInfo('1990(?)').label).toBe('Year uncertain');expect(yearInfo('1972-73').keys).toEqual(['1972','1973']);expect(yearInfo(null).label).toBe('Year unknown');expect(yearInfo('1999–01').keys).toEqual(['1999','2000','2001']);
+});
+it('numeric, codes and names naturally sort without altering literal ranges',()=>{
+ expect(['10','KB-12','2','KB-2','1'].sort(naturalCompare)).toEqual(['1','2','10','KB-2','KB-12']);expect(['Yount','Aaron','Molitor'].sort(naturalCompare)).toEqual(['Aaron','Molitor','Yount']);expect(parseCards('1–96 KB-2')).toEqual(['1–96','KB-2']);expect(parseCards('Rod Serling\nAaron, H','names')).toEqual(['Rod Serling','Aaron, H']);
+});
+it('all filters combine and options use actual data; dynamic categories browse normally',()=>{
+ const records=[{id:'a',year:'1995(?)',brand:'Topps',set_name:'Actor cards',list_type:'want_list',display_category:'UV Wantlist'},{id:'b',year:'1995',brand:'Fleer',set_name:'Actor cards',display_category:'UV Wantlist'},{id:'c',year:null,brand:null,set_name:'Twilight',display_category:'Twilight Zone Actor Wantlist'}];
+ const {container}=render(<Browse records={records} categories={[...view.categories,'Twilight Zone Actor Wantlist']}/>);fireEvent.change(screen.getByLabelText('Category'),{target:{value:'UV Wantlist'}});fireEvent.change(screen.getByLabelText('Year'),{target:{value:'1995'}});fireEvent.change(screen.getByLabelText('Manufacturer'),{target:{value:'Topps'}});fireEvent.change(screen.getByLabelText('Search this category'),{target:{value:'Actor'}});expect(container.querySelectorAll('.listing-row')).toHaveLength(1);expect(screen.getByText(/Year uncertain/)).toBeVisible();fireEvent.change(screen.getByLabelText('Manufacturer'),{target:{value:'Fleer'}});expect(container.querySelectorAll('.listing-row')).toHaveLength(1);
+});
+it('3392 derived listings, 26 bobbleheads, seven approved types, literal HAVE range and distinct JSW groups',()=>{
+ expect(view.records).toHaveLength(3392);expect(view.records.filter(r=>r.display_category==='Brewers Bobblehead Wantlist')).toHaveLength(26);for(const [id,approval] of Object.entries(view.classification_approvals)){const r=view.records.find(r=>r.id===id);expect(compactStatus(r)).toBe({complete:'COMPLETE',want_list:'WANT list',have_list:'HAVE list'}[approval.list_type]);expect(r.uncertainty.length).toBeGreaterThan(0);}
+ const jsw=view.records.filter(r=>r.year==='1995'&&r.set_name.startsWith('1995 JSW'));expect(jsw.filter(r=>r.display_list_type==='complete').map(r=>r.id)).toEqual(['p1996-l008']);const range=view.records.find(r=>r.id==='p3022-l006');expect(JSON.stringify(range)).toContain('1-96');
+});
+it('full dataset filtering remains client-side and responsive',()=>{
+ const start=performance.now();const {container}=render(<Browse records={view.records}/>);fireEvent.change(screen.getByLabelText('Category'),{target:{value:'UV Wantlist'}});fireEvent.change(screen.getByLabelText('Year'),{target:{value:'1995'}});fireEvent.change(screen.getByLabelText('Manufacturer'),{target:{value:'Topps'}});expect(container.querySelectorAll('.listing-row').length).toBeGreaterThan(0);expect(performance.now()-start).toBeLessThan(6000);
+});

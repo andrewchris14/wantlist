@@ -1,0 +1,24 @@
+{
+  "backup": {
+    "backup_file": "foundation/.local/phase34-pre-migration.json",
+    "sha256": "ab20f638a3eca59d67d6bb7851e442e808a8a48d9ef202c3c82ee698b02cd81f",
+    "local_restore_verified": true,
+    "tables": 12,
+    "records": 232,
+    "authentication_excluded": true
+  },
+  "migration": {
+    "migrated": true,
+    "added_records": 32,
+    "bobblehead_listings": 26,
+    "approved_classifications": 7,
+    "statements": 26,
+    "aggregate_archived": true
+  },
+  "staging_only": true,
+  "existing_secret_bindings_inherited": true,
+  "sessions_modified": false,
+  "test_writes_performed": false,
+  "full_import": false,
+  "production_cutover": false
+}

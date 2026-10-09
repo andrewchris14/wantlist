@@ -1,0 +1,45 @@
+{
+  "checks": {},
+  "category_counts": {},
+  "remote_worker_via_loopback_transport": true,
+  "mutations": false,
+  "passed": false,
+  "failed_stage": "startup",
+  "error_type": "Error",
+  "samples": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/assets/index-C0vLe0Z0.js",
+      "status": 200
+    },
+    {
+      "route": "/assets/index-CmlVdhPc.css",
+      "status": 200
+    },
+    {
+      "route": "/session",
+      "status": 401
+    },
+    {
+      "route": "/public/categories",
+      "status": 200
+    },
+    {
+      "route": "/public/index",
+      "status": 200
+    },
+    {
+      "route": "/public/index",
+      "status": 200
+    },
+    {
+      "route": "/public/index",
+      "status": 404
+    }
+  ],
+  "http_request_cap": 40,
+  "cpu_attribution": "Concurrent browser traffic is outside the serial CPU test window"
+}

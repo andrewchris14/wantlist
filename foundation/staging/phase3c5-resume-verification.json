@@ -1,0 +1,16 @@
+{
+  "verified_at": "2026-10-09T18:13:34.173345+00:00",
+  "worker": "wantlist-test-3c2-bc5991ba",
+  "disposable_worker_and_database_verified": true,
+  "endpoint": {
+    "enabled": false,
+    "previews_enabled": false
+  },
+  "temporary_secret_absent": true,
+  "account_day_usage": {
+    "rowsRead": 6552133,
+    "rowsWritten": 52754
+  },
+  "tests_repeated": false,
+  "endpoint_reenabled": false
+}

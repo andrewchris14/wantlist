@@ -1,0 +1,11 @@
+{
+  "endpoint": {
+    "enabled": false,
+    "previews_enabled": false
+  },
+  "original_deployed_modules_restored": true,
+  "binding_names_and_types_restored": true,
+  "temporary_secret_absent": true,
+  "database_binding_unchanged": true,
+  "disposable_custom_domains": 0
+}

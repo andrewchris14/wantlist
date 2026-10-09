@@ -1,0 +1,37 @@
+{
+  "window_start": "2026-10-09T00:00:00Z",
+  "window_end": "2026-10-09T17:46:54.290034Z",
+  "source": "Cloudflare d1AnalyticsAdaptiveGroups",
+  "includes_prior_tasks_and_other_account_activity": true,
+  "ingestion_can_lag": true,
+  "rows": [
+    {
+      "dimensions": {
+        "databaseId": "7cf1e9a2-f0b7-4d6b-bded-f5a3315c028c"
+      },
+      "sum": {
+        "readQueries": 637,
+        "rowsRead": 6053275,
+        "rowsWritten": 49613,
+        "writeQueries": 1005
+      }
+    },
+    {
+      "dimensions": {
+        "databaseId": "81f241d4-b17d-4cd4-802d-177f982cc5e1"
+      },
+      "sum": {
+        "readQueries": 1281,
+        "rowsRead": 498358,
+        "rowsWritten": 3141,
+        "writeQueries": 361
+      }
+    }
+  ],
+  "account_totals": {
+    "readQueries": 1918,
+    "rowsRead": 6551633,
+    "rowsWritten": 52754,
+    "writeQueries": 1366
+  }
+}

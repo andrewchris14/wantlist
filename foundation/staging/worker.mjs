@@ -122,12 +122,14 @@ async function handle(request,env){
 }
 export default {async fetch(request,env){
  if(env.STAGING_METRICS!=='true'||request.headers.get('X-Staging-Metrics')!=='on')return handle(request,env);
- const totals={rows_read:0,rows_written:0,sql_ms:0};
- const collect=r=>{totals.sql_ms+=r.meta?.duration||0;totals.rows_read+=r.meta?.rows_read||0;totals.rows_written+=r.meta?.rows_written||0;return r;};
+ const totals={rows_read:0,rows_written:0,sql_ms:0,complete:true};
+ const collect=r=>{const m=r?.meta;const valid=m&&Number.isSafeInteger(m.rows_read)&&m.rows_read>=0&&Number.isSafeInteger(m.rows_written)&&m.rows_written>=0&&typeof m.duration==='number'&&Number.isFinite(m.duration)&&m.duration>=0;
+  if(!valid)totals.complete=false;else {totals.sql_ms+=m.duration;totals.rows_read+=m.rows_read;totals.rows_written+=m.rows_written;}return r;};
+ const observed=async fn=>{try{return collect(await fn());}catch(error){totals.complete=false;throw error;}};
  const raw=env.DB;
- const wrap=st=>({raw:st,bind(...args){return wrap(st.bind(...args));},async all(){return collect(await st.all());},async first(){const r=collect(await st.all());return r.results[0]||null;},async run(){return collect(await st.run());}});
- const db={prepare(sql){return wrap(raw.prepare(sql));},async batch(statements){return (await raw.batch(statements.map(s=>s.raw))).map(collect);}};
+ const wrap=st=>({raw:st,bind(...args){return wrap(st.bind(...args));},async all(){return observed(()=>st.all());},async first(){const r=await observed(()=>st.all());return r.results[0]||null;},async run(){return observed(()=>st.run());}});
+ const db={prepare(sql){return wrap(raw.prepare(sql));},async batch(statements){try{return (await raw.batch(statements.map(s=>s.raw))).map(collect);}catch(error){totals.complete=false;throw error;}}};
  const response=await handle(request,{...env,DB:db});
- const headers=new Headers(response.headers);headers.set('X-Staging-D1-Reads',String(totals.rows_read));headers.set('X-Staging-D1-Writes',String(totals.rows_written));headers.set('X-Staging-D1-Ms',String(totals.sql_ms));
+ const headers=new Headers(response.headers);headers.set('X-Staging-D1-Complete',String(totals.complete));headers.set('X-Staging-D1-Reads',totals.complete?String(totals.rows_read):'unknown');headers.set('X-Staging-D1-Writes',totals.complete?String(totals.rows_written):'unknown');headers.set('X-Staging-D1-Ms',totals.complete?String(totals.sql_ms):'unknown');
  return new Response(response.body,{status:response.status,headers});
 }};

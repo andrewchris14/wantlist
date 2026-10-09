@@ -53,3 +53,37 @@ test('authorized local adapter uses ordinary remembered login without exposing P
     assert.equal(db.sqlite.prepare('SELECT generation FROM auth_control WHERE id=1').get().generation, before);
   } finally {db.close();}
 });
+
+test('minimal review lease rejects every route before D1 on expiry, missing key, wrong storage or host',async()=>{
+ const noDB={prepare(){throw Error('Forbidden D1 access');},batch(){throw Error('Forbidden D1 access');}};
+ const lease={...base,DB:noDB,MINIMAL_FREE_REVIEW:'true',MINIMAL_FREE_REVIEW_UNTIL:new Date(Date.now()+10*60*1000).toISOString()};
+ const read=(path='/public/index',headers={'X-Free-Review-Key':key},host=origin,method='GET')=>new Request(host+path,{method,headers});
+ for(const [req,env] of [
+  [read(),{...lease,MINIMAL_FREE_REVIEW_UNTIL:new Date(0).toISOString()}],
+  [read(),{...lease,MINIMAL_FREE_REVIEW_UNTIL:undefined}],
+  [read(),{...lease,MINIMAL_FREE_REVIEW_UNTIL:'invalid'}],
+  [read(),{...lease,MINIMAL_FREE_REVIEW_UNTIL:new Date(Date.now()+60*60*1000).toISOString()}],
+  [read(),{...lease,ISOLATED_TEST_STORAGE:'false'}],
+  [read(),{...lease,STAGING_EDITOR:'false'}],
+  [read('/owner/record',{}),lease],
+  [read('/action',{'X-Free-Review-Key':key},origin,'POST'),{...lease,FREE_HTTP_REVIEW_KEY:undefined}],
+  [read('/public/index',{'X-Free-Review-Key':'wrong'}),lease],
+  [read('/public/index',{'X-Free-Review-Key':key},'https://wantlist-staging.andrewchris14.workers.dev'),lease],
+  [read('/operator/phase34-migration',{'X-Free-Review-Key':key},origin,'POST'),lease],
+  [read('/public/index',{'X-Free-Review-Key':key},origin,'POST'),lease],
+ ]){
+  const r=await wrapper.fetch(req,env);assert.equal(r.status,403);const text=await r.text();assert.deepEqual(JSON.parse(text),{error:'Forbidden'});assert.ok(!text.includes(key));
+ }
+});
+
+test('valid short review lease preserves normal login and passes public index through unchanged',async()=>{
+ const db=localD1();try{
+ db.sqlite.exec(readFileSync(new URL('../staging/schema.sql',import.meta.url),'utf8'));
+ db.sqlite.exec(readFileSync(new URL('../staging/public-index.sql',import.meta.url),'utf8'));
+ const env={...base,DB:db,MINIMAL_FREE_REVIEW:'true',MINIMAL_FREE_REVIEW_UNTIL:new Date(Date.now()+10*60*1000).toISOString()};
+ const login=await wrapper.fetch(request(),env);assert.equal(login.status,200);assert.ok(login.headers.get('Set-Cookie'));
+ const r=await wrapper.fetch(new Request(origin+'/public/index?after=',{headers:{'X-Free-Review-Key':key}}),env);
+ assert.equal(r.status,200);assert.deepEqual(await r.json(),{records:[],next:null});
+ assert.equal(db.sqlite.prepare('SELECT generation FROM auth_control WHERE id=1').get().generation,1);
+ }finally{db.close();}
+});

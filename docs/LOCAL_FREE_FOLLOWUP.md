@@ -158,3 +158,11 @@ Worker CPU, billed reads/writes, concurrent editing cost, and the remote 404 cau
 remain unresolved. A verified recoverable backup outside Cloudflare is still
 required before destructive staging changes, archival or historical import;
 Google Drive is optional, and backup storage was not implemented in this phase.
+
+## Subsequent minimal test preparation
+
+[MINIMAL_FREE_VERIFICATION.md](MINIMAL_FREE_VERIFICATION.md) narrows the first
+future test to six measured owner/maximum Save/Undo invocations, strengthens
+account-wide reserves and adds locally tested cleanup/diagnostic guards. It
+supersedes the earlier nine-call proposal for that first canary. Current owner
+usage remains over the read allowance; no remote operation is authorized.

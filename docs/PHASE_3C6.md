@@ -207,3 +207,11 @@ coverage, safe 404 evidence, bounded owner-response chunks and the explicit
 owner-read cost tradeoff. The tables above describe the original optimization;
 they do not measure the subsequent chunked owner query. No additional Cloudflare
 CPU or billed-read measurements have been taken.
+
+## Subsequent minimal test preparation
+
+[MINIMAL_FREE_VERIFICATION.md](MINIMAL_FREE_VERIFICATION.md) narrows the first
+future test to six measured owner/maximum Save/Undo invocations, strengthens
+account-wide reserves and adds locally tested cleanup/diagnostic guards. It
+supersedes the earlier nine-call proposal for that first canary. Current owner
+usage remains over the read allowance; no remote operation is authorized.

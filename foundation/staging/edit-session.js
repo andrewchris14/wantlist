@@ -1,6 +1,7 @@
 import {effectiveListType} from './effective-list-type.js';
 // One revision, receipt, audit event and transactional projection per Save.
 // Unchanged inventories never cross the Worker: JSON work stays in D1.
+const changeKeys=new Set(['id','state','removed']),itemStates=new Set(['wanted','pending','owned',null]),additionFields=new Set(['card_numbers','items']),additionStates=new Set(['wanted','pending','owned']);
 const fail=(code='INVALID')=>{throw Object.assign(Error(code),{code});};
 const itemJSON=`json_object('id',i.id,'group_id',i.group_id,'field_key',i.field_key,'position',i.position,'value',i.value,'state',i.state,'actionable',i.actionable,'limitation',i.limitation,'pending_at',i.pending_at,'received_at',i.received_at,'deleted_at',i.deleted_at)`;
 export function rebuildProjection(db,id,revision,stamp,metadata={},rebuildGroups=true){
@@ -23,8 +24,8 @@ export async function editSession(db,input,requestHash,undoing=false){
  if(conversion&&!input.confirm_conversion)fail();
  if(!Array.isArray(changes)||!Array.isArray(additions)||changes.length>500||additions.length>500)fail();
  if(new Set(changes.map(c=>c.id)).size!==changes.length)fail();
- if(changes.some(c=>typeof c.id!=='string'||Object.keys(c).some(k=>!['id','state','removed'].includes(k))||typeof c.removed!=='boolean'||!['wanted','pending','owned',null].includes(c.state)))fail();
- if(additions.some(a=>typeof a.value!=='string'||!a.value.trim()||a.value.length>500||!['card_numbers','items'].includes(a.field_key)||!['wanted','pending','owned'].includes(a.state)||typeof a.group_id!=='string'))fail();
+ if(changes.some(c=>typeof c.id!=='string'||Object.keys(c).some(k=>!changeKeys.has(k))||typeof c.removed!=='boolean'||!itemStates.has(c.state)))fail();
+ if(additions.some(a=>typeof a.value!=='string'||!a.value.trim()||a.value.length>500||!additionFields.has(a.field_key)||!additionStates.has(a.state)||typeof a.group_id!=='string'))fail();
  if(mode==='complete'&&(changes.length||additions.length))fail();
  const changesJSON=JSON.stringify(changes);
  const validation=changes.length?await db.prepare(`SELECT count(*) n,
@@ -44,7 +45,7 @@ export async function editSession(db,input,requestHash,undoing=false){
  }
  const groups=additions.length?(await db.prepare('SELECT * FROM record_groups WHERE record_id=?').bind(row.id).all()).results:[];
  const groupById=new Map(groups.map(g=>[g.id,g]));
- const newGroups=[],added=[];
+ const newGroups=[],added=[],valuesByGroup=new Map();
  for(const a of additions){
   let g=groupById.get(a.group_id);
   if(g&&!(g.list_type===mode||g.kind==='primary'&&g.list_type==='uncertain'&&mode===currentMode))g=null;
@@ -53,10 +54,10 @@ export async function editSession(db,input,requestHash,undoing=false){
   }
   if(mode==='have_list'&&a.state!=='owned'||mode==='want_list'&&a.state==='owned')fail();
   if(!g||!['want_list','have_list'].includes(mode))fail();
-  added.push({id:'owner-item-'+crypto.randomUUID(),group_id:g.id,field_key:a.field_key,value:a.value.trim(),state:mode==='want_list'?(a.state==='pending'?'pending':'wanted'):'owned'});
+  const value=a.value.trim();let values=valuesByGroup.get(g.id);if(!values){values=new Set();valuesByGroup.set(g.id,values);}if(values.has(value))fail();values.add(value);
+  added.push({id:'owner-item-'+crypto.randomUUID(),group_id:g.id,field_key:a.field_key,value,state:mode==='want_list'?(a.state==='pending'?'pending':'wanted'):'owned'});
  }
  // Duplicates across the logical inventory are checked in SQL, excluding draft removals.
- if(new Set(added.map(a=>a.group_id+'\0'+a.value)).size!==added.length)fail();
  const addedJSON=JSON.stringify(added);
  const duplicate=added.length?await db.prepare(`SELECT i.id FROM json_each(?) a CROSS JOIN record_groups g CROSS JOIN items i INDEXED BY items_group_value WHERE g.record_id=? AND i.group_id=g.id AND i.value=a.value AND (g.list_type=? OR g.kind='primary' AND g.list_type='uncertain') AND i.deleted_at IS NULL AND i.id NOT IN (SELECT json_extract(value,'$.id') FROM json_each(?) WHERE json_extract(value,'$.removed')=1) LIMIT 1`).bind(JSON.stringify(added.map(a=>a.value)),row.id,mode,changesJSON).first():null;
  if(duplicate)fail();

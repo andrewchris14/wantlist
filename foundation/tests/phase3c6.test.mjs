@@ -112,3 +112,38 @@ test('addition positions retain global ordinal across mixed groups and Undo pres
  assert.equal(db.sqlite.prepare('SELECT deleted_at FROM items WHERE id=?').get('synthetic-mixed-original').deleted_at,null);
  }finally{db.close();}
 });
+
+test('large active and retained inventories use bounded encoded D1 cells and preserve complete owner/Save/Undo state',async()=>{
+ const db=performanceFixture(':memory:',5000,5000);try{
+ let maxCell=0,reads=0;
+ const measured={prepare(sql){const s=db.prepare(sql);return {bind(...args){const bound=s.bind(...args);return {async all(){reads++;const result=await bound.all();for(const row of result.results){maxCell=Math.max(maxCell,Buffer.byteLength(row.body));assert.ok(Buffer.byteLength(row.body)<2_000_000,'D1 value limit');}return result;}};}};}};
+ const encoded=await ownerRecordJSON(measured,recordId),before=JSON.parse(encoded);
+ assert.ok(Buffer.byteLength(encoded)>2_000_000);assert.equal(reads,1);assert.ok(maxCell<512_000);
+ assert.equal(before.groups[0].entries.length,10000);
+ const original=items(db);const body=maximumBody();await mutate(db,body);
+ assert.equal((await mutate(db,body)).replayed,true);const saved=await ownerRecord(db,recordId);
+ assert.equal(saved.groups[0].entries.length,10500);assert.equal(saved.groups[0].entries.filter(i=>i.state==='pending').length,500);
+ await act(db,{op:'undo',revision:2,history_id:history(db)});
+ const originalIds=new Set(original.map(o=>o.id));assert.deepEqual(items(db).filter(i=>originalIds.has(i.id)),original);
+ assert.equal((await ownerRecord(db,recordId)).groups[0].entries.length,10500);
+ }finally{db.close();}
+});
+
+
+test('trimmed cross-field draft duplicates reject atomically before issuing a transaction',async()=>{
+ const db=performanceFixture(':memory:',3,0);try{
+ let batches=0;const wrapped={prepare:db.prepare.bind(db),batch:async statements=>{batches++;return db.batch(statements);}};
+ const before=items(db);await assert.rejects(act(wrapped,{op:'edit_session',revision:1,additions:[{group_id:groupId,field_key:'items',state:'wanted',value:' Unicode 😀 '},{group_id:groupId,field_key:'card_numbers',state:'wanted',value:'Unicode 😀'}]}),{code:'INVALID'});
+ assert.equal(batches,0);assert.deepEqual(items(db),before);assert.equal(db.sqlite.prepare('SELECT revision FROM records WHERE id=?').get(recordId).revision,1);
+ }finally{db.close();}
+});
+
+test('chunk ordering agrees with the approved owner response across fields, groups and Unicode',async()=>{
+ const db=performanceFixture(':memory:',260,140);try{
+ db.sqlite.prepare('UPDATE items SET value=? WHERE position%2=0').run('😀'.repeat(250));
+ for(let n=0;n<100;n++)db.sqlite.prepare('INSERT INTO items VALUES(?,?,?,?,?,?,1,NULL,NULL,NULL,NULL)').run('owner-item-synthetic-'+n,groupId,n%2?'items':'card_numbers',600+n,'quoted \" \\ '+n,'wanted');
+ const result=await ownerRecord(db,recordId);assert.equal(result.groups[0].entries.length,500);
+ assert.deepEqual(result.groups[0].entries.slice(0,400).map(i=>i.id),Array.from({length:400},(_,n)=>'synthetic-item-'+String(n).padStart(6,'0')));
+ const ids=result.groups[0].entries.map(i=>i.id);assert.deepEqual(ids.slice(-100),Array.from({length:100},(_,n)=>'owner-item-synthetic-'+n));
+ }finally{db.close();}
+});

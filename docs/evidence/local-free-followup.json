@@ -1,0 +1,219 @@
+{
+  "local_only": true,
+  "cloudflare_cpu_or_billed_reads": false,
+  "baseline_commit": "6412d76",
+  "sqlite_version": "3.53.1",
+  "synthetic_fixture": {
+    "active": 526,
+    "retained_removed": 1503,
+    "unrelated": 2000,
+    "maximum_changes": 500,
+    "maximum_additions": 500
+  },
+  "sql_work": {
+    "approved": {
+      "vm_instructions": {
+        "owner_large_record": 91916,
+        "notes_save": 640,
+        "normal_save": 50591,
+        "maximum_save": 241736,
+        "large_undo": 88943
+      },
+      "query_counts": {
+        "owner_large_record": 1,
+        "notes_save": 6,
+        "normal_save": 11,
+        "maximum_save": 11,
+        "large_undo": 9
+      },
+      "bound_parameter_bytes": {
+        "owner_large_record": 27,
+        "notes_save": 771,
+        "normal_save": 1516,
+        "maximum_save": 734496,
+        "large_undo": 25965
+      }
+    },
+    "followup": {
+      "vm_instructions": {
+        "owner_large_record": 152724,
+        "notes_save": 640,
+        "normal_save": 50591,
+        "maximum_save": 241736,
+        "large_undo": 88943
+      },
+      "query_counts": {
+        "owner_large_record": 1,
+        "notes_save": 6,
+        "normal_save": 11,
+        "maximum_save": 11,
+        "large_undo": 9
+      },
+      "bound_parameter_bytes": {
+        "owner_large_record": 27,
+        "notes_save": 771,
+        "normal_save": 1516,
+        "maximum_save": 734496,
+        "large_undo": 25965
+      }
+    },
+    "owner_query_plans": [
+      [
+        "MERGE (UNION ALL)",
+        "LEFT",
+        "MERGE (UNION ALL)",
+        "LEFT",
+        "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)",
+        "RIGHT",
+        "MATERIALIZE groups",
+        "CO-ROUTINE (subquery-14)",
+        "SEARCH records USING COVERING INDEX sqlite_autoindex_records_1 (id=?)",
+        "SEARCH g USING INDEX sqlite_autoindex_record_groups_2 (record_id=?)",
+        "USE TEMP B-TREE FOR ORDER BY",
+        "SCAN (subquery-14)",
+        "SCAN g",
+        "CORRELATED SCALAR SUBQUERY 10",
+        "CO-ROUTINE (subquery-9)",
+        "COMPOUND QUERY",
+        "LEFT-MOST SUBQUERY",
+        "SCAN CONSTANT ROW",
+        "UNION ALL",
+        "SCAN CONSTANT ROW",
+        "UNION ALL",
+        "SCAN CONSTANT ROW",
+        "UNION ALL",
+        "SCAN json_each VIRTUAL TABLE INDEX 1:",
+        "SCAN (subquery-9)",
+        "USE TEMP B-TREE FOR ORDER BY",
+        "RIGHT",
+        "CO-ROUTINE (subquery-12)",
+        "SCAN g",
+        "SEARCH i USING INDEX items_group_value (group_id=?)",
+        "CORRELATED SCALAR SUBQUERY 3",
+        "SEARCH h USING INDEX history_item_reference (item_id=? AND record_id=? AND created_at=?)",
+        "USE TEMP B-TREE FOR ORDER BY",
+        "SCAN (subquery-12)",
+        "USE TEMP B-TREE FOR GROUP BY",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ]
+    ]
+  },
+  "local_js_replay": {
+    "local_only": true,
+    "cloudflare_cpu_or_billed_reads": false,
+    "measurement": "Node process CPU, predecoded synthetic D1 replay; no database execution, response decoding, network or HTTP",
+    "node_version": "v24.19.0",
+    "observations": [
+      {
+        "version": "approved-6412d76",
+        "operation": "owner_open",
+        "iterations_per_sample": 100,
+        "samples_ms": [
+          0.00183,
+          0.00532,
+          0.0027500000000000003,
+          0.0047599999999999995,
+          0.0031
+        ],
+        "median_cpu_ms_per_operation": 0.0031,
+        "response_bytes": 1194225,
+        "returned_rows": 1,
+        "max_body_cell_bytes": 1194225
+      },
+      {
+        "version": "approved-6412d76",
+        "operation": "notes_save",
+        "iterations_per_sample": 100,
+        "samples_ms": [
+          0.09807,
+          0.11138999999999999,
+          0.08558,
+          0.11092,
+          0.19264
+        ],
+        "median_cpu_ms_per_operation": 0.11092
+      },
+      {
+        "version": "approved-6412d76",
+        "operation": "maximum_save",
+        "iterations_per_sample": 100,
+        "samples_ms": [
+          3.63485,
+          4.066,
+          3.1636599999999997,
+          3.75753,
+          6.28143
+        ],
+        "median_cpu_ms_per_operation": 3.75753
+      },
+      {
+        "version": "followup",
+        "operation": "owner_open",
+        "iterations_per_sample": 100,
+        "samples_ms": [
+          0.61112,
+          0.59624,
+          0.55332,
+          0.5925,
+          0.54779
+        ],
+        "median_cpu_ms_per_operation": 0.5925,
+        "response_bytes": 1194225,
+        "returned_rows": 66,
+        "max_body_cell_bytes": 22945
+      },
+      {
+        "version": "followup",
+        "operation": "notes_save",
+        "iterations_per_sample": 100,
+        "samples_ms": [
+          0.061,
+          0.0735,
+          0.05992,
+          0.08410000000000001,
+          0.12834
+        ],
+        "median_cpu_ms_per_operation": 0.0735
+      },
+      {
+        "version": "followup",
+        "operation": "maximum_save",
+        "iterations_per_sample": 100,
+        "samples_ms": [
+          2.6545,
+          3.57639,
+          3.68048,
+          3.12026,
+          3.58417
+        ],
+        "median_cpu_ms_per_operation": 3.57639
+      }
+    ]
+  },
+  "original_pre_phase3c6_owner_transport": {
+    "local_only": true,
+    "not_cloudflare_cpu": true,
+    "iterations": 200,
+    "baseline_returned_rows": 2031,
+    "optimized_returned_rows": 66,
+    "baseline_js_cpu_ms_per_open": 4.009515,
+    "optimized_js_cpu_ms_per_open": 0.6982250000000001
+  },
+  "regressions": {
+    "foundation_node_tests": 84,
+    "safe_response_evidence_tests": 2,
+    "fully_intercepted_browser_tests": 2,
+    "public_manifest_records": 3394,
+    "index_pages": 7,
+    "synthetic_large_owner_entries_before_save": 10000,
+    "synthetic_large_owner_entries_after_save_and_undo": 10500
+  },
+  "limitations": [
+    "SQL VM steps are not billed D1 reads.",
+    "Node CPU excludes D1 response decoding, network and HTTP and is not Worker CPU.",
+    "CPU samples overlap; no reliable maximum Save speedup is established.",
+    "Bounded owner cells add SQL and JS work compared with single-cell Phase3C6 aggregation.",
+    "The public manifest is an in-memory search fixture, not a historical D1 import.",
+    "No remote Cloudflare access or deployment was performed."
+  ]
+}

@@ -199,3 +199,11 @@ quota headroom and Free billing before authorizing that retest. Historical impor
 production deployment, practice archival and durable backup recovery remain gated
 by the prior approvals and incomplete recovery work. $0/month reliable hosting
 is still a goal, not an established outcome.
+
+## Subsequent local follow-up
+
+See [LOCAL_FREE_FOLLOWUP.md](LOCAL_FREE_FOLLOWUP.md) for full-manifest browser
+coverage, safe 404 evidence, bounded owner-response chunks and the explicit
+owner-read cost tradeoff. The tables above describe the original optimization;
+they do not measure the subsequent chunked owner query. No additional Cloudflare
+CPU or billed-read measurements have been taken.

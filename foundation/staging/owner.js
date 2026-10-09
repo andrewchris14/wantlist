@@ -2,16 +2,31 @@
 // Build the lean response in one consistent SQL read. The HTTP route forwards
 // this JSON string without materializing/re-serializing thousands of item objects.
 export async function ownerRecordJSON(db,id){
- const row=await db.prepare(`SELECT substr(header,1,length(header)-1)||',"groups":'||groups_json||'}' body FROM (SELECT json_object('id',r.id,'revision',r.revision,'list_type',r.list_type,'deleted_at',r.deleted_at,'content',json_object('source_list_type',json_extract(r.content_json,'$.source_list_type'),'entry_order',json_extract(r.content_json,'$.entry_order'),'display_year',json_extract(r.content_json,'$.display_year'),'display_category',json_extract(r.content_json,'$.display_category'),'year',json_extract(r.content_json,'$.year'),'brand',json_extract(r.content_json,'$.brand'),'set_name',json_extract(r.content_json,'$.set_name'),'category',json_extract(r.content_json,'$.category'),'notes',json_extract(r.content_json,'$.notes'),'prefixes',json_extract(r.content_json,'$.prefixes'),'uncertainty',json_extract(r.content_json,'$.uncertainty'))) header,(SELECT '['||COALESCE(group_concat(body,','),'')||']' FROM (SELECT substr(header,1,length(header)-1)||',"entries":'||entries||'}' body FROM (
- SELECT (SELECT json_group_object(key,json(value)) FROM (
-  SELECT 'id' key,json_quote(g.id) value UNION ALL SELECT 'kind',json_quote(g.kind) UNION ALL SELECT 'list_type',json_quote(g.list_type)
-  UNION ALL SELECT key,CASE WHEN type IN ('array','object') THEN value WHEN type IN ('true','false','null') THEN type ELSE json_quote(value) END FROM json_each(g.metadata_json) WHERE key IN ('label','description','notes')
- )) header,(SELECT json_group_array(json(entry)) FROM (
-   SELECT json_object('id',i.id,'group_id',i.group_id,'value',i.value,'field_key',i.field_key,'position',i.position,'state',i.state,'actionable',i.actionable,'deleted_at',i.deleted_at,'individually_removed',CASE WHEN i.deleted_at IS NULL THEN 0 ELSE EXISTS(SELECT 1 FROM change_history h WHERE h.item_id=i.id AND h.record_id=g.record_id AND h.created_at=i.deleted_at AND h.action='remove_item' AND (i.actionable=1 OR json_extract(h.before_json,'$.group_list_type')=g.list_type)) END) entry
-   FROM items i WHERE i.group_id=g.id ORDER BY CASE WHEN i.id LIKE 'owner-item-%' THEN 1 ELSE 0 END,CASE WHEN i.id NOT LIKE 'owner-item-%' THEN i.field_key END,i.position
-  )) entries FROM record_groups g WHERE g.record_id=r.id ORDER BY CASE g.kind WHEN 'primary' THEN 0 WHEN 'mixed' THEN 1 ELSE 2 END,g.position
- ))) groups_json FROM records r WHERE r.id=?)`).bind(id).first();
- return row?.body||null;
+ // Keep each D1 result value bounded: repeated Save/Undo retains removed items,
+ // so a whole-record JSON aggregate can outgrow D1's 2 MB value/row limit.
+ // Position buckets avoid an item window/materialization. The approved three
+ // inventory fields plus UNIQUE(group_id,field_key,position) bound each bucket
+ // to at most 96 items. One statement provides a consistent read; only encoded
+ // chunks cross JS, with the original item ordering preserved.
+ const rows=(await db.prepare(`WITH target AS (SELECT * FROM records WHERE id=?),
+ groups AS MATERIALIZED (SELECT g.*,row_number() OVER (ORDER BY CASE g.kind WHEN 'primary' THEN 0 WHEN 'mixed' THEN 1 ELSE 2 END,g.position) ordinal FROM record_groups g JOIN target r ON g.record_id=r.id),
+ entries AS (SELECT g.ordinal,CASE WHEN i.id LIKE 'owner-item-%' THEN 1 ELSE 0 END owner_item,CASE WHEN i.id NOT LIKE 'owner-item-%' THEN i.field_key ELSE '' END field_order,i.position,
+ json_object('id',i.id,'group_id',i.group_id,'value',i.value,'field_key',i.field_key,'position',i.position,'state',i.state,'actionable',i.actionable,'deleted_at',i.deleted_at,'individually_removed',CASE WHEN i.deleted_at IS NULL THEN 0 ELSE EXISTS(SELECT 1 FROM change_history h WHERE h.item_id=i.id AND h.record_id=g.record_id AND h.created_at=i.deleted_at AND h.action='remove_item' AND (i.actionable=1 OR json_extract(h.before_json,'$.group_list_type')=g.list_type)) END) entry
+ FROM groups g JOIN items i ON i.group_id=g.id)
+ SELECT 0 ordinal,0 entry_order,0 owner_item,'' field_order,0 chunk,'root' kind,json_object('id',r.id,'revision',r.revision,'list_type',r.list_type,'deleted_at',r.deleted_at,'content',json_object('source_list_type',json_extract(r.content_json,'$.source_list_type'),'entry_order',json_extract(r.content_json,'$.entry_order'),'display_year',json_extract(r.content_json,'$.display_year'),'display_category',json_extract(r.content_json,'$.display_category'),'year',json_extract(r.content_json,'$.year'),'brand',json_extract(r.content_json,'$.brand'),'set_name',json_extract(r.content_json,'$.set_name'),'category',json_extract(r.content_json,'$.category'),'notes',json_extract(r.content_json,'$.notes'),'prefixes',json_extract(r.content_json,'$.prefixes'),'uncertainty',json_extract(r.content_json,'$.uncertainty'))) body FROM target r
+ UNION ALL SELECT g.ordinal,0,0,'',0,'group',(SELECT json_group_object(key,json(value)) FROM (
+ SELECT 'id' key,json_quote(g.id) value UNION ALL SELECT 'kind',json_quote(g.kind) UNION ALL SELECT 'list_type',json_quote(g.list_type)
+ UNION ALL SELECT key,CASE WHEN type IN ('array','object') THEN value WHEN type IN ('true','false','null') THEN type ELSE json_quote(value) END FROM json_each(g.metadata_json) WHERE key IN ('label','description','notes')
+ )) FROM groups g
+ UNION ALL SELECT ordinal,1,owner_item,field_order,CAST(position/32 AS INTEGER),'entries',json_group_array(json(entry)) FROM (SELECT * FROM entries ORDER BY ordinal,owner_item,field_order,position) GROUP BY ordinal,owner_item,field_order,CAST(position/32 AS INTEGER)
+ ORDER BY ordinal,entry_order,owner_item,field_order,chunk`).bind(id).all()).results;
+ if(!rows.length)return null;
+ const groups=[];let group;
+ for(const row of rows.slice(1)){
+  if(row.kind==='group'){group={header:row.body,chunks:[]};groups.push(group);}
+  else group.chunks.push(row.body.slice(1,-1));
+ }
+ return rows[0].body.slice(0,-1)+',"groups":['+groups.map(g=>g.header.slice(0,-1)+',"entries":['+g.chunks.join(',')+']}').join(',')+']}';
 }
 export async function ownerRecord(db,id){
  const body=await ownerRecordJSON(db,id);return body?JSON.parse(body):null;

@@ -4,6 +4,7 @@ Run with supported per-command network permission and inherited proxy/TLS trust.
 No credentials, cookies or database rows are written into the report.
 """
 import collections
+import hashlib
 import datetime as dt
 import json
 import statistics
@@ -17,6 +18,12 @@ import uuid
 from pathlib import Path
 
 from .cloudflare import api, deploy, endpoint, metrics_groups, query
+
+def response_evidence(origin, path, raw, headers):
+    """Safe response fingerprint; never retain body, cookies or request secrets."""
+    return {'response_sha256': hashlib.sha256(raw).hexdigest(),
+            'response_headers': {key: headers.get(key) for key in ('CF-Ray','Server','Content-Type')},
+            'public_index_url': origin + path if path.startswith('/public/index?') else None}
 
 ROOT = Path(__file__).resolve().parents[2]
 NAME = 'wantlist-test-3c2-bc5991ba'
@@ -140,7 +147,8 @@ class Review:
                 self.cookie = response.headers['Set-Cookie'].split(';')[0]
             sample = {'operation': label, 'route': path.split('?')[0], 'started': started,
                       'ended': utc(), 'status': response.status, 'expected_status': expected,
-                      'diagnostic': diagnostic, 'response_bytes': len(raw)}
+                      'diagnostic': diagnostic, 'response_bytes': len(raw),
+                      **response_evidence(self.origin, path, raw, response.headers)}
             if response.headers.get('X-Staging-D1-Reads') is not None:
                 sample.update(rows_read=int(response.headers['X-Staging-D1-Reads']),
                               rows_written=int(response.headers['X-Staging-D1-Writes']),

@@ -1,12 +1,13 @@
 // Synthetic-only performance fixture. Never reads a backup or a remote database.
 import {localD1} from './d1-local-adapter.mjs';
-import {readFileSync} from 'node:fs';
+import {readFileSync,existsSync} from 'node:fs';
 export const recordId='synthetic-performance-large',groupId=recordId+'-primary';
 export function performanceFixture(path=':memory:',size=526,removed=1503,baselineDirectory=null){
  const db=localD1(path);
  db.sqlite.exec(readFileSync(new URL('../staging/schema.sql',import.meta.url),'utf8'));
  db.sqlite.exec(readFileSync(baselineDirectory?baselineDirectory+'/foundation/staging/public-index.sql':new URL('../staging/public-index.sql',import.meta.url),'utf8'));
- if(!baselineDirectory)db.sqlite.exec(readFileSync(new URL('../staging/phase3c6-performance.sql',import.meta.url),'utf8'));
+ const migration=baselineDirectory?baselineDirectory+'/foundation/staging/phase3c6-performance.sql':new URL('../staging/phase3c6-performance.sql',import.meta.url);
+ if(existsSync(migration))db.sqlite.exec(readFileSync(migration,'utf8'));
  db.sqlite.exec("INSERT INTO staging_import_state VALUES(1,'synthetic','synthetic',1,1)");
  const content={id:recordId,set_name:'Synthetic large inventory',year:'2026',brand:'Synthetic Maker',category:'baseball_cards',display_category:'UV Wantlist',notes:['Original synthetic note'],prefixes:[],source_list_type:'want_list',entry_order:'natural'};
  db.sqlite.prepare('INSERT INTO records VALUES(?,NULL,?,?,1,?,?,NULL)').run(recordId,'want_list',JSON.stringify(content),'synthetic','synthetic');

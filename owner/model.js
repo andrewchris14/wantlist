@@ -15,9 +15,16 @@ export function logicalInventories(r){
  const primary=same.filter(g=>g.kind!=='sublist'&&!g.label),variants=same.filter(g=>g.kind==='sublist'||g.label);
  return [...(primary.length?[{id:primary[0].id,notes:primary.flatMap(g=>[...(g.notes||[]),...(g.description?[g.description]:[])]),entries:primary.flatMap(g=>g.entries.map(i=>({...i,group_id:g.id}))),groups:primary}]:[]),...variants.map(g=>({...g,groups:[g]}))].filter(g=>g.entries.some(i=>!i.deleted_at)||g.list_type!=='complete');
 }
+export function currentNotesText(r){const c=r.content||r;return Array.isArray(c.notes)?c.notes.filter(n=>typeof n==='string').join('\n'):'';}
+export function publicSearchRecord(r){
+ const mode=effectiveListType(r),active=['want_list','have_list'].includes(mode);
+ const clean=g=>({label:g.label,list_type:g.list_type,items:g.items||[]});
+ const groups=values=>active?(values||[]).filter(g=>!g.list_type||g.list_type===mode).map(clean):[];
+ return {id:r.id,year:r.year,brand:r.brand,set_name:r.set_name,category:r.category,notes:r.notes,prefixes:r.prefixes,card_numbers:active?r.card_numbers:[],card_ranges:active?r.card_ranges:[],items:active&&!sourceNoteFields(r.id).includes('items')?r.items:[],mixed_lists:groups(r.mixed_lists),sublists:groups(r.sublists)};
+}
 export function publicPrimaryEntry(mode,i){return mode==='have_list'?[null,undefined,'owned'].includes(i.state):mode==='want_list'?[null,undefined,'wanted','pending'].includes(i.state):mode==='complete'?false:true;}
-// Only genuine source supplements become public notes. Received entries and
-// owner-created superseded groups remain recoverable in the owner editor/history.
+// Legacy audit adapter only. Ordinary public browsing and editing never use
+// these source supplements; raw source/history remains stored for recovery.
 export function publicSourceNotes(r){
  const historical=!!historicalMap.mapping[r.id]||r.id?.startsWith('display-')&&(r.source_refs||[]).length>0;
  const raw=!r.groups;
@@ -36,8 +43,8 @@ export function browseRecord(r) {
  const mode=effectiveListType(r);r={...r,list_type:mode,groups:(r.groups||[]).map(g=>({...g,list_type:g.kind==='primary'&&g.list_type==='uncertain'?mode:g.list_type}))};
  const {groups=[],...header}=r;
  const inventories=logicalInventories(r);
- const supplemental=publicSourceNotes(r);
- return {...header,card_numbers:[],items:[],card_ranges:[],logical_inventories:inventories.map(g=>({...g,entries:sortedEntries(g.entries.filter(i=>!i.deleted_at&&publicPrimaryEntry(mode,i)),r.entry_order==='original')})),supplemental_notes:supplemental,mixed_lists:[...groups.filter(g=>g.kind==='sublist'&&g.list_type==='complete').map(g=>({...g,items:[]})),...inventories.map(g=>({label:g.label,list_type:r.list_type,items:g.entries.filter(i=>!i.deleted_at&&i.state!=='pending'&&publicPrimaryEntry(mode,i)).map(i=>i.value)}))]};
+
+ return {...header,card_numbers:[],items:[],card_ranges:[],logical_inventories:inventories.map(g=>({...g,entries:sortedEntries(g.entries.filter(i=>!i.deleted_at&&publicPrimaryEntry(mode,i)),r.entry_order==='original')})),supplemental_notes:[],mixed_lists:[...groups.filter(g=>g.kind==='sublist'&&g.list_type==='complete').map(g=>({...g,items:[]})),...inventories.map(g=>({label:g.label,list_type:r.list_type,items:g.entries.filter(i=>!i.deleted_at&&i.state!=='pending'&&publicPrimaryEntry(mode,i)).map(i=>i.value)}))]};
 }
 export function parseCards(input,kind='numbers') {
  // Names are one per line; commas may be part of an item name. No range expansion.

@@ -12,7 +12,7 @@ function fixture(){
  const db=localD1();db.sqlite.exec(readFileSync('foundation/staging/schema.sql','utf8'));db.sqlite.exec("INSERT INTO staging_import_state VALUES(1,'isolated','isolated',0,1)");
  const view=JSON.parse(readFileSync('foundation/staging/historical-view.json','utf8'));
  const extra=view.records.find(r=>r.brand==='Topps'),year1951=view.records.find(r=>r.year==='1951');
- const chosen=view.records.filter(r=>r.display_category==='Brewers Bobblehead Wantlist'||r.id===year1951.id||r.id===extra.id||r.id==='p0581-l001'||r.id==='p0060-l001'||r.id==='p1237-l004'||r.id==='p1996-l008'||r.id==='p2501-l001'||r.id.startsWith('display-'));
+ const chosen=view.records.filter(r=>r.display_category==='Brewers Bobblehead Wantlist'||r.id===year1951.id||r.id===extra.id||r.id==='p1566-l003'||r.id==='p0581-l001'||r.id==='p0060-l001'||r.id==='p1237-l004'||r.id==='p1996-l008'||r.id==='p2501-l001'||r.id.startsWith('display-'));
  chosen.push({id:'owner-record-public-remnant',year:'2028',brand:'Bowman',set_name:'2028 Bowman Chrome Test',category:'baseball_cards',display_category:'UV Wantlist',list_type:'want_list',notes:['just collecting the first 10 cards'],card_numbers:['2','4','6','8','10']});
  const stamp=new Date().toISOString();
  for(const r of chosen){

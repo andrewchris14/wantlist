@@ -2,13 +2,14 @@ import SearchableSelect from './SearchableSelect.jsx';
 import {useMemo,useState} from 'react';
 import {prepareRecords,queryMatches,yearSpan,asArray,normalize} from '../site/model.js';
 import map from '../foundation/staging/historical-map.json';
-import {recordYear,yearInfo,naturalCompare,titleOf,sourceNoteFields,effectiveCategory,effectiveListType,publicSourceNotes,publicPrimaryEntry} from './model.js';
+import {recordYear,yearInfo,naturalCompare,titleOf,sourceNoteFields,effectiveCategory,effectiveListType,publicPrimaryEntry,currentNotesText,publicSearchRecord} from './model.js';
 export const CATEGORIES=map.categories;
 export const originalCategory=effectiveCategory;
 export function compactStatus(r){return ({want_list:'WANT list',have_list:'HAVE list',complete:'COMPLETE'})[effectiveListType(r)]||'Notes';}
 export function compactSort(a,b){return (yearInfo(recordYear(b)).sort??-1)-(yearInfo(recordYear(a)).sort??-1)||String(a.set_name||'').localeCompare(String(b.set_name||''),'en',{numeric:true,sensitivity:'base'});}
+function CurrentNotes({record}){const text=currentNotesText(record);return text.trim()?<p className="owner-notes">{text}</p>:null;}
 function Contents({record:r}){
- if(r.list_type==='uncertain'&&compactStatus(r)==='Notes'){const notes=[...asArray(r.uncertainty),...asArray(r.notes),...asArray(r.items),...(r.mixed_lists||[]).flatMap(g=>asArray(g.items))];return <div className="listing-content source-note">{[...new Set(notes)].map((s,i)=><p key={i}>{s}</p>)}</div>;}
+ if(compactStatus(r)==='Notes')return <div className="listing-content"><CurrentNotes record={r}/></div>;
  const itemMode=['Eau Claire Players','Milwaukee 8x10 List','Brewers Bobblehead Wantlist'].includes(originalCategory(r));
  const inventories=r.logical_inventories||[{...r,list_type:effectiveListType(r),entries:[...asArray(r.card_numbers),...asArray(r.card_ranges),...(sourceNoteFields(r.id).includes('items')?[]:asArray(r.items))].map(value=>({value}))},...(r.mixed_lists||[]).map(g=>({...g,entries:asArray(g.items).map(value=>({value}))})),...(r.sublists||[]).map(g=>({...g,entries:asArray(g.items).map(value=>({value}))}))];
  const primary=inventories.filter(g=>!g.list_type||g.list_type===effectiveListType(r)).map(g=>({...g,entries:g.entries.filter(i=>publicPrimaryEntry(effectiveListType(r),i))}));
@@ -17,8 +18,8 @@ function Contents({record:r}){
  return <div className="listing-content">{compactStatus(r)==='COMPLETE'?<p>Complete</p>:primary.map((g,n)=>{
  const entries=ordered(g.entries.filter(i=>i.state!=='pending'));
  if(!entries.length)return null;
- return <section key={n}>{g.label&&g.label!==r.set_name&&<h3>{g.label}</h3>}{g.description&&<p>{g.description}</p>}<p><strong>{compactStatus(r)==='HAVE list'?`${itemMode?'Items':'Cards'} I HAVE:`:`${itemMode?'Items':'Cards'} I NEED:`}</strong> {entries.map(i=>i.value).join(itemMode?'; ':', ')}</p>{asArray(g.notes).map((note,i)=><p key={i}>{note}</p>)}</section>;
- })}{pending.length>0&&<p><strong>Pending:</strong> {pending.map(i=>i.value).join(', ')}</p>}{asArray(r.supplemental_notes||publicSourceNotes(r)).map((n,i)=><p key={'supp'+i}>{n}</p>)}{asArray(r.notes).filter(n=>!itemMode||!['Milwaukee Baseball 8x10 HAVE list','Eau Claire Players',r.set_name].includes(n)&&!/^_+$/.test(n)).map((s,i)=><p key={'note'+i}>{s}</p>)}{asArray(r.uncertainty).length>0&&<p className="source-note">{r.uncertainty.join(' ')}</p>}</div>;
+ return <section key={n}>{g.label&&g.label!==r.set_name&&<h3>{g.label}</h3>}<p><strong>{compactStatus(r)==='HAVE list'?`${itemMode?'Items':'Cards'} I HAVE:`:`${itemMode?'Items':'Cards'} I NEED:`}</strong> {entries.map(i=>i.value).join(itemMode?'; ':', ')}</p></section>;
+ })}{pending.length>0&&<p><strong>Pending:</strong> {pending.map(i=>i.value).join(', ')}</p>}<CurrentNotes record={r}/></div>;
 
 }
 
@@ -29,7 +30,7 @@ function ListingRow({record:r,ownerAction}){
 
 export default function Browse({records,toolbar,ownerAction,categories=CATEGORIES}){
  const [category,setCategory]=useState(CATEGORIES[0]),[query,setQuery]=useState(''),[year,setYear]=useState(''),[manufacturer,setManufacturer]=useState('');
- const prepared=useMemo(()=>prepareRecords(records||[]).map(r=>{const display_category=originalCategory(r),label=normalize([display_category,...(r.logical_inventories||[]).flatMap(g=>g.entries.filter(i=>i.state==='pending').map(i=>i.value)),...(r.supplemental_notes||[])].filter(Boolean).join(' '));return {...r,display_category,_search:r._search+' '+label,_words:new Set([...r._words,...label.split(' ')])};}),[records]);
+ const prepared=useMemo(()=>prepareRecords((records||[]).map(publicSearchRecord)).map((r,i)=>{const record=records[i],display_category=originalCategory(record),label=normalize([display_category,...(record.logical_inventories||[]).flatMap(g=>g.entries.filter(i=>i.state==='pending').map(i=>i.value))].filter(Boolean).join(' '));return {...record,display_category,_search:r._search+' '+label,_words:new Set([...r._words,...label.split(' ')])};}),[records]);
  // Legacy source members remain archived in D1; they never become duplicate
  // public listings if an aggregate is temporarily missing/deleted.
  const special=['Eau Claire Players','Milwaukee 8x10 List'];

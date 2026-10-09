@@ -1,0 +1,50 @@
+{
+  "active_public_records": 265,
+  "current_note_records": 58,
+  "supplement_records_now_audit_only": [
+    "p0010-l001",
+    "p0136-l001",
+    "p0526-l006",
+    "p1566-l003"
+  ],
+  "group_annotation_records": [
+    "p0010-l001",
+    "p0136-l001",
+    "p1566-l003"
+  ],
+  "uncertainty_records": [
+    "owner-record-0cb16bcd-506f-4d8d-8bfa-2cb529a4f12b",
+    "owner-record-6783fa29-3cdd-4d5e-9279-4e985148e34a",
+    "owner-record-6926225b-eeb3-4f10-bb95-98a4b43227d5",
+    "owner-record-76df2ca2-018c-4b78-bf7d-52fc21bcfe7d",
+    "owner-record-a9a66b81-ba05-4b6d-834e-1fc2d0369ef5",
+    "owner-record-b5b24f66-e9d7-4955-8a28-9172e2cdd280",
+    "owner-record-c3812c0b-025d-4664-bece-5fe042e71c64",
+    "owner-record-cd27a294-b5e1-41ed-a96c-68b670b06184",
+    "owner-record-dd8ae4c4-2253-4f81-a121-6110555026d7",
+    "p0023-l001",
+    "p0060-l001",
+    "p0273-l029",
+    "p0273-l039",
+    "p1996-l008",
+    "p2501-l001",
+    "p2851-l007",
+    "p3022-l006"
+  ],
+  "classification_mismatches": [],
+  "note_mismatches": [],
+  "inputs_unchanged": true,
+  "ritz": {
+    "record_id": "p1566-l003",
+    "revision": 1,
+    "current_note": "Red Border Griffey already owned",
+    "wanted": [
+      "Blue Border Griffey"
+    ],
+    "supplemental_notes": [],
+    "retained_owned_values": [
+      "Red Border Griffey"
+    ],
+    "retained_group_description": "User-confirmed owned variant."
+  }
+}

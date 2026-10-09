@@ -1,0 +1,70 @@
+{
+  "engine": "same per-listing trigger SQL as remote pilot",
+  "manifest": "59982810e795fa2f3745df64d3098a07b514b4a0b3ea1a7ac7154a95de1a214c",
+  "listings": 3394,
+  "items": 59098,
+  "groups": 3461,
+  "reserved_writes": 821301,
+  "virtual_free_days": [
+    {
+      "added": 351,
+      "paused": true
+    },
+    {
+      "added": 333,
+      "paused": true
+    },
+    {
+      "added": 199,
+      "paused": true
+    },
+    {
+      "added": 180,
+      "paused": true
+    },
+    {
+      "added": 204,
+      "paused": true
+    },
+    {
+      "added": 147,
+      "paused": true
+    },
+    {
+      "added": 169,
+      "paused": true
+    },
+    {
+      "added": 199,
+      "paused": true
+    },
+    {
+      "added": 202,
+      "paused": true
+    },
+    {
+      "added": 198,
+      "paused": true
+    },
+    {
+      "added": 247,
+      "paused": true
+    },
+    {
+      "added": 342,
+      "paused": true
+    },
+    {
+      "added": 349,
+      "paused": true
+    },
+    {
+      "added": 274,
+      "paused": false
+    }
+  ],
+  "local_wall_seconds_not_worker_cpu": 16.244,
+  "retry_added": 0,
+  "sqlite_database_bytes": 39858176,
+  "index_bytes": 1453928
+}

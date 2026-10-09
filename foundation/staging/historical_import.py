@@ -60,8 +60,16 @@ class Remote:
     def __init__(self,database):
         if not isolated_name(api('/d1/database/'+database)['name']):raise ValueError('Phase 3C.2 execution requires a disposable named database; human-review import is disabled')
         self.database=database
-    def rows(self,sql,args=()):return query(self.database,sql,list(args))[0]['results']
-    def statement(self,sql,args=()):return sum(r['meta']['rows_written'] for r in query(self.database,sql,list(args)))
+        self.meter={'api_requests':0,'rows_read':0,'rows_written':0,'d1_duration_ms':0}
+    def _query(self,sql,args):
+        result=query(self.database,sql,list(args));self.meter['api_requests']+=1
+        for row in result:
+            meta=row['meta']
+            for key in ('rows_read','rows_written'):self.meter[key]+=meta.get(key,0)
+            self.meter['d1_duration_ms']+=meta.get('duration',0)
+        return result
+    def rows(self,sql,args=()):return self._query(sql,args)[0]['results']
+    def statement(self,sql,args=()):return sum(r['meta']['rows_written'] for r in self._query(sql,args))
 
 class Importer:
     def __init__(self,transport,plan,budget=60000):
@@ -80,7 +88,8 @@ class Importer:
         if not old:self.t.statement('INSERT INTO import_batches VALUES(?,?,?,?,?)',['derived-3c2',p['identity']['approved_commit'],p['identity']['dataset_sha256'],storage.dumps(p['identity']),datetime.datetime.now(datetime.timezone.utc).isoformat()])
     def run(self,limit=20,day=None):
         if not isinstance(limit,int) or not 1<=limit<=3394:raise ValueError('Invalid controlled batch')
-        report={'added':[],'preserved':[],'replayed':[],'actual_writes':0,'paused':False,'manifest':self.plan['hash']}
+        meter_before=dict(getattr(self.t,'meter',{}))
+        report={'added':[],'preserved':[],'replayed':[],'actual_writes':0,'paused':False,'manifest':self.plan['hash'],'ambiguous_payload_responses':0}
         day=day or self.t.rows("SELECT strftime('%Y-%m-%d','now') day")[0]['day']
         receipts={r['record_id']:r for r in self.t.rows('SELECT * FROM derived_import_receipts')}
         existing={r['id'] for r in self.t.rows('SELECT id FROM records')}
@@ -105,6 +114,7 @@ class Importer:
             sql="INSERT INTO derived_import_payloads VALUES(?,?,?,?,?,?,CASE WHEN NOT EXISTS(SELECT 1 FROM records WHERE id=?) AND EXISTS(SELECT 1 FROM derived_import_manifests WHERE hash=?) AND EXISTS(SELECT 1 FROM derived_import_attempts WHERE id=? AND record_id=?) THEN 1 ELSE 0 END)"
             try:actual=self.t.statement(sql,[rid,self.plan['hash'],record['source_hash'],record['payload_hash'],attempt,payload,rid,self.plan['hash'],attempt,rid])
             except Exception:
+                report['ambiguous_payload_responses']+=1
                 # Read receipt after ambiguous response; never blindly overwrite/retry.
                 done=self.t.rows('SELECT * FROM derived_import_receipts WHERE record_id=?',[rid])
                 if not done:raise RuntimeError('Stopped: reservation retained; inspect conflict or failed transaction before retry') from None
@@ -114,6 +124,13 @@ class Importer:
                 if actual>bound:raise RuntimeError('Measured D1 writes exceeded reservation; stop')
                 report['actual_writes']+=actual
             report['added'].append(rid)
+        report['payload_reported_writes']=report['actual_writes']
+        if meter_before:
+            report['reported_d1_usage']={k:self.t.meter[k]-v for k,v in meter_before.items()}
+            # Every SQL call counts, including reservations and attempts. If an
+            # execution response was lost, do not claim complete actual usage.
+            report['actual_writes']=report['reported_d1_usage']['rows_written'] if not report['ambiguous_payload_responses'] else None
+        else:report['actual_writes']=None # local SQLite has no D1 billing meter
         return report
 
 def main():

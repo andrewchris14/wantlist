@@ -1,0 +1,13 @@
+{
+  "manifest_sha256": "948205eb0376c739d3a958ae17b153113885acc9ea6a2a7b6150fa9ce565625b",
+  "proposed_count": 202,
+  "historical_ids_affected": 0,
+  "revision_or_content_conflicts": [],
+  "benchmark_rows": 1403,
+  "active_benchmark_rows": 0,
+  "approved_corrections_excluded": true,
+  "all_active_practice_ids_covered": true,
+  "archival_executed": false,
+  "approval_still_required": true,
+  "fresh_backup_sha256": "da0a62a460b9ae4696a622839eb4f6f3495f175a52a9e3042ab34720a3e13dc1"
+}

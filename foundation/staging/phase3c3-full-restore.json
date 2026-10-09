@@ -1,0 +1,31 @@
+{
+  "isolated_complete_restore": true,
+  "tables": {
+    "foundation_meta": 0,
+    "import_batches": 1,
+    "records": 3394,
+    "record_groups": 3461,
+    "items": 59098,
+    "provenance": 3394,
+    "private_details": 0,
+    "change_history": 0,
+    "login_limits": 0,
+    "auth_control": 1,
+    "sessions": 0,
+    "staging_import_state": 0,
+    "staging_import_chunks": 0,
+    "mutation_receipts": 0,
+    "public_records": 3394,
+    "categories": 7,
+    "category_history": 0,
+    "category_receipts": 0,
+    "public_browse_index": 3394,
+    "derived_import_manifests": 1,
+    "derived_import_days": 14,
+    "derived_import_attempts": 3394,
+    "derived_import_receipts": 3394,
+    "derived_import_payloads": 0
+  },
+  "schema_objects": 11,
+  "durable_external_copy": false
+}

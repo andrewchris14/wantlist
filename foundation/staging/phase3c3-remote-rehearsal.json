@@ -1,0 +1,41 @@
+{
+  "resource": "wantlist-test-3c2-bc5991ba",
+  "started_from_records": 36,
+  "added_in_controlled_batches": 200,
+  "batch_sizes": [
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20
+  ],
+  "batch_elapsed_api_wall_seconds_not_cpu": 122.505,
+  "batch_usage": {
+    "api_requests": 830,
+    "rows_read": 13255,
+    "rows_written": 9258,
+    "d1_duration_ms": 645.9681999999998
+  },
+  "conservative_ledger": [
+    {
+      "day": "2026-10-09",
+      "reserved": 46196,
+      "budget": 60000
+    }
+  ],
+  "preserved_removed_owner_fixture": "p0239-l009",
+  "malformed_atomic_rollback_and_retry": true,
+  "interrupted_after_two_commits_resumed": true,
+  "retry_writes": 0,
+  "remote_records": 242,
+  "remote_receipts": 241,
+  "full_remote_collection": false,
+  "human_review_writes": false,
+  "cpu_measurement": null,
+  "database_bytes": 3710976
+}

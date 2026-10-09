@@ -1,0 +1,15 @@
+{
+  "resource": "wantlist-test-3c2-bc5991ba",
+  "record_id": "p0241-l001",
+  "committed_response_lost_then_receipt_recovered": true,
+  "ambiguous_responses": 1,
+  "complete_actual_write_total_claimed": false,
+  "retry_writes": 0,
+  "reported_usage": {
+    "api_requests": 12,
+    "rows_read": 1243,
+    "rows_written": 28,
+    "d1_duration_ms": 17.1398
+  },
+  "human_review_writes": false
+}

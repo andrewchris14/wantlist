@@ -1,0 +1,58 @@
+{
+  "review_date": "2026-10-09",
+  "official_sources": [
+    {
+      "url": "https://developers.cloudflare.com/billing/manage/cancel-subscription/",
+      "http_status": 200,
+      "sha256": "3753899898340006b7f828bcaeb35373de575071ee6fe3f1995b5f591fc68ed3"
+    },
+    {
+      "url": "https://developers.cloudflare.com/billing/manage/change-plan/",
+      "http_status": 200,
+      "sha256": "f12d3a0126009a7ea8144d0a080f5e29d9975dcf14d32bf3aec92889f9fdb9c2"
+    },
+    {
+      "url": "https://developers.cloudflare.com/billing/understand/billing-policy/",
+      "http_status": 200,
+      "sha256": "5483f88268aba05d7c7b415b1e32aadb6eb99685956303e350aba5322bb6f143"
+    },
+    {
+      "url": "https://developers.cloudflare.com/billing/manage/budget-alerts/",
+      "http_status": 200,
+      "sha256": "65cd06201db5d3e94ed3067967a9968ee9472097f69d31beb9a368981b1200a8"
+    },
+    {
+      "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+      "http_status": 200,
+      "sha256": "d7997835c25ea9d25124c15fa538479a236f89ae9f6e06b88fb6336897e6a36d"
+    },
+    {
+      "url": "https://developers.cloudflare.com/d1/platform/limits/",
+      "http_status": 200,
+      "sha256": "ccc126f716d1fe5ad6169ce65a53e17bf802a0ca0c12bef0753d23e8de9d0bbc"
+    },
+    {
+      "url": "https://developers.cloudflare.com/d1/platform/pricing/",
+      "http_status": 200,
+      "sha256": "75fb72d79ea869d11ce1d1a70d66101e64d9c5e08ac9a103f38fafad53baa8d0"
+    }
+  ],
+  "cancellation_effective": "end of current billing period",
+  "downgrade_effective": "end of current billing period; not immediate",
+  "cancellation_deadline": "at least 24 hours before billing date; Cloudflare dates are UTC",
+  "refund_unused_period": false,
+  "subscription_auto_renews": true,
+  "minimum_workers_paid_usd_per_month": 5,
+  "applicable_tax_and_overage_possible": true,
+  "budget_alerts_cap_usage": false,
+  "account_subscriptions_api_access": "403 scoped-token denial",
+  "account_billing_date_verified": false,
+  "durable_object_namespaces": 0,
+  "project_binding_types": [
+    "d1",
+    "plain_text",
+    "secret_text"
+  ],
+  "paid_subscription_changed": false,
+  "downgrade_dashboard_confirmation_required": true
+}

@@ -1,0 +1,10 @@
+{
+  "resource": "wantlist-test-3c2-bc5991ba",
+  "latest_approved_index_route_deployed": true,
+  "editor_assets_built": true,
+  "public_endpoint_disabled": true,
+  "human_review_or_production_deployed": false,
+  "existing_secrets_inherited": true,
+  "worker_module_bytes_uncompressed": 644961,
+  "http_cpu_validation": false
+}

@@ -14,7 +14,7 @@ from .readiness_audit import restore_snapshot
 
 def main():
     import argparse
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--phase',choices=['phase3c1','phase3c2'],default='phase3c1');phase=p.parse_args().phase
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--phase',choices=['phase3c1','phase3c2','phase3c3'],default='phase3c1');phase=p.parse_args().phase
     _,database=settings()
     names={r['name']:r['sql'] for r in query(database,"SELECT name,sql FROM sqlite_master WHERE type='table'")[0]['results']}
     allowed=(*TABLES,'auth_control','sessions','login_limits','import_write_days','import_write_attempts','import_chunk_payloads','public_browse_index','derived_import_manifests','derived_import_days','derived_import_attempts','derived_import_receipts','derived_import_payloads')

@@ -1,0 +1,14 @@
+{
+  "transport": "D1 API, not Worker HTTP",
+  "index_records": 241,
+  "response_bytes": 102791,
+  "next": null,
+  "actual_d1_usage": {
+    "api_requests": 1,
+    "rows_read": 241,
+    "rows_written": 0,
+    "d1_duration_ms": 7.9957
+  },
+  "seven_http_requests_verified": false,
+  "worker_cpu_ms": null
+}

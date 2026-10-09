@@ -23,7 +23,7 @@ class DerivedRemoteSQLTests(unittest.TestCase):
             result=raw(sql,args)
             if 'INSERT INTO derived_import_payloads' in sql and not lost:lost=True;raise ConnectionError('lost after commit')
             return result
-        self.t.statement=fail;self.assertEqual(len(self.i.run(1)['added']),1);self.assertEqual(self.db.execute('SELECT count(*) FROM records').fetchone()[0],1)
+        self.t.statement=fail;result=self.i.run(1);self.assertEqual(result['ambiguous_payload_responses'],1);self.assertIsNone(result['actual_writes']);self.assertEqual(len(result['added']),1);self.assertEqual(self.db.execute('SELECT count(*) FROM records').fetchone()[0],1)
         self.assertIn(self.plan['records'][0]['id'],self.i.run(1)['replayed'])
     def test_failed_payload_retains_budget_and_rolls_back_all_listing_tables(self):
         raw=self.t.statement

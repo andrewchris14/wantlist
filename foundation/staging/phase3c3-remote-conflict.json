@@ -1,0 +1,15 @@
+{
+  "resource": "wantlist-test-3c2-bc5991ba",
+  "conflict_record_id": "p0239-l022",
+  "concurrent_root_preserved_exactly": true,
+  "no_partial_inventory_projection_or_receipt": true,
+  "retry_writes": 0,
+  "reservation_retained": true,
+  "human_review_writes": false,
+  "reported_usage": {
+    "api_requests": 18,
+    "rows_read": 1214,
+    "rows_written": 6,
+    "d1_duration_ms": 14.1959
+  }
+}

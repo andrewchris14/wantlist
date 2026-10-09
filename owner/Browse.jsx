@@ -1,8 +1,9 @@
 import SearchableSelect from './SearchableSelect.jsx';
-import {useMemo,useState} from 'react';
+import {useEffect,useMemo,useState} from 'react';
+import {request} from './api.js';
 import {prepareRecords,queryMatches,yearSpan,asArray,normalize} from '../site/model.js';
 import map from '../foundation/staging/historical-map.json';
-import {recordYear,yearInfo,naturalCompare,titleOf,sourceNoteFields,effectiveCategory,effectiveListType,publicPrimaryEntry,currentNotesText,publicSearchRecord} from './model.js';
+import {browseRecord,recordYear,yearInfo,naturalCompare,titleOf,sourceNoteFields,effectiveCategory,effectiveListType,publicPrimaryEntry,currentNotesText,publicSearchRecord} from './model.js';
 export const CATEGORIES=map.categories;
 export const originalCategory=effectiveCategory;
 export function compactStatus(r){return ({want_list:'WANT list',have_list:'HAVE list',complete:'COMPLETE'})[effectiveListType(r)]||'Notes';}
@@ -24,8 +25,9 @@ function Contents({record:r}){
 }
 
 function ListingRow({record:r,ownerAction}){
- const [open,setOpen]=useState(false);
- return <details className="listing-row" onToggle={e=>setOpen(e.currentTarget.open)}><summary><span className="listing-title">{titleOf(r)}{yearInfo(recordYear(r)).label&&<small className="year-note"> · {yearInfo(recordYear(r)).label}</small>}</span><strong className={'list-label '+r.list_type}>{compactStatus(r)}</strong></summary>{open&&<><Contents record={r}/>{ownerAction&&<div className="listing-edit">{ownerAction(r)}</div>}</>}</details>;
+ const [open,setOpen]=useState(false),[detail,setDetail]=useState(null),[error,setError]=useState(false),[attempt,setAttempt]=useState(0);
+ useEffect(()=>{let live=true;if(open&&r.index_only){setDetail(null);setError(false);request('/public/record?id='+encodeURIComponent(r.id)).then(p=>{if(live)setDetail(browseRecord(p));}).catch(()=>{if(live)setError(true);});}return()=>{live=false;};},[open,r.id,r.revision,r.index_only,attempt]);
+ return <details className="listing-row" onToggle={e=>setOpen(e.currentTarget.open)}><summary><span className="listing-title">{titleOf(r)}{yearInfo(recordYear(r)).label&&<small className="year-note"> · {yearInfo(recordYear(r)).label}</small>}</span><strong className={'list-label '+r.list_type}>{compactStatus(r)}</strong></summary>{open&&<>{r.index_only&&!detail?<div className="listing-content">{error?<p>Could not load this listing. <button onClick={()=>setAttempt(a=>a+1)}>Try again</button></p>:<p role="status">Loading listing…</p>}</div>:<Contents record={r.index_only?detail:r}/>} {ownerAction&&<div className="listing-edit">{ownerAction(r)}</div>}</>}</details>;
 }
 
 export default function Browse({records,toolbar,ownerAction,categories=CATEGORIES}){

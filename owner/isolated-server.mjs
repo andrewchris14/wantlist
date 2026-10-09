@@ -40,6 +40,7 @@ function fixture(){
  return db;
 }
 let db=fixture();
+db.sqlite.exec(readFileSync('foundation/staging/public-index.sql','utf8'));
 async function publish(){for(const {id} of db.sqlite.prepare('SELECT id FROM records').all()){const r=await openRecord(db,id);db.sqlite.prepare('INSERT OR REPLACE INTO public_records VALUES(?,?,?,?,?)').run(id,r.revision,r.updated_at,0,JSON.stringify(publicProjection(r)));}}
 await publish();
 const env=()=>({DB:db,STAGING_ONLY:'true',STAGING_EDITOR:'true',OWNER_PIN:'4826',OWNER_PIN_VERSION:'isolated-test-only'});
@@ -47,7 +48,7 @@ http.createServer(async(req,res)=>{
  try{
   const data=[];for await(const chunk of req)data.push(chunk);
   const body=Buffer.concat(data).toString();
-  if(req.url==='/reset'&&req.method==='POST'){db.close();db=fixture();await publish();res.end('reset');return;}
+  if(req.url==='/reset'&&req.method==='POST'){db.close();db=fixture();db.sqlite.exec(readFileSync('foundation/staging/public-index.sql','utf8'));await publish();res.end('reset');return;}
   if(req.url==='/external-edit'&&req.method==='POST'){const {id}=JSON.parse(body),r=await openRecord(db,id);await mutate(db,{op:'edit_session',request_id:crypto.randomUUID(),record_id:id,revision:r.revision,metadata:{notes:['Other device edit']}});res.end('saved');return;}
   if(req.url==='/expire'&&req.method==='POST'){const now=Math.floor(Date.now()/1000);db.sqlite.prepare('UPDATE sessions SET created_at=?,expires_at=?').run(now-100,now-1);res.end('expired');return;}
   if(req.url==='/relay'&&req.method==='POST'){

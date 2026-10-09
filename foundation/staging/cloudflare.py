@@ -6,10 +6,13 @@ No billing API or production routing operations are implemented.
 import json
 import os
 import secrets
+import re
 import urllib.request
 
 WORKER = 'wantlist-staging'
 PROBE = 'wantlist-staging-3b2-probe'
+def isolated_name(name):
+    return bool(re.fullmatch(r'wantlist-test-3c2-[a-f0-9]{8}',name))
 
 
 def api(path, method='GET', payload=None, raw=None, content_type=None):
@@ -30,10 +33,14 @@ def api(path, method='GET', payload=None, raw=None, content_type=None):
 
 
 def deploy(name, modules, main, bindings):
-    if name not in (WORKER, PROBE):
+    if name not in (WORKER, PROBE) and not isolated_name(name):
         raise ValueError('Only the approved staging Worker names may be deployed')
     if name == WORKER and any(b.get('name') == 'ISOLATED_TEST_STORAGE' and b.get('text') == 'true' for b in bindings):
         raise ValueError('Human-review staging cannot enable diagnostic test writes')
+    if isolated_name(name):
+        if not any(b.get('name')=='ISOLATED_TEST_STORAGE' and b.get('text')=='true' for b in bindings):raise ValueError('Disposable Worker requires isolated storage marker')
+        database=next((b.get('id') for b in bindings if b.get('name')=='DB' and b.get('type')=='d1'),None)
+        if not database or api('/d1/database/'+database)['name']!=name:raise ValueError('Disposable Worker must bind its own named database')
     metadata = {'main_module': main, 'compatibility_date': '2026-10-01', 'bindings': bindings}
     boundary = '----staging' + secrets.token_hex(12)
     parts = []
@@ -47,7 +54,7 @@ def deploy(name, modules, main, bindings):
 
 
 def endpoint(name, enabled):
-    if name not in (WORKER, PROBE):
+    if name not in (WORKER, PROBE) and not isolated_name(name):
         raise ValueError('Staging names only')
     return api('/workers/scripts/' + name + '/subdomain', 'POST', {'enabled': enabled, 'previews_enabled': False})
 
@@ -57,7 +64,7 @@ def query(database, sql, params=None):
 
 
 def metrics(name, start, end):
-    if name not in (WORKER, PROBE):
+    if name not in (WORKER, PROBE) and not isolated_name(name):
         raise ValueError('Staging metrics only')
     # Cloudflare's Time-variable filtering returned empty data despite matching
     # literal timestamp queries; serialize validated strings as GraphQL literals.
@@ -79,7 +86,7 @@ def metrics_groups(name, start, end):
     explicit timestamps/group counts; do not invent per-request CPU measurements.
     """
     from datetime import datetime, timedelta
-    if name not in (WORKER, PROBE):
+    if name not in (WORKER, PROBE) and not isolated_name(name):
         raise ValueError('Staging metrics only')
     a = datetime.fromisoformat(start.replace('Z', '+00:00'))
     b = datetime.fromisoformat(end.replace('Z', '+00:00'))

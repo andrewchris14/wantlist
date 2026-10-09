@@ -1,0 +1,2036 @@
+{
+  "plan_only": true,
+  "owner_clarification": "All owner-created staging listings are practice entries; review exact IDs before archiving",
+  "backup_sha256": "da0a62a460b9ae4696a622839eb4f6f3495f175a52a9e3042ab34720a3e13dc1",
+  "count": 202,
+  "historical_records_affected": 0,
+  "records": [
+    {
+      "id": "owner-record-00aee308-1e60-4eb7-b061-7d7967ef1be8",
+      "expected_revision": 17,
+      "name": "2027 Topps \u2014 Practice 2130",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "56f0a887c76b61b2539fb03a083cdca5f6c0e828c0cb09a92eb82d3c74af2ed3"
+    },
+    {
+      "id": "owner-record-010f3a35-d6ff-4b6e-8664-5c5c23606d4d",
+      "expected_revision": 6,
+      "name": "2027 Topps Complete Practice owner-desktop 1791411996213",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "d6db2fc03671e00ffcc6b6b534cf8a6c696da0319a094f6d952e961ed9629929"
+    },
+    {
+      "id": "owner-record-01573e45-a884-4cb9-8a5e-4a8f4df9414d",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 12",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "ca04d489e1227430afe5d7b7cb78853e3a97f3b76c9f98a52710f775632edbbd"
+    },
+    {
+      "id": "owner-record-01acd815-9d81-454d-8e52-a4e5c3d47603",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 0968",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "9bb6a6d39a8f5897552afbab5ebdc114e5539b6b31e497520bc0f8d97dcd77e6"
+    },
+    {
+      "id": "owner-record-03f37fe4-41c3-4e03-b510-f117b0d993dd",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 9818",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "091c588b7fcb99a7e6ba19704e7921558748218032a582c3d80dbb4876fb9996"
+    },
+    {
+      "id": "owner-record-066c8218-2c87-4a77-abc1-a7476d9ed180",
+      "expected_revision": 6,
+      "name": "2027 Replacement Practice 29183511",
+      "category": "OBC Wantlist",
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "fd599638dabe7e0663958fd32761b0420296afe4331ca18597e15af1cd3b4324"
+    },
+    {
+      "id": "owner-record-06b2217c-845c-4f0b-8fcb-d0d3391b9734",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 29213646",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "c90475cf07105b821fa0fae23be4d06156ca2e35b468a011ca64222a6ab303c8"
+    },
+    {
+      "id": "owner-record-0703598c-b74e-499b-9e1f-647cea883dc9",
+      "expected_revision": 17,
+      "name": "2027 Topps \u2014 Practice 7784",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "48c73b0a9dd672764a85c0af68288aa604c570ca6400644697abb1a0d4cb7915"
+    },
+    {
+      "id": "owner-record-0a22a2a3-062a-4d5b-9b68-c9f0faf3c741",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 30246248",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "335e5c18c58d412860553624dc2ba4a7aecfc09599b897f5adf8cb6f1fa8c0ef"
+    },
+    {
+      "id": "owner-record-0bd34189-7cf8-45e9-bccc-f2171fed98ac",
+      "expected_revision": 17,
+      "name": "2027 Topps Practice owner-mobile 1791412364302",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "008c464bd463b645e81fb3504466ef6f38163a40329df38674dde8f238ed63b4"
+    },
+    {
+      "id": "owner-record-0c803d3c-2e25-4ec5-80e9-28cf6e94bcd3",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 18",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "44cc6a797aa4b933895c9f92d8eff09c4d6d4b93cae9842e013ce976eb5ba000"
+    },
+    {
+      "id": "owner-record-0cb16bcd-506f-4d8d-8bfa-2cb529a4f12b",
+      "expected_revision": 15,
+      "name": "2027 Topps (staging fiction)",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "8f690f853347abc57ff1870e135d405627de23879ed32e880f90663db5448c80"
+    },
+    {
+      "id": "owner-record-0e0df596-feef-4492-abc2-973932c257a0",
+      "expected_revision": 3,
+      "name": "2027 Owned-only staging test",
+      "category": null,
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "3869124336af3c7acbf1471bd1b3e9df2289fe385d37e2505f72ce00cc620a37"
+    },
+    {
+      "id": "owner-record-10e239e7-dabc-4965-9d87-04d40acfb355",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 16",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "6fcadcbe223bdb9c62198ea6229fdc69e253a0a85496c3966ca8bb84960c81e2"
+    },
+    {
+      "id": "owner-record-13b9e57b-eb81-41e0-bbdf-3d34f3883fda",
+      "expected_revision": 15,
+      "name": "2027 Replacement API Practice",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "584bda044f9e36623e260bc20f8a2b26e3eaf4940c850722c71a51e50dd0972b"
+    },
+    {
+      "id": "owner-record-1400d206-ecf4-4e24-b56a-7f66ef450a07",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 2",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "ec16593142312f6f22d94c09a244bfa9e707bce376819e3af1ea5dfaacdf0db9"
+    },
+    {
+      "id": "owner-record-161592e9-2811-43cd-a676-4530880b9646",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 3",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "3c15e220010a9023e75b571176b6484bb1e969b38cb198e2cd0be8c2a9d007a6"
+    },
+    {
+      "id": "owner-record-17f36b24-6934-47e7-97df-4a0695f04456",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 6",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "4fcf6d659d5fb9037452be079997026ff34c42f05cce92b0052979dd413f2a93"
+    },
+    {
+      "id": "owner-record-18adc75b-786b-4392-99e5-9eaac3b7b6ed",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 3",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "df2d69380165c0148ec4698fcda51e4c7e3e79dd61d8eb7833bb239b71f97293"
+    },
+    {
+      "id": "owner-record-1aa955e7-8b5b-4262-97db-3d840fd9a269",
+      "expected_revision": 3,
+      "name": "2027 Owned-only staging test",
+      "category": null,
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "dc5dca0ba51954883b4d6c7b0365e4e568d161c96e9aff7861233af691dc7b17"
+    },
+    {
+      "id": "owner-record-1b03c301-c574-4f65-adc0-639ddd79b99d",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 7710",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "6a34466c43da6ec082625b7d1205a96c1559d271322b668b24ff64ee0ece2a3c"
+    },
+    {
+      "id": "owner-record-1ee26301-6137-4ba5-8ac6-68b2be2afcd2",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 30244188",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "d8712169bb3471f3e7952e42a929f89d1d602cd5e2ebc4d394a70fe5bd2f9536"
+    },
+    {
+      "id": "owner-record-209442cd-c093-44ef-83c5-844f1877f17a",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 22",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "daa65253ebc92d06828bf1a97ff013946eeb5414d3225fb6327883724f81ff57"
+    },
+    {
+      "id": "owner-record-21b75cb6-264c-4461-8c35-5620e19d279a",
+      "expected_revision": 6,
+      "name": "2027 Topps Complete Practice owner-desktop 1791412082584",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "ce723e4d0218cdaf82e2f230a5daf2f104fb9c8a878199286ad3c3de194d74a8"
+    },
+    {
+      "id": "owner-record-231e4b24-36ae-4812-9769-265a82eb78b5",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 31876660",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "cd6e07d1f2a49b199b7ebe6089d63aa9dd62b359852ecf5666bf2d98621e683d"
+    },
+    {
+      "id": "owner-record-24a8c84a-a140-41e4-9927-342a1b69d251",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 0",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "3dd62ea5778987762449abe875530bf850c2725a1db76ff9f959685617c34b1b"
+    },
+    {
+      "id": "owner-record-24b2a7b0-490a-434f-9fc8-d4e615b1d450",
+      "expected_revision": 6,
+      "name": "2027 Replacement Practice 30346006",
+      "category": "OBC Wantlist",
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "de59c4adf8650753b23e993a43833d864b6204a16497bf4063eb49da6ae3b00b"
+    },
+    {
+      "id": "owner-record-2596f2ff-da37-40e8-b4a1-c3f0efb78090",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 13",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "1722880db74354a6b9ae665dbc936c972583c06b5eb423a42178ef365e6f9633"
+    },
+    {
+      "id": "owner-record-25ea88c5-dc49-4340-b7c2-d191fa0ec25d",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 7625",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "6b6b3cea817a40eae34210855faaee1f59b53245a77a268022c0e5e28c6e5cf2"
+    },
+    {
+      "id": "owner-record-27ae859c-54ea-4da0-803d-42fdf4daa8f3",
+      "expected_revision": 3,
+      "name": "2027 Owned-only staging test",
+      "category": null,
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "887c198208ec086b0abe296889629195cbeb80d31054250baa914eac23fd7f3e"
+    },
+    {
+      "id": "owner-record-2a7116d8-4f06-47de-a49f-e086722b1242",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 4",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "a1d737a9a96a27e7ff6aa00167693d518895e5425b1963db8b381de7b84c3408"
+    },
+    {
+      "id": "owner-record-2b6ce563-6517-4063-9f51-69c33743d8b0",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 2",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "ee53f151f1ed6eb945808142177cdbf5f47a4f934eff60d018671909c2941bcf"
+    },
+    {
+      "id": "owner-record-2bdec8eb-0422-4109-865f-5aa6ca9f6a29",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 20",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "d571239e46aa2b6f3d5acf6660f490fc4eaaeaba1866d57f41d9373761a521e2"
+    },
+    {
+      "id": "owner-record-2bf328d2-f639-4d8d-b0b5-c1e3b990d712",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 8846",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "ec9ce00e66e7d5d92a0215b38ba7579b1e45a0314dcad6ce698cab52455ddf24"
+    },
+    {
+      "id": "owner-record-2d7cf294-836c-4a72-8d45-98ba2884631e",
+      "expected_revision": 15,
+      "name": "2027 Topps Practice owner-desktop 1791411875014",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "9bbfb689474271cdc9a9130b42962e06527f6c4ef1037336ef40fcdc259b023b"
+    },
+    {
+      "id": "owner-record-2f280f99-03b5-4c5e-9b35-c28be1e21003",
+      "expected_revision": 24,
+      "name": "2027 Topps Owner API Practice",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "d385fb6a42140d6d63ea46f995ae4d54730208fa1a501f7777c178dbb1fa228c"
+    },
+    {
+      "id": "owner-record-30345069-f237-4585-a99e-effafea93764",
+      "expected_revision": 3,
+      "name": "2027 Owned-only staging test",
+      "category": null,
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "714ec7414ef8a717d4a248652005a28351f0c5aa5d1252e7121324a15ebb76a8"
+    },
+    {
+      "id": "owner-record-31874bd5-175d-4501-b09b-d4b964317d9b",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 8",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "03852b1d22b3d7d362ec113a4acf84cbd7b1f72568be538c1d197795a787c36e"
+    },
+    {
+      "id": "owner-record-33d8a19c-e5c4-4b7c-bfac-d768c0932709",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 0",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "445a78146a2f631304b29536fbbd738b0e188584857049bc272e640b20b50c56"
+    },
+    {
+      "id": "owner-record-34236bab-9717-4802-8f14-4fbebe2a856b",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 6585",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "4338dd23cd1dd63e5868468d1f298b42b9ab9b424fff3745871740bb13a10e30"
+    },
+    {
+      "id": "owner-record-37056acd-ac92-4a14-8943-696edd3c9b02",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 0435",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "501ccb5fcc2fb21029a43ee4347d6a097535b62220dbd3eaa5b2683b7bd375b4"
+    },
+    {
+      "id": "owner-record-375e30bb-be24-45b6-b4bb-7414cbb01d63",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 30317650",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "e272449cc9db92cd2ee40d89854a394bfa47ec3663e6a1905c4624e745e7cd06"
+    },
+    {
+      "id": "owner-record-39dac18c-a081-4e6d-96f7-0d1df41ca954",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 12",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "e3537147f309f97ae6b28f59a61efd86bd7ffd15b56133df9bb87ba23c1b794e"
+    },
+    {
+      "id": "owner-record-3a1f22cf-654e-4394-9966-a24f8249a484",
+      "expected_revision": 17,
+      "name": "2027 Topps \u2014 Practice 1792",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "25a03872d0b849e29b47ed7e4e35e2cdb0ecc74ab0e4c115c3bb783d860a042a"
+    },
+    {
+      "id": "owner-record-3b9e4d0d-dba1-4040-8a5c-74580fe85b5f",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 30342781",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "901871c9ec624228c04c396fc806413e67a5deecafbe0ed1139332333774b1b2"
+    },
+    {
+      "id": "owner-record-3dad4260-0703-48f4-a99f-ea0410240e98",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 31908925",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "5b7fb947a205369177d2e267a40d63971f67a84a5e0cc5e74f9fbcd670206e61"
+    },
+    {
+      "id": "owner-record-41e34fb4-150e-4fa3-b6f7-5c2830d1cce2",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 0352",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "a067df300ad6022d7ea6434b34f6e00a150b555c044829bdbf1fb68f054338a2"
+    },
+    {
+      "id": "owner-record-4288f796-32b3-458c-95a9-369ac838abdd",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 14",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "bf182c6084430d24fa7fcd4177d5981707dff7db18ce9bb68a06364e799d1792"
+    },
+    {
+      "id": "owner-record-431c6fac-83e8-4dd6-854a-ab10eaf33c32",
+      "expected_revision": 8,
+      "name": "2027 Replacement Practice 1247",
+      "category": "OBC Wantlist",
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "b512672cbb1ea10692f0dc33e69829ebcffdd795f924e32793dc631efec40cf6"
+    },
+    {
+      "id": "owner-record-448906be-4e77-4f84-a662-6309bf2a74a9",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 3",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "d5ed748c6b8811e1711a1247d07bfe524f0e9aaacc0cf06f3b5ae62da18ef8bb"
+    },
+    {
+      "id": "owner-record-45d4303f-b029-4acc-926f-fb2ec0b3b983",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 31863357",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "888431bf991c4c008a5d8db1d9a56f9ad0224547cec8835e4f47f3b8bf4c8f65"
+    },
+    {
+      "id": "owner-record-4a414fdb-2bbd-4e03-a2f6-80ac27df0fbc",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 15",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "622ad6c5ba12cc27f2c26c3c322cf68c48c59f86df1227a482400a31756bfb65"
+    },
+    {
+      "id": "owner-record-4ad97bc0-ccab-4445-8f3d-7d50a5f49fc2",
+      "expected_revision": 6,
+      "name": "2027 Replacement Practice 29216460",
+      "category": "OBC Wantlist",
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "74e6e5c92aa730f9afc08a5156782414c465efbac7b5146fa63d55674c061596"
+    },
+    {
+      "id": "owner-record-4b6038f0-06f4-4895-ae33-c5646771d4cf",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 7551",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "a0b44b2ae707220283e8fde47662432e145e041634ddd34d50cdb04911468750"
+    },
+    {
+      "id": "owner-record-4ba877ad-e41e-4cf0-8665-b9e41db26eea",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 9399",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "4a43785d4d435716b148bc122a6c9a667ca2cb79594cd8e3068e0994c49f3377"
+    },
+    {
+      "id": "owner-record-4cf86b6d-588e-44f8-b095-1577e26b0999",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 3957",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "b22ffe7b086c6a9cfce9337df863108c4c6d3dc0fb256b9d591eb7a4b53fe163"
+    },
+    {
+      "id": "owner-record-4d998b3f-11e7-4673-a8b1-465b53866413",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 5",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "a6b3ff83dd9893b0167408a7761d8f8088a00d1f90f2eafe463b1882845d7fc6"
+    },
+    {
+      "id": "owner-record-4e5c9fd2-fce3-496c-9674-5d39029daa6f",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 1151",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "a26081a44e5416a00bc95024f11e0a7c903040660bab7fee3612ca2349f735ed"
+    },
+    {
+      "id": "owner-record-4facead7-6207-4bc2-b396-deaa201e6725",
+      "expected_revision": 14,
+      "name": "2027 Replacement API Practice",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "1c801b5193728a433472c295556475156f395aaba6b60a58cc3ce606db8dfbf9"
+    },
+    {
+      "id": "owner-record-50e445aa-9be2-4648-8523-2982a0975420",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 5816",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "f679bc9d68a05568566100cc0135a4453dfc45fae16832e56b2b37ada5d27891"
+    },
+    {
+      "id": "owner-record-515ccc54-5e21-4d59-a3e9-64f8a9b7861c",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 4",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "34d53e46ac979670b054e3525c25027117e8f8eca5e0f21ea8b31a325f66724d"
+    },
+    {
+      "id": "owner-record-518f89b4-df87-400f-ad2b-68e9c53920fc",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 29178528",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "9f7d3b26deabcee500b5bcc579737289dba9e4c6eaacfbf6bb2d87585a98cc7c"
+    },
+    {
+      "id": "owner-record-5355a638-02fe-44d9-923d-2e9cc0cfbf0b",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 31930518",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "19d4433470cca8930c891dd55922ec0286b7039c4a57b9835195ed4546cdf6df"
+    },
+    {
+      "id": "owner-record-54547a3b-68e4-4d50-8192-0cec5be92fa3",
+      "expected_revision": 17,
+      "name": "2027 Topps Practice owner-mobile 1791412553677",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "9cc391480de8ce0368d2915b5511878a162174e8e2bcc21214d175bfe6d5479d"
+    },
+    {
+      "id": "owner-record-54a52bde-4033-46b0-b157-1e54859d2bcc",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 17",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "8dfa9918f9832b93aa6a2ee8fa43e65fc61964c8ffdb6edb432259a239f30753"
+    },
+    {
+      "id": "owner-record-54a76138-f3c7-4954-92e8-24d799636f33",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 5507",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "3083c214dc9673ade5f63615b2b32a841d6ab6b59a99862f5140902f1a94e612"
+    },
+    {
+      "id": "owner-record-56006987-54da-4dae-bf25-a143ee254549",
+      "expected_revision": 14,
+      "name": "2027 Topps \u2014 Practice 0968",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "45bf15f09e61ce98098aad149e58c60267552950171714763dcbec2e777735c8"
+    },
+    {
+      "id": "owner-record-5771798a-3ce6-480b-8129-2b230266aab8",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 3498",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "34170ea2d6bc0b863dc383cdb8009fc8bcab53de32e2238c3357d66302e4d72e"
+    },
+    {
+      "id": "owner-record-580e9ccf-cc28-41be-bc0a-2e4973b634af",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 15",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "3913e4fa6761309bac573dc997e93ae1480b4bcc63913578cce8b252f6075bb9"
+    },
+    {
+      "id": "owner-record-5842514b-1c25-47f3-a79e-f16311f5027e",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 8849",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "f9f333d5da0984042af2f03254bd09224c562a91713e3e327a49f0be5744172c"
+    },
+    {
+      "id": "owner-record-58e5176d-4165-45ac-a26b-e7022e2201df",
+      "expected_revision": 6,
+      "name": "2027 Topps Complete Practice owner-mobile 1791412565387",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "e5344257206853c67ea948ae0cdc7fcfecaa7a216683aa243ef456dc06bb42d4"
+    },
+    {
+      "id": "owner-record-5fde09fc-5da2-4e7b-bc14-a3785cbb8aed",
+      "expected_revision": 5,
+      "name": "2027 Topps Complete Practice owner-mobile 1791412111342",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "2f6eebd591fcada5eb61fd308ba185d18e10b2cb26ce8ad65a16dc44613048f4"
+    },
+    {
+      "id": "owner-record-60fe5bb0-47d0-4c7a-a138-8ec43a07828c",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 29173474",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "9b89a28eab6b7f380515b823d83618c7b104209aba29f0164ed957d552f6d9d3"
+    },
+    {
+      "id": "owner-record-6372d8e0-6a6b-4637-b7e6-7a746e95f9df",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 7",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "cab97905fd561b07b7e88b6867c7d1d48c6f92f630a8f42950dc8905ef0d9016"
+    },
+    {
+      "id": "owner-record-63a64a60-8e10-4ee0-a5a8-a567712d9896",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 30176407",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "27296002e076905faad847e81a93e9d5dd0437432ba988e797c0afe0ab29048a"
+    },
+    {
+      "id": "owner-record-6707ec2d-da31-4347-be1e-4009f93b2283",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 6",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "9cee45672c9fbd5f7a77e432c9b18599c4f0d4e0864df0e0c2b18be9d702f55a"
+    },
+    {
+      "id": "owner-record-6783fa29-3cdd-4d5e-9279-4e985148e34a",
+      "expected_revision": 15,
+      "name": "2027 Topps (staging fiction)",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "84ffe3c718e6de9c12f8677bbf9e12b10e0967d3e1282defbdd0c212c307b686"
+    },
+    {
+      "id": "owner-record-68210376-b236-43dd-9e0b-ca2f9bf3bd18",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 29194780",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "85e16df874656c5cff7ef09b107c155aa7d205c4f60c8f74b40e8b8e4d27c2e5"
+    },
+    {
+      "id": "owner-record-68376645-1083-48ae-8f13-7fdc870db1ea",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 1449",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "33e42c5c4bafab7349746949073d5c4f53d03723e7cc8994e3e3c753cbe951cf"
+    },
+    {
+      "id": "owner-record-68f369ec-abe0-49c8-9e3e-925975b058a7",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 4421",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "23a8693311ca6d318e13371797bc74e365173188dd85c7803db06e030dab9ffb"
+    },
+    {
+      "id": "owner-record-6926225b-eeb3-4f10-bb95-98a4b43227d5",
+      "expected_revision": 15,
+      "name": "2027 Topps (staging fiction)",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "c1324f60ce7d0506bf3d02dcd0c0d06dce4700ed4f6b301d95ba5ada5cf63186"
+    },
+    {
+      "id": "owner-record-6a2435dd-275d-4e6a-9f72-c38d3b91cc7e",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 31885036",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "6cb8f0de699bb203bfb8c81e115b289029ca0804d0a9e4b6c1eef9a09d89702d"
+    },
+    {
+      "id": "owner-record-6a9a1723-e3f2-4991-97cc-ecc08c56b37c",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 0496",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "daf1a27967956cc8e09c232134122f0b3ecca99ee1e6dab6c1bf33b305f730c4"
+    },
+    {
+      "id": "owner-record-6ac5c55a-1752-4863-9651-d50e8415f414",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 8",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "380134f13054851ea89fe68cdecea3fc160bb381d504e02047386d7577f41717"
+    },
+    {
+      "id": "owner-record-6ae8fa06-0b65-4f58-8b13-a503bacb6bc2",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 5018",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "f572285eb00331a62854b856335b59ab4b27b6666435fbe9873ca52a4509dbb8"
+    },
+    {
+      "id": "owner-record-6c324678-af4a-44b9-bd38-c9dc44801e80",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 1270",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "849a5e1f8d2a150f12cb7cb7433408cb17116e263fa21946bcbed3335a3abc71"
+    },
+    {
+      "id": "owner-record-6ccb75ff-e1e9-46e9-9ec1-7c277ae0cbf7",
+      "expected_revision": 17,
+      "name": "2027 Topps Practice owner-desktop 1791412534615",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "131b5305acdc14c6fbb80e80962629df021f120ff4bc9ffabbebe27d46d2c5e2"
+    },
+    {
+      "id": "owner-record-711da841-fe60-4add-9296-9ab67acf636a",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 1",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "5039f5924479279f8ee8af8b25dd7cca6714ac3cad2d31febfa66aee06c6801a"
+    },
+    {
+      "id": "owner-record-7272aa2e-0278-4c31-94fc-b4f5ee99905f",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 29210838",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "d98e91f4e27beee09aefc268c578cb64622b1119f6785db2ea06df15812883c8"
+    },
+    {
+      "id": "owner-record-7352d9b7-5b93-497a-89a5-c8e61d5f1ee7",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 7792",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "e71ea0439179394a70b6bb18a667492158930c227abb5ac596224f33a4fd5a8f"
+    },
+    {
+      "id": "owner-record-73e60900-02f1-46ab-ba0e-019920f31154",
+      "expected_revision": 17,
+      "name": "2027 Topps \u2014 Practice 2062",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "fef667483e4545186171aaf289b4881b0c0c0960a232fe0a976193662c452ea6"
+    },
+    {
+      "id": "owner-record-741c22fa-9783-43e7-a320-bfe26bc7f16a",
+      "expected_revision": 6,
+      "name": "2027 Replacement Practice 31934162",
+      "category": "OBC Wantlist",
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "9b3577311c99e767be2e536eef2e7be170c831c1340e6685647cdf6ddedbe1be"
+    },
+    {
+      "id": "owner-record-741dce6b-9251-410f-9d09-1709db7bac59",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 8",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "fc4d795cdbe229aa9d9dc6e0bec0320458e7df710111a1867f1cce0f5307d854"
+    },
+    {
+      "id": "owner-record-7534b41e-8a4f-4028-a0cf-8c14a27e2fd3",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 9282",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "cddba7143fb5529dca70a7710ecf269208b9fa7b299ffdff58d5f46f3bc1f5fa"
+    },
+    {
+      "id": "owner-record-76c7e11b-eb55-4f72-bcbb-322be095f116",
+      "expected_revision": 6,
+      "name": "2027 Topps Complete Practice owner-desktop 1791412547277",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "f63071586366d274570cd0e5fcb22b024fb21c927723702a00b27202fd86743c"
+    },
+    {
+      "id": "owner-record-76c80bf4-f304-4195-8f1d-f053fbc84e9f",
+      "expected_revision": 3,
+      "name": "2027 Owned-only staging test",
+      "category": null,
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "2bc8c9549da73928ed1f59d3d7d9023e57e95a4ddb42d3aa5611980dd1aa07e8"
+    },
+    {
+      "id": "owner-record-76d76404-d665-4b7c-a717-0ee2244012b2",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 7",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "6fde710934ca00eb1c42f809197af8e68907e7a557508b5c2c9c56368e5bd9ad"
+    },
+    {
+      "id": "owner-record-76df2ca2-018c-4b78-bf7d-52fc21bcfe7d",
+      "expected_revision": 15,
+      "name": "2027 Topps (staging fiction)",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "9663ee7568a0a4fc2090c498c855559b4d058878aa9d04bd9078b18fd5196529"
+    },
+    {
+      "id": "owner-record-78503fa7-baa5-4db5-9895-e8d95794418d",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 7191",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "7cde435a8185c08449f05b50070c13e7437f7868ba58563abc7efb5ca2bd34cc"
+    },
+    {
+      "id": "owner-record-78727281-899b-4e98-86ff-97996f3e04bb",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 29160212",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "eb91fbbe777c3235fbcc1cbcd10763d319adcede251aa804d909505180efc92d"
+    },
+    {
+      "id": "owner-record-7ba8e10b-4a0d-4d73-87ee-e034a9289e14",
+      "expected_revision": 17,
+      "name": "2027 Topps Practice owner-mobile 1791412094722",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "dbeeea39b29127dfb992e6e7cb8d59e8fce179dba63d6f10c166e27a25dfa6c7"
+    },
+    {
+      "id": "owner-record-7bdff8c2-7929-480d-9b67-9a45652528f0",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 6606",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "9d4def38f4ecb465ddb1228c89585d855818ba3272b65479ab692ab3ff17dd3a"
+    },
+    {
+      "id": "owner-record-7d04c530-0dff-407a-812d-6d32b84c2018",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 30389632",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "b0afda3fbd6f286d20f2de591f189dcb90895c4a5e2a5658ba594feba18d6d05"
+    },
+    {
+      "id": "owner-record-7e060899-6463-4b2f-b3d4-21c8f1d69ba1",
+      "expected_revision": 6,
+      "name": "2027 Replacement Practice 31888870",
+      "category": "OBC Wantlist",
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "dd91a8b649ae13d6ed8e48dde2e5381db80df7cc61b35384c3ed03b5898d400c"
+    },
+    {
+      "id": "owner-record-7e680348-b533-49d3-bb6e-d9c1f8a6b25f",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 31882592",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "fbe44bf0ceb2cd98bc2e2d7f92832c1031fa5d1b720d442a7dc404b03194a70c"
+    },
+    {
+      "id": "owner-record-8015040d-1321-4bf5-816c-f6e492b971fc",
+      "expected_revision": 32,
+      "name": "2027 Topps Owner API Practice",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "23bf83653d3770b044a324b67571daddd9aeb329882a6bea0f229a274457da6a"
+    },
+    {
+      "id": "owner-record-827ac666-e57f-44b8-86df-cb91acbf6be6",
+      "expected_revision": 6,
+      "name": "2027 Replacement Practice 7688",
+      "category": "OBC Wantlist",
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "50b2809b9bf1bd88d298871a707ebba39d73240635be46e57943706e69010034"
+    },
+    {
+      "id": "owner-record-85416600-2752-4fd5-8350-ccaf0a9829ba",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 6",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "f16c633cbc801afb8a027d6c4fa71901ae15de366ac5eeef8b7994b964ee5253"
+    },
+    {
+      "id": "owner-record-8ae4b7c3-d9c0-4f9c-9c99-58f9ed0718b3",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 5447",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "ba31551b97b72bfe27484d99c58329ac608b8be15be35c5dd6d10c829adaead9"
+    },
+    {
+      "id": "owner-record-8b756a2f-ab85-41fd-9fb0-c568cac35f20",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 7399",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "f2161b628c8231f52e64188a186fc34b7692f48f17f212b6377b63d5b0210526"
+    },
+    {
+      "id": "owner-record-8b95523c-8644-48ac-be94-06c6f81bdccf",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 2",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "e08ec82610e22e5341cef3e1409b0c2405c489fd36b5ca2864971c235dcf3b5d"
+    },
+    {
+      "id": "owner-record-8bd6cebb-8348-4ac9-981b-67753d51e56b",
+      "expected_revision": 17,
+      "name": "2027 Topps Practice owner-desktop 1791412340517",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "7f3bcc7951f0e455f0baa2056f6f087472357b62e2008852ce84733325d1fcb1"
+    },
+    {
+      "id": "owner-record-8d1d1cb8-c557-4848-85d8-9b710b9bdb88",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 30333403",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "c4887be088cf00a00844c8180f7d0d450a422e782e22e0b865bee45483dcb8dc"
+    },
+    {
+      "id": "owner-record-8feeea37-ad9a-4de4-95c6-080602134944",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 4382",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "0e9854a54c791cfe35db8c010dfd10e2217e2e977dd2a67e54690ea19c8a9db5"
+    },
+    {
+      "id": "owner-record-9145fa9b-79a3-4194-90f9-a8fddc9dc7d7",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 2398",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "3307b3b62f39dbaafcac4cf129c26741593662f25103f3f4623e7866eb2292fc"
+    },
+    {
+      "id": "owner-record-915f8772-fec4-435e-aad4-866445fa46b7",
+      "expected_revision": 32,
+      "name": "2027 Topps Owner API Practice",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "f8e19da5f305f90845d280d35d95c8d02fdd8b224e75925579b4e086a50a51ac"
+    },
+    {
+      "id": "owner-record-91991ed1-6fd9-46aa-bcf9-75215a2d991b",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 8403",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "0db08367abc211174e966ca15f321c45fbc1d9bb1b2d7aa30b70d7fa439a2678"
+    },
+    {
+      "id": "owner-record-937db524-2a05-48ff-8f8f-5f2eb577a849",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 5137",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "d31c1995f1953da54f73749164b1d744152f7bb3277a562afd74b13be2aab784"
+    },
+    {
+      "id": "owner-record-96692d92-0a0d-41d3-ad06-5685269edb51",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 30387034",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "f619e38098eb829fcc934d8933306951077f9164a4203fc28a5b9a5537ed2677"
+    },
+    {
+      "id": "owner-record-967afa4a-830d-4d37-806b-e9109f53ba62",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 6192",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "8cf1ca4e67123457b9033a2f708cee237eced9ec554cbd0c8a75196ddae49363"
+    },
+    {
+      "id": "owner-record-99716f21-4fb8-44dc-bd4d-e13ac938ba22",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 9920",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "f0ed859ea5527a9c24e3997b8bc29b78ef1d8cc7b3ec7cd2b6eaf6c6427f2a96"
+    },
+    {
+      "id": "owner-record-9ab89299-e735-43a5-bfc9-312a713c8dd6",
+      "expected_revision": 17,
+      "name": "2027 Topps Practice owner-desktop 1791412063729",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "9391b3cfc829e9acbe06f5824e64925362958d3510ac91c92c23397cdebcbc0b"
+    },
+    {
+      "id": "owner-record-9af41b66-2ebe-4a65-9ec7-b0397ba178ec",
+      "expected_revision": 6,
+      "name": "2027 Replacement Practice 5096",
+      "category": "OBC Wantlist",
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "a7275d372d4903c71d12f36e87c8fbdcce80514d8431577176027aeaacbbabad"
+    },
+    {
+      "id": "owner-record-9d2fa364-07eb-443e-8a66-70888152575b",
+      "expected_revision": 32,
+      "name": "2027 Topps Owner API Practice",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "b65e1debe19aab4f5b09469f81de75564cb679ddd291b8f9c246873afea5ce91"
+    },
+    {
+      "id": "owner-record-9f51bbfc-4b5f-407a-976d-bc64cb8b2913",
+      "expected_revision": 3,
+      "name": "2027 Owned-only staging test",
+      "category": null,
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "ae56804e0b74c98c5bb5ed58472746488c5663cf213d8dac228c057bb1a41f82"
+    },
+    {
+      "id": "owner-record-9f70aeef-10b5-42f6-a754-f2d4c961d152",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 30239169",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "5519642d6e0406037a8df4bd7b2fd36fa1615a63b2467ef9421921f4e42014b9"
+    },
+    {
+      "id": "owner-record-9fcf5f91-4a67-4db6-a802-3cb17bc484db",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 30224260",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "6865acc71a22a580f126ceb26beb7035c8e64b3eba02d3e7b848f13876e7e913"
+    },
+    {
+      "id": "owner-record-a093fcde-3a62-455c-a87d-15da0509d2dc",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 20",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "9dd7b9871396f33525872a33299635e4847608936572723d7ec4af01f9c3a742"
+    },
+    {
+      "id": "owner-record-a20a5204-e2b7-4ad7-932c-d289e08b0d3a",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 22",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "18e9c94274dc86df82df2304edc6cf404b1238404307bcb49bf109e233f4c36e"
+    },
+    {
+      "id": "owner-record-a2155d40-e928-49b3-81b9-ec9373c910bd",
+      "expected_revision": 17,
+      "name": "2027 Topps \u2014 Practice 0855",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "1bf4bef90d7683fedf28797602a7440d8ddc79027d304b49e909ba6cb0aa62f5"
+    },
+    {
+      "id": "owner-record-a38f266f-8883-4579-a2fb-e1c3f2f62fea",
+      "expected_revision": 19,
+      "name": "2028 Bowman Chrome Test",
+      "category": "UV Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "c82dc2d78b3226b705ada3714e3f0309d910754514f10578b0bfbd0ee2374fe3"
+    },
+    {
+      "id": "owner-record-a5da2def-afda-455f-88e2-3c83ebfd8ad4",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 10",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "883fbf2391b4d34e5ab4ed647897d1f521a5b2cfae0f5471deca8fe9cf9d931f"
+    },
+    {
+      "id": "owner-record-a606dac2-a0ba-451d-8516-14cce469bb46",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 11",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "f4f11b50d2ebe2d1ce98b8418d461241dc42a851c462d62a59d4e6338aa140f4"
+    },
+    {
+      "id": "owner-record-a87b4890-9b2f-4162-afaa-eb4c762de26d",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 14",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "fe0d13dad409511c6d8f983385d4e010c0e9dc5e31e883c6b5da034b5402ecdf"
+    },
+    {
+      "id": "owner-record-a8c9d0ab-e070-4880-87a7-b930e3b60af1",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 21",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "c36628a9e9b9f17e4210c375de330c730a931162152ca93bb2c57a9706ad4db0"
+    },
+    {
+      "id": "owner-record-a9a66b81-ba05-4b6d-834e-1fc2d0369ef5",
+      "expected_revision": 16,
+      "name": "2027 Topps (staging fiction)",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "58e4c127494a808f5fccb16239a3831ad208a84e5d3fbb3a770cb6d0d27a478c"
+    },
+    {
+      "id": "owner-record-aa1cfef5-6876-4382-b4e0-61acf52e8b68",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 13",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "5ad2e1b781751d6cc7f9acc0888a5f8ca23a8f52fe9c6f571b968839142902d2"
+    },
+    {
+      "id": "owner-record-ab591b3a-164b-47b6-9989-de977ffa4de8",
+      "expected_revision": 15,
+      "name": "2027 Topps Practice owner-mobile 1791412008307",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "80f7d449a8a705db45bbc7dcbb40b7817fd37a400d1f324186580a998a187df8"
+    },
+    {
+      "id": "owner-record-acebfcbb-7f8e-437a-b162-64e660ffacdd",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 2518",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "1c64c2d8ccb66f08c14f09e99afb57ba315caba1e363c465325e7ea6dbb449b0"
+    },
+    {
+      "id": "owner-record-ad23c2bb-bcc9-4227-97dc-64d9ee770241",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 5383",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "0b34c0f93c66788317961aeb5d767996a2b4ccc7457f6db04bf929d561e2c948"
+    },
+    {
+      "id": "owner-record-ae118f17-86a2-4090-b650-a1c8d2d06998",
+      "expected_revision": 4,
+      "name": "2027 Topps (staging fiction)",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "9663c7d5058544f56e4218d1954f80184f43af0534d0140f9c82bb46fc763755"
+    },
+    {
+      "id": "owner-record-ae5d1f79-6ad2-49b3-a31b-506ed3ea5e09",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 4",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "5e10920696cc3c5b230a0903566ceb48556decfdd1d25a4a79f715e955cf13c0"
+    },
+    {
+      "id": "owner-record-af0a4cea-11ac-4a0d-bbdf-5fa2062d072f",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 2289",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "30b82a9ee7caab1ea05f341fe2d7feac4edefa94c3043a581436434215984f86"
+    },
+    {
+      "id": "owner-record-af323f15-b7a2-4b87-9c31-57c994463c81",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 5",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "956513c997d829de76c35fd224aaf86fa588a965070200cd1a07d85bae7ecfe5"
+    },
+    {
+      "id": "owner-record-af6351ae-1d5e-4a85-8a2d-492fe3cfc56a",
+      "expected_revision": 6,
+      "name": "2027 Topps Complete Practice owner-desktop 1791412357244",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "009a32f217855f1ae9d196cb0e3ce50bffd047fb896a7824e6914099387228ce"
+    },
+    {
+      "id": "owner-record-afafe74c-4d57-4927-a109-05b7cc62ff8f",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 6836",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "19baaa3a908f089c41867cc9bc32928871f17b0b1c66ada54fb4e14092a4baf4"
+    },
+    {
+      "id": "owner-record-b2323392-4e42-4050-a4c6-e0755962252a",
+      "expected_revision": 6,
+      "name": "2027 Replacement Practice 30188461",
+      "category": "OBC Wantlist",
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "943f6a7dae2d7f2f2334f370d63360ef576ae7e8cedb019a971c1a297d29980e"
+    },
+    {
+      "id": "owner-record-b2b97a90-f85f-494e-81d7-43dc0b3476fe",
+      "expected_revision": 3,
+      "name": "2029 Bowman",
+      "category": "UV Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "3fee8230541e1a5e8c37719bf4b278c253d6b8c88868ea440ef58b01cbe5e8cb"
+    },
+    {
+      "id": "owner-record-b475c21b-7dd3-4a39-ab6b-4075e591469a",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 5000",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "ceadb371e65bf5b417452d19725b3a89d4f64e10bd1831e437c752e9e58e71e5"
+    },
+    {
+      "id": "owner-record-b5b24f66-e9d7-4955-8a28-9172e2cdd280",
+      "expected_revision": 15,
+      "name": "2027 Topps (staging fiction)",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "409d677978438ee8c7b5d05ad6a843ed97aeb8c317fc62fb8b9823fcd4a5d054"
+    },
+    {
+      "id": "owner-record-b9981a8a-355c-44ce-925a-2d6663e2b288",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 30162597",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "3e11f792acf2c4fc069be8efeeb3c397cbc78f4462ac02ebca4c49e60a923bd5"
+    },
+    {
+      "id": "owner-record-bb27f736-ec97-4b59-9988-6738f03e3dce",
+      "expected_revision": 3,
+      "name": "2027 Owned-only staging test",
+      "category": null,
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "8d34be6e1eb7e18dff119000469da8a8ee61fcccbe8c1c3574c2d7a7f8d1ffd5"
+    },
+    {
+      "id": "owner-record-bce0c89b-f048-4868-bebb-e2b940bbb610",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 30185103",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "209d4891066d268d63fab98b01e19015e166ea988c480691e1c537776895c811"
+    },
+    {
+      "id": "owner-record-bd1d3a04-faff-4d48-90e1-145171b8c544",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 29180767",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "de4a14f2d8c4d6bc70d517a5a0c8499e88ad36591a17771c9bf81d00b3ac2415"
+    },
+    {
+      "id": "owner-record-bf435b82-8bd8-4683-9721-07b553efaf64",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 30339336",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "4000b8cf5db827281d9cd5dc53f73909a247219938dbd38e43fc070353e3c5ee"
+    },
+    {
+      "id": "owner-record-bf7b7fdb-38c2-449c-90e1-8bdd0d08a0a7",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 12",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "e48cd0d2a721f5f89521b88921b28368d0c9c04c48e78e364413b84115829747"
+    },
+    {
+      "id": "owner-record-c05e4685-242c-47f0-9854-133f44cc50f6",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 2767",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "953123858bdbe399249dd4165bc7103ad575752e72bfe7834272a6eb20e5f8ae"
+    },
+    {
+      "id": "owner-record-c0d45b2e-0223-4da0-88de-1a168d217fdc",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 2562",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "c8f72578cf32ae07057c00a8e7d6009b0230ca75d9d1e97871e4dba72690c4a0"
+    },
+    {
+      "id": "owner-record-c37b83e1-e0a7-4c31-b94f-32a64759ee3b",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 11",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "ff1ba0eb52049ffa5063fe460eb3ed60653c1503f10350a3ed08299ed7046740"
+    },
+    {
+      "id": "owner-record-c3812c0b-025d-4664-bece-5fe042e71c64",
+      "expected_revision": 15,
+      "name": "2027 Topps (staging fiction)",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "8e6a0c7d724cf09ed5bd4cdfe1c6006162c137b0d9dba96ee359ec7804c7b1a4"
+    },
+    {
+      "id": "owner-record-c614c433-f823-4442-942e-d097910c1357",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 13",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "96baa75813ca9ebefb7150f515c019fb7878ebf9d1f594896894a8fa53eddcb5"
+    },
+    {
+      "id": "owner-record-ca06b056-c16f-4fbb-b040-b3c989e57d33",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 17",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "a7ff072bb5fdc29e047009edc33ea5ed4200cac6baa823160db8948d81a01f82"
+    },
+    {
+      "id": "owner-record-ccff882a-2206-4355-aa1d-d75b826a4788",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 6346",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "a02ec8ecc4ca7950fc874fa7a709f96c27e1802999f098894d7dd2f3caccdb26"
+    },
+    {
+      "id": "owner-record-cd27a294-b5e1-41ed-a96c-68b670b06184",
+      "expected_revision": 15,
+      "name": "2027 Topps (staging fiction)",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "ff649e011dfca6233f012401b994e2f44dcfccdce639a6b1e70e94dcb973ea93"
+    },
+    {
+      "id": "owner-record-ce5f7312-0a28-4bc0-b82d-8fd43fd2a242",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 1",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "5afb69d5f503bc098928e7b3b4fe17c32f59ba2de79fd554a192bfec24a2bf10"
+    },
+    {
+      "id": "owner-record-cf50a620-8778-4be1-bf44-b3804e3e4649",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 30380936",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "be13a3a68afdfed34bfc509157c2c76d85f2a42a13cfe30df042515d61917f68"
+    },
+    {
+      "id": "owner-record-d3b4e56b-4559-49b8-8ea5-1eb76e266586",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 3751",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "7f9a3cc44adc753f03fc543728fe84097f8674d059e58f7e19fb31e470e6cc77"
+    },
+    {
+      "id": "owner-record-d5087aa4-5696-41f1-927b-dfea5220f724",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 31921881",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "d930c46deb5a69d936d725348122c6701341c62c0182bc132e451bd06e489145"
+    },
+    {
+      "id": "owner-record-d579f5ff-9677-41bd-9398-9f70f912d886",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 9",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "94f30ea478770c0e3a4973095e3af79f27c0b5e64b01e5a97654e054b6a2f955"
+    },
+    {
+      "id": "owner-record-d66001a4-890d-4775-9e94-f78003dc6165",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 5",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "83b8b7bfcfac31ba5836e5b03c4320f622b9d89574dbea165df1ae227c2eba05"
+    },
+    {
+      "id": "owner-record-d7633ff8-c94d-4143-a88d-268cd1ceacd7",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 1",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "651470c8b6141e535b2b6d1df43cd27467a451c61e4b28259cae2331c80473aa"
+    },
+    {
+      "id": "owner-record-d889be42-fb52-454a-8010-0e868793900a",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 10",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "02748ee2ad3e755f67ce8336970172e08a017fea57fe1c1112de0bce0bc3a6e5"
+    },
+    {
+      "id": "owner-record-d8e1c73c-acd8-40ca-9740-cb4bc7bf4a9e",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 11",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "8f10165c5f4a8480ca980e5f67922a4a292657eb2187f9fca748c02505b5b669"
+    },
+    {
+      "id": "owner-record-da5d7b59-9cf4-4c20-9ae8-08cd2e253a4b",
+      "expected_revision": 16,
+      "name": "2027 Topps \u2014 Practice 30367608",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "105f6950d1849adb619d6a0057e71ac0ec8e62a9afec648b22a53e1dd0cd7b19"
+    },
+    {
+      "id": "owner-record-da69cd1d-9a3f-4cb3-bac5-abb7c6c3643b",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 6427",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "5a5524394f26c6ef724613679d901b364de1ddd405e264418c74d09504043b6a"
+    },
+    {
+      "id": "owner-record-da8711c4-27c1-4549-8243-ffd28ac3c67c",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 31927755",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "e5d1ac93784a1b6db5322f87eccce7a8c429f709f881bf4fc07c1db896212b6b"
+    },
+    {
+      "id": "owner-record-daa9568c-5a6a-4ee7-99ff-15956d108d6e",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 2014",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "91fa848d2c67be1b19b69e8e4a9a0653ac58f7e655a15567820d94661807e2f3"
+    },
+    {
+      "id": "owner-record-dd8ae4c4-2253-4f81-a121-6110555026d7",
+      "expected_revision": 15,
+      "name": "2027 Topps (staging fiction)",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "f5357a0e6736a6a8ef4914b53561eec4e8e1fcbf08e931a8317b1583251f11df"
+    },
+    {
+      "id": "owner-record-e04a7acc-91d4-4590-ac9b-fb04258692ef",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 4639",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "c6142f2a59269a79a2388fa6f707650ef127999fef86bc790f066418b48dc7b3"
+    },
+    {
+      "id": "owner-record-e3a50bc1-5524-47fd-b2a2-6579834a403d",
+      "expected_revision": 6,
+      "name": "2027 Replacement Practice 8756",
+      "category": "OBC Wantlist",
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "3d3a06f653cc699b4ebf91ae1f2d46e4639e5d71cefd4bb984fd1ca2c17576d4"
+    },
+    {
+      "id": "owner-record-e6ef7225-c138-41b1-b992-91474f996cbf",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 9",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "a2a10f3af880cf2bb9e6561157625041d104faf902f217192ea70814927a7249"
+    },
+    {
+      "id": "owner-record-e8bebcac-4748-41c8-8232-8be5f14fb268",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 18",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "feb58522febfa65fd21dd3847f124858940001688190b82f38d9f97e26e32e87"
+    },
+    {
+      "id": "owner-record-e984005b-82ea-4d8e-9fd3-a860c82a9d89",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 9",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "0b06e10ba027178c12eafabb9c5d792eba5bff1c3647f6cc3b14bcdff58af56d"
+    },
+    {
+      "id": "owner-record-ea33fe39-a11f-4278-b6fc-ef7533962764",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 0",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "7521b541eab3ca7952a2f6c4f79894156915572f9d963fdd34324022d5763436"
+    },
+    {
+      "id": "owner-record-ea74105b-9790-47f8-95bc-a714318727d1",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 21",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "c220296d7fe408329078c9301aecc67ae1a6a945672c630f101116095ad1abd7"
+    },
+    {
+      "id": "owner-record-ee4df4a7-3e3b-485f-a6c0-5fb511750863",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 4968",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "d7947317a206508c7589bc30c26566e23a204179d29ab53a54b7d8bc7586b714"
+    },
+    {
+      "id": "owner-record-ee95933a-d6a9-4fe2-af2f-fad60fdc032b",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Retry Practice 30182093",
+      "category": "OBC Wantlist",
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "499e0848784c21583d27b2fec1051c55044ca99172e94d3f1a02f10d38b490c1"
+    },
+    {
+      "id": "owner-record-ee9afff4-f89f-4852-9a4e-d9924768160c",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 10",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "b47612c06e399c5565341ff43758a3c323ed7f899ee762bff8a1762cd5b8c7ce"
+    },
+    {
+      "id": "owner-record-efbc57a4-b542-41d0-b881-0db0fca835bc",
+      "expected_revision": 6,
+      "name": "2027 Replacement Practice 30249871",
+      "category": "OBC Wantlist",
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "4529bf17b2b572d38d3553c655af9350b2f783adc95c892b68b8d7b25fb4955f"
+    },
+    {
+      "id": "owner-record-f07baad4-5ece-4006-9d25-4d61a14bbb59",
+      "expected_revision": 17,
+      "name": "2027 Topps \u2014 Practice 7981",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "3bca38fcde269b1a7043bbb4fa74169420475140ddd55a9aae2735225e1b0949"
+    },
+    {
+      "id": "owner-record-f206734d-0d4e-40d4-8d0a-3ab520db7c1a",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 19",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "874b95ea54b6ef226fe72941d8ec8f4b10e41c3871a7b4cdbb5e9e9495d9d97c"
+    },
+    {
+      "id": "owner-record-f39592f1-ca0b-4dde-952e-08ea069bf5ae",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 14",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "7300a57d01821868a64ab0f198f97746d52ce8d68c7f28c08b096222404df6c6"
+    },
+    {
+      "id": "owner-record-f6bef0ed-7e0e-40ff-a659-5b31e5dcc628",
+      "expected_revision": 6,
+      "name": "2027 Replacement Practice 30392200",
+      "category": "OBC Wantlist",
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "e38f7b42ff0bed3620a68cf9c9ee8d3e1200ae16c52524b7e5c3d1ae40319408"
+    },
+    {
+      "id": "owner-record-f6e3d599-bf21-4b1d-b7dc-0b1b20f12a4c",
+      "expected_revision": 17,
+      "name": "2027 Topps \u2014 Practice 8167",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "f1e344aa266b32d3690c6ba01bc9a224a8c412d70ec01baabe9db756e998d729"
+    },
+    {
+      "id": "owner-record-f6e907ff-e389-4c83-8989-c5d10fe7fe31",
+      "expected_revision": 6,
+      "name": "2027 Topps Complete Practice owner-mobile 1791412380464",
+      "category": null,
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "d4ccc39d76bc9081f91fa10f7d99d1de2edec2710adb4b287b420999ef74ff52"
+    },
+    {
+      "id": "owner-record-f75db2a4-9484-4476-abc7-5deab7c5413a",
+      "expected_revision": 3,
+      "name": "2027 Owned-only staging test",
+      "category": null,
+      "classification": "have_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "4dad1a3927948c5c42cea78cae5ae870cf6be68eb026ad88ae4eac9aa3fe172f"
+    },
+    {
+      "id": "owner-record-f7a4a282-56b0-46c3-8474-9eb140e16faa",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 16",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "ff49d24e1e5b2defd075cee1a7d2e5ce05172bdf8f538ce3b2c7f46ac7dcaed0"
+    },
+    {
+      "id": "owner-record-f8815117-1195-4257-8145-433f99d598b3",
+      "expected_revision": 17,
+      "name": "2027 Topps \u2014 Practice 8378",
+      "category": null,
+      "classification": "uncertain",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "009adb817f0a0d2e250ac5215b6a195d82feadc8bac30b982c843cc733b585f6"
+    },
+    {
+      "id": "owner-record-fba4e10e-4538-4aee-8400-d608de09ffff",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 19",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "8b8d98798773dad00abefe2717afc854ee1b62047f7bca358fc41818be25fd37"
+    },
+    {
+      "id": "owner-record-fddc22b8-0615-49ce-8863-9b01bf590f76",
+      "expected_revision": 1,
+      "name": "2027 Topps CPU staging 7",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "d3a5a6151ff1f2a3b51a3b524811323ca85245afe1bf39850e57b18028c9f42d"
+    },
+    {
+      "id": "owner-record-feaffbb7-27ca-46fe-b910-0924be05363a",
+      "expected_revision": 6,
+      "name": "2027 Topps \u2014 Complete Practice 29205713",
+      "category": "OBC Wantlist",
+      "classification": "complete",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "7497c4ed33ede10473264d3469c7cbb68f6340eba55a8b2f9309c0bc2e0cff9c"
+    },
+    {
+      "id": "owner-record-ffe51dd0-95c5-44fb-a64f-e2d4aaf5b282",
+      "expected_revision": 2,
+      "name": "2027 Topps \u2014 Session Practice 2325",
+      "category": null,
+      "classification": "want_list",
+      "provenance_rows": 0,
+      "proposed_action": "soft archive listing and public projection; preserve items/history; revision checked",
+      "content_sha256": "6851b713ab71e85ac597dc2b95a3a47753e26a072f7b1a7736466df17f468041"
+    }
+  ],
+  "existing_deleted_roots_preserved": [
+    "display-brewers-bobblehead-wantlist",
+    "display-eau-claire-players",
+    "owner-record-7fa005d0-ae02-4856-a2c2-d397dd97b223"
+  ],
+  "benchmark_rows_not_restored": 1403,
+  "manifest_sha256": "948205eb0376c739d3a958ae17b153113885acc9ea6a2a7b6150fa9ce565625b"
+}

@@ -36,7 +36,7 @@ async function handle(request,env){
   if(editor&&request.method==='GET'&&Object.hasOwn(editorAssets,url.pathname)){
     const asset=editorAssets[url.pathname];return new Response(asset.body,{headers:{'Content-Type':asset.type,'Cache-Control':'no-store','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",'X-Content-Type-Options':'nosniff'}});
   }
-  const ownerRoutes=new Set(['/login','/session','/logout','/catalog','/owner/record','/owner/recent','/action','/public/catalog','/public/record','/public/page','/public/categories','/owner/category']);
+  const ownerRoutes=new Set(['/login','/session','/logout','/catalog','/owner/record','/owner/recent','/action','/public/catalog','/public/record','/public/page','/public/index','/public/categories','/owner/category']);
   // Operator gate isolates diagnostic routes and all requests in non-editor mode.
   // Comparing digests avoids ordinary string comparison of the operator secret.
   const supplied=request.headers.get('X-Staging-Probe') || '';
@@ -65,6 +65,10 @@ async function handle(request,env){
       return json({results:await env.DB.batch(statements)});
     }
     if(url.pathname==='/public/categories')return json({categories:await categories(env.DB)});
+    if(url.pathname==='/public/index') {
+      const row=await env.DB.prepare("SELECT COALESCE(json_group_array(json(index_json)),'[]') records,CASE WHEN count(*)=500 THEN max(record_id) END next FROM (SELECT record_id,index_json FROM public_browse_index WHERE deleted=0 AND record_id>? ORDER BY record_id LIMIT 500)").bind(url.searchParams.get('after')||'').first();
+      return new Response('{"records":'+row.records+',"next":'+JSON.stringify(row.next)+'}',{headers:{'Content-Type':'application/json','Cache-Control':'public, max-age=30'}});
+    }
     if(url.pathname==='/public/catalog')return json({records:(await env.DB.prepare('SELECT record_id,revision,updated_at,deleted FROM public_records ORDER BY record_id').all()).results});
     if(url.pathname==='/public/record') {
       const row=await env.DB.prepare('SELECT * FROM public_records WHERE record_id=?').bind(url.searchParams.get('id')).first();

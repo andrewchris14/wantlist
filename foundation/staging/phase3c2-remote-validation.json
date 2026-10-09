@@ -1,0 +1,31 @@
+{
+  "added": [
+    "p0060-l001",
+    "p0273-l029",
+    "p0273-l039",
+    "p0526-l006",
+    "p0581-l001",
+    "p0645-l005",
+    "p1237-l004",
+    "p1996-l008",
+    "p2501-l001",
+    "p2851-l007",
+    "p3022-l006",
+    "p3029-l001",
+    "display-eau-claire-1",
+    "display-milwaukee-8x10-list"
+  ],
+  "preserved": [],
+  "replayed": [
+    "p0008-l001"
+  ],
+  "actual_writes": 3909,
+  "paused": false,
+  "manifest": "59982810e795fa2f3745df64d3098a07b514b4a0b3ea1a7ac7154a95de1a214c",
+  "elapsed_api_wall_seconds_not_cpu": 9.062,
+  "retry_added": 0,
+  "lost_response_recovered": true,
+  "remote_record_count": 36,
+  "resource": "wantlist-test-3c2-bc5991ba",
+  "full_remote_import": false
+}

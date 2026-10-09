@@ -16,6 +16,7 @@ def restore_snapshot(snapshot):
     if db.execute('PRAGMA foreign_key_check').fetchall():raise ValueError('Backup foreign-key error')
     for table,rows in snapshot['tables'].items():
         if [dict(r) for r in db.execute('SELECT * FROM '+table+' ORDER BY 1')]!=rows:raise ValueError('Restore mismatch: '+table)
+    for obj in snapshot.get('schema_objects',[]):db.execute(obj['sql'])
     return db
 
 def main():

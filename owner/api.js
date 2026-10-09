@@ -11,6 +11,6 @@ export async function request(path,body){
 }
 export async function publicRecords(){
  let result=[],after='';
- do{const page=await request('/public/page?after='+encodeURIComponent(after));result.push(...page.records);after=page.next;}while(after);
+ do{const page=await request('/public/index?after='+encodeURIComponent(after));result.push(...page.records);after=page.next;}while(after);
  return result;
 }

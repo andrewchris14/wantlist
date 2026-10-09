@@ -1,0 +1,33 @@
+{
+  "staging_only": true,
+  "deployment": {
+    "created_on": "2026-10-07T20:08:00.337782Z",
+    "modified_on": "2026-10-09T03:34:59.295085Z",
+    "id": "wantlist-staging",
+    "tag": "a0fe0d5393c24e63b5bd6729ac18b122",
+    "entry_point": "worker.mjs",
+    "tags": null,
+    "deployment_id": "591d2e3c5cc244ddab9745fe2a310d11",
+    "tail_consumers": null,
+    "logpush": false,
+    "has_assets": false,
+    "has_modules": true,
+    "etag": "d36c04fab247fba315f9de1e6f69d2e59adde449ab394dce42c0c94f7ddea8e2",
+    "handlers": [
+      "fetch"
+    ],
+    "last_deployed_from": "dash",
+    "compatibility_date": "2026-10-01",
+    "usage_model": "standard",
+    "startup_time_ms": 2
+  },
+  "tested_asset_sha256": "5ea32bec45e3d28aabeceefaf280737a10fd5ed27b83fcf046aed7a153d3b145",
+  "deployed_asset_matches_tested_build": true,
+  "public_football_id": "p0581-l001",
+  "public_football_type": "have_list",
+  "d1_records_and_history_unchanged": true,
+  "sessions_and_auth_generation_unchanged": true,
+  "secret_names_preserved": true,
+  "d1_test_writes": false,
+  "record_count": 267
+}

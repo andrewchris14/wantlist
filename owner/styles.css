@@ -26,3 +26,4 @@ dialog{width:min(860px,calc(100% - 24px));max-height:90dvh;margin:auto;padding:2
 .searchable-select label{margin-bottom:5px}
 @media(max-width:600px){.searchable-select{flex-basis:calc(50% - 10px);min-width:0}}
 dialog{padding-top:0}.dialog-header{padding-top:16px;margin-top:0}
+.owner-name{overflow-wrap:anywhere}.owner-name a{color:inherit;text-underline-offset:.15em}

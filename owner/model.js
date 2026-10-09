@@ -1,9 +1,14 @@
 import historicalMap from '../foundation/staging/historical-map.json' with {type:'json'};
+export {effectiveListType} from '../foundation/staging/effective-list-type.js';
+import {effectiveListType} from '../foundation/staging/effective-list-type.js';
+export function effectiveCategory(r){const c=r.content||r;return c.display_category||historicalMap.mapping[r.id]||(r.id?.startsWith('display-')?historicalMap.categories.find(name=>'display-'+name.toLowerCase().replaceAll(' ','-')===r.id):null);}
+export function editorDefaults(record){const c=record.content||record;return {year:recordYear(c)||'',brand:c.brand||'',set_name:c.set_name||'',category:c.category||'',display_category:effectiveCategory(record)||'',notes:(c.notes||[]).join('\n'),list_type:effectiveListType(record),entry_order:c.entry_order||'natural'};}
+export function editorPayload(record,form){const initial=editorDefaults(record),metadata={};for(const [key,value] of Object.entries(form)){if(key==='list_type'||value===initial[key])continue;metadata[key]=key==='notes'?value.split('\n').filter(n=>n.trim()):['year','brand'].includes(key)?value||null:value;}return {metadata,...(form.list_type!==initial.list_type?{list_type:form.list_type}:{})};}
 export const sourceNoteFields=id=>historicalMap.source_note_fields?.[id]?.fields||[];
 // Presentation adapter only; historical data is never normalized again here.
 export function logicalInventories(r){
- const c=r.content||r,mode=r.list_type;
- const same=(r.groups||[]).map(g=>({...g,entries:g.entries.filter(i=>g.kind!=='primary'||!sourceNoteFields(r.id).includes(i.field_key))})).filter(g=>(g.list_type||mode)===mode);
+ const c=r.content||r,mode=effectiveListType(r);
+ const same=(r.groups||[]).map(g=>({...g,list_type:g.kind==='primary'&&g.list_type==='uncertain'?mode:g.list_type,entries:g.entries.filter(i=>g.kind!=='primary'||!sourceNoteFields(r.id).includes(i.field_key))})).filter(g=>(g.list_type||mode)===mode);
  const special=['Milwaukee 8x10 List','Eau Claire Players'].includes(c.display_category);
  if(special)same.sort((a,b)=>(a.kind==='sublist'?0:1)-(b.kind==='sublist'?0:1));
  if(special)return [{id:same.find(g=>g.entries.some(i=>!i.deleted_at))?.id||same[0]?.id||'new-primary',label:c.set_name,notes:same.flatMap(g=>[...(g.notes||[]),...(g.description?[g.description]:[])]),entries:same.flatMap(g=>g.entries.map(i=>({...i,group_id:g.id}))),groups:same}];
@@ -11,6 +16,7 @@ export function logicalInventories(r){
  return [...(primary.length?[{id:primary[0].id,notes:primary.flatMap(g=>[...(g.notes||[]),...(g.description?[g.description]:[])]),entries:primary.flatMap(g=>g.entries.map(i=>({...i,group_id:g.id}))),groups:primary}]:[]),...variants.map(g=>({...g,groups:[g]}))].filter(g=>g.entries.some(i=>!i.deleted_at)||g.list_type!=='complete');
 }
 export function browseRecord(r) {
+ const mode=effectiveListType(r);r={...r,list_type:mode,groups:(r.groups||[]).map(g=>({...g,list_type:g.kind==='primary'&&g.list_type==='uncertain'?mode:g.list_type}))};
  const {groups=[],...header}=r;
  const inventories=logicalInventories(r);
  const supplemental=groups.flatMap(g=>{

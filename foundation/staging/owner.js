@@ -1,7 +1,7 @@
 // Owner-facing read models. Historical source blobs stay in D1, not editor forms.
 export async function ownerRecord(db,id){
  const r=await db.prepare(`SELECT id,revision,list_type,deleted_at,json_object(
- 'entry_order',json_extract(content_json,'$.entry_order'),'display_year',json_extract(content_json,'$.display_year'),'display_category',json_extract(content_json,'$.display_category'),'year',json_extract(content_json,'$.year'),'brand',json_extract(content_json,'$.brand'),
+ 'source_list_type',json_extract(content_json,'$.source_list_type'),'entry_order',json_extract(content_json,'$.entry_order'),'display_year',json_extract(content_json,'$.display_year'),'display_category',json_extract(content_json,'$.display_category'),'year',json_extract(content_json,'$.year'),'brand',json_extract(content_json,'$.brand'),
  'set_name',json_extract(content_json,'$.set_name'),'category',json_extract(content_json,'$.category'),
  'notes',json_extract(content_json,'$.notes'),'prefixes',json_extract(content_json,'$.prefixes'),
  'uncertainty',json_extract(content_json,'$.uncertainty')) content FROM records WHERE id=?`).bind(id).first();

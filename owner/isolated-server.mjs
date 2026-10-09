@@ -12,10 +12,11 @@ function fixture(){
  const db=localD1();db.sqlite.exec(readFileSync('foundation/staging/schema.sql','utf8'));db.sqlite.exec("INSERT INTO staging_import_state VALUES(1,'isolated','isolated',0,1)");
  const view=JSON.parse(readFileSync('foundation/staging/historical-view.json','utf8'));
  const extra=view.records.find(r=>r.brand==='Topps'),year1951=view.records.find(r=>r.year==='1951');
- const chosen=view.records.filter(r=>r.display_category==='Brewers Bobblehead Wantlist'||r.id===year1951.id||r.id===extra.id||r.id==='p0060-l001'||r.id==='p1237-l004'||r.id==='p1996-l008'||r.id==='p2501-l001'||r.id.startsWith('display-'));
+ const chosen=view.records.filter(r=>r.display_category==='Brewers Bobblehead Wantlist'||r.id===year1951.id||r.id===extra.id||r.id==='p0581-l001'||r.id==='p0060-l001'||r.id==='p1237-l004'||r.id==='p1996-l008'||r.id==='p2501-l001'||r.id.startsWith('display-'));
  const stamp=new Date().toISOString();
  for(const r of chosen){
   const mode=r.display_list_type||r.list_type,content={...r};for(const k of ['card_numbers','items','card_ranges','mixed_lists','sublists','source_records','source_wording'])delete content[k];
+  if(r.id==='p0581-l001')delete content.display_category;
   db.sqlite.prepare('INSERT INTO records VALUES(?,NULL,?,?,1,?,?,NULL)').run(r.id,mode,JSON.stringify(content),stamp,stamp);
   const groups=[{...r,kind:'primary',position:0},...(r.mixed_lists||[]).map((g,i)=>({...g,kind:'mixed',position:i})),...(r.sublists||[]).map((g,i)=>({...g,kind:'sublist',position:i}))];
   for(const g of groups){

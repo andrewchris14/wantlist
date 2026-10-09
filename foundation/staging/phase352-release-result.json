@@ -1,0 +1,39 @@
+{
+  "staging_only": true,
+  "guest_owner_read_status": 401,
+  "deployment": {
+    "created_on": "2026-10-07T20:08:00.337782Z",
+    "modified_on": "2026-10-09T13:22:51.802025Z",
+    "id": "wantlist-staging",
+    "tag": "a0fe0d5393c24e63b5bd6729ac18b122",
+    "entry_point": "worker.mjs",
+    "tags": null,
+    "deployment_id": "af13b23db3cf42da910b72d9dba2c6f0",
+    "tail_consumers": null,
+    "logpush": false,
+    "has_assets": false,
+    "has_modules": true,
+    "etag": "fd1e825de15e66283116cd663baba849129a455323026f18dfe12210d6460f92",
+    "handlers": [
+      "fetch"
+    ],
+    "last_deployed_from": "dash",
+    "compatibility_date": "2026-10-01",
+    "usage_model": "standard",
+    "startup_time_ms": 2
+  },
+  "tested_asset_sha256": "d593cea545fece1a646fff7a7eb21158a03cd52844ededc6920d696073e802ed",
+  "deployed_asset_matches_tested_build": true,
+  "public_football_id": "p0581-l001",
+  "public_football_type": "have_list",
+  "d1_records_and_history_unchanged": true,
+  "sessions_and_auth_generation_unchanged": true,
+  "secret_names_preserved": true,
+  "d1_test_writes": false,
+  "record_count": 268,
+  "public_projections_unchanged": true,
+  "active_public_records": 265,
+  "bowman_record_id": "owner-record-a38f266f-8883-4579-a2fb-e1c3f2f62fea",
+  "bowman_revision_unchanged": 19,
+  "bowman_recoverable_owned_entry_retained": true
+}

@@ -7,7 +7,7 @@ const view=JSON.parse(readFileSync('foundation/staging/historical-view.json')).r
 const map=JSON.parse(readFileSync('foundation/staging/historical-map.json'));
 it('all 3394 historical editor classifications agree with public display, including absent legacy display fields',()=>{
  expect(view).toHaveLength(3394);const seen=new Set();
- for(const r of view){const c={...r};if(!r.id.startsWith('display-'))delete c.display_category;delete c.display_list_type;const dto={id:r.id,list_type:r.list_type,content:c,groups:[]};const form=editorDefaults(dto);expect(form.display_category,r.id).toBe(originalCategory(r));expect(form.list_type,r.id).toBe(r.display_list_type||r.list_type);expect(compactStatus(r),r.id).toBe({want_list:'WANT list',have_list:'HAVE list',complete:'COMPLETE',uncertain:'Source note — review needed'}[form.list_type]);seen.add(form.display_category);expect(editorPayload(dto,form)).toEqual({metadata:{}});}
+ for(const r of view){const c={...r};if(!r.id.startsWith('display-'))delete c.display_category;delete c.display_list_type;const dto={id:r.id,list_type:r.list_type,content:c,groups:[]};const form=editorDefaults(dto);expect(form.display_category,r.id).toBe(originalCategory(r));expect(form.list_type,r.id).toBe(r.display_list_type||r.list_type);expect(compactStatus(r),r.id).toBe({want_list:'WANT list',have_list:'HAVE list',complete:'COMPLETE',uncertain:'Notes'}[form.list_type]);seen.add(form.display_category);expect(editorPayload(dto,form)).toEqual({metadata:{}});}
  expect([...seen].sort()).toEqual([...map.categories].sort());
  for(const [id,a] of Object.entries(map.classification_approvals))expect(editorDefaults({id,list_type:'uncertain',content:{}}).list_type).toBe(a.list_type);
 });

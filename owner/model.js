@@ -15,17 +15,29 @@ export function logicalInventories(r){
  const primary=same.filter(g=>g.kind!=='sublist'&&!g.label),variants=same.filter(g=>g.kind==='sublist'||g.label);
  return [...(primary.length?[{id:primary[0].id,notes:primary.flatMap(g=>[...(g.notes||[]),...(g.description?[g.description]:[])]),entries:primary.flatMap(g=>g.entries.map(i=>({...i,group_id:g.id}))),groups:primary}]:[]),...variants.map(g=>({...g,groups:[g]}))].filter(g=>g.entries.some(i=>!i.deleted_at)||g.list_type!=='complete');
 }
+export function publicPrimaryEntry(mode,i){return mode==='have_list'?[null,undefined,'owned'].includes(i.state):mode==='want_list'?[null,undefined,'wanted','pending'].includes(i.state):mode==='complete'?false:true;}
+// Only genuine source supplements become public notes. Received entries and
+// owner-created superseded groups remain recoverable in the owner editor/history.
+export function publicSourceNotes(r){
+ const historical=!!historicalMap.mapping[r.id]||r.id?.startsWith('display-')&&(r.source_refs||[]).length>0;
+ const raw=!r.groups;
+ const groups=r.groups||[{...r,kind:'primary',list_type:effectiveListType(r),entries:(sourceNoteFields(r.id).includes('items')?r.items||[]:[]).map(value=>({value,field_key:'items'}))},...(r.mixed_lists||[]).map(g=>({...g,kind:'mixed',entries:(g.items||[]).map(value=>({value}))})),...(r.sublists||[]).map(g=>({...g,kind:'sublist',entries:(g.items||[]).map(value=>({value}))}))];
+ return groups.flatMap(g=>{
+  const prose=g.kind==='primary'?g.entries.filter(i=>!i.deleted_at&&sourceNoteFields(r.id).includes(i.field_key)).map(i=>i.value):[];
+  const source=historical&&!g.id?.startsWith('owner-group-');
+  if(!source||!g.list_type||g.list_type===effectiveListType(r))return prose;
+  const notes=[...(g.notes||[]),...(g.description?[g.description]:[])].map(n=>g.label?g.label+': '+n:n);
+  const entries=sortedEntries(g.entries.filter(i=>!i.deleted_at&&!i.received_at&&(raw||i.id?.startsWith(g.id+':'))&&(g.list_type==='have_list'?[null,undefined,'owned'].includes(i.state):[null,undefined,'wanted','pending'].includes(i.state))),r.entry_order==='original');
+  const label=g.label?g.label+': ':'';
+  return [...prose,...notes,...(entries.length?[label+(g.list_type==='have_list'?'Owned: ':'Needed: ')+entries.map(i=>i.value).join('; ')]:[]),...(g.list_type==='complete'?[label+'Complete.']:[])];
+ });
+}
 export function browseRecord(r) {
  const mode=effectiveListType(r);r={...r,list_type:mode,groups:(r.groups||[]).map(g=>({...g,list_type:g.kind==='primary'&&g.list_type==='uncertain'?mode:g.list_type}))};
  const {groups=[],...header}=r;
  const inventories=logicalInventories(r);
- const supplemental=groups.flatMap(g=>{
-  const opposite=g.list_type!==r.list_type;
-  const values=g.entries.filter(i=>!i.deleted_at&&(opposite||i.state==='owned'&&r.list_type==='want_list'||g.kind==='primary'&&sourceNoteFields(r.id).includes(i.field_key))).map(i=>i.value);
-  const qualifications=opposite?[...(g.notes||[]),...(g.description?[g.description]:[])].map(n=>(g.label?g.label+': ':'')+n):[];
-  return [...qualifications,...(values.length?[`${g.label?g.label+': ':''}${g.list_type==='have_list'||r.list_type==='want_list'&&values.some(v=>g.entries.some(i=>i.value===v&&i.state==='owned'))?'Historical owned information':g.list_type==='want_list'&&opposite?'Historical wanted information':'Historical note'}: ${values.join('; ')}`]:[])];
- });
- return {...header,card_numbers:[],items:[],card_ranges:[],logical_inventories:inventories.map(g=>({...g,entries:sortedEntries(g.entries.filter(i=>!i.deleted_at&&(r.list_type!=='want_list'||i.state!=='owned')),r.entry_order==='original')})),supplemental_notes:[...supplemental,...groups.filter(g=>g.kind==='sublist'&&g.list_type==='complete').map(g=>(g.label||'Historical group')+': Complete')],mixed_lists:[...groups.filter(g=>g.kind==='sublist'&&g.list_type==='complete').map(g=>({...g,items:[]})),...inventories.map(g=>({label:g.label,list_type:r.list_type,items:g.entries.filter(i=>!i.deleted_at&&i.state!=='pending'&&(r.list_type!=='want_list'||i.state!=='owned')).map(i=>i.value)}))]};
+ const supplemental=publicSourceNotes(r);
+ return {...header,card_numbers:[],items:[],card_ranges:[],logical_inventories:inventories.map(g=>({...g,entries:sortedEntries(g.entries.filter(i=>!i.deleted_at&&publicPrimaryEntry(mode,i)),r.entry_order==='original')})),supplemental_notes:supplemental,mixed_lists:[...groups.filter(g=>g.kind==='sublist'&&g.list_type==='complete').map(g=>({...g,items:[]})),...inventories.map(g=>({label:g.label,list_type:r.list_type,items:g.entries.filter(i=>!i.deleted_at&&i.state!=='pending'&&publicPrimaryEntry(mode,i)).map(i=>i.value)}))]};
 }
 export function parseCards(input,kind='numbers') {
  // Names are one per line; commas may be part of an item name. No range expansion.

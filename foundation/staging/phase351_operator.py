@@ -5,14 +5,14 @@ from .phase34_operator import settings,worker_backup,ORIGIN
 from .phase35_operator import release
 from .cloudflare import query
 ROOT=Path(__file__).resolve().parents[2]
-def run():
+def run(phase='351'):
  s,db=settings()
  def state():
   return {'records':query(db,'SELECT id,revision,list_type,content_json,deleted_at FROM records ORDER BY id')[0]['results'],
    'history_count':query(db,'SELECT count(*) n FROM change_history')[0]['results'],
    'sessions':query(db,'SELECT count(*) n,min(created_at) oldest,max(created_at) newest FROM sessions')[0]['results'],
    'auth_generation':query(db,'SELECT generation FROM auth_control WHERE id=1')[0]['results']}
- before=state();rollback=ROOT/'foundation/.local/phase351-worker-rollback.json'
+ before=state();rollback=ROOT/f'foundation/.local/phase{phase}-worker-rollback.json'
  if not rollback.exists():worker_backup(rollback)
  deployed=release(s)
  def fetch(path):
@@ -33,5 +33,5 @@ def run():
  after=state();assert before==after,'Concurrent staging changes detected: inspect before claiming unchanged D1'
  current,_=settings();assert {b['name'] for b in s['bindings'] if b['type']=='secret_text'}=={b['name'] for b in current['bindings'] if b['type']=='secret_text'}
  result={'staging_only':True,'guest_owner_read_status':guest_status,'deployment':deployed,'tested_asset_sha256':hashlib.sha256(local).hexdigest(),'deployed_asset_matches_tested_build':True,'public_football_id':public['id'],'public_football_type':public['list_type'],'d1_records_and_history_unchanged':True,'sessions_and_auth_generation_unchanged':True,'secret_names_preserved':True,'d1_test_writes':False,'record_count':len(before['records'])}
- (ROOT/'foundation/staging/phase351-release-result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
+ (ROOT/f'foundation/staging/phase{phase}-release-result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
 if __name__=='__main__':run()

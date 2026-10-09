@@ -13,6 +13,7 @@ function fixture(){
  const view=JSON.parse(readFileSync('foundation/staging/historical-view.json','utf8'));
  const extra=view.records.find(r=>r.brand==='Topps'),year1951=view.records.find(r=>r.year==='1951');
  const chosen=view.records.filter(r=>r.display_category==='Brewers Bobblehead Wantlist'||r.id===year1951.id||r.id===extra.id||r.id==='p0581-l001'||r.id==='p0060-l001'||r.id==='p1237-l004'||r.id==='p1996-l008'||r.id==='p2501-l001'||r.id.startsWith('display-'));
+ chosen.push({id:'owner-record-public-remnant',year:'2028',brand:'Bowman',set_name:'2028 Bowman Chrome Test',category:'baseball_cards',display_category:'UV Wantlist',list_type:'want_list',notes:['just collecting the first 10 cards'],card_numbers:['2','4','6','8','10']});
  const stamp=new Date().toISOString();
  for(const r of chosen){
   const mode=r.display_list_type||r.list_type,content={...r};for(const k of ['card_numbers','items','card_ranges','mixed_lists','sublists','source_records','source_wording'])delete content[k];
@@ -21,10 +22,10 @@ function fixture(){
   const groups=[{...r,kind:'primary',position:0},...(r.mixed_lists||[]).map((g,i)=>({...g,kind:'mixed',position:i})),...(r.sublists||[]).map((g,i)=>({...g,kind:'sublist',position:i}))];
   for(const g of groups){
    const gid=r.id+':'+g.kind+':'+g.position,gm=g.kind==='primary'?mode:g.list_type||mode;
-   db.sqlite.prepare('INSERT INTO record_groups VALUES(?,?,?,?,?,?,?)').run(gid,r.id,g.kind,g.position,gm,JSON.stringify({label:g.label,notes:g.notes||[],description:g.description}),'["card_numbers","items","card_ranges"]');
+   db.sqlite.prepare('INSERT INTO record_groups VALUES(?,?,?,?,?,?,?)').run(gid,r.id,g.kind,g.position,gm,JSON.stringify({label:g.label,notes:r.id==='owner-record-public-remnant'?[]:g.notes||[],description:g.description}),'["card_numbers","items","card_ranges"]');
    for(const field of ['card_numbers','items','card_ranges'])for(const [i,value] of (g[field]||[]).entries()){
     const actionable=field!=='card_ranges'&&['want_list','have_list'].includes(gm)&&r.id!=='display-eau-claire-players';
-    db.sqlite.prepare('INSERT INTO items VALUES(?,?,?,?,?,?,?,?,NULL,NULL,NULL)').run(gid+':'+field+':'+i,gid,field,i,value,actionable?(gm==='have_list'?'owned':'wanted'):null,actionable?1:0,actionable?null:'Preserved source');
+    db.sqlite.prepare('INSERT INTO items VALUES(?,?,?,?,?,?,?,?,NULL,NULL,NULL)').run(gid+':'+field+':'+i,gid,field,i,value,r.id==='owner-record-public-remnant'&&value==='2'?'owned':actionable?(gm==='have_list'?'owned':'wanted'):null,actionable?1:0,actionable?null:'Preserved source');
    }
   }
  }

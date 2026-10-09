@@ -2,23 +2,23 @@ import SearchableSelect from './SearchableSelect.jsx';
 import {useMemo,useState} from 'react';
 import {prepareRecords,queryMatches,yearSpan,asArray,normalize} from '../site/model.js';
 import map from '../foundation/staging/historical-map.json';
-import {recordYear,yearInfo,naturalCompare,titleOf,sourceNoteFields,effectiveCategory,effectiveListType} from './model.js';
+import {recordYear,yearInfo,naturalCompare,titleOf,sourceNoteFields,effectiveCategory,effectiveListType,publicSourceNotes,publicPrimaryEntry} from './model.js';
 export const CATEGORIES=map.categories;
 export const originalCategory=effectiveCategory;
-export function compactStatus(r){return ({want_list:'WANT list',have_list:'HAVE list',complete:'COMPLETE'})[effectiveListType(r)]||'Source note — review needed';}
+export function compactStatus(r){return ({want_list:'WANT list',have_list:'HAVE list',complete:'COMPLETE'})[effectiveListType(r)]||'Notes';}
 export function compactSort(a,b){return (yearInfo(recordYear(b)).sort??-1)-(yearInfo(recordYear(a)).sort??-1)||String(a.set_name||'').localeCompare(String(b.set_name||''),'en',{numeric:true,sensitivity:'base'});}
 function Contents({record:r}){
- if(r.list_type==='uncertain'&&compactStatus(r)==='Source note — review needed'){const notes=[...asArray(r.uncertainty),...asArray(r.notes),...asArray(r.items),...(r.mixed_lists||[]).flatMap(g=>asArray(g.items))];return <div className="listing-content source-note"><strong>Original source information:</strong>{[...new Set(notes)].map((s,i)=><p key={i}>{s}</p>)}</div>;}
+ if(r.list_type==='uncertain'&&compactStatus(r)==='Notes'){const notes=[...asArray(r.uncertainty),...asArray(r.notes),...asArray(r.items),...(r.mixed_lists||[]).flatMap(g=>asArray(g.items))];return <div className="listing-content source-note">{[...new Set(notes)].map((s,i)=><p key={i}>{s}</p>)}</div>;}
  const itemMode=['Eau Claire Players','Milwaukee 8x10 List','Brewers Bobblehead Wantlist'].includes(originalCategory(r));
- const inventories=r.logical_inventories||[{...r,entries:[...asArray(r.card_numbers),...asArray(r.card_ranges),...(sourceNoteFields(r.id).includes('items')?[]:asArray(r.items))].map(value=>({value}))},...(r.mixed_lists||[]).map(g=>({...g,entries:asArray(g.items).map(value=>({value}))})),...(r.sublists||[]).map(g=>({...g,entries:asArray(g.items).map(value=>({value}))}))];
+ const inventories=r.logical_inventories||[{...r,list_type:effectiveListType(r),entries:[...asArray(r.card_numbers),...asArray(r.card_ranges),...(sourceNoteFields(r.id).includes('items')?[]:asArray(r.items))].map(value=>({value}))},...(r.mixed_lists||[]).map(g=>({...g,entries:asArray(g.items).map(value=>({value}))})),...(r.sublists||[]).map(g=>({...g,entries:asArray(g.items).map(value=>({value}))}))];
+ const primary=inventories.filter(g=>!g.list_type||g.list_type===effectiveListType(r)).map(g=>({...g,entries:g.entries.filter(i=>publicPrimaryEntry(effectiveListType(r),i))}));
  const ordered=values=>r.entry_order==='original'?values:[...values].sort((a,b)=>naturalCompare(a.value,b.value));
- const pending=ordered(inventories.flatMap(g=>g.entries.filter(i=>i.state==='pending')));
- return <div className="listing-content">{compactStatus(r)==='COMPLETE'?<p>Complete</p>:inventories.map((g,n)=>{
+ const pending=ordered(primary.flatMap(g=>g.entries.filter(i=>i.state==='pending')));
+ return <div className="listing-content">{compactStatus(r)==='COMPLETE'?<p>Complete</p>:primary.map((g,n)=>{
  const entries=ordered(g.entries.filter(i=>i.state!=='pending'));
  if(!entries.length)return null;
- const secondary=g.list_type&&g.list_type!==r.list_type;
- return <section key={n}>{g.label&&g.label!==r.set_name&&<h3>{g.label}</h3>}{g.description&&<p>{g.description}</p>}<p>{secondary?<strong>Historical note: </strong>:<strong>{compactStatus(r)==='HAVE list'?`${itemMode?'Items':'Cards'} I have:`:`${itemMode?'Items':'Cards'} I need:`}</strong>} {entries.map(i=>i.value).join(itemMode?'; ':', ')}</p>{asArray(g.notes).map((note,i)=><p key={i}>{note}</p>)}</section>;
- })}{pending.length>0&&<p><strong>Pending:</strong> {pending.map(i=>i.value).join(', ')}</p>}{(!r.logical_inventories&&sourceNoteFields(r.id).includes('items')?asArray(r.items):[]).map((n,i)=><p key={'source'+i}>{n}</p>)}{asArray(r.supplemental_notes).map((n,i)=><p key={'supp'+i}>{n}</p>)}{asArray(r.notes).filter(n=>!itemMode||!['Milwaukee Baseball 8x10 HAVE list','Eau Claire Players',r.set_name].includes(n)&&!/^_+$/.test(n)).map((s,i)=><p key={'note'+i}>{s}</p>)}{asArray(r.uncertainty).length>0&&<p className="source-note">Original wording: {r.uncertainty.join(' ')}</p>}</div>;
+ return <section key={n}>{g.label&&g.label!==r.set_name&&<h3>{g.label}</h3>}{g.description&&<p>{g.description}</p>}<p><strong>{compactStatus(r)==='HAVE list'?`${itemMode?'Items':'Cards'} I HAVE:`:`${itemMode?'Items':'Cards'} I NEED:`}</strong> {entries.map(i=>i.value).join(itemMode?'; ':', ')}</p>{asArray(g.notes).map((note,i)=><p key={i}>{note}</p>)}</section>;
+ })}{pending.length>0&&<p><strong>Pending:</strong> {pending.map(i=>i.value).join(', ')}</p>}{asArray(r.supplemental_notes||publicSourceNotes(r)).map((n,i)=><p key={'supp'+i}>{n}</p>)}{asArray(r.notes).filter(n=>!itemMode||!['Milwaukee Baseball 8x10 HAVE list','Eau Claire Players',r.set_name].includes(n)&&!/^_+$/.test(n)).map((s,i)=><p key={'note'+i}>{s}</p>)}{asArray(r.uncertainty).length>0&&<p className="source-note">{r.uncertainty.join(' ')}</p>}</div>;
 
 }
 

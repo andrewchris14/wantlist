@@ -1,7 +1,8 @@
-// All browser writes execute the real Worker in disposable in-memory SQLite.
+// All browser writes execute the real Worker in disposable local SQLite.
 // No Cloudflare credentials, remote relay, or D1 API are used.
 import http from 'node:http';
-import {readFileSync,existsSync} from 'node:fs';
+import {readFileSync,existsSync,copyFileSync} from 'node:fs';
+import {resolve,relative} from 'node:path';
 import {timingSafeEqual} from 'node:crypto';
 import {localD1} from '../foundation/tests/d1-local-adapter.mjs';
 import worker from '../foundation/staging/worker.mjs';
@@ -9,6 +10,13 @@ import {mutate,openRecord,publicProjection} from '../foundation/staging/records.
 const origin='https://isolated.wantlist.test';
 Object.defineProperty(crypto.subtle,'timingSafeEqual',{value:(a,b)=>timingSafeEqual(Buffer.from(a),Buffer.from(b)),configurable:true});
 function fixture(){
+ if(process.env.FULL_REHEARSAL_DB){
+  const source=resolve(process.env.FULL_REHEARSAL_DB),rel=relative(resolve('work'),source);
+  if(rel.startsWith('..')||rel.startsWith('/')||!source.endsWith('.sqlite'))throw Error('Only ignored local rehearsal SQLite files are supported');
+  const target=resolve('work/phase3c1-browser.sqlite');if(source===target)throw Error('Source must remain untouched');
+  copyFileSync(source,target);const db=localD1(target,false);
+  db.sqlite.exec("INSERT OR IGNORE INTO staging_import_state VALUES(1,'isolated','isolated',3394,1)");return db;
+ }
  const db=localD1();db.sqlite.exec(readFileSync('foundation/staging/schema.sql','utf8'));db.sqlite.exec("INSERT INTO staging_import_state VALUES(1,'isolated','isolated',0,1)");
  const view=JSON.parse(readFileSync('foundation/staging/historical-view.json','utf8'));
  const extra=view.records.find(r=>r.brand==='Topps'),year1951=view.records.find(r=>r.year==='1951');
@@ -32,7 +40,7 @@ function fixture(){
  return db;
 }
 let db=fixture();
-async function publish(){for(const {id} of db.sqlite.prepare('SELECT id FROM records').all()){const r=await openRecord(db,id);db.sqlite.prepare('INSERT INTO public_records VALUES(?,?,?,?,?)').run(id,r.revision,r.updated_at,0,JSON.stringify(publicProjection(r)));}}
+async function publish(){for(const {id} of db.sqlite.prepare('SELECT id FROM records').all()){const r=await openRecord(db,id);db.sqlite.prepare('INSERT OR REPLACE INTO public_records VALUES(?,?,?,?,?)').run(id,r.revision,r.updated_at,0,JSON.stringify(publicProjection(r)));}}
 await publish();
 const env=()=>({DB:db,STAGING_ONLY:'true',STAGING_EDITOR:'true',OWNER_PIN:'4826',OWNER_PIN_VERSION:'isolated-test-only'});
 http.createServer(async(req,res)=>{

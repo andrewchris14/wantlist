@@ -1,0 +1,34 @@
+{
+  "window_start": "2026-10-09T00:00:00+00:00",
+  "window_end": "2026-10-09T14:20:35.100907+00:00",
+  "d1_account_analytics": {
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "d1AnalyticsAdaptiveGroups": [
+              {
+                "dimensions": {
+                  "databaseId": "81f241d4-b17d-4cd4-802d-177f982cc5e1"
+                },
+                "sum": {
+                  "readQueries": 1048,
+                  "rowsRead": 369767,
+                  "rowsWritten": 3141,
+                  "writeQueries": 361
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "errors": null
+  },
+  "worker_observations": 193,
+  "worker_groups_p99_over_10ms": 13,
+  "worker_max_group_p99_ms": 20.484,
+  "worker_requests": 332,
+  "worker_errors": 0,
+  "active_stress_test": false
+}

@@ -1,0 +1,231 @@
+{
+  "local_only": true,
+  "cloudflare_cpu_measured": false,
+  "projections": 3394,
+  "largest_listing": {
+    "record_id": "p1237-l004",
+    "n": 526
+  },
+  "observations": [
+    {
+      "operation": "project_all_3394",
+      "node_process_cpu_ms": 1940.309,
+      "local_wall_ms": 5268.479577
+    },
+    {
+      "operation": "add_and_notes_p1237-l004",
+      "node_process_cpu_ms": 35.711,
+      "local_wall_ms": 21.846896000000015
+    },
+    {
+      "operation": "add_and_notes_display-milwaukee-8x10-list",
+      "node_process_cpu_ms": 6.25,
+      "local_wall_ms": 4.075738999999885
+    },
+    {
+      "operation": "add_and_notes_display-eau-claire-1",
+      "node_process_cpu_ms": 2.388,
+      "local_wall_ms": 3.8918630000007397
+    },
+    {
+      "operation": "add_and_notes_p1566-l003",
+      "node_process_cpu_ms": 1.917,
+      "local_wall_ms": 3.223410999999942
+    },
+    {
+      "operation": "save_500_pending_p1237-l004",
+      "node_process_cpu_ms": 411.923,
+      "local_wall_ms": 413.94087000000036
+    },
+    {
+      "operation": "undo_500_pending",
+      "node_process_cpu_ms": 7.252,
+      "local_wall_ms": 8.541772000000492
+    }
+  ],
+  "year_examples": [
+    {
+      "id": "display-eau-claire-1",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "display-eau-claire-2",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "display-eau-claire-3",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "display-milwaukee-8x10-list",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "p0273-l021",
+      "year": "1972(?)",
+      "label": "Year uncertain",
+      "keys": [
+        "1972"
+      ],
+      "sort": 1972
+    },
+    {
+      "id": "p0273-l029",
+      "year": "1972 (?)",
+      "label": "Year uncertain",
+      "keys": [
+        "1972"
+      ],
+      "sort": 1972
+    },
+    {
+      "id": "p0273-l041",
+      "year": "1972 (?)",
+      "label": "Year uncertain",
+      "keys": [
+        "1972"
+      ],
+      "sort": 1972
+    },
+    {
+      "id": "p0526-l006",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "p0526-l008",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "p0528-l003",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "p0528-l005",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "p0528-l007",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "p0528-l009",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "p0528-l011",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "p0538-l001",
+      "year": "1936?",
+      "label": "Year uncertain",
+      "keys": [
+        "1936"
+      ],
+      "sort": 1936
+    },
+    {
+      "id": "p0564-l003",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "p0566-l002",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "p0566-l003",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "p0566-l004",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    },
+    {
+      "id": "p0566-l005",
+      "year": null,
+      "label": "Year unknown",
+      "keys": [
+        "unknown"
+      ],
+      "sort": null
+    }
+  ],
+  "unknown_years": 178,
+  "uncertain_years": 11,
+  "database_bytes": 36098048
+}

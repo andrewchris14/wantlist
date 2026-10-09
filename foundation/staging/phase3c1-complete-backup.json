@@ -1,0 +1,30 @@
+{
+  "created_utc": "20261009T142725Z",
+  "private_file": "foundation/.local/phase3c1-complete-private-20261009T142725Z.json",
+  "sha256": "bc31e4c4b02db9df9ff192bb84cbde9430a9e946489101d9fae182bae2b85e27",
+  "tables": {
+    "categories": 7,
+    "foundation_meta": 5,
+    "import_batches": 3,
+    "records": 268,
+    "record_groups": 369,
+    "items": 5639,
+    "provenance": 65,
+    "private_details": 8,
+    "change_history": 2239,
+    "public_records": 268,
+    "mutation_receipts": 2200,
+    "staging_import_state": 1,
+    "staging_import_chunks": 3,
+    "category_history": 0,
+    "category_receipts": 0,
+    "auth_control": 1,
+    "sessions": 248,
+    "login_limits": 3
+  },
+  "exact_restore_and_foreign_keys_verified": true,
+  "hashed_authentication_rows_in_private_backup": true,
+  "worker_secrets_read": false,
+  "remote_writes": false,
+  "native_time_travel_tested": false
+}

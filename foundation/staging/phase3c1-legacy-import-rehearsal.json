@@ -1,0 +1,90 @@
+{
+  "local_only": true,
+  "approved_derived_model_supported": false,
+  "source_records": 3392,
+  "days": [
+    {
+      "paused": true,
+      "completed_now": 82,
+      "completed_chunks": 82,
+      "imported_records": 3392
+    },
+    {
+      "paused": true,
+      "completed_now": 36,
+      "completed_chunks": 118,
+      "imported_records": 3392
+    },
+    {
+      "paused": true,
+      "completed_now": 36,
+      "completed_chunks": 154,
+      "imported_records": 3392
+    },
+    {
+      "paused": true,
+      "completed_now": 36,
+      "completed_chunks": 190,
+      "imported_records": 3392
+    },
+    {
+      "paused": true,
+      "completed_now": 36,
+      "completed_chunks": 226,
+      "imported_records": 3392
+    },
+    {
+      "paused": true,
+      "completed_now": 83,
+      "completed_chunks": 309,
+      "imported_records": 3392
+    },
+    {
+      "paused": false,
+      "completed_now": 9,
+      "completed_chunks": 318,
+      "imported_records": 3392
+    }
+  ],
+  "idempotent_no_writes": true,
+  "conservative_reservations": [
+    {
+      "day": "2026-10-09",
+      "reserved": 77924,
+      "budget": 80000
+    },
+    {
+      "day": "2026-10-10",
+      "reserved": 77904,
+      "budget": 80000
+    },
+    {
+      "day": "2026-10-11",
+      "reserved": 77904,
+      "budget": 80000
+    },
+    {
+      "day": "2026-10-12",
+      "reserved": 77904,
+      "budget": 80000
+    },
+    {
+      "day": "2026-10-13",
+      "reserved": 77904,
+      "budget": 80000
+    },
+    {
+      "day": "2026-10-14",
+      "reserved": 79826,
+      "budget": 80000
+    },
+    {
+      "day": "2026-10-15",
+      "reserved": 2367,
+      "budget": 80000
+    }
+  ],
+  "reconciliation_passed": true,
+  "items": 59104,
+  "d1_billing_measured": false
+}

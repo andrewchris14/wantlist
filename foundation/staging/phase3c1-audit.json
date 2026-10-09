@@ -1,0 +1,1160 @@
+{
+  "baseline_commit": "9db0bfe7f414de7e1a8b569599e448c05575b546",
+  "protected_sha256": "38a7ee7ad07ede1ae744dbe91b819c1bb78a294c70ca30f933bc66604d44c98a",
+  "display_sha256": "edd444c2ede69ff44539eac15fe32415fb01c0dc0aadfe04848260f226f78f73",
+  "source_records": 3392,
+  "display_listings": 3394,
+  "source_coverage": 3392,
+  "categories": {
+    "OBC Wantlist": {
+      "listings": 583,
+      "types": {
+        "want_list": 164,
+        "complete": 139,
+        "have_list": 280
+      },
+      "literal_items": 4587
+    },
+    "UV Wantlist": {
+      "listings": 2517,
+      "types": {
+        "want_list": 757,
+        "complete": 843,
+        "have_list": 917
+      },
+      "literal_items": 49061
+    },
+    "Eau Claire Players": {
+      "listings": 3,
+      "types": {
+        "want_list": 3
+      },
+      "literal_items": 112
+    },
+    "Milwaukee 8x10 List": {
+      "listings": 1,
+      "types": {
+        "have_list": 1
+      },
+      "literal_items": 250
+    },
+    "Brewers Bobblehead Wantlist": {
+      "listings": 26,
+      "types": {
+        "complete": 8,
+        "want_list": 18
+      },
+      "literal_items": 35
+    },
+    "Football Wantlist": {
+      "listings": 62,
+      "types": {
+        "have_list": 24,
+        "want_list": 32,
+        "complete": 6
+      },
+      "literal_items": 4022
+    },
+    "Other Stuff": {
+      "listings": 202,
+      "types": {
+        "want_list": 26,
+        "have_list": 166,
+        "complete": 10
+      },
+      "literal_items": 1031
+    }
+  },
+  "eau_claire": [
+    {
+      "id": "display-eau-claire-1",
+      "name": "Major League Players",
+      "items": 102
+    },
+    {
+      "id": "display-eau-claire-2",
+      "name": "Major League Managers",
+      "items": 3
+    },
+    {
+      "id": "display-eau-claire-3",
+      "name": "EC Managers (but did not play for EC) with major league experience",
+      "items": 7
+    }
+  ],
+  "approved_classifications": {
+    "p0060-l001": {
+      "expected": "complete",
+      "actual": "complete"
+    },
+    "p0273-l029": {
+      "expected": "complete",
+      "actual": "complete"
+    },
+    "p0273-l039": {
+      "expected": "want_list",
+      "actual": "want_list"
+    },
+    "p1996-l008": {
+      "expected": "complete",
+      "actual": "complete"
+    },
+    "p2501-l001": {
+      "expected": "complete",
+      "actual": "complete"
+    },
+    "p2851-l007": {
+      "expected": "complete",
+      "actual": "complete"
+    },
+    "p3022-l006": {
+      "expected": "have_list",
+      "actual": "have_list"
+    }
+  },
+  "staging": {
+    "stored": 268,
+    "active": 265,
+    "derived_matches": 62,
+    "legacy_members": 1,
+    "owner_created": 202,
+    "deleted_ids": [
+      "display-brewers-bobblehead-wantlist",
+      "display-eau-claire-players",
+      "owner-record-7fa005d0-ae02-4856-a2c2-d397dd97b223"
+    ],
+    "items": 5639,
+    "active_items": 3992,
+    "history": 2239,
+    "fixture_candidates": [
+      {
+        "id": "owner-record-010f3a35-d6ff-4b6e-8664-5c5c23606d4d",
+        "name": "2027 Topps Complete Practice owner-desktop 1791411996213",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-01573e45-a884-4cb9-8a5e-4a8f4df9414d",
+        "name": "2027 Topps CPU staging 12",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-0bd34189-7cf8-45e9-bccc-f2171fed98ac",
+        "name": "2027 Topps Practice owner-mobile 1791412364302",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-0c803d3c-2e25-4ec5-80e9-28cf6e94bcd3",
+        "name": "2027 Topps CPU staging 18",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-0e0df596-feef-4492-abc2-973932c257a0",
+        "name": "2027 Owned-only staging test",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-10e239e7-dabc-4965-9d87-04d40acfb355",
+        "name": "2027 Topps CPU staging 16",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-13b9e57b-eb81-41e0-bbdf-3d34f3883fda",
+        "name": "2027 Replacement API Practice",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-1400d206-ecf4-4e24-b56a-7f66ef450a07",
+        "name": "2027 Topps CPU staging 2",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-161592e9-2811-43cd-a676-4530880b9646",
+        "name": "2027 Topps CPU staging 3",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-17f36b24-6934-47e7-97df-4a0695f04456",
+        "name": "2027 Topps CPU staging 6",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-18adc75b-786b-4392-99e5-9eaac3b7b6ed",
+        "name": "2027 Topps CPU staging 3",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-1aa955e7-8b5b-4262-97db-3d840fd9a269",
+        "name": "2027 Owned-only staging test",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-209442cd-c093-44ef-83c5-844f1877f17a",
+        "name": "2027 Topps CPU staging 22",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-21b75cb6-264c-4461-8c35-5620e19d279a",
+        "name": "2027 Topps Complete Practice owner-desktop 1791412082584",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-24a8c84a-a140-41e4-9927-342a1b69d251",
+        "name": "2027 Topps CPU staging 0",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-2596f2ff-da37-40e8-b4a1-c3f0efb78090",
+        "name": "2027 Topps CPU staging 13",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-27ae859c-54ea-4da0-803d-42fdf4daa8f3",
+        "name": "2027 Owned-only staging test",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-2a7116d8-4f06-47de-a49f-e086722b1242",
+        "name": "2027 Topps CPU staging 4",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-2b6ce563-6517-4063-9f51-69c33743d8b0",
+        "name": "2027 Topps CPU staging 2",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-2bdec8eb-0422-4109-865f-5aa6ca9f6a29",
+        "name": "2027 Topps CPU staging 20",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-2d7cf294-836c-4a72-8d45-98ba2884631e",
+        "name": "2027 Topps Practice owner-desktop 1791411875014",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-30345069-f237-4585-a99e-effafea93764",
+        "name": "2027 Owned-only staging test",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-31874bd5-175d-4501-b09b-d4b964317d9b",
+        "name": "2027 Topps CPU staging 8",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-33d8a19c-e5c4-4b7c-bfac-d768c0932709",
+        "name": "2027 Topps CPU staging 0",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-39dac18c-a081-4e6d-96f7-0d1df41ca954",
+        "name": "2027 Topps CPU staging 12",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-4288f796-32b3-458c-95a9-369ac838abdd",
+        "name": "2027 Topps CPU staging 14",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-448906be-4e77-4f84-a662-6309bf2a74a9",
+        "name": "2027 Topps CPU staging 3",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-4a414fdb-2bbd-4e03-a2f6-80ac27df0fbc",
+        "name": "2027 Topps CPU staging 15",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-4d998b3f-11e7-4673-a8b1-465b53866413",
+        "name": "2027 Topps CPU staging 5",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-4facead7-6207-4bc2-b396-deaa201e6725",
+        "name": "2027 Replacement API Practice",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-515ccc54-5e21-4d59-a3e9-64f8a9b7861c",
+        "name": "2027 Topps CPU staging 4",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-54547a3b-68e4-4d50-8192-0cec5be92fa3",
+        "name": "2027 Topps Practice owner-mobile 1791412553677",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-54a52bde-4033-46b0-b157-1e54859d2bcc",
+        "name": "2027 Topps CPU staging 17",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-580e9ccf-cc28-41be-bc0a-2e4973b634af",
+        "name": "2027 Topps CPU staging 15",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-58e5176d-4165-45ac-a26b-e7022e2201df",
+        "name": "2027 Topps Complete Practice owner-mobile 1791412565387",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-5fde09fc-5da2-4e7b-bc14-a3785cbb8aed",
+        "name": "2027 Topps Complete Practice owner-mobile 1791412111342",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-6372d8e0-6a6b-4637-b7e6-7a746e95f9df",
+        "name": "2027 Topps CPU staging 7",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-6707ec2d-da31-4347-be1e-4009f93b2283",
+        "name": "2027 Topps CPU staging 6",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-6ac5c55a-1752-4863-9651-d50e8415f414",
+        "name": "2027 Topps CPU staging 8",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-6ccb75ff-e1e9-46e9-9ec1-7c277ae0cbf7",
+        "name": "2027 Topps Practice owner-desktop 1791412534615",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-711da841-fe60-4add-9296-9ab67acf636a",
+        "name": "2027 Topps CPU staging 1",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-741dce6b-9251-410f-9d09-1709db7bac59",
+        "name": "2027 Topps CPU staging 8",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-76c7e11b-eb55-4f72-bcbb-322be095f116",
+        "name": "2027 Topps Complete Practice owner-desktop 1791412547277",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-76c80bf4-f304-4195-8f1d-f053fbc84e9f",
+        "name": "2027 Owned-only staging test",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-76d76404-d665-4b7c-a717-0ee2244012b2",
+        "name": "2027 Topps CPU staging 7",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-7ba8e10b-4a0d-4d73-87ee-e034a9289e14",
+        "name": "2027 Topps Practice owner-mobile 1791412094722",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-85416600-2752-4fd5-8350-ccaf0a9829ba",
+        "name": "2027 Topps CPU staging 6",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-8b95523c-8644-48ac-be94-06c6f81bdccf",
+        "name": "2027 Topps CPU staging 2",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-8bd6cebb-8348-4ac9-981b-67753d51e56b",
+        "name": "2027 Topps Practice owner-desktop 1791412340517",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-9ab89299-e735-43a5-bfc9-312a713c8dd6",
+        "name": "2027 Topps Practice owner-desktop 1791412063729",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-9f51bbfc-4b5f-407a-976d-bc64cb8b2913",
+        "name": "2027 Owned-only staging test",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-a093fcde-3a62-455c-a87d-15da0509d2dc",
+        "name": "2027 Topps CPU staging 20",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-a20a5204-e2b7-4ad7-932c-d289e08b0d3a",
+        "name": "2027 Topps CPU staging 22",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-a5da2def-afda-455f-88e2-3c83ebfd8ad4",
+        "name": "2027 Topps CPU staging 10",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-a606dac2-a0ba-451d-8516-14cce469bb46",
+        "name": "2027 Topps CPU staging 11",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-a87b4890-9b2f-4162-afaa-eb4c762de26d",
+        "name": "2027 Topps CPU staging 14",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-a8c9d0ab-e070-4880-87a7-b930e3b60af1",
+        "name": "2027 Topps CPU staging 21",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-aa1cfef5-6876-4382-b4e0-61acf52e8b68",
+        "name": "2027 Topps CPU staging 13",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-ab591b3a-164b-47b6-9989-de977ffa4de8",
+        "name": "2027 Topps Practice owner-mobile 1791412008307",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-ae5d1f79-6ad2-49b3-a31b-506ed3ea5e09",
+        "name": "2027 Topps CPU staging 4",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-af323f15-b7a2-4b87-9c31-57c994463c81",
+        "name": "2027 Topps CPU staging 5",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-af6351ae-1d5e-4a85-8a2d-492fe3cfc56a",
+        "name": "2027 Topps Complete Practice owner-desktop 1791412357244",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-bb27f736-ec97-4b59-9988-6738f03e3dce",
+        "name": "2027 Owned-only staging test",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-bf7b7fdb-38c2-449c-90e1-8bdd0d08a0a7",
+        "name": "2027 Topps CPU staging 12",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-c37b83e1-e0a7-4c31-b94f-32a64759ee3b",
+        "name": "2027 Topps CPU staging 11",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-c614c433-f823-4442-942e-d097910c1357",
+        "name": "2027 Topps CPU staging 13",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-ca06b056-c16f-4fbb-b040-b3c989e57d33",
+        "name": "2027 Topps CPU staging 17",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-ce5f7312-0a28-4bc0-b82d-8fd43fd2a242",
+        "name": "2027 Topps CPU staging 1",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-d579f5ff-9677-41bd-9398-9f70f912d886",
+        "name": "2027 Topps CPU staging 9",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-d66001a4-890d-4775-9e94-f78003dc6165",
+        "name": "2027 Topps CPU staging 5",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-d7633ff8-c94d-4143-a88d-268cd1ceacd7",
+        "name": "2027 Topps CPU staging 1",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-d889be42-fb52-454a-8010-0e868793900a",
+        "name": "2027 Topps CPU staging 10",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-d8e1c73c-acd8-40ca-9740-cb4bc7bf4a9e",
+        "name": "2027 Topps CPU staging 11",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-e6ef7225-c138-41b1-b992-91474f996cbf",
+        "name": "2027 Topps CPU staging 9",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-e8bebcac-4748-41c8-8232-8be5f14fb268",
+        "name": "2027 Topps CPU staging 18",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-e984005b-82ea-4d8e-9fd3-a860c82a9d89",
+        "name": "2027 Topps CPU staging 9",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-ea33fe39-a11f-4278-b6fc-ef7533962764",
+        "name": "2027 Topps CPU staging 0",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-ea74105b-9790-47f8-95bc-a714318727d1",
+        "name": "2027 Topps CPU staging 21",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-ee9afff4-f89f-4852-9a4e-d9924768160c",
+        "name": "2027 Topps CPU staging 10",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-f206734d-0d4e-40d4-8d0a-3ab520db7c1a",
+        "name": "2027 Topps CPU staging 19",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-f39592f1-ca0b-4dde-952e-08ea069bf5ae",
+        "name": "2027 Topps CPU staging 14",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-f6e907ff-e389-4c83-8989-c5d10fe7fe31",
+        "name": "2027 Topps Complete Practice owner-mobile 1791412380464",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-f75db2a4-9484-4476-abc7-5deab7c5413a",
+        "name": "2027 Owned-only staging test",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-f7a4a282-56b0-46c3-8474-9eb140e16faa",
+        "name": "2027 Topps CPU staging 16",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-fba4e10e-4538-4aee-8400-d608de09ffff",
+        "name": "2027 Topps CPU staging 19",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      },
+      {
+        "id": "owner-record-fddc22b8-0615-49ce-8863-9b01bf590f76",
+        "name": "2027 Topps CPU staging 7",
+        "active_prefix_items": 0,
+        "fixture_title_candidate": true,
+        "duplicate_values": 0,
+        "decision": "preserve; owner/provenance review required"
+      }
+    ],
+    "active_cpu_entries": 0,
+    "removed_cpu_entries": 1403,
+    "preserved_historical_ids": [
+      "display-eau-claire-1",
+      "display-eau-claire-2",
+      "display-eau-claire-3",
+      "display-milwaukee-8x10-list",
+      "p0008-l001",
+      "p0010-l001",
+      "p0012-l001",
+      "p0014-l001",
+      "p0019-l001",
+      "p0023-l001",
+      "p0026-l001",
+      "p0028-l001",
+      "p0060-l001",
+      "p0092-l005",
+      "p0122-l001",
+      "p0136-l001",
+      "p0199-l001",
+      "p0237-l001",
+      "p0273-l029",
+      "p0273-l039",
+      "p0273-l047",
+      "p0277-l007",
+      "p0289-l007",
+      "p0526-l006",
+      "p0531-l001",
+      "p0581-l001",
+      "p0645-l005",
+      "p0672-l001",
+      "p0694-l001",
+      "p0730-l001",
+      "p1237-l004",
+      "p1566-l003",
+      "p1996-l008",
+      "p2501-l001",
+      "p2851-l007",
+      "p3022-l006",
+      "p3029-l001",
+      "p3032-l001",
+      "p3035-l001",
+      "p3038-l001",
+      "p3041-l001",
+      "p3044-l001",
+      "p3047-l001",
+      "p3052-l001",
+      "p3055-l001",
+      "p3059-l001",
+      "p3062-l001",
+      "p3066-l001",
+      "p3069-l001",
+      "p3072-l001",
+      "p3076-l001",
+      "p3080-l001",
+      "p3086-l001",
+      "p3089-l001",
+      "p3092-l001",
+      "p3096-l001",
+      "p3099-l001",
+      "p3103-l001",
+      "p3106-l001",
+      "p3109-l001",
+      "p3112-l001",
+      "p3117-l001"
+    ],
+    "historical_edits": [
+      {
+        "id": "display-milwaukee-8x10-list",
+        "revision": 13
+      },
+      {
+        "id": "p0019-l001",
+        "revision": 14
+      },
+      {
+        "id": "p0526-l006",
+        "revision": 2
+      },
+      {
+        "id": "p0531-l001",
+        "revision": 5
+      },
+      {
+        "id": "p0581-l001",
+        "revision": 3
+      },
+      {
+        "id": "p0645-l005",
+        "revision": 3
+      },
+      {
+        "id": "p1237-l004",
+        "revision": 801
+      },
+      {
+        "id": "p3029-l001",
+        "revision": 2
+      },
+      {
+        "id": "p3117-l001",
+        "revision": 6
+      }
+    ]
+  },
+  "overlay_rehearsal": {
+    "added": 3332,
+    "preserved": 62,
+    "stored_after": 3600,
+    "old_rows_exactly_unchanged": true,
+    "comparison": {
+      "passed": true,
+      "differences": [],
+      "preserved_existing": 62,
+      "foreign_key_errors": 0
+    }
+  },
+  "backup": {
+    "snapshot_sha256": "a3b144c84c34cf8d51745329cd7526101db99a76d5910fc40da22916da757f79",
+    "existing_snapshot_exact_restore": true,
+    "overlay_exact_restore": true,
+    "overlay_tables": 16,
+    "authentication_excluded": true,
+    "native_time_travel_tested": false
+  },
+  "source_anomalies": {
+    "duplicate_identifier_groups": [
+      {
+        "id": "p0612-l001",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "112",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p0726-l001",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "14",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p0821-l001",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "29",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p0827-l001",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "69",
+            3
+          ]
+        ]
+      },
+      {
+        "id": "p0910-l003",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "298",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p0986-l001",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "215",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p1161-l029",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "332",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p1237-l004",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "38",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p1272-l021",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "296",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p1272-l025",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "453",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p1476-l003",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "484",
+            2
+          ],
+          [
+            "485",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p1490-l003",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "96",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p1520-l003",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "439",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p1924-l001",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "53",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p2588-l001",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "270",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "p2952-l001",
+        "group": 0,
+        "field": "card_numbers",
+        "duplicates": [
+          [
+            "333",
+            2
+          ]
+        ]
+      }
+    ],
+    "same_title_source_pairs": [
+      [
+        "p0185-l001",
+        "p0187-l001"
+      ],
+      [
+        "p1056-l005",
+        "p1058-l001"
+      ],
+      [
+        "p1056-l007",
+        "p1060-l007"
+      ]
+    ],
+    "identical_inventory_at_distinct_source_locations": [
+      "p1056-l005",
+      "p1058-l001"
+    ],
+    "normalized_literals": 59104,
+    "derived_literals": 59098,
+    "word_line_special_collections": {
+      "Milwaukee 8x10 List": {
+        "normalized": 251,
+        "display": 250
+      },
+      "Eau Claire Players": {
+        "normalized": 117,
+        "display": 112
+      }
+    },
+    "source_records_preserved_in_provenance": true,
+    "derived_independently_rebuilt_from_word": true
+  }
+}

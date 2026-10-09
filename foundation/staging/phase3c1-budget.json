@@ -1,0 +1,23 @@
+{
+  "estimate_only": true,
+  "d1_billing_verified": false,
+  "per_listing_overhead_reservation": 64,
+  "cost_formula": "1 + 2 * SQLite index count per inserted row; projection + receipt + 64 overhead per listing",
+  "index_row_costs": {
+    "records": 5,
+    "provenance": 3,
+    "record_groups": 5,
+    "items": 7,
+    "public_records": 3,
+    "rehearsal_receipts": 3
+  },
+  "full_reserved_writes": 695723,
+  "missing_reserved_writes": 682717,
+  "recommended_daily_budget": 60000,
+  "estimated_days_for_missing": 12,
+  "missing_literal_rows": 57978,
+  "largest_listing_reservation": 3765,
+  "largest_payload_bytes": 125452,
+  "maximum_listings_per_operator_batch": 20,
+  "pending_chunk_implementation": true
+}

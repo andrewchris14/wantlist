@@ -1,63 +1,33 @@
-# Owner setup: private encrypted Google Drive backups
+# Owner setup: verified encrypted backup outside Cloudflare
 
-This setup does not purchase Cloudflare services or import/clean up the collection.
-No Drive connection or upload has been made.
+The owner has retained the existing private recovery key and recovery password.
+**Do not generate new keys or send recovery materials to Codex.**
 
-## Create and keep your recovery files
+Google Drive is **optional**, not a requirement. A securely retained encrypted
+backup on the owner's computer or USB is acceptable. The gate is one outside-
+Cloudflare copy whose actual saved file has been checksum-checked, decrypted and
+restored successfully in isolation before destructive staging changes, archival
+or full historical import. Hosting must remain $0/month on Cloudflare Free.
 
-1. Open [the recovery page in GitHub](https://github.com/andrewchris14/wantlist/blob/work/tools/backup-recovery.html).
-   Use **Download raw file** above the code. Save `backup-recovery.html` on your
-   own computer, then double-click it to open in an up-to-date browser.
-2. Enter a strong recovery password, at least 16 characters. Keep it in your
-   password manager. This password protects your private recovery key; it is not
-   the website PIN, your Google password or a new login credential.
-3. Select **Generate recovery files**. Then use the two separate download buttons.
-4. Keep `wantlist-private-recovery-key.ENCRYPTED.json` on a secure USB or another
-   owner-controlled location outside GitHub and this agent workspace, separate
-   from the Drive backups. Keep a second safe copy. Do not send this file or its
-   password to the agent. Keep the downloaded setup page for future recovery.
-5. Share **only** `wantlist-public-key.json` with the backup operator. It cannot
-   decrypt a backup. The private recovery key stays on your own computer/storage.
+The new [Windows backup guide](WINDOWS_BACKUP_GUIDE.md) and
+[technical review](WINDOWS_BACKUP_REVIEW.md) describe the prepared owner-run,
+click-through workflow. It uses the existing key/envelope formats, creates no
+plaintext database file, and tests restoration in RAM without changing the live
+website. One free Python installation and an up-to-date Edge/Chrome browser are
+needed; no terminal, Wrangler, extra packages or Drive connection.
 
-The page performs cryptography locally and has a policy forbidding network
-connections. The operator's encryption tool refuses private keys. Losing the
-private recovery file and/or its password can make backup recovery impossible.
+**Prepared for owner review only.** No real export or remote Cloudflare operation
+was performed while preparing it. Windows launch/file-association behavior and
+actual read-only account permissions still need owner-side verification. Quota
+headroom must be confirmed before any export; a current limit notice blocks it.
+The previous backup remains undelivered and owner recovery remains unverified.
 
-## Choose and authorize the Drive destination
+`tools/backup-recovery.html` remains available for the original recovery-file
+format and legacy recovery procedure. Its old **Verify and recover backup**
+button downloads plaintext; use the new Windows workflow for memory-only restore
+of new backups. The new workflow supports the existing public key and protected
+private key; it does not require making replacements.
 
-Create a folder in your personal Google Drive, such as **Want List Private Backups**.
-Keep its sharing setting **Restricted**; do not make it public or enable an
-anyone-with-link permission. Identify that folder for the operator.
-
-Authorize a Google Drive connection and explicitly approve uploading encrypted
-backups to that exact folder. Connection availability is not assumed. If the
-connection cannot upload/download files, the operator can provide ciphertext for
-you to upload/download manually; that does not require terminal commands.
-
-Only encrypted database files belong in the Drive backup folder. Do not upload
-plaintext database exports or the private recovery key there. The backups include
-sensitive hashed session/authentication state, even though they contain no PIN
-secret; encryption is mandatory.
-
-## Verify a durable copy before approving cleanup/import
-
-The operator creates a fresh consistent backup, proves local restoration, then
-encrypts it using your public key. After upload, download the Drive copy again.
-The operator compares its ciphertext checksum with the original.
-
-Use **Recover an encrypted backup** on the local recovery page. Select your
-password-protected recovery-key file and the downloaded encrypted backup, enter
-the password, and confirm the recovered file will remain private. A successful
-recovery verifies authenticated encryption and the plaintext checksum.
-
-The resulting `wantlist-recovered-backup.PRIVATE.json` is sensitive. Store it
-privately and share it only through an approved private recovery channel with
-the authorized operator. Never put it in GitHub or a public link. The operator
-must demonstrate an isolated database restore and compare records, history,
-removed state, categories, metadata, provenance and import receipts. Do not
-replace the live database or newer owner edits as part of this check.
-
-**The durable-backup gate remains incomplete until a Drive copy has been
-retrieved, decrypted and restored successfully.** No owner key/public key,
-authorized folder or durable copy has been provided yet. Cloudflare's native
-backup/Time Travel recovery has not been tested.
+If you choose Drive later, keep the folder Restricted and upload only ciphertext.
+Download the actual Drive copy again and verify/decrypt/restore it just like a
+local/USB copy. There is no requirement to connect Google to Codex.

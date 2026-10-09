@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Want List local backup and recovery</title>
+<style>body{font:18px/1.5 system-ui;max-width:48rem;margin:1rem auto;padding:1rem;color:#172330}fieldset{margin:1.2rem 0;padding:1rem}label{display:block;margin:.9rem 0}input,button{font:inherit;padding:.5rem;max-width:100%;box-sizing:border-box}input[type=text],input[type=password]{width:100%}button{margin:.5rem 0}input[type=checkbox]{width:1.2rem;height:1.2rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}#status{white-space:pre-wrap;background:#edf2f5;padding:1rem}.warning{border-left:5px solid #a75000;padding:.6rem}small{display:block}</style>
+<h1>Want List local backup and recovery</h1>
+<p>This page runs on your computer. It saves encrypted backups only. Recovery uses your existing key and password in this browser and tests a new, temporary database in memory.</p>
+<p class="warning">Prepared for owner review. Do not export until this process is approved and the D1 quota has safe headroom. The website and Cloudflare account are never restored or modified here.</p>
+<p id="day"></p>
+<form id="export-form"><fieldset><legend>1. Create an encrypted staging backup</legend>
+<p>Source: <strong>wantlist-staging</strong>. This tool cannot select production or a disposable database.</p>
+<label>Existing public encryption key <input id="public-key" type="file" accept=".json" required></label>
+<label>Cloudflare Account ID <input id="account" type="text" autocomplete="off" spellcheck="false" required></label>
+<label>Short-lived read-only API token <input id="token" type="password" autocomplete="off" required></label>
+<small>Only D1 Read and Account Analytics Read for this account. Never enter your Global API Key, website PIN, recovery key or password here.</small>
+<label>Today's account-wide D1 rows read, from the Cloudflare dashboard <input id="reads" type="number" min="0" step="1" required></label>
+<label>Today's account-wide D1 rows written, from the dashboard <input id="writes" type="number" min="0" step="1" required></label>
+<label><input id="notice" type="checkbox" checked> Cloudflare sent a D1-limit notice for this UTC quota day.</label>
+<label><input id="approved" type="checkbox" required> I have approved this workflow for use.</label>
+<label><input id="free" type="checkbox" required> My account is on Free; I have not activated Paid.</label>
+<label><input id="quiet" type="checkbox" required> I stopped edits and all other D1 jobs for at least 30 minutes; these dashboard readings are fresh account totals for today's UTC quota day.</label>
+<label><input id="encrypted-pc" type="checkbox" required> Device Encryption or BitLocker is on, and this is my private computer.</label>
+<button>Create backup: check quota, verify and encrypt</button>
+<small>Unavailable/insufficient quota, mismatching reads or restoration failure stops without saving any backup. No automatic retries.</small>
+</fieldset></form>
+<section id="ready" hidden><h2>2. Save encrypted files</h2><p>Local pre-encryption restoration passed. Recovery of your saved copy has not yet been verified.</p><button id="download">Save encrypted backup</button> <button id="receipt">Save checksum receipt</button><pre id="checksum"></pre><p>Save to your computer or USB. Then select the actual saved copy below. Google Drive is optional.</p></section>
+<form id="recover-form"><fieldset><legend>3. Verify your saved copy and test recovery</legend>
+<p>This section needs no Cloudflare access or API token. Disconnect Wi-Fi if you wish. Your recovery key and password stay in the browser.</p>
+<label>Actual encrypted backup saved on your computer or USB <input id="backup-file" type="file" accept=".json" required></label>
+<label>Expected encrypted SHA-256 checksum, from your saved receipt <input id="expected" type="text" pattern="[A-Fa-f0-9]{64}" autocomplete="off" required></label>
+<label>Existing password-protected recovery key <input id="private-key" type="file" accept=".json" required></label>
+<label>Recovery password <input id="password" type="password" autocomplete="off" required></label>
+<button>Check saved copy, decrypt and test isolated restore</button>
+</fieldset></form>
+<section id="verified" hidden><h2>Recovery verified for this selected file</h2><pre id="recovery-result"></pre><button id="proof">Save recovery verification receipt</button><p>Keep the encrypted backup and receipts outside Cloudflare. Keep your encrypted private recovery key and password safe, preferably separately. No plaintext database file was downloaded.</p></section>
+<p id="status" role="status">Ready. Opening this page makes no Cloudflare requests.</p><button id="close">Close and clear local tool</button>
+<script type="module" src="/backup.js"></script></html>

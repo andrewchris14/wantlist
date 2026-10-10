@@ -1,0 +1,19 @@
+{
+  "bindings_match": true,
+  "calls": 3,
+  "changed_binding_names": [],
+  "database_binding_verified": true,
+  "endpoint_disabled": true,
+  "extra_binding_names": [],
+  "missing_binding_names": [],
+  "modules_match": true,
+  "option_diff_fields": [],
+  "options_match": true,
+  "previews_disabled": true,
+  "scope": "cleanup-only",
+  "worker": "wantlist-test-3c2-bc5991ba",
+  "sql_calls": 0,
+  "application_http_calls": 0,
+  "mutations": 0,
+  "fully_verified": true
+}

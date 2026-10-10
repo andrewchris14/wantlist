@@ -45,7 +45,7 @@ class LiveTransport:
                     if time.monotonic()-started>30:raise StopReview('HTTP_TOTAL_TIMEOUT')
                     if not chunk:break
                     size+=len(chunk)
-                    if size>4_000_000:raise StopReview('RESPONSE_SIZE_STOP')
+                    if size>getattr(self,'response_limit',4_000_000):raise StopReview('RESPONSE_SIZE_STOP')
                     chunks.append(chunk)
                 return response.status,dict(response.headers),b''.join(chunks)
         except StopReview:raise

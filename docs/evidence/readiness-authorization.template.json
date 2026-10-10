@@ -1,0 +1,13 @@
+{
+  "protocol": "readiness-no-d1-v1",
+  "worker": "wantlist-test-3c2-bc5991ba",
+  "database": "7cf1e9a2-f0b7-4d6b-bded-f5a3315c028c",
+  "probe_source_sha256": "34a1a8c3283104489bb0049bf10a3d202bd109e9e8bb132c9880eff70f22557b",
+  "expires_at_utc": null,
+  "owner_authorized": false,
+  "allow_probe_release": false,
+  "allow_enable": false,
+  "allow_two_gets": false,
+  "allow_optional_browser": false,
+  "allow_cleanup": false
+}

@@ -86,7 +86,7 @@ def verify_quota(snapshot, now, require_migration_bound=True):
     return {'remaining_reads': READ_LIMIT - reads, 'remaining_writes': WRITE_LIMIT - writes,
             'remaining_worker_requests': WORKER_REQUEST_LIMIT - requests}
 
-def verify_resources(resources):
+def verify_resources(resources, require_application=True):
     if resources.get('worker_name') != WORKER or resources.get('database_name') != WORKER or resources.get('database_id') != DATABASE:
         stop('DISPOSABLE_IDENTITY_MISMATCH')
     if resources.get('custom_domains') != [] or resources.get('routes') != []:
@@ -108,9 +108,9 @@ def verify_resources(resources):
             stop('ISOLATION_MARKER_MISSING')
     if any(b.get('name') in ('PHASE34_MIGRATION_DIGEST', 'PHASE35_MAINTENANCE_DIGEST') for b in bindings):
         stop('MAINTENANCE_CAPABILITY_PRESENT')
-    if resources.get('reviewed_code_and_schema_verified') is not True:
+    if require_application and resources.get('reviewed_code_and_schema_verified') is not True:
         stop('REVIEWED_CODE_OR_SCHEMA_UNVERIFIED')
-    if resources.get('synthetic_fixture_verified') is not True:
+    if require_application and resources.get('synthetic_fixture_verified') is not True:
         stop('SYNTHETIC_FIXTURE_UNVERIFIED')
     # usage_model=standard and a successful HTTP response prove neither plan.
     if resources.get('explicit_cpu_limit_ms') not in (None, 10):

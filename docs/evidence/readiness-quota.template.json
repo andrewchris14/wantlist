@@ -1,0 +1,19 @@
+{
+  "workers_free_confirmed": true,
+  "d1_free_confirmed": true,
+  "source": "owner-dashboard",
+  "account_wide": false,
+  "period_verified": false,
+  "competing_bulk_jobs_paused": false,
+  "migration_pending": true,
+  "migration_scan_bound_confirmed": false,
+  "observed_at_utc": null,
+  "period_start_utc": null,
+  "period_end_utc": null,
+  "rows_read_upper_bound": null,
+  "rows_written_upper_bound": null,
+  "worker_requests_upper_bound": null,
+  "storage_bytes_upper_bound": null,
+  "database_count": null,
+  "disposable_database_bytes_upper_bound": null
+}

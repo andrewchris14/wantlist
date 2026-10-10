@@ -1,0 +1,21 @@
+{
+  "protocol": "readiness-no-d1-v1",
+  "main_module": "worker.mjs",
+  "probe_source_sha256": "34a1a8c3283104489bb0049bf10a3d202bd109e9e8bb132c9880eff70f22557b",
+  "original_module_sha256": {
+    "auth.js": "1eb4decbca6f76c2e58c71105c42dba32259ee04d407edc0e84e1d33b1100858",
+    "categories.js": "f7abc007458cc10b7469d19db1d167fb7f80352df5304ca14d73898b7a1dd16d",
+    "edit-session.js": "ae27412a6692acb6ebc7a33b3c9e4624da28208818766d21f234e7c6b6d0e328",
+    "editor-assets.js": "25f5dc6613b62625d932342ff03447b85df3d0cab63f1722185e847e3b903697",
+    "effective-list-type.js": "e1cf406ce37b86910b44acfae4dd6776cd6e93ca91fd673ebd278733299ea746",
+    "owner.js": "c98a23be5d2394694d32acc859a02ba30adb54ec8e918d829e1bfcb611406892",
+    "phase34-migration.js": "47373ed689ac57f6e0d69c992441a3582636ddd4a512f59244a4d779e4aabf3c",
+    "phase34-samples.js": "0cacd13118ace4f9dc2195e0a46a6a7f714abc1ee633f69fa64c64ea61fd064a",
+    "phase35-maintenance-data.js": "f7796abc6f6ac400992bc390a01dbe37d21842a6fb0a89ca2fb2e289645f29b2",
+    "phase35-maintenance.js": "dd68bdd200881200307d82a8a037fc2bdd7219077072cd555c6ce65371ee8ceb",
+    "records.js": "e7ba78e43cdbeb4f1bf98abf2b4b4c58c157b4d1cc49ea2fc3e1a1c3b79065ae",
+    "replace-list.js": "30d1559434d001cc950f0ec100fd1e7e38a080b773c9a7277d804005eab57da7",
+    "worker.mjs": "c71a7fd5e25ec61a2df85923e562da508bf8e08256fb245624a85c4b6ec7f058"
+  },
+  "original_options_sha256": "bee78a2448e532ba8610f5c83dd217870c94d1b48232add96e96293997179dfb"
+}

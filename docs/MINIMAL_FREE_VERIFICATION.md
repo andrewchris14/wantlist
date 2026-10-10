@@ -6,7 +6,14 @@ Permanent hosting must remain **$0/month**. This document replaces the earlier
 nine-call proposal for the **first** verification; Notes/normal Save and full
 browser coverage remain separate later approvals.
 
-## Current block and scope
+## Current status and scope
+
+October 10 update: the owner reports Workers Free **Active**, no card/Paid, and
+D1 reads/writes reset to zero. Local live-adapter preparation is now complete;
+see [adapter, release manifest, fault tests and exact authorization](MINIMAL_FREE_ADAPTER.md).
+No remote execution is authorized. A fresh complete quota snapshot is still required.
+
+### Historical October 9 quota block
 
 The owner reports D1 reads **6.55 million / 5 million**, writes
 **52,750 / 100,000**, databases **3 / 10**, storage **35.04 MB / 5 GB**.
@@ -22,14 +29,11 @@ Nothing was enabled during preparation. A reset or new usage message is not
 permission to execute. The owner will provide updated usage and separately
 approve the specific disposable-only work.
 
-Prepared artifacts are offline guard/payload/measurement functions in
-`foundation/staging/minimal_free_plan.py`, fault-injection tests, improved D1
-instrumentation and an opt-in expiring review wrapper. The Python module has
-**no network client, credential access, CLI or connected execution runner**.
-The procedure below is an operator test specification. A future transport adapter
-must be reviewed and locally fault-tested against these guards before it runs;
-do not substitute the broad `free_http_review.py` harness. It can seed thousands
-of records, retry readiness/login and issue many queries outside this budget.
+The offline policy module remains credential/network free. A connected adapter
+now exists separately and is locally fault-tested: see
+[MINIMAL_FREE_ADAPTER.md](MINIMAL_FREE_ADAPTER.md). This specification governs
+its eight-request/six-measurement protocol. Do not substitute the broad
+`free_http_review.py` harness, which seeds and queries outside this budget.
 
 ## Admission, before any data-plane call
 
@@ -221,7 +225,7 @@ compatibility. This canary tests neither a full historical D1 import nor a new
 
 The protected scope always attempts shutdown after entering its verified action,
 including enable timeouts, work exceptions, budget stops and graceful interrupts.
-Bind SIGINT/SIGTERM to graceful cancellation in a future live adapter. Keep the
+The prepared live adapter binds SIGINT/SIGTERM to graceful cancellation. Keep the
 cleanup call reserve independent of exhausted work budgets. Disable workers.dev
 and previews; verify the control-plane state. Retry disable/verification at most
 twice. **Confirm disabled before restoring normal modules**. Otherwise restoration
@@ -237,7 +241,7 @@ prevents further SQL after expiry; it does **not** disable workers.dev. If shutd
 cannot be confirmed, retain the expiring guarded modules, report cleanup incomplete
 and request owner dashboard action to disable workers.dev and previews on exactly
 this disposable Worker. Do not claim disabled because requests now return 403.
-A hard-killed process cannot run finally; a future live adapter also needs an
+A hard-killed process cannot run finally; the prepared live adapter includes an
 independent bounded cleanup supervisor/owner recovery instructions. No such
 supervisor was installed remotely during this phase.
 
@@ -281,8 +285,9 @@ No updated Worker CPU or billed D1 measurements exist.
 conservative reserves, ephemeral disposable release/lease and any performance
 migration. **Still needed before execution:** fresh accounting/billing/request
 usage, migration scan bounds, current disposable metadata/schema/fixture checks,
-a reviewed live transport adapter with checkpoint/timeout/signal/cleanup-supervisor
-fault tests, and a separately bounded account-wide final reconciliation. Approval
+the prepared adapter release reviewed for authorization, and a separately bounded
+account-wide final reconciliation. Adapter fault tests now exist; see the linked
+October 10 preparation report. Approval
 of a plan does not remove these execution prerequisites.
 
 Additional work safe to pursue locally:

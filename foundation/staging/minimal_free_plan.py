@@ -48,7 +48,7 @@ def utc(value):
 def integer(value):
     return type(value) is int and value >= 0
 
-def verify_quota(snapshot, now):
+def verify_quota(snapshot, now, require_migration_bound=True):
     """Strict account-wide upper bounds; missing/stale/billing data fails closed."""
     if snapshot.get('workers_free_confirmed') is not True or snapshot.get('d1_free_confirmed') is not True:
         stop('FREE_BILLING_UNCONFIRMED')
@@ -77,7 +77,7 @@ def verify_quota(snapshot, now):
     migration_pending = snapshot.get('migration_pending')
     if type(migration_pending) is not bool:
         stop('MIGRATION_STATUS_UNKNOWN')
-    if migration_pending and snapshot.get('migration_scan_bound_confirmed') is not True:
+    if require_migration_bound and migration_pending and snapshot.get('migration_scan_bound_confirmed') is not True:
         stop('MIGRATION_SCAN_BOUND_UNCONFIRMED')
     read_reserve = POST_MIGRATION_READ_HEADROOM + (MIGRATION_READ_RESERVE if migration_pending else 0)
     write_reserve = POST_MIGRATION_WRITE_HEADROOM + (MIGRATION_WRITE_RESERVE if migration_pending else 0)

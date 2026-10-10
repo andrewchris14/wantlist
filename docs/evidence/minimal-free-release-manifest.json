@@ -1,0 +1,29 @@
+{
+  "source_commit": "3c881ddd7e33486ccccd6c56bcdba0c7ebf68163",
+  "main_module": "free-review-wrapper.mjs",
+  "module_bytes": 651549,
+  "module_sha256": {
+    "auth.js": "1eb4decbca6f76c2e58c71105c42dba32259ee04d407edc0e84e1d33b1100858",
+    "categories.js": "f7abc007458cc10b7469d19db1d167fb7f80352df5304ca14d73898b7a1dd16d",
+    "edit-session.js": "30ebd45f5041ae51f875aa677494b83477218275da9567ebfe7a1b3d2279c172",
+    "editor-assets.js": "5a3a956dde9a7a70ef649f35a7748f31079e354ae89819d737bcd5d8926044b6",
+    "effective-list-type.js": "e1cf406ce37b86910b44acfae4dd6776cd6e93ca91fd673ebd278733299ea746",
+    "free-review-wrapper.mjs": "01f2663018137c683ea7f6094884cdd3c84e60e0195d3b70e5e7e60f45856fc1",
+    "owner.js": "f636db6b7c236eb836a933809ffc78eeda2a0015237d980f0fd1a3ce485406e2",
+    "phase34-migration.js": "47373ed689ac57f6e0d69c992441a3582636ddd4a512f59244a4d779e4aabf3c",
+    "phase34-samples.js": "0cacd13118ace4f9dc2195e0a46a6a7f714abc1ee633f69fa64c64ea61fd064a",
+    "phase35-maintenance-data.js": "f7796abc6f6ac400992bc390a01dbe37d21842a6fb0a89ca2fb2e289645f29b2",
+    "phase35-maintenance.js": "dd68bdd200881200307d82a8a037fc2bdd7219077072cd555c6ce65371ee8ceb",
+    "records.js": "e7ba78e43cdbeb4f1bf98abf2b4b4c58c157b4d1cc49ea2fc3e1a1c3b79065ae",
+    "replace-list.js": "30d1559434d001cc950f0ec100fd1e7e38a080b773c9a7277d804005eab57da7",
+    "worker.mjs": "376566d4b89be5a673099a09ee83fe8a210c377a09d033f7f91af2e1bb074ee5"
+  },
+  "asset_sha256": {
+    "/": "4b79aba88fcba67e4d9ea39752445c7f5bd57ca276814b41fd3fa36300fa3abf",
+    "/assets/index-CmlVdhPc.css": "45d3c63d90ded079d01cf53087a0b036aff38f061e7a6887fe10bc0ecb338763",
+    "/assets/index-PL4J437Z.js": "5e719f43aab649832e0c1a1c63113d119e20e92d52f57b430f86670168a64107",
+    "/index.html": "4b79aba88fcba67e4d9ea39752445c7f5bd57ca276814b41fd3fa36300fa3abf"
+  },
+  "migration_sha256": "97fd78f0e9671c99066d52e2f2b6451f343b0219ca3e6351358432685e6f1c1d",
+  "package_sha256": "35452fd6f7a98db0adc810555f9d594db013005e3392c04ab81fe66fdbfc4af0"
+}

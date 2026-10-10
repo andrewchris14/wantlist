@@ -1,0 +1,63 @@
+{
+  "application_http_calls": 0,
+  "calls": {
+    "cleanup": 5,
+    "control": 15,
+    "http": 1
+  },
+  "cleanup": {
+    "complete": false,
+    "disabled_verified": true,
+    "restored_verified": false,
+    "temporary_key_removed": true
+  },
+  "database": "7cf1e9a2-f0b7-4d6b-bded-f5a3315c028c",
+  "endpoint_enable": {
+    "acknowledged_at": "2026-10-10T03:35:16.600Z",
+    "api_enabled": true,
+    "started": "2026-10-10T03:35:13.556Z"
+  },
+  "final_account_reconciliation_complete": false,
+  "preflight": {
+    "application_schema_or_fixture_inspected": false,
+    "disposable_identity_verified": true,
+    "original_release_verified": true
+  },
+  "probe_complete": false,
+  "probe_source_sha256": "34a1a8c3283104489bb0049bf10a3d202bd109e9e8bb132c9880eff70f22557b",
+  "protocol": "readiness-no-d1-v1",
+  "public_nonce": "46f6d62078d47327e801812500ef1a6a",
+  "route_marker_observed": true,
+  "samples": [
+    {
+      "attribution": {
+        "application_route_confirmed": true,
+        "authorized_response": true,
+        "classification": "disposable_probe_marker_observed"
+      },
+      "diagnostic": false,
+      "ended": "2026-10-10T03:35:21.967Z",
+      "headers": {
+        "age": null,
+        "cache-control": "no-store",
+        "cf-cache-status": null,
+        "cf-ray": "a482931a2a1fb103-LAX",
+        "content-type": "application/json",
+        "server": "envoy",
+        "via": null,
+        "x-envoy-upstream-service-time": "103",
+        "x-wantlist-readiness": "no-d1-v1",
+        "x-wantlist-readiness-nonce": "46f6d62078d47327e801812500ef1a6a"
+      },
+      "public_index_url": "https://wantlist-test-3c2-bc5991ba.andrewchris14.workers.dev/public/index?after=",
+      "response_bytes": 100,
+      "response_sha256": "a713a8f8499ec1d31664d6601b3db781777d4bf64df130b8de2761b9ba81c1a7",
+      "scheduled_offset_seconds": 5,
+      "started": "2026-10-10T03:35:21.600Z",
+      "status": 200
+    }
+  ],
+  "sql_calls": 0,
+  "stop_code": "CPU_ANALYTICS_MISSING_OR_AMBIGUOUS",
+  "worker": "wantlist-test-3c2-bc5991ba"
+}

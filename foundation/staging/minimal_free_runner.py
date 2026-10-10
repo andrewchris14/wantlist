@@ -142,7 +142,10 @@ class Runner:
         self.t.publish(self.package['modules'],self.package['main_module'],bindings,release_options=self.original['options'])
         actual=self.t.release_metadata(self.resources);live=self.t.modules()
         verify_review_release({**actual,'reviewed_code_and_schema_verified':True,'synthetic_fixture_verified':True,'main_module':self.package['main_module'],'release_module_digests_verified':live==self.package['modules']},self.clock())
-        self.t.endpoint(True)
+        self.report['endpoint_enable']={'started':iso(self.clock())};self.checkpoint()
+        acknowledgement=self.t.endpoint(True)
+        self.report['endpoint_enable'].update(acknowledged_at=iso(self.clock()),api_enabled=acknowledgement.get('enabled') if isinstance(acknowledgement,dict) else None,api_previews_enabled=acknowledgement.get('previews_enabled') if isinstance(acknowledgement,dict) else None)
+        self.checkpoint()
     def call(self,label,path,body=None,diagnostic=False):
         # Separate all Worker requests into distinct UTC seconds.
         while self.last_http_second==int(self.clock().timestamp()):self.sleep(.1)

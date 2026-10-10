@@ -41,4 +41,6 @@ Cleanup completed by approximately **02:56:31.866 UTC**, with independent checks
 
 No Save or Undo was dispatched and no owner login/session was created. No human-review staging, production, historical or practice records were changed. The approved disposable performance migration remains installed; cleanup intentionally does not downgrade schema. No Paid activation, import, archival or backup operation occurred.
 
+The later [focused local investigation](READINESS_404_INVESTIGATION.md) matches the response fingerprint to Cloudflare error 1042, making an intermediate Worker-to-Worker fetch restriction the leading explanation. This supersedes the earlier generic propagation hypothesis without identifying the blocked caller.
+
 Next essential action: review the 404 and determine its cause before authorizing another bounded readiness attempt. Fresh post-run dashboard usage is needed for account-wide reconciliation and again before future execution. Do not repeat migrations or successful preflight work without a concrete verification need, reset fixtures, or start broad load testing. Stop for owner review.

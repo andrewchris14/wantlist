@@ -141,7 +141,7 @@ class LiveTransport:
         try:data=json.loads(raw)
         except Exception:data=None
         safe={'status':status,'response_bytes':len(raw),'response_sha256':digest(raw),
-              'headers':{k:lower.get(k) for k in ('cf-ray','server','content-type')},'diagnostic':diagnostic}
+              'headers':{k:lower.get(k) for k in ('cf-ray','server','content-type','cache-control','cf-cache-status','age','via','x-envoy-upstream-service-time','x-wantlist-readiness','x-wantlist-readiness-nonce')},'diagnostic':diagnostic}
         if path.startswith('/public/index?'):safe['public_index_url']=ORIGIN+path
         if diagnostic:
             safe['d1_complete']=lower.get('x-staging-d1-complete')=='true'

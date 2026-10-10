@@ -1,0 +1,74 @@
+{
+  "protocol": "minimal-free-six-v1",
+  "worker": "wantlist-test-3c2-bc5991ba",
+  "database": "7cf1e9a2-f0b7-4d6b-bded-f5a3315c028c",
+  "release_sha256": "35452fd6f7a98db0adc810555f9d594db013005e3392c04ab81fe66fdbfc4af0",
+  "samples": [
+    {
+      "d1_complete": false,
+      "diagnostic": true,
+      "ended": "2026-10-10T02:56:29.824Z",
+      "headers": {
+        "cf-ray": "a4825a2a5a5af210-LAX",
+        "content-type": "text/plain; charset=UTF-8",
+        "server": "envoy"
+      },
+      "label": "index_readiness",
+      "public_index_url": "https://wantlist-test-3c2-bc5991ba.andrewchris14.workers.dev/public/index?after=",
+      "response_bytes": 17,
+      "response_sha256": "a4daf148dd64d1a3e8e8101040915e50d12df29153c5936d377cf2260ccc8ba0",
+      "started": "2026-10-10T02:56:29.636Z",
+      "status": 404
+    }
+  ],
+  "sql_usage": {
+    "migration": {
+      "reads": 150,
+      "writes": 3
+    },
+    "rollback": {
+      "reads": 0,
+      "writes": 0
+    },
+    "setup": {
+      "reads": 4212,
+      "writes": 0
+    }
+  },
+  "calls": {
+    "cleanup": 7,
+    "control": 16,
+    "http": 1
+  },
+  "preflight": {
+    "active": 526,
+    "fixture_revision": 25,
+    "history_rows_upper_bound": 24,
+    "identity_verified": true,
+    "migration_needed": true,
+    "removed": 1503
+  },
+  "cleanup": {
+    "complete": true,
+    "disabled_verified": true,
+    "restored_verified": true,
+    "temporary_key_removed": true
+  },
+  "test_complete": false,
+  "final_account_reconciliation_complete": false,
+  "stop_code": "HTTP_RESULT_UNKNOWN",
+  "owner_quota_evidence": {
+    "capture_time_utc_approximate": "2026-10-10T02:55:00Z",
+    "accounting_day_utc": "2026-10-10",
+    "workers_free_active": true,
+    "d1_rows_read": 0,
+    "d1_rows_written": 0,
+    "workers_requests_today": 0,
+    "database_count": 3,
+    "storage_display": "35.04 MB",
+    "competing_bulk_jobs_paused": true
+  },
+  "http_d1_usage": "Unknown: readiness response had no diagnostic cost headers; no subsequent HTTP requests.",
+  "worker_cpu": "Unmeasured: readiness failed before analytics; no measured protocol invocations.",
+  "account_wide_usage_after_run": "Unverified; no full-pass claim."
+}
